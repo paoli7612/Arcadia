@@ -1,3 +1,10 @@
+local imageFile
+
+
+function love.load()
+	imageFile = love.graphics.newImage("img/pelton.png")
+end
+
 function love.draw()
-    love.graphics.print("Ciao mondo", 400, 300)
+	love.graphics.draw(imageFile)
 end
