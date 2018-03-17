@@ -1,1 +1,1 @@
-start love2d/love.exe src
+start love2d/lovec.exe src
