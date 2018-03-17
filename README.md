@@ -1,4 +1,4 @@
-#Lua and Love2d Learning
+# Lua and Love2d Learning
 ## run program
 Love2d is required. Open love2d folder of this repository to see *readme* for install love2d.
 File batch simplify the start of program but first copy love2d in love2d folder.
