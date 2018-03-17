@@ -1,47 +1,65 @@
-local Images = require("spritesheet") 
+local Images = require("spritesheet")
+
+local ACC = 0.8
+local FRICTION = -0.12
+local GRAV = 0.8
 
 function Player(name,type)
 	local name = name
 	local images = Images(name,type)
 	local player = {}
 	local current_frame = 0
-	local anim = images.stand.right[current_frame]
+	local anim = images.stand
 	local delta = 0
-	local x = 0
-	local y = 100
-	local speed = 5
+	local direction = "right"
+	local pos = {x=0, y=0}
+	local vel = {x=0, y=0}
+	local acc = {x=0, y=0}
 
 	function draw()
-		love.graphics.draw(images.image, anim[current_frame], x, y,0,4,4)
+		love.graphics.draw(images.image, anim[current_frame], pos.x, pos.y,0,4,4)
 	end
 
 	local total_delay = 0
 	function update(dt)
-		delta = 0
+		acc.x = 0
+		acc.y = GRAV
 		total_delay = total_delay + dt
 		if total_delay > 0.1 then
 			current_frame = (current_frame+1)%(table.getn(anim)+1)
 			total_delay = 0
 		end
 		if love.keyboard.isDown("left") then
-			delta = delta - speed
-			anim = images.walk.left
+			acc.x = -ACC
+			direction = "left"
 		elseif love.keyboard.isDown("right") then
-			delta = delta + speed
-			anim = images.walk.right
-		else
-			current_frame = 0
-			anim = images.stand.right
+			acc.x = ACC
+			direction = "right"
 		end
-		x = delta + x
+		acc.x = acc.x + vel.x * FRICTION
+		vel.x = vel.x + acc.x
+		vel.y = vel.y + acc.y
+		pos.x = pos.x + vel.x + 0.5*acc.x
+		pos.y = pos.y + vel.y + 0.5*acc.y
+		if math.abs(vel.x) < 0.7 then
+			vel.x = 0
+			anim = images.stand[direction]
+			current_frame = 0
+		end
+		if math.abs(vel.x) > 0 then
+			anim = images.walk[direction]
+		end
 	end
 
+	function jump()
+		vel.y = vel.y - 20
+	end
 
 	player.draw = draw
 	player.update = update
+	player.jump = jump
 
 	return player
 end
 
 return Player
-

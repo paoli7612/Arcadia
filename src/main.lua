@@ -1,7 +1,13 @@
 Player = require("player")
 
+local player
 function love.load()
-	player = Player("jeff","base")
+	player = Player("duncan","base")
+end
+function love.keypressed(key)
+	if key=="up" then
+		player.jump()
+	end
 end
 
 function love.update(dt)
