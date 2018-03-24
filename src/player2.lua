@@ -21,7 +21,7 @@ function Player(name, type)
     if love.keyboard.isDown("right") then acc.x = ACC end
   end
 
-  function player.update()
+  function player.update(dt,all_sprites)
     acc.x = 0
     player.event()
     acc.x = acc.x + vel.x * FRICTION
