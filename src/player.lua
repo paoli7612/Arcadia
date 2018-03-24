@@ -2,7 +2,7 @@ local Images = require("spritesheet")
 
 local ACC = 0.8
 local FRICTION = -0.12
-local GRAV = 0.8
+local GRAV = 1.5
 
 function Player(name,type)
 	local name = name
@@ -23,7 +23,8 @@ function Player(name,type)
 	local total_delay = 0
 	function update(dt)
 		acc.x = 0
-		acc.y = GRAV
+		if pos.y < 100 then acc.y = GRAV
+		else acc.y = 0 end
 		total_delay = total_delay + dt
 		if total_delay > 0.1 then
 			current_frame = (current_frame+1)%(table.getn(anim)+1)
@@ -37,6 +38,7 @@ function Player(name,type)
 			direction = "right"
 		end
 		acc.x = acc.x + vel.x * FRICTION
+		acc.y = acc.y + vel.y * FRICTION
 		vel.x = vel.x + acc.x
 		vel.y = vel.y + acc.y
 		pos.x = pos.x + vel.x + 0.5*acc.x
@@ -52,7 +54,7 @@ function Player(name,type)
 	end
 
 	function jump()
-		vel.y = vel.y - 20
+		vel.y = vel.y - 60
 	end
 
 	player.draw = draw
