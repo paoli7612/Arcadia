@@ -1,4 +1,4 @@
-Player = require("player")
+Player = require("player2")
 
 local player
 
