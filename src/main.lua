@@ -1,27 +1,16 @@
-Player = require("player2")
-Platform = require("platform")
+Player = require("player")
 
-local player
-local platform
-local all_sprites = {}
 function love.load()
-	player = Player("duncan","base")
-	platform = Platform(10,300,4)
-
-	all_sprites[0] = platform
+	player = Player()
 end
 
 function love.keypressed(key)
-	if key=="up" then
-		player.jump()
-	end
 end
 
 function love.update(dt)
-	player.update(dt,all_sprites)
+	player.update(dt)
 end
 
 function love.draw()
 	player.draw()
-	platform.draw()
 end
