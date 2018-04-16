@@ -3,8 +3,8 @@ Player = require("player")
 Grill = require("grill")
 
 function love.load()
-	player = Player()
 	grill = Grill()
+	player = Player(grill)
 end
 
 function love.keypressed(key)

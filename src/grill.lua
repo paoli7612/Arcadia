@@ -1,19 +1,21 @@
 -- grill
 function Grill()
 	local grill = {
-		w = 800,
-		h = 800,
-		tile = 50
+		WIDTH = 800,
+		HEIGHT = 800,
+		tile = 50,
 	}
-	love.window.setMode( grill.w, grill.h )
+	grill.tile_w = grill.WIDTH/grill.tile
+	grill.tile_h = grill.HEIGHT/grill.tile
+	love.window.setMode( grill.WIDTH, grill.HEIGHT )
 
 	function grill.draw()
 		love.graphics.setColor(0, 100, 255)
-		for y=0,grill.h,grill.tile do 
-			love.graphics.line(0, y, grill.w, y)
+		for y=0,grill.HEIGHT,grill.tile do
+			love.graphics.line(0, y, grill.WIDTH, y)
 		end
-		for x=0,grill.w,grill.tile do
-			love.graphics.line(x, 0, x, grill.h)
+		for x=0,grill.WIDTH,grill.tile do
+			love.graphics.line(x, 0, x, grill.HEIGHT)
 		end
 	end
 

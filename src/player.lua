@@ -1,10 +1,11 @@
 -- player.lua
 
-function Player(name,type)
+function Player(grill)
+	local grill = grill
 	local player = {
 		x=0,
 		y=0,
-		size=50
+		size=grill.tile
 	}
 
 	function player.draw()
@@ -22,6 +23,10 @@ function Player(name,type)
 			player.y = player.y - 1
 		elseif love.keyboard.isDown("down") then
 			player.y = player.y + 1
+		end
+
+		if player.x > grill.tile_w then
+			player.x = 0
 		end
 	end
 
