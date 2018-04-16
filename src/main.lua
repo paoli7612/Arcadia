@@ -1,27 +1,29 @@
 -- main.lua
 
-level_spawn = require "maps/spawn"
-
-
 Grill = require("grill")
 Player = require("player")
+Maps = require("map")
 
-Map = require("map")
+function Boss()
+	local boss = {
+		grill = Grill(),
+	}
+	boss.maps = Maps(boss)
+	boss.player = Player(boss,5,5)
+	boss.group = boss.maps["spawn"]
+	return boss
+end
 
 function love.load()
-	grill = Grill()
-	map = Map(grill)
-	all_sprites = map.get_group(level_spawn)
-	player = Player(grill,5,5)
-	player.group = all_sprites
+	boss = Boss()
 end
 
 function love.update(dt)
-	player.update(dt)
+	boss.player.update(dt)
 end
 
 function love.draw()
-	grill.draw()
-	player.draw()
-	all_sprites.draw()
+	boss.grill.draw()
+	boss.player.draw()
+	boss.group.draw()
 end

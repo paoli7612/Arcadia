@@ -2,23 +2,45 @@
 Wall = require("wall")
 Npc = require("npc")
 Group = require("group")
+Door = require("door")
 
-function Map(grill)
-  local grill = grill
-  local map = {}
+level_spawn = require "maps/spawn"
+level_street = require "maps/street"
 
-  function map.get_group(level)
-    g = Group()
-    x,y = 0,0
-    for i,p in ipairs(level.layers[1].data) do
-      if x == grill.tile_w then x = 0 y = y + 1 end
-      if p == 390 then g.add(Wall(grill,x,y)) end
-      if p == 223 then g.add(Npc(grill,x,y)) end
-      x = x+1
-    end
-    return g
+function Maps(boss)
+  local grill = boss.grill
+  local boss = boss
+  local maps = {}
+
+  function maps.change_map(door_prop)
+    boss.group = maps[door_prop.dest]
+    boss.player.x = door_prop.coord_x
+    boss.player.y = door_prop.coord_y
   end
 
-  return map
+  function load_map(level)
+    x,y = 0,0
+    group = Group(maps)
+    for i,p in ipairs(level.data) do
+      if x == grill.tile_w then x = 0 y = y + 1 end
+      if p >= 1 and p < 20 then
+        group.add(Wall(grill,x,y))
+      elseif p >= 20 and p < 40 then
+        for i,npc in ipairs(level.properties.npc) do
+          if npc.id == p then group.add(Npc(grill,x,y,npc)) end
+        end
+      elseif p >= 40 and p < 60 then
+        for i,door in ipairs(level.properties.doors) do
+          if door.id == p then group.add(Door(grill, x, y, door)) end
+        end
+      end
+      x = x+1
+    end
+    return group
+  end
+  maps["spawn"] = load_map(level_spawn)
+  maps["street"] = load_map(level_street)
+  return maps
 end
-return Map
+
+return Maps

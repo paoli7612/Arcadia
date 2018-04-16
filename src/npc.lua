@@ -1,12 +1,13 @@
 -- npc.lua
 
-function Npc(grill,x,y)
+function Npc(grill,x,y,properties)
 	local npc = grill
 	local npc = {
     name = "npc",
 		x=x,
 		y=y,
-		size=grill.tile
+		size=grill.tile,
+		properties = properties
 	}
 
 	function npc.draw()

@@ -1,7 +1,8 @@
 -- group.lua
 
-function Group()
+function Group(maps)
   local group = {}
+  local maps = maps
 
   function group.add(new_sprite)
     table.insert(group,new_sprite)
@@ -25,6 +26,9 @@ function Group()
     for i,item in ipairs(group) do
       if sprite.x + sprite.dx == item.x and sprite.y + sprite.dy == item.y then
         print("collision: " .. sprite.name .. " - " .. item.name)
+        if item.name == "door" then
+          maps.change_map(item.properties)
+        end
         return true
       end
     end

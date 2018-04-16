@@ -1,7 +1,8 @@
 -- player.lua
 
-function Player(grill,x,y)
-	local grill = grill
+function Player(boss,x,y)
+	local grill = boss.grill
+	local boss = boss
 	local time = 0
 	local player = {
 		name = "player",
@@ -34,7 +35,7 @@ function Player(grill,x,y)
 		elseif love.keyboard.isDown("down") then
 			player.dy = 1
 		end
-		if not player.group.collide(player) then
+		if not boss.group.collide(player) then
 			player.x = player.x + player.dx
 			player.y = player.y + player.dy
 		end
