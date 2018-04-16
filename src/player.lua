@@ -1,13 +1,28 @@
+-- player.lua
+
 function Player(name,type)
-	local player = {}
+	local player = {
+		x=0,
+		y=0,
+		size=50
+	}
+
 	function player.draw()
-		--love.graphics.draw(images.image, anim[current_frame], pos.x, pos.y,0,4,4)
+		love.graphics.setColor(255, 0, 255)
+  		love.graphics.rectangle("fill", player.x*player.size, player.y*player.size, player.size, player.size)
 	end
 
 	function player.update(dt)
-	end
-
-	function player.jump()
+		if love.keyboard.isDown("right") then
+			player.x = player.x + 1
+		elseif love.keyboard.isDown("left") then
+			player.x = player.x - 1
+		end
+		if love.keyboard.isDown("up") then
+			player.y = player.y - 1
+		elseif love.keyboard.isDown("down") then
+			player.y = player.y + 1
+		end
 	end
 
 	return player
