@@ -5,7 +5,6 @@ Wall = require("wall")
 Npc = require("npc")
 Group = require("group")
 
-
 function load_walls()
 	function new_wall(x,y)
 		wall = Wall(grill,x,y)
