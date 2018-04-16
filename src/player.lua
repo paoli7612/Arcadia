@@ -11,7 +11,7 @@ function Player(grill,x,y)
 		speed = 0.1
 	}
 	function player.draw()
-		love.graphics.setColor(255, 0, 255)
+		love.graphics.setColor(0, 255, 0)
   		love.graphics.rectangle("fill", player.x*player.size, player.y*player.size, player.size, player.size)
 	end
 

@@ -2,6 +2,7 @@
 Grill = require("grill")
 Player = require("player")
 Wall = require("wall")
+Npc = require("npc")
 Group = require("group")
 
 function load_walls()
@@ -19,15 +20,15 @@ function load_walls()
 	end
 end
 
-
 function love.load()
 	grill = Grill()
 	all_sprites = Group()
 	player = Player(grill,5,5)
+	npc = Npc(grill,4,7)
+	all_sprites.add(npc)
 	load_walls()
 	player.group = all_sprites
 	all_sprites.show()
-
 end
 
 function love.update(dt)

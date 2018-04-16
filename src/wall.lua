@@ -9,7 +9,7 @@ function Wall(grill,x,y)
 		size=grill.tile
 	}
 	function wall.draw()
-		love.graphics.setColor(255, 0, 0)
+		love.graphics.setColor(80, 80, 80)
 		love.graphics.rectangle("fill", wall.x*wall.size, wall.y*wall.size, wall.size, wall.size)
 	end
 
