@@ -1,13 +1,14 @@
 -- grill
 function Grill()
 	local grill = {
-		WIDTH = 800,
-		HEIGHT = 800,
-		tile = 50,
+		tile_w = 40,
+		tile_h = 25,
+		tile = 30,	-- change if your monitor is too small
 	}
-	grill.tile_w = grill.WIDTH/grill.tile
-	grill.tile_h = grill.HEIGHT/grill.tile
-
+	grill.WIDTH = grill.tile_w*grill.tile
+	grill.HEIGHT = grill.tile_h*grill.tile
+	print(grill.tile_w)
+	print(grill.tile_h)
 	love.window.setMode( grill.WIDTH, grill.HEIGHT )
 
 	function grill.draw()
