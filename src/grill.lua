@@ -7,6 +7,7 @@ function Grill()
 	}
 	grill.tile_w = grill.WIDTH/grill.tile
 	grill.tile_h = grill.HEIGHT/grill.tile
+
 	love.window.setMode( grill.WIDTH, grill.HEIGHT )
 
 	function grill.draw()

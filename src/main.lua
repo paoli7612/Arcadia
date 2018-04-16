@@ -1,13 +1,24 @@
 -- main.lua
-Player = require("player")
 Grill = require("grill")
+Player = require("player")
+Wall = require("wall")
+Group = require("group")
 
 function love.load()
 	grill = Grill()
-	player = Player(grill)
-end
+	all_sprites = Group()
+	player = Player(grill,5,5)
+	for i = 0,10 do
+		wall = Wall(grill,0,i)
+		all_sprites.add(wall)
+	end
+	for i = 0,10 do
+		wall = Wall(grill,i,0)
+		all_sprites.add(wall)
+	end
+	player.group = all_sprites
+	all_sprites.show()
 
-function love.keypressed(key)
 end
 
 function love.update(dt)
@@ -17,4 +28,5 @@ end
 function love.draw()
 	grill.draw()
 	player.draw()
+	all_sprites.draw()
 end
