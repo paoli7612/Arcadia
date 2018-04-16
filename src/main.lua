@@ -6,7 +6,7 @@ Maps = require("map")
 
 function Boss()
 	local boss = {
-		grill = Grill(),
+		grill = Grill()
 	}
 	boss.maps = Maps(boss)
 	boss.player = Player(boss,5,5)
@@ -24,6 +24,6 @@ end
 
 function love.draw()
 	boss.grill.draw()
-	boss.player.draw()
 	boss.group.draw()
+	boss.player.draw()
 end

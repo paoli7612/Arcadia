@@ -1,9 +1,13 @@
 -- player.lua
 
+Spritesheet = require ("spritesheet")
+
 function Player(boss,x,y)
 	local grill = boss.grill
 	local boss = boss
 	local time = 0
+	local spritesheet = Spritesheet(grill)
+
 	local player = {
 		name = "player",
 		x=x,
@@ -12,8 +16,7 @@ function Player(boss,x,y)
 		speed = 0.1
 	}
 	function player.draw()
-		love.graphics.setColor(0, 255, 0)
-  		love.graphics.rectangle("fill", player.x*player.size, player.y*player.size, player.size, player.size)
+		spritesheet.draw_image(player.x*player.size,player.y*player.size,spritesheet.quads["down"]["stand"])
 	end
 
 	function player.update(dt)
