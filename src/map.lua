@@ -34,7 +34,7 @@ function Maps(boss)
         end
       elseif p >= 40 and p < 60 then
         for i,door in ipairs(level.properties.doors) do
-          if door.id == p then group.add(Door(grill, x, y, door)) end
+          if door.id == p then group.add(Door(boss, x, y, door)) end
         end
       end
       x = x+1

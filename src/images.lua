@@ -48,10 +48,17 @@ function Spritesheet(grill, type)
     spritesheet.quads["wall"] = {}
     spritesheet.quads["wall"]["blue"] = {get_image(0,0),get_image(1,0),get_image(2,0),get_image(3,0)}
     spritesheet.quads["wall"]["red"] = {get_image(4,0),get_image(5,0),get_image(6,0),get_image(7,0)}
+
+
+  elseif type == "things" then
+    spritesheet.quads["door"] = {get_image(0,0),get_image(0,1),get_image(0,2),get_image(0,3)}
+    spritesheet.quads["chest"] = {get_image(6,0),get_image(6,1),get_image(6,2),get_image(6,3)}
+    spritesheet.quads["torchs"] = {}
+    spritesheet.quads["torchs"]["yellow"] = {get_image(0,4),get_image(1,4),get_image(2,4)}
+    spritesheet.quads["torchs"]["blue"] = {get_image(0,5),get_image(1,5),get_image(2,5)}
+    spritesheet.quads["torchs"]["red"] = {get_image(0,6),get_image(1,6),get_image(2,6)}
+    spritesheet.quads["torchs"]["green"] = {get_image(0,7),get_image(1,7),get_image(2,7)}
   end
-
-
-
 
   return spritesheet
 end

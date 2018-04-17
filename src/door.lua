@@ -1,7 +1,7 @@
 
-function Door(grill,x,y,properties)
-	local grill = grill
-
+function Door(boss,x,y,properties)
+	local grill = boss.grill
+	local spritesheet = boss.images["things"]
 	local door = {
     name = "door",
 		x=x,
@@ -11,8 +11,7 @@ function Door(grill,x,y,properties)
 	}
 
 	function door.draw()
-		--love.graphics.setColor(255, 255, 0)
-		love.graphics.rectangle("fill", door.x*door.size, door.y*door.size, door.size, door.size)
+		spritesheet.draw_image(door.x*door.size,door.y*door.size,spritesheet.quads["door"][1])
 	end
 
 	return door
