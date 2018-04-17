@@ -25,12 +25,11 @@ function Group(maps)
   function group.collide(sprite)
     for i,item in ipairs(group) do
       if sprite.x + sprite.dx == item.x and sprite.y + sprite.dy == item.y then
+        if item.name == "floor" then else
         print("collision: " .. sprite.name .. " - " .. item.name)
         if item.name == "door" then
           maps.change_map(item.properties)
         end
-        if item.name == "floor" then
-        else
         return true
       end
       end

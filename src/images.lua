@@ -43,7 +43,6 @@ function Spritesheet(grill, type)
     spritesheet.quads["ghost"] = get_set(2,1)
     spritesheet.quads["spider"] = get_set(3,1)
 
-
   elseif type == "basictiles" then
     spritesheet.quads["wall"] = {}
     spritesheet.quads["wall"]["blue"] = {get_image(0,0),get_image(1,0),get_image(2,0),get_image(3,0)}
@@ -54,6 +53,7 @@ function Spritesheet(grill, type)
     spritesheet.quads["floor"]["wood"] = {get_image(0,1),get_image(0,2)}
     spritesheet.quads["floor"]["ice"] = {get_image(5,3),get_image(5,4)}
 
+    spritesheet.quads["door"] = {get_image(0,6),get_image(1,6),get_image(2,6),get_image(0,7),get_image(1,7)}
 
   elseif type == "things" then
     spritesheet.quads["door"] = {get_image(0,0),get_image(0,1),get_image(0,2),get_image(0,3)}
