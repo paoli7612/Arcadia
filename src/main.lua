@@ -3,14 +3,17 @@
 Grill = require("grill")
 Player = require("player")
 Maps = require("map")
+Images = require("images")
 
 function Boss()
-	local boss = {
-		grill = Grill()
-	}
+	local boss = {}
+	boss.grill = Grill()
+
+	boss.images = Images(boss.grill)
 	boss.maps = Maps(boss)
 	boss.player = Player(boss,5,5)
 	boss.group = boss.maps["spawn"]
+
 	return boss
 end
 

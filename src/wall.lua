@@ -1,7 +1,8 @@
 -- wall.lua
 
-function Wall(grill,x,y)
-	local grill = grill
+function Wall(boss,x,y)
+	local grill = boss.grill
+	local spritesheet = boss.images["basictiles"]
 	local wall = {
     name = "wall",
 		x=x,
@@ -9,8 +10,7 @@ function Wall(grill,x,y)
 		size=grill.tile
 	}
 	function wall.draw()
-		love.graphics.setColor(80, 80, 80)
-		love.graphics.rectangle("fill", wall.x*wall.size, wall.y*wall.size, wall.size, wall.size)
+		spritesheet.draw_image(wall.x*wall.size,wall.y*wall.size,spritesheet.quads["wall"]["blue"][1])
 	end
 
 	return wall

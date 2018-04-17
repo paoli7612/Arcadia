@@ -1,12 +1,11 @@
 -- player.lua
 
-Spritesheet = require ("spritesheet")
 
 function Player(boss,x,y)
 	local grill = boss.grill
 	local boss = boss
+	local spritesheet = boss.images["characters"]
 	local time = 0
-	local spritesheet = Spritesheet(grill)
 
 	local player = {
 		name = "player",

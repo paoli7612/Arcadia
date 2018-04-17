@@ -12,7 +12,7 @@ function Grill()
 	love.window.setMode( grill.WIDTH, grill.HEIGHT )
 
 	function grill.draw()
-		love.graphics.setColor(0, 100, 255)
+		--.love.graphics.setColor(0, 100, 255)
 		for y=0,grill.HEIGHT,grill.tile do
 			love.graphics.line(0, y, grill.WIDTH, y)
 		end

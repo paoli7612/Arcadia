@@ -11,7 +11,7 @@ function Npc(grill,x,y,properties)
 	}
 
 	function npc.draw()
-		love.graphics.setColor(0, 0, 255)
+		--love.graphics.setColor(0, 0, 255)
 		love.graphics.rectangle("fill", npc.x*npc.size, npc.y*npc.size, npc.size, npc.size)
 	end
 
