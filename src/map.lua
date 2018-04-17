@@ -25,7 +25,9 @@ function Maps(boss)
     for i,p in ipairs(level.data) do
       if x == grill.tile_w then x = 0 y = y + 1 end
       if p >= 1 and p < 20 then
-        group.add(Wall(boss,x,y))
+        for i,wall in ipairs(level.properties.walls) do
+          if wall.id == p then group.add(Wall(boss, x, y, wall)) end
+        end
       elseif p >= 20 and p < 40 then
         for i,npc in ipairs(level.properties.npc) do
           if npc.id == p then group.add(Npc(grill,x,y,npc)) end
