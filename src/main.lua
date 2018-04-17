@@ -26,7 +26,6 @@ function love.update(dt)
 end
 
 function love.draw()
-	--boss.grill.draw()
 	boss.group.draw()
 	boss.player.draw()
 end

@@ -18,19 +18,19 @@ function Spritesheet(grill, type)
       x,y = x*3,y*5
       local quads = {}
       quads["down"] = {}
-      quads["down"]["stand"] = get_image(1+x,0+y)
+      quads["down"]["stand"] = {get_image(1+x,0+y)}
       quads["down"]["walk"] = {get_image(0+x,0+y),get_image(2+x,0+y)}
 
       quads["right"] = {}
-      quads["right"]["stand"] = get_image(1+x,2+y)
+      quads["right"]["stand"] = {get_image(1+x,2+y)}
       quads["right"]["walk"] = {get_image(0+x,2+y),get_image(2+x,2+y)}
 
       quads["left"] = {}
-      quads["left"]["stand"] = get_image(1+x,1+y)
+      quads["left"]["stand"] = {get_image(1+x,1+y)}
       quads["left"]["walk"] = {get_image(0+x,1+y),get_image(2+x,1+y)}
 
       quads["up"] = {}
-      quads["up"]["stand"] = get_image(1+x,3+y)
+      quads["up"]["stand"] = {get_image(1+x,3+y)}
       quads["up"]["walk"] = {get_image(0+x,3+y),get_image(2+x,3+y)}
       return quads
     end

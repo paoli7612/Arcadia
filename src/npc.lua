@@ -12,7 +12,7 @@ function Npc(boss,properties)
 	}
 
 	function npc.draw()
-		spritesheet.draw_image(npc.x*npc.size,npc.y*npc.size,spritesheet.quads[npc.properties.type]["down"]["stand"])
+		spritesheet.draw_image(npc.x*npc.size,npc.y*npc.size,spritesheet.quads[npc.properties.type]["down"]["stand"][1])
 	end
 
 	return npc

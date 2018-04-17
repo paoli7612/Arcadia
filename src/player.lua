@@ -12,10 +12,13 @@ function Player(boss,x,y)
 		x=x,
 		y=y,
 		size=grill.tile,
+		direction = "down",
+		position = "stand",
+		frame = 1,
 		speed = 0.1
 	}
 	function player.draw()
-		spritesheet.draw_image(player.x*player.size,player.y*player.size,spritesheet.quads["boy"]["down"]["stand"])
+		spritesheet.draw_image(player.x*player.size,player.y*player.size,spritesheet.quads["boy"][player.direction][player.position][player.frame])
 	end
 
 	function player.update(dt)
@@ -28,14 +31,21 @@ function Player(boss,x,y)
 
 	function player.move()
 		player.dx, player.dy = 0,0
+		player.position = "walk"
 		if love.keyboard.isDown("right") then
 			player.dx = 1
+			player.direction = "right"
 		elseif love.keyboard.isDown("left") then
 			player.dx = -1
+			player.direction = "left"
 		elseif love.keyboard.isDown("up") then
 			player.dy = -1
+			player.direction = "up"
 		elseif love.keyboard.isDown("down") then
 			player.dy = 1
+			player.direction = "down"
+		else
+			player.position = "stand"
 		end
 
 		-- control coord for write maps
