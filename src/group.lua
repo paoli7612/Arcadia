@@ -29,7 +29,10 @@ function Group(maps)
         if item.name == "door" then
           maps.change_map(item.properties)
         end
+        if item.name == "floor" then
+        else
         return true
+      end
       end
     end
     return false

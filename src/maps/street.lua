@@ -43,12 +43,10 @@ return {
 				coord_y = 23}
 			},
 			npc={
-				{id = 20,
-				type = "boy",
+				{type = "boy",
 				coord_x = 3,
 				coord_y = 3},
-				{id = 20,
-				type = "boy",
+				{type = "boy",
 				coord_x = 36,
 				coord_y = 3}
 			}

@@ -3,6 +3,7 @@ Wall = require("wall")
 Npc = require("npc")
 Group = require("group")
 Door = require("door")
+Floor = require("floor")
 
 level_spawn = require "maps/spawn"
 level_street = require "maps/street"
@@ -28,6 +29,10 @@ function Maps(boss)
         for i,wall in ipairs(level.properties.walls) do
           if wall.id == p then group.add(Wall(boss, x, y, wall)) end
         end
+      elseif p >= 20 and p < 40 then
+        for i,floor in ipairs(level.properties.floors) do
+          if floor.id == p then group.add(Floor(boss, x, y, floor)) end
+        end
       elseif p >= 40 and p < 60 then
         for i,door in ipairs(level.properties.doors) do
           if door.id == p then group.add(Door(boss, x, y, door)) end
@@ -36,7 +41,7 @@ function Maps(boss)
       x = x+1
     end
     for i,npc in ipairs(level.properties.npc) do
-      group.add(Npc(boss,npc)) 
+      group.add(Npc(boss,npc))
     end
     return group
   end
