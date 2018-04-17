@@ -28,16 +28,15 @@ function Maps(boss)
         for i,wall in ipairs(level.properties.walls) do
           if wall.id == p then group.add(Wall(boss, x, y, wall)) end
         end
-      elseif p >= 20 and p < 40 then
-        for i,npc in ipairs(level.properties.npc) do
-          if npc.id == p then group.add(Npc(boss,x,y,npc)) end
-        end
       elseif p >= 40 and p < 60 then
         for i,door in ipairs(level.properties.doors) do
           if door.id == p then group.add(Door(boss, x, y, door)) end
         end
       end
       x = x+1
+    end
+    for i,npc in ipairs(level.properties.npc) do
+      group.add(Npc(boss,npc)) 
     end
     return group
   end

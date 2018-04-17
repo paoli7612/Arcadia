@@ -1,12 +1,12 @@
 -- npc.lua
 
-function Npc(boss,x,y,properties)
+function Npc(boss,properties)
 	local grill = boss.grill
 	local spritesheet = boss.images["characters"]
 	local npc = {
     name = "npc",
-		x=x,
-		y=y,
+		x=properties.coord_x,
+		y=properties.coord_y,
 		size=grill.tile,
 		properties = properties
 	}
