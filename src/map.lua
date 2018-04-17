@@ -13,6 +13,7 @@ function Maps(boss)
   local maps = {}
 
   function maps.change_map(door_prop)
+    print(door_prop.dest)
     boss.group = maps[door_prop.dest]
     boss.player.x = door_prop.coord_x
     boss.player.y = door_prop.coord_y

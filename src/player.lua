@@ -38,6 +38,9 @@ function Player(boss,x,y)
 		elseif love.keyboard.isDown("down") then
 			player.dy = 1
 		end
+
+		if love.keyboard.isDown("q") then print(player.x, player.y) end
+
 		if not boss.group.collide(player) then
 			player.x = player.x + player.dx
 			player.y = player.y + player.dy
