@@ -39,6 +39,7 @@ function Player(boss,x,y)
 			player.dy = 1
 		end
 
+		-- control coord for write maps
 		if love.keyboard.isDown("q") then print(player.x, player.y) end
 
 		if not boss.group.collide(player) then
