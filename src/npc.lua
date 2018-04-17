@@ -1,7 +1,8 @@
 -- npc.lua
 
-function Npc(grill,x,y,properties)
-	local npc = grill
+function Npc(boss,x,y,properties)
+	local grill = boss.grill
+	local spritesheet = boss.images["characters"]
 	local npc = {
     name = "npc",
 		x=x,
@@ -11,8 +12,7 @@ function Npc(grill,x,y,properties)
 	}
 
 	function npc.draw()
-		--love.graphics.setColor(0, 0, 255)
-		love.graphics.rectangle("fill", npc.x*npc.size, npc.y*npc.size, npc.size, npc.size)
+		spritesheet.draw_image(npc.x*npc.size,npc.y*npc.size,spritesheet.quads[npc.properties.type]["down"]["stand"])
 	end
 
 	return npc

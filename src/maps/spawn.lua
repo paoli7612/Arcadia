@@ -46,7 +46,8 @@ return {
 				coord_y = 1}
 			},
 			npc={
-				{id=20}
+				{id = 20,
+				type = "boy"}
 			}
 		}
 	}

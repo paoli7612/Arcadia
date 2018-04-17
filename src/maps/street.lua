@@ -43,7 +43,8 @@ return {
 				coord_y = 23}
 			},
 			npc={
-				{id=20}
+				{id = 20,
+				type = "girl"}
 			}
 		}
 	}
