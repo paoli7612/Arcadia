@@ -14,21 +14,36 @@ function Spritesheet(grill, type)
   end
 
   if type == "characters" then
-    spritesheet.quads["down"] = {}
-    spritesheet.quads["down"]["stand"] = get_image(1,0)
-    spritesheet.quads["down"]["walk"] = {get_image(0,0),get_image(2,0)}
+    function get_set(x,y)
+      x,y = x*3,y*5
+      local quads = {}
+      quads["down"] = {}
+      quads["down"]["stand"] = get_image(1+x,0+y)
+      quads["down"]["walk"] = {get_image(0+x,0+y),get_image(2+x,0+y)}
 
-    spritesheet.quads["right"] = {}
-    spritesheet.quads["right"]["stand"] = get_image(1,2)
-    spritesheet.quads["right"]["walk"] = {get_image(0,2),get_image(2,2)}
+      quads["right"] = {}
+      quads["right"]["stand"] = get_image(1+x,2+y)
+      quads["right"]["walk"] = {get_image(0+x,2+y),get_image(2+x,2+y)}
 
-    spritesheet.quads["left"] = {}
-    spritesheet.quads["left"]["stand"] = get_image(1,1)
-    spritesheet.quads["left"]["walk"] = {get_image(0,1),get_image(2,1)}
+      quads["left"] = {}
+      quads["left"]["stand"] = get_image(1+x,1+y)
+      quads["left"]["walk"] = {get_image(0+x,1+y),get_image(2+x,1+y)}
 
-    spritesheet.quads["up"] = {}
-    spritesheet.quads["up"]["stand"] = get_image(1,3)
-    spritesheet.quads["up"]["walk"] = {get_image(0,3),get_image(2,3)}
+      quads["up"] = {}
+      quads["up"]["stand"] = get_image(1+x,3+y)
+      quads["up"]["walk"] = {get_image(0+x,3+y),get_image(2+x,3+y)}
+      return quads
+    end
+    spritesheet.quads["man"] = get_set(0,0)
+    spritesheet.quads["boy"] = get_set(1,0)
+    spritesheet.quads["girl"] = get_set(2,0)
+    spritesheet.quads["alien"] = get_set(3,0)
+    spritesheet.quads["slime"] = get_set(0,1)
+    spritesheet.quads["bat"] = get_set(1,1)
+    spritesheet.quads["ghost"] = get_set(2,1)
+    spritesheet.quads["spider"] = get_set(3,1)
+
+
   elseif type == "basictiles" then
     spritesheet.quads["wall"] = {}
     spritesheet.quads["wall"]["blue"] = {get_image(0,0),get_image(1,0),get_image(2,0),get_image(3,0)}
