@@ -4,9 +4,7 @@ Npc = require("npc")
 Group = require("group")
 Door = require("door")
 Floor = require("floor")
-
-level_spawn = require "maps/spawn"
-level_street = require "maps/street"
+Decor = require("decor")
 
 function Maps(boss)
   local grill = boss.grill
@@ -21,6 +19,7 @@ function Maps(boss)
   end
 
   function load_map(level)
+    print(level.name)
     x,y = 0,0
     group = Group(maps)
     for i,p in ipairs(level.data) do
@@ -43,10 +42,18 @@ function Maps(boss)
     for i,npc in ipairs(level.properties.npc) do
       group.add(Npc(boss,npc))
     end
+    for i,decor in ipairs(level.properties.decor) do
+      group.add(Decor(boss,decor))
+    end
     return group
   end
-  maps["spawn"] = load_map(level_spawn)
-  maps["street"] = load_map(level_street)
+  maps["spawn"] = load_map(require("maps/spawn"))
+  maps["street"] = load_map(require("maps/street"))
+  maps["village"] = load_map(require("maps/village"))
+  maps["castle"] = load_map(require("maps/castle"))
+  maps["dungeon"] = load_map(require("maps/dungeon"))
+  maps["lake"] = load_map(require("maps/lake"))
+
   return maps
 end
 
