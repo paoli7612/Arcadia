@@ -1,1 +1,2 @@
-wine love2d/lovec.exe src
+# if love2d was setup
+love src

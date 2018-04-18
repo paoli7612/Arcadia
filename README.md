@@ -7,5 +7,6 @@ File batch simplify the start of program but first copy love2d in love2d folder.
 The image of sprites are take from Comunity TV Series
 I take all images from https://github.com/hawkthorne/hawkthorne-journey/tree/master/src/characters
 
-
+# history
 ![alt text](https://github.com/paoli7612/TileGame-Lua/blob/master/doc/img/001.png)
+![alt text](https://github.com/paoli7612/TileGame-Lua/blob/master/doc/img/002.png)
