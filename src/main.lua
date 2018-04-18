@@ -26,6 +26,8 @@ end
 
 function love.update(dt)
 	boss.player.update(dt)
+	boss.group.update(dt)
+	if love.keyboard.isDown("w") then boss.group.show() end
 end
 
 function love.draw()

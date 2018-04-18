@@ -46,6 +46,9 @@ return {
 				{id = 44, dest = "null", coord_x = 0, coord_y = 0, type = 1}
 			},
 			npc={},
-		decor={}
+		decor={},
+		torch={
+			{color = "yellow", coord_x = 1, coord_y = 1}
+		}
 		}
 	}

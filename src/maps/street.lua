@@ -52,6 +52,9 @@ return {
 				{type = "boy", coord_x = 3, coord_y = 3},
 				{type = "boy", coord_x = 36, coord_y = 3}
 			},
-			decor={}
+			decor={},
+			torch={
+				{color = "yellow", coord_x = 1, coord_y = 1}
+			}
 		}
 	}

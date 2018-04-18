@@ -51,14 +51,15 @@ return {
 				{id = 43, dest = "street", coord_x = 1, coord_y = 22, type = 1}
 			},
 			npc={
-				{type = "boy", coord_x = 3, coord_y = 3}
+				{type = "boy", coord_x = 3, coord_y = 3}	-- seller
 			},
 			decor={
+				-- shop
 				{type = "shelf", coord_x = 2, coord_y = 1},
 				{type = "chest", coord_x = 3, coord_y = 1},
 				{type = "shelf", coord_x = 5, coord_y = 1},
 				{type = "urn", coord_x = 6, coord_y = 1},
-				-- hous 4
+				-- hous 3
 				{type = "bed_up", coord_x = 36, coord_y = 18},
 				{type = "bed_down", coord_x = 36, coord_y = 19},
 				{type = "bed_up", coord_x = 37, coord_y = 18},
@@ -70,6 +71,9 @@ return {
 				{type = "throne", coord_x = 31, coord_y = 20},
 				{type = "throne", coord_x = 32, coord_y = 20},
 				{type = "urn", coord_x = 34, coord_y = 23}
+			},
+			torch={
+				{color = "yellow", coord_x = 1, coord_y = 1}
 			}
 		}
 	}

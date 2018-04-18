@@ -4,7 +4,7 @@ function Decor(boss,properties)
 	local grill = boss.grill
 	local spritesheet = boss.images["basictiles"]
 	local decor = {
-    name = "npc",
+    name = "decor",
 		x=properties.coord_x,
 		y=properties.coord_y,
 		size=grill.tile,
