@@ -59,7 +59,10 @@ function Spritesheet(grill, type)
     spritesheet.quads["decor"] = {}
     spritesheet.quads["decor"]["shelf"] = get_image(7,6)
     spritesheet.quads["decor"]["chest"] = get_image(4,4)
-
+    spritesheet.quads["decor"]["table"] = get_image(6,6)
+    spritesheet.quads["decor"]["urn"] = get_image(3,3)
+    spritesheet.quads["decor"]["bed_down"] = get_image(5,6)
+    spritesheet.quads["decor"]["bed_up"] = get_image(5,5)
 
     spritesheet.quads["door"] = {get_image(0,6),get_image(1,6),get_image(2,6),get_image(0,7),get_image(1,7)}
 
