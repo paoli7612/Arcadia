@@ -6,6 +6,7 @@ Door = require("door")
 Floor = require("floor")
 Decor = require("decor")
 Torch = require("torch")
+Cartel = require("cartel")
 
 function Maps(boss)
   local grill = boss.grill
@@ -13,7 +14,7 @@ function Maps(boss)
   local maps = {}
 
   function maps.change_map(door_prop)
-    print(door_prop.dest)
+    love.window.setTitle(door_prop.dest)
     boss.group = maps[door_prop.dest]
     boss.player.x = door_prop.coord_x
     boss.player.y = door_prop.coord_y
@@ -43,6 +44,7 @@ function Maps(boss)
     for i,npc in ipairs(level.properties.npc) do group.add(Npc(boss,npc)) end
     for i,decor in ipairs(level.properties.decor) do group.add(Decor(boss,decor)) end
     for i,torch in ipairs(level.properties.torch) do group.add(Torch(boss,torch)) end
+    for i,cartel in ipairs(level.properties.cartel) do group.add(Cartel(boss,cartel)) end
     return group
   end
   maps["spawn"] = load_map(require("maps/spawn"))

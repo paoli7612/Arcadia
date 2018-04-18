@@ -74,6 +74,9 @@ return {
 			},
 			torch={
 				{color = "yellow", coord_x = 1, coord_y = 1}
+			},
+			cartel={
+				{text = "test", coord_x = 2, coord_y = 23}
 			}
 		}
 	}

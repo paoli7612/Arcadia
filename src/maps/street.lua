@@ -55,6 +55,7 @@ return {
 			decor={},
 			torch={
 				{color = "yellow", coord_x = 1, coord_y = 1}
-			}
+			},
+			cartel={}
 		}
 	}

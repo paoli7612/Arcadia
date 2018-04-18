@@ -68,6 +68,7 @@ function Spritesheet(grill, type)
     spritesheet.quads["decor"]["throne"] = get_image(6,5)
 
     spritesheet.quads["door"] = {get_image(0,6),get_image(1,6),get_image(2,6),get_image(0,7),get_image(1,7)}
+    spritesheet.quads["cartel"] = get_image(3,8)
 
   elseif type == "things" then
     spritesheet.quads["door"] = {get_image(0,0),get_image(0,1),get_image(0,2),get_image(0,3)}
