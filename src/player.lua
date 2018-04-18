@@ -56,9 +56,10 @@ function Player(boss,x,y)
 			player.y = player.y + player.dy
 		end
 
-		if player.x > grill.tile_w then
-			player.x = 0
-		end
+		if player.position == "walk" then
+			player.frame = (player.frame + 1)
+			if player.frame == 3 then player.frame = 1 end
+		else player.frame = 1 end
 	end
 
 	return player
