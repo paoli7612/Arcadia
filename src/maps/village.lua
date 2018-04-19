@@ -47,8 +47,7 @@ return {
 			doors={
 				{id = 40, dest = "street", coord_x = 1, coord_y = 21, type = 1},
 				{id = 41, dest = "street", coord_x = 1, coord_y = 22, type = 1},
-				{id = 42, dest = "street", coord_x = 1, coord_y = 21, type = 1},
-				{id = 43, dest = "street", coord_x = 1, coord_y = 22, type = 1}
+				{id = 42, dest = "street_tortoise", coord_x = 4, coord_y = 1, type = 1},
 			},
 			npc={
 				{type = "boy", coord_x = 3, coord_y = 3}	-- seller
@@ -76,7 +75,8 @@ return {
 				{color = "yellow", coord_x = 1, coord_y = 1}
 			},
 			cartel={
-				{text = "test", coord_x = 2, coord_y = 23}
+				{text = "test", coord_x = 2, coord_y = 23},
+				{text = "street", coord_x = 38, coord_y = 4}
 			}
 		}
 	}
