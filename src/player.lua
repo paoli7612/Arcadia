@@ -18,7 +18,7 @@ function Player(boss,x,y)
 		speed = 0.1
 	}
 	function player.draw()
-		spritesheet.draw_image(player.x*player.size,player.y*player.size,spritesheet.quads["boy"][player.direction][player.position][player.frame])
+		spritesheet.draw_image(player.x*player.size,player.y*player.size,spritesheet.quads["barra"][player.direction][player.position][player.frame])
 	end
 
 	function player.update(dt)

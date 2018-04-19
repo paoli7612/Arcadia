@@ -15,7 +15,7 @@ function Spritesheet(grill, type)
 
   if type == "characters" then
     function get_set(x,y)
-      x,y = x*3,y*5
+      x,y = x*3,y*4
       local quads = {}
       quads["down"] = {}
       quads["down"]["stand"] = {get_image(1+x,0+y)}
@@ -34,14 +34,26 @@ function Spritesheet(grill, type)
       quads["up"]["walk"] = {get_image(0+x,3+y),get_image(2+x,3+y)}
       return quads
     end
+    -- mans
     spritesheet.quads["man"] = get_set(0,0)
     spritesheet.quads["boy"] = get_set(1,0)
-    spritesheet.quads["girl"] = get_set(2,0)
+    spritesheet.quads["libri"] = get_set(0,2)
+    spritesheet.quads["barra"] = get_set(1,2)
+    -- mob
     spritesheet.quads["alien"] = get_set(3,0)
     spritesheet.quads["slime"] = get_set(0,1)
     spritesheet.quads["bat"] = get_set(1,1)
-    spritesheet.quads["ghost"] = get_set(2,1)
     spritesheet.quads["spider"] = get_set(3,1)
+    -- girl
+    spritesheet.quads["blonde_girl"] = get_set(2,2)
+    spritesheet.quads["red_girl"] = get_set(3,2)
+    spritesheet.quads["brown_girl"] = get_set(2,0)
+    -- ghost
+    spritesheet.quads["ghost_white"] = get_set(2,1)
+    spritesheet.quads["ghost_yellow"] = get_set(0,3)
+    spritesheet.quads["ghost_red"] = get_set(1,3)
+    spritesheet.quads["ghost_blue"] = get_set(2,3)
+    spritesheet.quads["ghost_green"] = get_set(3,3)
 
   elseif type == "basictiles" then
     spritesheet.quads["wall"] = {}
