@@ -87,7 +87,9 @@ return {
 			},
 			cartel={
 				{text = "test", coord_x = 2, coord_y = 23},
-				{text = "street", coord_x = 38, coord_y = 4}
+				{text = "street", coord_x = 38, coord_y = 4},
+				{text = "shop", coord_x = 5, coord_y = 11},
+				{text = "memorial", coord_x = 14, coord_y = 9},
 			}
 		}
 	}
