@@ -5,6 +5,7 @@ class Setting:
     TILE = TILE_X, TILE_Y = 40,25
     SIZE = WIDTH, HEIGHT = TILE_X * TILE_SIZE ,TILE_Y * TILE_SIZE
     LUA_FORMAT = ".lua"
+    IMAGE_FORMAT = ".png"
     class Colors:
         BLACK = (0,0,0)
         WHITE = (255,255,255)
