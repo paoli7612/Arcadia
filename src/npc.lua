@@ -21,6 +21,10 @@ function Npc(boss,properties)
 		spritesheet.draw_image(npc.x*npc.size,npc.y*npc.size,spritesheet.quads[npc.properties.type][npc.direction]["stand"][1])
 	end
 
+	function npc.speak()
+		-- have a collision with player
+	end
+
 	function npc.update(dt)
 		npc.dx, npc.dy = 0,0
 

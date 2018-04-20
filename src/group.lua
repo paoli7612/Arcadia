@@ -48,6 +48,7 @@ function Group(maps)
     for i,item in ipairs(group.updater) do
       if sprite.x + sprite.dx == item.x and sprite.y + sprite.dy == item.y then
         if item.name == "cartel" then item.touch() end
+        if item.name == "npc" then item.speak() end
         return true end
     end
     return false
