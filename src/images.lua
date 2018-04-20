@@ -64,7 +64,7 @@ function Spritesheet(grill, type)
 
     spritesheet.quads["floor"] = {}
     spritesheet.quads["floor"]["grass"] = {get_image(0,8),get_image(1,8),get_image(3,1),get_image(4,1)}
-    spritesheet.quads["floor"]["wood"] = {get_image(0,1),get_image(0,2),get_image(0,9)}
+    spritesheet.quads["floor"]["wood"] = {get_image(0,1),get_image(0,2),get_image(2,10),get_image(2,11),get_image(0,9)}
     spritesheet.quads["floor"]["ice"] = {get_image(5,3),get_image(5,4)}
     spritesheet.quads["floor"]["stone"] = {get_image(6,1),get_image(1,9)}
     spritesheet.quads["floor"]["carpet"] = {get_image(1,2)}
