@@ -51,7 +51,6 @@ return {
 				{id = 43, dest = "street", coord_x = 1, coord_y = 22, type = 1}
 			},
 			npc={
-				{type = "boy", coord_x = 3, coord_y = 3}	-- seller
 			},
 			decor={	},
 			torch={

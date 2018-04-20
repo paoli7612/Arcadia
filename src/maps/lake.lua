@@ -40,10 +40,7 @@ return {
 				{id = 40, dest = "street", coord_x = 19, coord_y = 1, type = 1},
 				{id = 41, dest = "street", coord_x = 20, coord_y = 1, type = 1}
 			},
-			npc={
-				{type = "boy", coord_x = 3, coord_y = 3},
-				{type = "alien", coord_x = 36, coord_y = 3}
-			},
+			npc={	},
 			decor={},
 			torch={
 				{color = "yellow", coord_x = 1, coord_y = 1}

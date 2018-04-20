@@ -10,9 +10,9 @@ function Boss()
 	boss.grill = Grill()
 	boss.images = Images(boss.grill)
 	boss.maps = Maps(boss)
-	boss.player = Player(boss,boss.grill.tile_w-2,1)
+	boss.player = Player(boss,5,5)
+
 	boss.group = boss.maps["village"]
-	love.window.setTitle("village")
 	return boss
 end
 

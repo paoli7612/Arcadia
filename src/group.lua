@@ -10,7 +10,7 @@ function Group(maps)
 
   function group.add(new_sprite)
     if new_sprite.name == "wall" then table.insert(group.collider,new_sprite)
-    elseif new_sprite.name == "npc" then table.insert(group.collider,new_sprite)
+    elseif new_sprite.name == "npc" then table.insert(group.updater,new_sprite)
     elseif new_sprite.name == "door" then table.insert(group.collider,new_sprite)
     elseif new_sprite.name == "floor" then table.insert(group.drawable,new_sprite)
     elseif new_sprite.name == "decor" then table.insert(group.collider,new_sprite)
@@ -32,15 +32,21 @@ function Group(maps)
     for i,item in ipairs(group.updater) do item.draw() end
   end
 
-  function group.collide(player)
+  function group.collide_pair(spriteA, spriteB)
+    if spriteA.x + spriteA.dx == spriteB.x and spriteA.y + spriteA.dy == spriteB.y then
+      return true
+    else return false end
+  end
+
+  function group.collide(sprite)
     for i,item in ipairs(group.collider) do
-      if player.x + player.dx == item.x and player.y + player.dy == item.y then
+      if sprite.x + sprite.dx == item.x and sprite.y + sprite.dy == item.y then
         if item.name == "door" then maps.change_map(item.properties) end
         return true
       end
     end
     for i,item in ipairs(group.updater) do
-      if player.x + player.dx == item.x and player.y + player.dy == item.y then
+      if sprite.x + sprite.dx == item.x and sprite.y + sprite.dy == item.y then
         if item.name == "cartel" then item.touch() end
         return true end
     end

@@ -41,8 +41,8 @@ return {
 				{id = 41, dest = "street", coord_x = 20, coord_y = 1,	type = 1}
 			},
 			npc={
-				{type = "boy", coord_x = 3, coord_y = 3},
-				{type = "alien", coord_x = 36, coord_y = 3}
+				{type = "boy", coord_x = 3, coord_y = 3, offset_x = 0, offset_y = 0},
+				{type = "alien", coord_x = 36, coord_y = 3, offset_x = 0, offset_y = 0}
 			},
 			decor={},
 			torch={
