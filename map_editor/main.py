@@ -1,6 +1,7 @@
 import pygame, time, os
 from setting import Setting
 from spritesheet import Spritesheet
+from converter import Converter
 
 class Program:
     def __init__(self, argv):
@@ -17,11 +18,8 @@ class Program:
         self.images = Spritesheet(self)
 
     def load_map(self):
-        self.path_maps = os.path.join(self.path, ".." , "src", "maps")
-        self.map_file = open(os.path.join(self.path_maps, self.name_map)
-                        + self.opt.LUA_FORMAT, "r")
-        print(self.map_file.read())
-
+        self.path_maps = os.path.join(self.path, ".." , "src", "maps", self.name_map + self.opt.LUA_FORMAT)
+        self.converter = Converter(self)
 
 
 # test
