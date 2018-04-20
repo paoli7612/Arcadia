@@ -10,7 +10,7 @@ function Spritesheet(grill, type)
   end
 
   function spritesheet.draw_image(x,y,quad)
-    love.graphics.draw(image, quad, x, y, 0,( grill.tile / 16 ), ( grill.tile / 16 ))
+    love.graphics.draw(image, quad, x, y, 0,( grill.tile / 15 ), ( grill.tile / 15 )) -- correct for float to int
   end
 
   if type == "characters" then
