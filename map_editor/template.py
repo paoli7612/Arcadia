@@ -1,0 +1,55 @@
+template = """
+    return {
+    	name = %s,
+    	data = {
+    		%s,
+    		%s,
+    		%s,
+    		%s,
+    		%s,
+			%s,
+    		%s,
+    		%s,
+    		%s,
+    		%s,
+			%s,
+    		%s,
+    		%s,
+    		%s,
+    		%s,
+			%s,
+    		%s,
+    		%s,
+    		%s,
+    		%s,
+			%s,
+    		%s,
+    		%s,
+    		%s,
+    		%s
+    		},
+    	properties={
+    			walls={
+    				%s
+    			},
+    			floors={
+    				%s
+    			},
+    			doors={
+    				%s
+    			},
+    			npc={
+                    %s
+                },
+    			decor={
+                    %s
+                },
+    			torch={
+    				%s
+    			},
+    			cartel={
+                    %s
+                }
+    		}
+    	}
+"""
