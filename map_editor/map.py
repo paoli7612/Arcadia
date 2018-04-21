@@ -2,6 +2,7 @@ import pygame
 class Map:
     def __init__(self, program, matrix=False):
         self.program = program
+        self.screen = self.program.screen.copy()
         self.matrix = matrix
         if not matrix: self.convert_matrix()
         self.load_matrix()
@@ -25,30 +26,30 @@ class Map:
                 if cell in list(range(1,20)):   # WALL
                     for element in self.program.converter.properties["walls"]:
                         if element["id"] == cell:
-                            self.program.screen.blit(self.program.images.images["basictiles"]["wall"][element["color"]][element["type"]],
+                            self.screen.blit(self.program.images.images["basictiles"]["wall"][element["color"]][element["type"]],
                             (x*self.program.opt.TILE_SIZE, y*self.program.opt.TILE_SIZE))
 
                 if cell in list(range(20,40)):   # FLOOR
                     for element in self.program.converter.properties["floors"]:
                         if element["id"] == cell:
-                            self.program.screen.blit(self.program.images.images["basictiles"]["floor"][element["bloke"]][element["type"]],
+                            self.screen.blit(self.program.images.images["basictiles"]["floor"][element["bloke"]][element["type"]],
                             (x*self.program.opt.TILE_SIZE, y*self.program.opt.TILE_SIZE))
 
                 if cell in list(range(40,60)):   # DOORS
                     for element in self.program.converter.properties["doors"]:
                         if element["id"] == cell:
-                            self.program.screen.blit(self.program.images.images["basictiles"]["door"][element["type"]],
+                            self.screen.blit(self.program.images.images["basictiles"]["door"][element["type"]],
                             (x*self.program.opt.TILE_SIZE, y*self.program.opt.TILE_SIZE))
 
         #load others
         for element in self.program.converter.properties["decor"]:  # DECOR
-            self.program.screen.blit(self.program.images.images["basictiles"]["decor"][element["type"]],
+            self.screen.blit(self.program.images.images["basictiles"]["decor"][element["type"]],
             (element["coord_x"]*self.program.opt.TILE_SIZE, element["coord_y"]*self.program.opt.TILE_SIZE))
         for element in self.program.converter.properties["torch"]:  # TORCH
-            self.program.screen.blit(self.program.images.images["things"]["torch"][element["color"]],
+            self.screen.blit(self.program.images.images["things"]["torch"][element["color"]],
             (element["coord_x"]*self.program.opt.TILE_SIZE, element["coord_y"]*self.program.opt.TILE_SIZE))
         for element in self.program.converter.properties["npc"]:  # TORCH
-            self.program.screen.blit(self.program.images.images["characters"][element["type"]],
+            self.screen.blit(self.program.images.images["characters"][element["type"]],
             (element["coord_x"]*self.program.opt.TILE_SIZE, element["coord_y"]*self.program.opt.TILE_SIZE))
 
 

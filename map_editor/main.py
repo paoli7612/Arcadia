@@ -11,6 +11,7 @@ class Program:
         self.opt = Setting()
         self.name_map = arg.name_map
         self.screen = pygame.display.set_mode((self.opt.SIZE))
+        self.set_grill_surface()
         pygame.display.set_caption(self.opt.TITLE)
         self.path = os.path.dirname(__file__)
         self.path_img = os.path.join(self.path, ".." , "src", "img")
@@ -22,18 +23,55 @@ class Program:
         self.clock = pygame.time.Clock()
         self.converter = Converter(self)
         self.map = Map(self)
+        self.selector = Selector(self)
         self.loop()
+
+    def set_grill_surface(self):
+        self.grill = self.screen.copy()
+        for y in range(0, self.opt.HEIGHT, self.opt.TILE_SIZE):
+            pygame.draw.line(self.grill, (255,255,255), (0, y), (self.opt.WIDTH, y))
+        for x in range(0, self.opt.WIDTH, self.opt.TILE_SIZE):
+            pygame.draw.line(self.grill, (255,255,255), (x, 0), (x, self.opt.HEIGHT))
+        self.grill.set_colorkey((0,0,0))
+
 
     def loop(self):
         self.running = True
         self.pause = False
         while self.running:
             self.clock.tick(50)
+            self.selector.update()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.running = False
-                if event.type == pygame.KEYDOWN:
+                elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE: self.pause = True
+                elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                    print(self.map.matrix[self.selector.x][self.selector.y])
+
+            self.screen.blit(self.map.screen,(0,0))
+            self.screen.blit(self.grill,(0,0))
+            self.selector.draw(self.screen)
+            pygame.display.flip()
+
+
+class Selector(pygame.sprite.Sprite):
+    def __init__(self,program):
+        self.program = program
+        pygame.sprite.Sprite.__init__(self)
+        self.image = pygame.Surface((self.program.opt.TILE_SIZE,self.program.opt.TILE_SIZE))
+        pygame.draw.rect(self.image, (255,255,255), (0, 0, self.program.opt.TILE_SIZE,self.program.opt.TILE_SIZE ), 5)
+        self.image.set_colorkey((0,0,0))
+        self.rect = self.image.get_rect()
+
+    def update(self):
+        x,y = pygame.mouse.get_pos()
+        self.x = int(x/self.program.opt.TILE_SIZE)
+        self.y = int(y/self.program.opt.TILE_SIZE)
+        self.rect.topleft = self.x*self.program.opt.TILE_SIZE,self.y*self.program.opt.TILE_SIZE
+
+    def draw(self, surface):
+        surface.blit(self.image, self.rect.topleft)
 
 
 
@@ -42,6 +80,8 @@ if __name__ == "__main__":
     a = Argparser()
     if a.start:
         g = Program(a)
+
+
 
 
 # now we start with "python main.py [map_name]"
