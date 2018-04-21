@@ -31,7 +31,11 @@ class Builder:
         doors = str()
         for door in self.program.converter.properties["doors"]:
             doors += (template.doors %(door["id"],door["dest"],door["coord_x"],door["coord_y"],door["type"])) + down
+        # NPC
+        npcs = str()
+        for npc in self.program.converter.properties["npc"]:
+            npcs += (template.npc %(npc["type"],npc["coord_x"],npc["coord_y"],npc["offset_x"],npc["offset_y"])) + down
 
         f = open(self.program.path_maps + "0", "w")
-        f.write(template.to_fill %(self.program.name_map, data,walls,floors,doors,"","","",""))
+        f.write(template.to_fill %(self.program.name_map, data,walls,floors,doors,npcs,"","",""))
         f.close()
