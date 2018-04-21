@@ -9,3 +9,6 @@ class Builder:
     def write_new_map(self):
         f = open(self.program.path_maps,"a")
         f.write(template %self.program.name_map)
+
+    def save(self):
+        print("save_map")

@@ -6,6 +6,9 @@ from map import Map
 from builder import Builder
 from argparser import Argparser
 
+try: input = raw_input
+except: pass
+
 class Program:
     def __init__(self,arg):
         self.opt = Setting()
@@ -25,6 +28,10 @@ class Program:
         self.map = Map(self)
         self.selector = Selector(self)
         self.loop()
+        pygame.quit()
+        if input(("Salvare la mappa come <%s.lua>? (y/n) " %self.name_map)) == "y":
+            self.builder.save()
+
 
     def set_grill_surface(self):
         self.grill = self.screen.copy()
@@ -38,6 +45,7 @@ class Program:
     def loop(self):
         self.running = True
         self.pause = False
+        self.show_help()
         while self.running:
             self.clock.tick(50)
             self.selector.update()
@@ -46,17 +54,50 @@ class Program:
                     self.running = False
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE: self.pause = True
-                    elif event.key == pygame.K_q: self.selector.id = int(input("Inserire id del blocco da usare: "))
+                    elif event.key == pygame.K_w: self.add_property()
+                    elif event.key == pygame.K_e: self.del_property()
+                    elif event.key == pygame.K_r: self.show_properties()
+                    elif event.key == pygame.K_q: self.select_id()
+
+                    elif event.key == pygame.K_h: self.show_help()
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     if event.button == 1: self.map.matrix[self.selector.y][self.selector.x] = self.selector.id
                 elif event.type == pygame.MOUSEMOTION:
                     if event.buttons[0] == 1: self.map.matrix[self.selector.y][self.selector.x] = self.selector.id
-
             self.map.load_matrix()
             self.screen.blit(self.map.screen,(0,0))
             self.screen.blit(self.grill,(0,0))
             self.selector.draw(self.screen)
             pygame.display.flip()
+
+    def show_help(self):
+        print("HELP")
+        print("press 'q' to change id of block")
+        print("press 'w' to add a property")
+        print("press 'e' to del a property")
+        print("press 'r' to show all properties")
+        print("press 'h' to show help")
+
+    def show_properties(self):
+        print("SHOW PROPERTIES")
+        for property,dict in self.converter.properties.items():
+            print(property)
+            for d in dict:
+                print(d)
+
+    def add_property(self):
+        print("ADD PROPERTIES")
+
+
+    def del_property(self):
+        print("DEL PROPERTIES")
+
+    def select_id(self):
+        print("SELECT ID")
+        try: self.selector.id = int(input("type id to insert: "))
+        except: print("ID invalit")
+
+
 
 
 class Selector(pygame.sprite.Sprite):
