@@ -53,9 +53,9 @@ return {
 				{id = 43, dest = "street_dolphin", coord_x = 4, coord_y = 1, type = 1}
 			},
 			npc={
-				{type = "boy", coord_x = 3, coord_y = 3, offset_x = 0, offset_y = 0},	-- seller weapons
-				{type = "boy", coord_x = 6, coord_y = 3, offset_x = 0, offset_y = 0},	-- seller armors
-				{type = "boy", coord_x = 36, coord_y = 21, offset_x = 2, offset_y = 1}	-- seller armors
+				{type = "blonde_girl", coord_x = 3, coord_y = 3, offset_x = 0, offset_y = 0},	-- seller weapons
+				{type = "red_girl", coord_x = 6, coord_y = 3, offset_x = 0, offset_y = 0},	-- seller armors
+				{type = "boy", coord_x = 36, coord_y = 21, offset_x = 2, offset_y = 1}
 			},
 			decor={
 				-- out
