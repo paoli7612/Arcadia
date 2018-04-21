@@ -1,22 +1,25 @@
 import pygame
 class Map:
-    def __init__(self, program):
+    def __init__(self, program, matrix=False):
         self.program = program
+        self.matrix = matrix
+        if not matrix: self.convert_matrix()
+        self.load_matrix()
 
-        # compose matrix
+    def convert_matrix(self):
         self.matrix = list()
         x,y = 0,0
         row = list()
         for p in self.program.converter.data:
             row.append(int(p))
             if x == self.program.opt.TILE_X-1:
-
                 x,y = 0, y+1
                 self.matrix.append(row)
                 row = list()
             else: x += 1
+        self.load_matrix()
 
-        #load matrix
+    def load_matrix(self):
         for y,row in enumerate(self.matrix):
             for x,cell in enumerate(row):
                 if cell in list(range(1,20)):   # WALL
@@ -36,8 +39,6 @@ class Map:
                         if element["id"] == cell:
                             self.program.screen.blit(self.program.images.images["basictiles"]["door"][element["type"]],
                             (x*self.program.opt.TILE_SIZE, y*self.program.opt.TILE_SIZE))
-
-
 
         #load others
         for element in self.program.converter.properties["decor"]:  # DECOR

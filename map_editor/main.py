@@ -16,14 +16,16 @@ class Program:
         self.path_img = os.path.join(self.path, ".." , "src", "img")
         self.images = Spritesheet(self)
         self.path_maps = os.path.join(self.path, ".." , "src", "maps", self.name_map + self.opt.LUA_FORMAT)
-        if not os.path.exists(self.path_maps):
-            print("creator map isn't ready")
-        else:
+        if os.path.exists(self.path_maps): self.mode = "change"
+        else: self.mode = "create"
+        if self.mode == "change":
             self.converter = Converter(self)
             self.map = Map(self)
-            self.builder = Builder(self)
             try: raw_input()
             except: input()
+        elif self.mode == "create":
+            print(self.mode)
+        self.builder = Builder(self)
 # test
 if __name__ == "__main__":
     a = Argparser()

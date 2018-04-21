@@ -5,7 +5,6 @@ class Builder:
         self.program = program
         self.write()
 
-
     def write(self):
-        f = open(self.program.path_maps,"r")
-        print(f.read())
+        f = open(self.program.path_maps,"a")
+        f.write(template %self.program.name_map)
