@@ -33,6 +33,9 @@ class Spritesheet:
         self.images["basictiles"]["floor"]["stone"] = [get_image(6,1),get_image(1,9)]
         self.images["basictiles"]["floor"]["carpet"] = [get_image(1,2)]
         self.images["basictiles"]["floor"]["color"] = [get_image(1,1),get_image(3,1)]
+        # DOORS
+        self.images["basictiles"]["door"] = [get_image(0,6),get_image(1,6),get_image(2,6),get_image(0,7),get_image(1,7)]
+
         # DECOR
         self.images["basictiles"]["decor"] = dict()
         self.images["basictiles"]["decor"]["shelf"] = get_image(7,6)

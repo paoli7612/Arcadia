@@ -20,27 +20,34 @@ class Map:
             for x,cell in enumerate(row):
                 if cell in list(range(1,20)):   # WALL
                     for id, color, type in self.program.converter.properties["walls"]:
-                        print(id,color,type)
                         id = id.split("=")[-1]
                         color = color.split("=")[-1].split("\"")[1]
                         type = int(type.split("=")[-1])-1
-                        print(id,color,type)
                         if int(id) == cell:
                             self.program.screen.blit(self.program.images.images["basictiles"]["wall"][color][type],
                             (x*self.program.opt.TILE_SIZE, y*self.program.opt.TILE_SIZE))
 
                 if cell in list(range(20,40)):   # FLOOR
                     for id, bloke, type in self.program.converter.properties["floors"]:
-                        print(id,bloke,type)
                         id = id.split("=")[-1]
                         bloke = bloke.split("=")[-1].split("\"")[1]
                         type = int(type.split("=")[-1])-1
-                        print(id,color,type)
                         if int(id) == cell:
                             self.program.screen.blit(self.program.images.images["basictiles"]["floor"][bloke][type],
                             (x*self.program.opt.TILE_SIZE, y*self.program.opt.TILE_SIZE))
 
-
+                if cell in list(range(40,60)):   # DOORS
+                    for id, dest, coord_x, coord_y, type in self.program.converter.properties["doors"]:
+                        print(id, dest, coord_x, coord_y,type)
+                        id = id.split("=")[-1]
+                        dest = dest.split("=")[-1].split("\"")[1]
+                        coord_x = int(coord_x.split("=")[1])
+                        coord_y = int(coord_y.split("=")[1])
+                        type = int(type.split("=")[-1])-1
+                        print(id, dest, coord_x, coord_y,type)
+                        if int(id) == cell:
+                            self.program.screen.blit(self.program.images.images["basictiles"]["door"][type],
+                            (x*self.program.opt.TILE_SIZE, y*self.program.opt.TILE_SIZE))
 
 
 
