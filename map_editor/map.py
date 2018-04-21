@@ -46,6 +46,9 @@ class Map:
         for element in self.program.converter.properties["torch"]:  # TORCH
             self.program.screen.blit(self.program.images.images["things"]["torch"][element["color"]],
             (element["coord_x"]*self.program.opt.TILE_SIZE, element["coord_y"]*self.program.opt.TILE_SIZE))
+        for element in self.program.converter.properties["npc"]:  # TORCH
+            self.program.screen.blit(self.program.images.images["characters"][element["type"]],
+            (element["coord_x"]*self.program.opt.TILE_SIZE, element["coord_y"]*self.program.opt.TILE_SIZE))
 
 
         pygame.display.flip()

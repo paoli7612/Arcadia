@@ -85,10 +85,15 @@ class Converter:
             d["coord_x"] = int(coord_x.split("=")[1])
             d["coord_y"] = int(coord_y.split("=")[1])
             self.properties["cartel"][pos] = d
-
-
-
-
+        # NPC
+        for pos,(type, coord_x, coord_y, offset_x, offset_y) in enumerate(self.properties["npc"]):
+            d = dict()
+            d["type"] = type.split("=")[1].split("\"")[1]
+            d["coord_x"] = int(coord_x.split("=")[1])
+            d["coord_y"] = int(coord_y.split("=")[1])
+            d["offset_x"] = int(offset_x.split("=")[1])
+            d["offset_y"] = int(offset_y.split("=")[1])
+            self.properties["npc"][pos] = d
 
 
     def show(self):

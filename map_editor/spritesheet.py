@@ -54,7 +54,24 @@ class Spritesheet:
         self.images["basictiles"]["decor"]["tag_potion"] = get_image(7,9)
 
         self.characters = Images(os.path.join(self.program.path_img,"characters" + self.program.opt.IMAGE_FORMAT))
-
+        get_image = self.characters.get_image
+        self.images["characters"] = dict()
+        self.images["characters"]["boy"] = get_image(4,0)
+        self.images["characters"]["man"] = get_image(1,0)
+        self.images["characters"]["brown_girl"] = get_image(7,0)
+        self.images["characters"]["alien"] = get_image(10,0)
+        self.images["characters"]["slime"] = get_image(4,4)
+        self.images["characters"]["bat"] = get_image(1,4)
+        self.images["characters"]["ghost_white"] = get_image(7,4)
+        self.images["characters"]["spider"] = get_image(10,4)
+        self.images["characters"]["libri"] = get_image(4,0)
+        self.images["characters"]["barra"] = get_image(1,0)
+        self.images["characters"]["blonde_girl"] = get_image(7,0)
+        self.images["characters"]["red_girl"] = get_image(10,0)
+        self.images["characters"]["ghost_yellow"] = get_image(4,4)
+        self.images["characters"]["red_girl"] = get_image(1,4)
+        self.images["characters"]["ghost_blue"] = get_image(7,4)
+        self.images["characters"]["ghost_green"] = get_image(10,4)
         self.things = Images(os.path.join(self.program.path_img,"things" + self.program.opt.IMAGE_FORMAT))
         get_image = self.things.get_image
         self.images["things"] = dict()
