@@ -46,9 +46,13 @@ class Program:
                     self.running = False
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE: self.pause = True
-                elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-                    print(self.map.matrix[self.selector.x][self.selector.y])
+                    elif event.key == pygame.K_q: self.selector.id = int(input("Inserire id del blocco da usare: "))
+                elif event.type == pygame.MOUSEBUTTONDOWN:
+                    if event.button == 1: self.map.matrix[self.selector.y][self.selector.x] = self.selector.id
+                elif event.type == pygame.MOUSEMOTION:
+                    if event.buttons[0] == 1: self.map.matrix[self.selector.y][self.selector.x] = self.selector.id
 
+            self.map.load_matrix()
             self.screen.blit(self.map.screen,(0,0))
             self.screen.blit(self.grill,(0,0))
             self.selector.draw(self.screen)
@@ -63,6 +67,7 @@ class Selector(pygame.sprite.Sprite):
         pygame.draw.rect(self.image, (255,255,255), (0, 0, self.program.opt.TILE_SIZE,self.program.opt.TILE_SIZE ), 5)
         self.image.set_colorkey((0,0,0))
         self.rect = self.image.get_rect()
+        self.id = 1
 
     def update(self):
         x,y = pygame.mouse.get_pos()
