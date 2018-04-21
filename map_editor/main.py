@@ -22,8 +22,8 @@ class Program:
             self.converter = Converter(self)
             self.map = Map(self)
             self.builder = Builder(self)
-            raw_input()
-
+            try: raw_input()
+            except: input()
 # test
 if __name__ == "__main__":
     a = Argparser()

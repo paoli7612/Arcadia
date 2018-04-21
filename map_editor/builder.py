@@ -7,5 +7,5 @@ class Builder:
 
 
     def write(self):
-        f = open(self.program.path_maps,"ra")
+        f = open(self.program.path_maps,"r")
         print(f.read())

@@ -15,8 +15,8 @@ class Converter:
             self.lua_text += row
 
         # remove \t and \n
-        self.lua_text = self.lua_text.translate(None, '\t\n ')
-
+        try: self.lua_text = self.lua_text.translate(None, '\t\n ')
+        except: self.lua_text = self.lua_text.translate('\t\n ')
 
         self.data = self.lua_text.split("{")[2].split("}")[0].split(",")
         self.properties = dict()
