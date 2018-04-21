@@ -37,6 +37,39 @@ class Converter:
                     p.append(properties)
             self.properties[property] = p
 
+
+        #split dict
+
+        # WALL
+        for pos,(id, color, type) in enumerate(self.properties["walls"]):
+            d = dict()
+            d["id"] = int(id.split("=")[1])
+            d["color"] = color.split("=")[1].split("\"")[1]
+            d["type"] = int(type.split("=")[1])-1
+            self.properties["walls"][pos] = d
+        # FLOOR
+        for pos,(id, bloke, type) in enumerate(self.properties["floors"]):
+            d = dict()
+            d["id"] = int(id.split("=")[1])
+            d["bloke"] = bloke.split("=")[1].split("\"")[1]
+            d["type"] = int(type.split("=")[1])-1
+            self.properties["floors"][pos] = d
+        # DOORS
+        for pos,(id, dest, coord_x, coord_y, type) in enumerate(self.properties["doors"]):
+            d = dict()
+            d["id"] = int(id.split("=")[1])
+            d["dest"] = dest.split("=")[1].split("\"")[1]
+            d["coord_x"] = int(coord_x.split("=")[1])
+            d["coord_y"] = int(coord_y.split("=")[1])
+            d["type"] = int(type.split("=")[1])-1
+
+            self.properties["doors"][pos] = d
+
+
+
+
+
+
     def show(self):
         for k,vv in self.properties.items():
             print(k)
