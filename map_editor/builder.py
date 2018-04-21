@@ -1,4 +1,4 @@
-from template import template
+import template
 
 class Builder:
     def __init__(self,program):
@@ -8,7 +8,14 @@ class Builder:
 
     def write_new_map(self):
         f = open(self.program.path_maps,"a")
-        f.write(template %self.program.name_map)
+        f.write(template.empty %self.program.name_map)
 
     def save(self):
-        print("save_map")
+        data = str()
+        for y in self.program.map.matrix:
+            for x in y:
+                data+="%d,"%x
+
+        f = open("0" + self.program.name_map, "w")
+
+        f.write(template.to_fill %(self.program.name_map, data,"","","","","","",""))

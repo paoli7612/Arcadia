@@ -1,4 +1,4 @@
-template ="""return {
+empty ="""return {
     	name = "%s",
     	data = {
         	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -41,6 +41,37 @@ template ="""return {
     			torch={
     			},
     			cartel={
+                }
+    		}
+    	}
+"""
+
+to_fill ="""return {
+    	name = "%s",
+    	data = {
+            %s
+    	},
+    	properties={
+    			walls={
+                    %s
+    			},
+    			floors={
+                    %s
+    			},
+    			doors={
+                    %s
+    			},
+    			npc={
+                    %s
+                },
+    			decor={
+                    %s
+                },
+    			torch={
+                    %s
+    			},
+    			cartel={
+                    %s
                 }
     		}
     	}

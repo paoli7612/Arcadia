@@ -97,9 +97,6 @@ class Program:
         try: self.selector.id = int(input("type id to insert: "))
         except: print("ID invalit")
 
-
-
-
 class Selector(pygame.sprite.Sprite):
     def __init__(self,program):
         self.program = program
@@ -118,7 +115,6 @@ class Selector(pygame.sprite.Sprite):
 
     def draw(self, surface):
         surface.blit(self.image, self.rect.topleft)
-
 
 
 # test
