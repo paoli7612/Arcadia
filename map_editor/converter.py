@@ -71,7 +71,13 @@ class Converter:
             d["coord_x"] = int(coord_x.split("=")[1])
             d["coord_y"] = int(coord_y.split("=")[1])
             self.properties["decor"][pos] = d
-
+        # TORCH
+        for pos,(color, coord_x, coord_y) in enumerate(self.properties["torch"]):
+            d = dict()
+            d["color"] = color.split("=")[1].split("\"")[1]
+            d["coord_x"] = int(coord_x.split("=")[1])
+            d["coord_y"] = int(coord_y.split("=")[1])
+            self.properties["torch"][pos] = d
 
 
 
