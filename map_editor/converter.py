@@ -2,7 +2,9 @@
 class Converter:
     def __init__(self, program):
         self.program = program
-        self.lua_file = open(self.program.path_maps,"r")
+        self.file_exist = True
+        try: self.lua_file = open(self.program.path_maps,"r")
+        except: self.file_exist = False; return
         self.lua_text = str()
 
         # remove cumments
@@ -94,7 +96,6 @@ class Converter:
             d["offset_x"] = int(offset_x.split("=")[1])
             d["offset_y"] = int(offset_y.split("=")[1])
             self.properties["npc"][pos] = d
-
 
     def show(self):
         for k,vv in self.properties.items():
