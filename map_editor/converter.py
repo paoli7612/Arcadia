@@ -62,8 +62,16 @@ class Converter:
             d["coord_x"] = int(coord_x.split("=")[1])
             d["coord_y"] = int(coord_y.split("=")[1])
             d["type"] = int(type.split("=")[1])-1
-
             self.properties["doors"][pos] = d
+
+        # DECORS
+        for pos,(type, coord_x, coord_y) in enumerate(self.properties["decor"]):
+            d = dict()
+            d["type"] = type.split("=")[1].split("\"")[1]
+            d["coord_x"] = int(coord_x.split("=")[1])
+            d["coord_y"] = int(coord_y.split("=")[1])
+            self.properties["decor"][pos] = d
+
 
 
 
