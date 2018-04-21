@@ -18,14 +18,25 @@ class Program:
         self.path_maps = os.path.join(self.path, ".." , "src", "maps", self.name_map + self.opt.LUA_FORMAT)
         if os.path.exists(self.path_maps): self.mode = "change"
         else: self.mode = "create"
-        if self.mode == "change":
-            self.converter = Converter(self)
-            self.map = Map(self)
-            try: raw_input()
-            except: input()
-        elif self.mode == "create":
-            print(self.mode)
         self.builder = Builder(self)
+        self.clock = pygame.time.Clock()
+        self.converter = Converter(self)
+        self.map = Map(self)
+        self.loop()
+
+    def loop(self):
+        self.running = True
+        self.pause = False
+        while self.running:
+            self.clock.tick(50)
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    self.running = False
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE: self.pause = True
+
+
+
 # test
 if __name__ == "__main__":
     a = Argparser()
