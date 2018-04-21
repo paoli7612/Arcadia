@@ -1,4 +1,3 @@
-PROPERTIES = "walls floors doors npc decor torch cartel".split()
 
 class Converter:
     def __init__(self, program):
@@ -19,30 +18,32 @@ class Converter:
         self.lua_list = self.lua_text.split("{")
 
         self.data = self.lua_list[2].split("}")[0]
-
-        walls = self.lua_text.split("walls")[1].split("floors")[0]
-        print("WALLS", walls)
-        floors = self.lua_text.split("floors")[1].split("doors")[0]
-        print("FLOORS", floors)
-        doors = self.lua_text.split("doors")[1].split("npc")[0]
-        print("DOORS", doors)
-        npc = self.lua_text.split("npc")[1].split("decor")[0]
-        print("NPC", npc)
-        decor = self.lua_text.split("decor")[1].split("torch")[0]
-        print("DECOR", decor)
-        torch = self.lua_text.split("torch")[1].split("cartel")[0]
-        print("TORCH", torch)
-        cartel = self.lua_text.split("cartel")[1]
-        print("CARTEL", cartel)
+        self.properties = dict()
 
 
-        a = """
-        for row in (self.lua_list):
-            if not row:
-                continue
-            for prop in PROPERTIES:
-                if prop in row:
-                    print(prop)
-                    print(row.split(",")[:-1])
-            print(row)
-            print"""
+        self.properties["walls"] = self.lua_text.split("walls")[1].split("floors")[0]
+        #print("WALLS", walls)
+        self.properties["floors"] = self.lua_text.split("floors")[1].split("doors")[0]
+        #print("FLOORS", floors)
+        self.properties["doors"] = self.lua_text.split("doors")[1].split("npc")[0]
+        #print("DOORS", doors)
+        self.properties["npc"] = self.lua_text.split("npc")[1].split("decor")[0]
+        #print("NPC", npc)
+        self.properties["decor"] = self.lua_text.split("decor")[1].split("torch")[0]
+        #print("DECOR", decor)
+        self.properties["torch"] = self.lua_text.split("torch")[1].split("cartel")[0]
+        #print("TORCH", torch)
+        self.properties["cartel"] = self.lua_text.split("cartel")[1]
+        #print("CARTEL", cartel)
+
+        for property in self.properties:
+            p = list()
+            for a in self.properties[property].split("}"):
+                properties = a.split("{")[-1].split(",")
+                if len(properties) >= 3:
+                    p.append(properties)
+            self.properties[property] = p
+
+        for k,vv in self.properties.items():
+            print(k)
+            for v in vv: print(v)
