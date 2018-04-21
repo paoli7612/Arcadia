@@ -8,7 +8,7 @@ class Images:
     def get_image(self, x, y):
         image = pygame.Surface((16, 16))
         image.blit(self.image, (0, 0), (x*16, y*16, 16, 16))
-        image = pygame.transform.scale(image, (16 * 2, 16 * 2))
+        image = pygame.transform.scale(image, (22, 22))
         image.set_colorkey((0,0,0))
         return image
 
