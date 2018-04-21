@@ -4,11 +4,13 @@ from spritesheet import Spritesheet
 from converter import Converter
 from map import Map
 from builder import Builder
+from argparser import Argparser
 
 class Program:
-    def __init__(self, argv):
+    def __init__(self,arg):
         self.opt = Setting()
-        self.name_map = argv[1]
+        self.name_map = arg.name_map
+        self.mode = arg.mode_map
         self.screen = pygame.display.set_mode((self.opt.SIZE))
         pygame.display.set_caption(self.opt.TITLE)
         self.path = os.path.dirname(__file__)
@@ -22,8 +24,9 @@ class Program:
 
 # test
 if __name__ == "__main__":
-    import sys
-    g = Program(sys.argv)
-    raw_input()
+    a = Argparser()
+    if a.start:
+        g = Program(a)
+        raw_input()
 
 # now we start with "python main.py [map_name]"
