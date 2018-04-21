@@ -19,12 +19,14 @@ class Spritesheet:
         self.basictiles = Images(os.path.join(self.program.path_img,"basictiles" + self.program.opt.IMAGE_FORMAT))
         self.images["basictiles"] = dict()
         get_image = self.basictiles.get_image
+
         # WALL
         self.images["basictiles"]["wall"] = dict()
         self.images["basictiles"]["wall"]["blue"] = [get_image(0,0),get_image(1,0),get_image(2,0),get_image(3,0)]
         self.images["basictiles"]["wall"]["red"] = [get_image(4,0),get_image(5,0),get_image(6,0),get_image(7,0)]
         self.images["basictiles"]["wall"]["stone"] = [get_image(0,10),get_image(1,10)]
         self.images["basictiles"]["wall"]["wood"] = [get_image(0,11),get_image(1,11)]
+
         # FLOOR
         self.images["basictiles"]["floor"] = dict()
         self.images["basictiles"]["floor"]["grass"] = [get_image(0,8),get_image(1,8),get_image(3,1),get_image(4,1)]
@@ -33,6 +35,7 @@ class Spritesheet:
         self.images["basictiles"]["floor"]["stone"] = [get_image(6,1),get_image(1,9)]
         self.images["basictiles"]["floor"]["carpet"] = [get_image(1,2)]
         self.images["basictiles"]["floor"]["color"] = [get_image(1,1),get_image(3,1)]
+
         # DOORS
         self.images["basictiles"]["door"] = [get_image(0,6),get_image(1,6),get_image(2,6),get_image(0,7),get_image(1,7)]
 
@@ -55,6 +58,8 @@ class Spritesheet:
 
         self.characters = Images(os.path.join(self.program.path_img,"characters" + self.program.opt.IMAGE_FORMAT))
         get_image = self.characters.get_image
+
+        # CHARACTERS
         self.images["characters"] = dict()
         self.images["characters"]["boy"] = get_image(4,0)
         self.images["characters"]["man"] = get_image(1,0)
@@ -72,8 +77,11 @@ class Spritesheet:
         self.images["characters"]["red_girl"] = get_image(1,4)
         self.images["characters"]["ghost_blue"] = get_image(7,4)
         self.images["characters"]["ghost_green"] = get_image(10,4)
+
         self.things = Images(os.path.join(self.program.path_img,"things" + self.program.opt.IMAGE_FORMAT))
         get_image = self.things.get_image
+
+        #TORCH
         self.images["things"] = dict()
         self.images["things"]["torch"] = dict()
         self.images["things"]["torch"]["yellow"] = get_image(0,4)
