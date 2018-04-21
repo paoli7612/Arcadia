@@ -10,12 +10,13 @@ class Map:
         for p in self.program.converter.data:
             row.append(int(p))
             if x == self.program.opt.TILE_X-1:
+
                 x,y = 0, y+1
                 self.matrix.append(row)
                 row = list()
             else: x += 1
 
-
+        #load matrix
         for y,row in enumerate(self.matrix):
             for x,cell in enumerate(row):
                 if cell in list(range(1,20)):   # WALL
@@ -36,6 +37,15 @@ class Map:
                             self.program.screen.blit(self.program.images.images["basictiles"]["door"][element["type"]],
                             (x*self.program.opt.TILE_SIZE, y*self.program.opt.TILE_SIZE))
 
+
+
+        #load others
+        for element in self.program.converter.properties["decor"]:  # DECOR
+            self.program.screen.blit(self.program.images.images["basictiles"]["decor"][element["type"]],
+            (element["coord_x"]*self.program.opt.TILE_SIZE, element["coord_y"]*self.program.opt.TILE_SIZE))
+        for element in self.program.converter.properties["torch"]:  # TORCH
+            self.program.screen.blit(self.program.images.images["things"]["torch"][element["color"]],
+            (element["coord_x"]*self.program.opt.TILE_SIZE, element["coord_y"]*self.program.opt.TILE_SIZE))
 
 
         pygame.display.flip()

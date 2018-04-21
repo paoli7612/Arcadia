@@ -24,6 +24,6 @@ class Program:
 if __name__ == "__main__":
     import sys
     g = Program(sys.argv)
-    time.sleep(2)
+    raw_input()
 
 # now we start with "python main.py [map_name]"
