@@ -78,6 +78,13 @@ class Converter:
             d["coord_x"] = int(coord_x.split("=")[1])
             d["coord_y"] = int(coord_y.split("=")[1])
             self.properties["torch"][pos] = d
+        # CARTEL
+        for pos,(text, coord_x, coord_y) in enumerate(self.properties["cartel"]):
+            d = dict()
+            d["text"] = text.split("=")[1].split("\"")[1]
+            d["coord_x"] = int(coord_x.split("=")[1])
+            d["coord_y"] = int(coord_y.split("=")[1])
+            self.properties["cartel"][pos] = d
 
 
 
