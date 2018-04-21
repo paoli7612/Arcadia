@@ -29,8 +29,8 @@ class Program:
         self.selector = Selector(self)
         self.loop()
         pygame.quit()
-        if input(("Salvare la mappa come <%s.lua>? (y/n) " %self.name_map)) == "y":
-            self.builder.save()
+        #if input(("Salvare la mappa come <%s.lua>? (y/n) " %self.name_map)) == "y":
+        self.builder.save()
 
 
     def set_grill_surface(self):
