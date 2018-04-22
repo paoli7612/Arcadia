@@ -43,8 +43,8 @@ class Program:
 
     def click(self):
         if self.selector.y < self.opt.TILE_Y:
-            self.map.load_matrix()
             self.map.matrix[self.selector.y][self.selector.x] = self.selector.id
+            self.map.load_matrix()
         else:
             print(self.selector.y)
             self.selector.id = self.list_properties[self.selector.x]
