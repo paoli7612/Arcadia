@@ -22,15 +22,15 @@ class Builder:
         # WALL
         walls = str()
         for wall in self.program.converter.properties["walls"]:
-            walls += (template.walls %(wall["id"],wall["color"],wall["type"])) + down
+            walls += (template.walls %(wall["id"],wall["color"],wall["type"]+1)) + down
         # FLOOR
         floors = str()
         for floor in self.program.converter.properties["floors"]:
-            floors += (template.walls %(floor["id"],floor["bloke"],floor["type"])) + down
+            floors += (template.floors %(floor["id"],floor["bloke"],floor["type"]+1)) + down
         # DOOR
         doors = str()
         for door in self.program.converter.properties["doors"]:
-            doors += (template.doors %(door["id"],door["dest"],door["coord_x"],door["coord_y"],door["type"])) + down
+            doors += (template.doors %(door["id"],door["dest"],door["coord_x"],door["coord_y"],door["type"]+1)) + down
         # NPC
         npcs = str()
         for npc in self.program.converter.properties["npc"]:

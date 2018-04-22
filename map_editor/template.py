@@ -78,10 +78,10 @@ to_fill ="""return {
 """
 
 
-walls = "{id = %d, color = \"%s\", type = %d}"
-floors = "{id = %d, bloke = \"%s\", type = %d}"
-doors = "{id = %d, dest = \"%s\", coord_x = %d, coord_y = %d, type = %d}"
-npc = "{type = \"%s\", coord_x = %d, coord_y = %d, offset_x = %d, offset_y = %d}"
-decor = "{type = \"%s\", coord_x = %d, coord_y = %d}"
-torch = "{color = \"%s\", coord_x = %d, coord_y = %d}"
-cartel = "{text = \"%s\", coord_x = %d, coord_y = %d}"
+walls = "{id = %d, color = \"%s\", type = %d},"
+floors = "{id = %d, bloke = \"%s\", type = %d},"
+doors = "{id = %d, dest = \"%s\", coord_x = %d, coord_y = %d, type = %d},"
+npc = "{type = \"%s\", coord_x = %d, coord_y = %d, offset_x = %d, offset_y = %d},"
+decor = "{type = \"%s\", coord_x = %d, coord_y = %d},"
+torch = "{color = \"%s\", coord_x = %d, coord_y = %d},"
+cartel = "{text = \"%s\", coord_x = %d, coord_y = %d},"
