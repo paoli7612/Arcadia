@@ -13,7 +13,7 @@ class Program:
     def __init__(self,arg):
         self.opt = Setting()
         self.name_map = arg.name_map
-        self.screen = pygame.display.set_mode((self.opt.WIDTH+1,self.opt.HEIGHT + 50))
+        self.screen = pygame.display.set_mode((self.opt.WIDTH+1,self.opt.HEIGHT + self.opt.TILE_SIZE))
         self.set_grill_surface()
         pygame.display.set_caption(self.opt.TITLE)
         self.path = os.path.dirname(__file__)
@@ -46,14 +46,17 @@ class Program:
             self.map.load_matrix()
             self.map.matrix[self.selector.y][self.selector.x] = self.selector.id
         else:
-            pass
+            print(self.selector.y)
+            self.selector.id = self.list_properties[self.selector.x]
 
     def set_properties_screen(self):
         self.properties_screen = pygame.Surface((self.opt.WIDTH, 30))
         self.properties_screen.fill((200,200,200))
+        self.list_properties = list()
         x = 0
         for wall in self.converter.properties["walls"]:
             self.properties_screen.blit(self.images.images["basictiles"]["wall"][wall["color"]][wall["type"]], (x, 0))
+            self.list_properties.append(wall["id"])
             x += self.opt.TILE_SIZE
 
     def loop(self):
