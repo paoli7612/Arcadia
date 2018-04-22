@@ -43,8 +43,8 @@ class Program:
 
     def click(self):
         if self.selector.y < self.opt.TILE_Y:
-            self.map.load_matrix()
             self.map.matrix[self.selector.y][self.selector.x] = self.selector.id
+            self.map.load_matrix()
         else:
             print(self.selector.y)
             self.selector.id = self.list_properties[self.selector.x]
@@ -57,6 +57,10 @@ class Program:
         for wall in self.converter.properties["walls"]:
             self.properties_screen.blit(self.images.images["basictiles"]["wall"][wall["color"]][wall["type"]], (x, 0))
             self.list_properties.append(wall["id"])
+            x += self.opt.TILE_SIZE
+        for floor in self.converter.properties["floors"]:
+            self.properties_screen.blit(self.images.images["basictiles"]["floor"][floor["bloke"]][floor["type"]], (x, 0))
+            self.list_properties.append(floor["id"])
             x += self.opt.TILE_SIZE
 
     def loop(self):
@@ -115,11 +119,16 @@ class Program:
                 d["color"] = input("color -> ")
                 d["type"] = int(input("type -> "))
                 self.converter.properties["walls"].append(d)
+            if element == 2: # FLOOR
+                d = dict()
+                d["id"] = int(input("id -> "))
+                d["bloke"] = input("bloke -> ")
+                d["type"] = int(input("type -> "))
+                self.converter.properties["floors"].append(d)
         except:
             print("insert invalid")
         self.map.load_matrix()
         self.set_properties_screen()
-
 
 
     def del_property(self):
