@@ -13,7 +13,7 @@ class Program:
     def __init__(self,arg):
         self.opt = Setting()
         self.name_map = arg.name_map
-        self.screen = pygame.display.set_mode((self.opt.WIDTH,self.opt.HEIGHT + self.opt.TILE_SIZE))
+        self.screen = pygame.display.set_mode((self.opt.WIDTH,self.opt.HEIGHT + self.opt.TILE_SIZE*3))
         self.set_grill_surface()
         pygame.display.set_caption(self.opt.TITLE)
         self.path = os.path.dirname(__file__)
@@ -37,16 +37,8 @@ class Program:
             pygame.draw.line(self.grill, (255,255,255), (x, 0), (x, self.opt.HEIGHT))
         self.grill.set_colorkey((0,0,0))
 
-    def click(self):
-        if self.selector.y < self.opt.TILE_Y:
-            self.map.matrix[self.selector.y][self.selector.x] = self.selector.id
-            self.map.load_matrix()
-        else:
-            try: self.selector.id = self.list_properties[self.selector.x]
-            except: self.add_property()
-
     def set_properties_screen(self):
-        self.properties_screen = pygame.Surface((self.opt.WIDTH, 30))
+        self.properties_screen = pygame.Surface((self.opt.WIDTH, self.opt.TILE_SIZE*3))
         self.properties_screen.fill((200,200,200))
         self.list_properties = list()
         x = 0
@@ -58,6 +50,21 @@ class Program:
             self.properties_screen.blit(self.images.images["basictiles"]["floor"][floor["bloke"]][floor["type"]], (x, 0))
             self.list_properties.append(floor["id"])
             x += self.opt.TILE_SIZE
+
+        self.list_decors = list()
+        x = 0
+        for name, image in self.images.images["basictiles"]["decor"].items():
+            self.properties_screen.blit(image, (x, self.opt.TILE_SIZE))
+            self.list_decors.append(name)
+            x += self.opt.TILE_SIZE
+
+        self.list_npc = list()
+        x = 0
+        for name, image in self.images.images["characters"].items():
+            self.properties_screen.blit(image, (x, self.opt.TILE_SIZE*2))
+            self.list_npc.append(name)
+            x += self.opt.TILE_SIZE
+
 
     def loop(self):
         self.set_properties_screen()
@@ -79,9 +86,9 @@ class Program:
                     elif event.key == pygame.K_s: self.builder.save()
                     elif event.key == pygame.K_h: self.show_help()
                 elif event.type == pygame.MOUSEBUTTONDOWN:
-                    if event.button == 1: self.click()
+                    if event.button == 1: self.selector.click()
                 elif event.type == pygame.MOUSEMOTION:
-                    if event.buttons[0] == 1: self.click()
+                    if event.buttons[0] == 1: self.selector.click()
             self.screen.fill((0,0,0))
             self.screen.blit(self.map.screen,(0,0))
             self.screen.blit(self.grill,(0,0))
@@ -115,14 +122,12 @@ class Program:
                 d["color"] = input("color -> ")
                 d["type"] = int(input("type -> "))
                 self.converter.properties["walls"].append(d)
-                print(d)
             if element == 2: # FLOOR
                 d = dict()
                 d["id"] = self.get_new_id("floors")
                 d["bloke"] = input("bloke -> ")
                 d["type"] = int(input("type -> "))
                 self.converter.properties["floors"].append(d)
-                print(d)
         except:
             print("insert invalid")
         self.map.load_matrix()
@@ -155,7 +160,9 @@ class Selector(pygame.sprite.Sprite):
         pygame.draw.rect(self.image, (255,255,255), (0, 0, self.program.opt.TILE_SIZE,self.program.opt.TILE_SIZE ), 5)
         self.image.set_colorkey((0,0,0))
         self.rect = self.image.get_rect()
-        self.id = 1
+        self.id = 0
+        self.id_mode = True
+        self.data_mode = True
 
     def update(self):
         x,y = pygame.mouse.get_pos()
@@ -163,8 +170,51 @@ class Selector(pygame.sprite.Sprite):
         self.y = int(y/self.program.opt.TILE_SIZE)
         self.rect.topleft = self.x*self.program.opt.TILE_SIZE,self.y*self.program.opt.TILE_SIZE
 
+
     def draw(self, surface):
         surface.blit(self.image, self.rect.topleft)
+
+
+    def click(self):
+        if self.y == self.program.opt.TILE_Y:                           # WALL FLOOR DOOR line
+            try:
+                self.id = self.program.list_properties[self.x]
+                self.id_mode = True
+            except: pass
+        elif self.y == self.program.opt.TILE_Y+1:                       # DECOR line
+            try:
+                self.item = self.program.list_decors[self.x]
+                self.id_mode = False
+                self.item_mode = "decor"
+                print("DECOR SELECTED")
+            except: pass
+        elif self.y == self.program.opt.TILE_Y+2:                       # NPC line
+            try:
+                self.item = self.program.list_npc[self.x]
+                self.id_mode = False
+                self.item_mode = "npc"
+                print("NPC SELECTED")
+            except: pass
+        else:
+            if self.id_mode:
+                self.program.map.matrix[self.y][self.x] = self.id
+            else:
+                if self.item_mode == "decor":
+                    d = dict()
+                    d["type"] = self.item
+                    d["coord_x"] = self.x
+                    d["coord_y"] = self.y
+                    self.program.converter.properties["decor"].append(d)
+                elif self.item_mode == "npc":
+                    d = dict()
+                    d["type"] = self.item
+                    d["coord_x"] = self.x
+                    d["coord_y"] = self.y
+                    d["offset_x"] = 0
+                    d["offset_y"] = 0
+                    self.program.converter.properties["npc"].append(d)
+
+        self.program.map.load_matrix()
 
 
 # test
