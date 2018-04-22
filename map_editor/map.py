@@ -2,7 +2,7 @@ import pygame
 class Map:
     def __init__(self, program, matrix=False):
         self.program = program
-        self.screen = self.program.screen.copy()
+
         self.matrix = matrix
         if not matrix: self.convert_matrix()
         self.load_matrix()
@@ -21,6 +21,7 @@ class Map:
         self.load_matrix()
 
     def load_matrix(self):
+        self.screen = pygame.Surface(self.program.opt.SIZE)
         for y,row in enumerate(self.matrix):
             for x,cell in enumerate(row):
                 if cell in list(range(1,20)):   # WALL
