@@ -39,6 +39,9 @@ class Spritesheet:
         # DOORS
         self.images["basictiles"]["door"] = [get_image(0,6),get_image(1,6),get_image(2,6),get_image(0,7),get_image(1,7)]
 
+        #CARTEL
+        self.images["basictiles"]["cartel"] = get_image(3,8)
+
         # DECOR
         self.images["basictiles"]["decor"] = dict()
         self.images["basictiles"]["decor"]["shelf"] = get_image(7,6)
@@ -69,14 +72,14 @@ class Spritesheet:
         self.images["characters"]["bat"] = get_image(1,4)
         self.images["characters"]["ghost_white"] = get_image(7,4)
         self.images["characters"]["spider"] = get_image(10,4)
-        self.images["characters"]["libri"] = get_image(4,0)
-        self.images["characters"]["barra"] = get_image(1,0)
-        self.images["characters"]["blonde_girl"] = get_image(7,0)
-        self.images["characters"]["red_girl"] = get_image(10,0)
-        self.images["characters"]["ghost_yellow"] = get_image(4,4)
-        self.images["characters"]["red_girl"] = get_image(1,4)
-        self.images["characters"]["ghost_blue"] = get_image(7,4)
-        self.images["characters"]["ghost_green"] = get_image(10,4)
+        self.images["characters"]["libri"] = get_image(4,8)
+        self.images["characters"]["barra"] = get_image(1,8)
+        self.images["characters"]["blonde_girl"] = get_image(7,8)
+        self.images["characters"]["red_girl"] = get_image(10,8)
+        self.images["characters"]["ghost_yellow"] = get_image(4,12)
+        self.images["characters"]["red_girl"] = get_image(1,12)
+        self.images["characters"]["ghost_blue"] = get_image(7,12)
+        self.images["characters"]["ghost_green"] = get_image(10,12)
 
         self.things = Images(os.path.join(self.program.path_img,"things" + self.program.opt.IMAGE_FORMAT))
         get_image = self.things.get_image
