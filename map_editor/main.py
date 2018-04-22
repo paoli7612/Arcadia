@@ -13,15 +13,14 @@ class Program:
     def __init__(self,arg):
         self.opt = Setting()
         self.name_map = arg.name_map
-        self.screen = pygame.display.set_mode((self.opt.WIDTH+1,self.opt.HEIGHT + self.opt.TILE_SIZE))
+        self.screen = pygame.display.set_mode((self.opt.WIDTH,self.opt.HEIGHT + self.opt.TILE_SIZE))
         self.set_grill_surface()
         pygame.display.set_caption(self.opt.TITLE)
         self.path = os.path.dirname(__file__)
         self.path_img = os.path.join(self.path, ".." , "src", "img")
         self.images = Spritesheet(self)
         self.path_maps = os.path.join(self.path, ".." , "src", "maps", self.name_map + self.opt.LUA_FORMAT)
-        if os.path.exists(self.path_maps): self.mode = "change"
-        else: self.mode = "create"
+        self.create = not os.path.exists(self.path_maps)
         self.builder = Builder(self)
         self.clock = pygame.time.Clock()
         self.converter = Converter(self)
@@ -29,9 +28,6 @@ class Program:
         self.selector = Selector(self)
         self.loop()
         pygame.quit()
-        #if input(("Salvare la mappa come <%s.lua>? (y/n) " %self.name_map)) == "y":
-
-
 
     def set_grill_surface(self):
         self.grill = self.screen.copy()
@@ -46,8 +42,8 @@ class Program:
             self.map.matrix[self.selector.y][self.selector.x] = self.selector.id
             self.map.load_matrix()
         else:
-            print(self.selector.y)
-            self.selector.id = self.list_properties[self.selector.x]
+            try: self.selector.id = self.list_properties[self.selector.x]
+            except: self.add_property()
 
     def set_properties_screen(self):
         self.properties_screen = pygame.Surface((self.opt.WIDTH, 30))
@@ -75,7 +71,7 @@ class Program:
                 if event.type == pygame.QUIT:
                     self.running = False
                 elif event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_ESCAPE: self.pause = True
+                    if event.key == pygame.K_ESCAPE: self.pause = not self.pause
                     elif event.key == pygame.K_w: self.add_property()
                     elif event.key == pygame.K_e: self.del_property()
                     elif event.key == pygame.K_r: self.show_properties()
@@ -115,16 +111,18 @@ class Program:
             element = int(input("select element: 1)wall 2)floor 3)door 4)npc 5)decor 6)torch 7)cartel\n -> "))
             if element == 1: # WALL
                 d = dict()
-                d["id"] = int(input("id -> "))
+                d["id"] = self.get_new_id("walls")
                 d["color"] = input("color -> ")
                 d["type"] = int(input("type -> "))
                 self.converter.properties["walls"].append(d)
+                print(d)
             if element == 2: # FLOOR
                 d = dict()
-                d["id"] = int(input("id -> "))
+                d["id"] = self.get_new_id("floors")
                 d["bloke"] = input("bloke -> ")
                 d["type"] = int(input("type -> "))
                 self.converter.properties["floors"].append(d)
+                print(d)
         except:
             print("insert invalid")
         self.map.load_matrix()
@@ -139,6 +137,15 @@ class Program:
         print("SELECT ID")
         try: self.selector.id = int(input("type id to insert: "))
         except: print("ID invalit")
+
+    def get_new_id(self, item):
+        if item == "walls":
+            for wall in self.converter.properties["walls"]: last_id = wall["id"]
+        elif item == "floors":
+            for floor in self.converter.properties["floors"]: last_id = floor["id"]
+        elif item == "doors":
+            for door in self.converter.properties["doors"]: last_id = door["id"]
+        return last_id + 1
 
 class Selector(pygame.sprite.Sprite):
     def __init__(self,program):
