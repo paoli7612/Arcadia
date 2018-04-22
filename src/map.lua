@@ -53,6 +53,7 @@ function Maps(boss)
       load_map(require("maps/dungeon"))
       load_map(require("maps/lake"))
       load_map(require("maps/village"))
+        load_map(require("maps/street_dolphin"))
         load_map(require("maps/street_tortoise"))
 
   return maps

@@ -58,6 +58,9 @@ class Spritesheet:
         self.images["basictiles"]["decor"]["tag_magic"] = get_image(7,8)
         self.images["basictiles"]["decor"]["tag_weapon"] = get_image(6,9)
         self.images["basictiles"]["decor"]["tag_potion"] = get_image(7,9)
+        self.images["basictiles"]["decor"]["bookshelf_full"] = get_image(4,10)
+        self.images["basictiles"]["decor"]["bookshelf_empty"] = get_image(5,10)
+        self.images["basictiles"]["decor"]["sedding"] = get_image(6,10)
 
         self.characters = Images(os.path.join(self.program.path_img,"characters" + self.program.opt.IMAGE_FORMAT))
         get_image = self.characters.get_image

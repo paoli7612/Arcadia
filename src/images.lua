@@ -85,6 +85,9 @@ function Spritesheet(grill, type)
     spritesheet.quads["decor"]["tag_magic"] = get_image(7,8)
     spritesheet.quads["decor"]["tag_weapon"] = get_image(6,9)
     spritesheet.quads["decor"]["tag_potion"] = get_image(7,9)
+    spritesheet.quads["decor"]["bookshelf_full"] = get_image(4,10)
+    spritesheet.quads["decor"]["bookshelf_empty"] = get_image(5,10)
+    spritesheet.quads["decor"]["sedding"] = get_image(6,10)
 
     spritesheet.quads["door"] = {get_image(0,6),get_image(1,6),get_image(2,6),get_image(0,7),get_image(1,7)}
 
