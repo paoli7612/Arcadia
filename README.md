@@ -24,3 +24,4 @@ This simply program allow you to create or changea ll game map. All game map sav
 in map_editor folder there is main.py.
 WINDOWS: use run_win.bat in map_editor folder for give name of map to create/change
 LINUX: type `python main.py` in map_editor folder to see help of argparse
+![alt text](https://github.com/paoli7612/TileGame-Lua/blob/master/doc/img/004.png)
