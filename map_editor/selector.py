@@ -66,9 +66,11 @@ class Selector(pygame.sprite.Sprite):
                 self.id_mode = False
                 self.item_mode = "npc"
             except: pass
+        elif self.x == self.program.opt.TILE_X:
+            print("new")
         else:
             if self.id_mode: self.program.map.matrix[self.y][self.x] = self.id
             else:
-                if self.item_mode == "decor": self.program.converter.properties["decor"].append({"type"self.item,"coord_x":self.x,"coord_y":self.y})
-                elif self.item_mode == "npc": self.program.converter.properties["npc"].append({"type"self.item,"coord_x":self.x,"coord_y":self.y,"allow_x":0,"allow_y":0})
+                if self.item_mode == "decor": self.program.converter.properties["decor"].append({"type":self.item,"coord_x":self.x,"coord_y":self.y})
+                elif self.item_mode == "npc": self.program.converter.properties["npc"].append({"type":self.item,"coord_x":self.x,"coord_y":self.y,"allow_x":0,"allow_y":0})
         self.program.map.load_matrix()

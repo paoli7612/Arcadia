@@ -14,7 +14,7 @@ class Program:
     def __init__(self,arg):
         self.opt = Setting()
         self.name_map = arg.name_map
-        self.screen = pygame.display.set_mode((self.opt.WIDTH,self.opt.HEIGHT + self.opt.TILE_SIZE*4))
+        self.screen = pygame.display.set_mode((self.opt.WIDTH + self.opt.TILE_SIZE*3,self.opt.HEIGHT + self.opt.TILE_SIZE*4))
         self.set_grill_surface()
         pygame.display.set_caption(self.opt.TITLE)
         self.path = os.path.dirname(__file__)
@@ -35,6 +35,19 @@ class Program:
         for y in range(0, self.opt.HEIGHT+1, self.opt.TILE_SIZE): pygame.draw.line(self.grill, (255,255,255), (0, y), (self.opt.WIDTH, y))
         for x in range(0, self.opt.WIDTH+1, self.opt.TILE_SIZE): pygame.draw.line(self.grill, (255,255,255), (x, 0), (x, self.opt.HEIGHT))
         self.grill.set_colorkey((0,0,0))
+
+    def set_creation_screen(self):
+        self.creation_screen = pygame.Surface((self.opt.TILE_SIZE*3,self.opt.HEIGHT))
+        self.creation_screen.fill((150,150,150))
+        self.all_walls = list()
+
+        y = 0
+        for name, list_image in self.images.images["basictiles"]["wall"].items():
+            for image in list_image:
+                print(name)
+                self.creation_screen.blit(image, (0, y))
+                self.list_npc.append(name)
+                y += self.opt.TILE_SIZE
 
     def set_properties_screen(self):
         self.properties_screen = pygame.Surface((self.opt.WIDTH, self.opt.TILE_SIZE*4))
@@ -72,6 +85,7 @@ class Program:
 
     def loop(self):
         self.set_properties_screen()
+        self.set_creation_screen()
         self.running = True
         self.pause = False
         while self.running:
@@ -93,6 +107,7 @@ class Program:
             self.screen.blit(self.map.screen,(0,0))
             self.screen.blit(self.grill,(0,0))
             self.screen.blit(self.properties_screen, (0, self.opt.HEIGHT))
+            self.screen.blit(self.creation_screen, (self.opt.WIDTH, 0))
             self.selector.draw(self.screen)
             pygame.display.flip()
 
