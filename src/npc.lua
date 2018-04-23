@@ -44,7 +44,7 @@ function Npc(boss,properties)
 					npc.dy = -1
 					npc.direction = "up"
 			end
-
+			npc.speed = 1 + math.random();
 			if not boss.group.collide_pair(npc,boss.player) then
 				npc.x = npc.x + npc.dx
 				npc.y = npc.y + npc.dy

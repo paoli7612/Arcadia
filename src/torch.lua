@@ -24,7 +24,7 @@ function Torch(boss,properties)
 			torch.frame = (torch.frame + 1)
       if torch.frame == 4 then torch.frame = 1 end
 			time = 0
-			torch.speed = love.math.random(0.2, 0.25)
+			torch.speed = math.random();
 		end
 	end
 

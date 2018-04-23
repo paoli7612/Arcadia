@@ -61,6 +61,8 @@ function Spritesheet(grill, type)
     spritesheet.quads["wall"]["red"] = {get_image(4,0),get_image(5,0),get_image(6,0),get_image(7,0)}
     spritesheet.quads["wall"]["stone"] = {get_image(0,10),get_image(1,10)}
     spritesheet.quads["wall"]["wood"] = {get_image(0,11),get_image(1,11)}
+    spritesheet.quads["wall"]["cave"] = {get_image(7,1),get_image(7,2)}
+    spritesheet.quads["wall"]["lava"] = {get_image(2,8),get_image(2,8),get_image(3,8)}
 
     spritesheet.quads["floor"] = {}
     spritesheet.quads["floor"]["grass"] = {get_image(0,8),get_image(1,8),get_image(3,1),get_image(4,1)}
@@ -85,6 +87,9 @@ function Spritesheet(grill, type)
     spritesheet.quads["decor"]["tag_magic"] = get_image(7,8)
     spritesheet.quads["decor"]["tag_weapon"] = get_image(6,9)
     spritesheet.quads["decor"]["tag_potion"] = get_image(7,9)
+    spritesheet.quads["decor"]["bookshelf_full"] = get_image(4,10)
+    spritesheet.quads["decor"]["bookshelf_empty"] = get_image(5,10)
+    spritesheet.quads["decor"]["sedding"] = get_image(6,10)
 
     spritesheet.quads["door"] = {get_image(0,6),get_image(1,6),get_image(2,6),get_image(0,7),get_image(1,7)}
 

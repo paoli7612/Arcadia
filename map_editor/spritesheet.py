@@ -26,6 +26,8 @@ class Spritesheet:
         self.images["basictiles"]["wall"]["red"] = [get_image(4,0),get_image(5,0),get_image(6,0),get_image(7,0)]
         self.images["basictiles"]["wall"]["stone"] = [get_image(0,10),get_image(1,10)]
         self.images["basictiles"]["wall"]["wood"] = [get_image(0,11),get_image(1,11)]
+        self.images["basictiles"]["wall"]["cave"] = [get_image(7,1),get_image(7,2)]
+        self.images["basictiles"]["wall"]["lava"] = [get_image(2,8),get_image(2,8),get_image(3,8)]
 
         # FLOOR
         self.images["basictiles"]["floor"] = dict()
@@ -58,26 +60,29 @@ class Spritesheet:
         self.images["basictiles"]["decor"]["tag_magic"] = get_image(7,8)
         self.images["basictiles"]["decor"]["tag_weapon"] = get_image(6,9)
         self.images["basictiles"]["decor"]["tag_potion"] = get_image(7,9)
+        self.images["basictiles"]["decor"]["bookshelf_full"] = get_image(4,10)
+        self.images["basictiles"]["decor"]["bookshelf_empty"] = get_image(5,10)
+        self.images["basictiles"]["decor"]["sedding"] = get_image(6,10)
 
         self.characters = Images(os.path.join(self.program.path_img,"characters" + self.program.opt.IMAGE_FORMAT))
         get_image = self.characters.get_image
 
         # CHARACTERS
         self.images["characters"] = dict()
-        self.images["characters"]["boy"] = get_image(4,0)
         self.images["characters"]["man"] = get_image(1,0)
+        self.images["characters"]["boy"] = get_image(4,0)
         self.images["characters"]["brown_girl"] = get_image(7,0)
         self.images["characters"]["alien"] = get_image(10,0)
-        self.images["characters"]["slime"] = get_image(4,4)
-        self.images["characters"]["bat"] = get_image(1,4)
+        self.images["characters"]["slime"] = get_image(1,4)
+        self.images["characters"]["bat"] = get_image(4,4)
         self.images["characters"]["ghost_white"] = get_image(7,4)
         self.images["characters"]["spider"] = get_image(10,4)
-        self.images["characters"]["libri"] = get_image(4,8)
-        self.images["characters"]["barra"] = get_image(1,8)
+        self.images["characters"]["libri"] = get_image(1,8)
+        self.images["characters"]["barra"] = get_image(4,8)
         self.images["characters"]["blonde_girl"] = get_image(7,8)
         self.images["characters"]["red_girl"] = get_image(10,8)
-        self.images["characters"]["ghost_yellow"] = get_image(4,12)
-        self.images["characters"]["red_girl"] = get_image(1,12)
+        self.images["characters"]["ghost_yellow"] = get_image(1,12)
+        self.images["characters"]["ghost_red"] = get_image(4,12)
         self.images["characters"]["ghost_blue"] = get_image(7,12)
         self.images["characters"]["ghost_green"] = get_image(10,12)
 
