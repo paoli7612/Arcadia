@@ -16,6 +16,7 @@ class Spritesheet:
     def __init__(self, program):
         self.program = program
         self.images = dict()
+# BASICTILES_____________________________________________________________________________________________________
         self.basictiles = Images(os.path.join(self.program.path_img,"basictiles" + self.program.opt.IMAGE_FORMAT))
         self.images["basictiles"] = dict()
         get_image = self.basictiles.get_image
@@ -64,6 +65,7 @@ class Spritesheet:
         self.images["basictiles"]["decor"]["bookshelf_empty"] = get_image(5,10)
         self.images["basictiles"]["decor"]["sedding"] = get_image(6,10)
 
+# CHARACTERS_____________________________________________________________________________________________________
         self.characters = Images(os.path.join(self.program.path_img,"characters" + self.program.opt.IMAGE_FORMAT))
         get_image = self.characters.get_image
 
@@ -86,6 +88,7 @@ class Spritesheet:
         self.images["characters"]["ghost_blue"] = get_image(7,12)
         self.images["characters"]["ghost_green"] = get_image(10,12)
 
+# THINGS_____________________________________________________________________________________________________
         self.things = Images(os.path.join(self.program.path_img,"things" + self.program.opt.IMAGE_FORMAT))
         get_image = self.things.get_image
 
