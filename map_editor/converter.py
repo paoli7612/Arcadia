@@ -10,8 +10,7 @@ class Converter:
         # remove cumments
         for row in self.lua_file:
             row = row.strip()
-            if "--" in row:
-                row = row.split("--")[0]
+            if "--" in row: row = row.split("--")[0]
             self.lua_text += row
 
         # remove \t and \n
@@ -35,67 +34,28 @@ class Converter:
             p = list()
             for a in self.properties[property].split("}"):
                 properties = a.split("{")[-1].split(",")
-                if len(properties) >= 3:
-                    p.append(properties)
+                if len(properties) >= 3: p.append(properties)
             self.properties[property] = p
-
 
         #split dict
 
-        # WALL
-        for pos,(id, color, type) in enumerate(self.properties["walls"]):
-            d = dict()
-            d["id"] = int(id.split("=")[1])
-            d["color"] = color.split("=")[1].split("\"")[1]
-            d["type"] = int(type.split("=")[1])-1
-            self.properties["walls"][pos] = d
-        # FLOOR
-        for pos,(id, bloke, type) in enumerate(self.properties["floors"]):
-            d = dict()
-            d["id"] = int(id.split("=")[1])
-            d["bloke"] = bloke.split("=")[1].split("\"")[1]
-            d["type"] = int(type.split("=")[1])-1
-            self.properties["floors"][pos] = d
-        # DOORS
-        for pos,(id, dest, coord_x, coord_y, type) in enumerate(self.properties["doors"]):
-            d = dict()
-            d["id"] = int(id.split("=")[1])
-            d["dest"] = dest.split("=")[1].split("\"")[1]
-            d["coord_x"] = int(coord_x.split("=")[1])
-            d["coord_y"] = int(coord_y.split("=")[1])
-            d["type"] = int(type.split("=")[1])-1
-            self.properties["doors"][pos] = d
+        def get_int(str): return int(str.split("=")[1])
+        def get_str(str): return str.split("=")[1].split("\"")[1]
 
-        # DECORS
+        for pos,(id, color, type) in enumerate(self.properties["walls"]):
+            self.properties["walls"][pos] = {"id": get_int(id),"color": get_str(color),"type": get_int(type)-1}
+        for pos,(id, bloke, type) in enumerate(self.properties["floors"]):
+            self.properties["floors"][pos] = {"id": get_int(id),"bloke": get_str(bloke),"type": get_int(type)-1}
+        for pos,(id, dest, coord_x, coord_y, type) in enumerate(self.properties["doors"]):
+            self.properties["doors"][pos] = {"id": get_int(id),"dest": get_str(dest),"coord_x": get_int(coord_x), "coord_y": get_int(coord_y),"type": get_int(type)-1}
         for pos,(type, coord_x, coord_y) in enumerate(self.properties["decor"]):
-            d = dict()
-            d["type"] = type.split("=")[1].split("\"")[1]
-            d["coord_x"] = int(coord_x.split("=")[1])
-            d["coord_y"] = int(coord_y.split("=")[1])
-            self.properties["decor"][pos] = d
-        # TORCH
+            self.properties["decor"][pos] = {"type": get_str(type), "coord_x": get_int(coord_x), "coord_y": get_int(coord_y)}
         for pos,(color, coord_x, coord_y) in enumerate(self.properties["torch"]):
-            d = dict()
-            d["color"] = color.split("=")[1].split("\"")[1]
-            d["coord_x"] = int(coord_x.split("=")[1])
-            d["coord_y"] = int(coord_y.split("=")[1])
-            self.properties["torch"][pos] = d
-        # CARTEL
+            self.properties["torch"][pos] = {"color": get_str(color), "coord_x": get_int(coord_x), "coord_y": get_int(coord_y)}
         for pos,(text, coord_x, coord_y) in enumerate(self.properties["cartel"]):
-            d = dict()
-            d["text"] = text.split("=")[1].split("\"")[1]
-            d["coord_x"] = int(coord_x.split("=")[1])
-            d["coord_y"] = int(coord_y.split("=")[1])
-            self.properties["cartel"][pos] = d
-        # NPC
+            self.properties["cartel"][pos] = {"text": get_str(text), "coord_x": get_int(coord_x), "coord_y": get_int(coord_y)}
         for pos,(type, coord_x, coord_y, offset_x, offset_y) in enumerate(self.properties["npc"]):
-            d = dict()
-            d["type"] = type.split("=")[1].split("\"")[1]
-            d["coord_x"] = int(coord_x.split("=")[1])
-            d["coord_y"] = int(coord_y.split("=")[1])
-            d["offset_x"] = int(offset_x.split("=")[1])
-            d["offset_y"] = int(offset_y.split("=")[1])
-            self.properties["npc"][pos] = d
+            self.properties["npc"][pos] = {"type": get_str(type),"coord_x": get_int(coord_x), "coord_y": get_int(coord_y),"offset_x": get_int(coord_x), "offset_y": get_int(coord_y)}
 
     def show(self):
         for k,vv in self.properties.items():
