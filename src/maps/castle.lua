@@ -30,10 +30,10 @@ return {
     	},
     	properties={
     			walls={
-                    {id = 1, color = "blue", type = 3},
-										{id = 2, color = "blue", type = 2},
-										{id = 3, color = "blue", type = 1},
-										{id = 4, color = "blue", type = 4},
+                    {id = 1, bloke = "blue", type = 3},
+										{id = 2, bloke = "blue", type = 2},
+										{id = 3, bloke = "blue", type = 1},
+										{id = 4, bloke = "blue", type = 4},
 										
     			},
     			floors={
@@ -42,11 +42,11 @@ return {
 										
     			},
     			doors={
-                    {id = 40, dest = "street", coord_x = 1, coord_y = 2, type = 1},
-										{id = 41, dest = "street", coord_x = 1, coord_y = 3, type = 1},
-										{id = 42, dest = "null", coord_x = 0, coord_y = 0, type = 2},
-										{id = 43, dest = "null", coord_x = 0, coord_y = 0, type = 2},
-										{id = 44, dest = "null", coord_x = 0, coord_y = 0, type = 1},
+                    {id = 40, dest = "street", dest_x = 1, dest_y = 2, type = 1},
+										{id = 41, dest = "street", dest_x = 1, dest_y = 3, type = 1},
+										{id = 42, dest = "null", dest_x = 0, dest_y = 0, type = 2},
+										{id = 43, dest = "null", dest_x = 0, dest_y = 0, type = 2},
+										{id = 44, dest = "null", dest_x = 0, dest_y = 0, type = 1},
 										
     			},
     			npc={

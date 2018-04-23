@@ -30,12 +30,12 @@ return {
     	},
     	properties={
     			walls={
-                    {id = 1, color = "blue", type = 1},
-										{id = 2, color = "blue", type = 2},
-										{id = 3, color = "wood", type = 2},
-										{id = 4, color = "wood", type = 1},
-										{id = 5, color = "stone", type = 1},
-										{id = 6, color = "stone", type = 2},
+                    {id = 1, bloke = "blue", type = 1},
+										{id = 2, bloke = "blue", type = 2},
+										{id = 3, bloke = "wood", type = 2},
+										{id = 4, bloke = "wood", type = 1},
+										{id = 5, bloke = "stone", type = 1},
+										{id = 6, bloke = "stone", type = 2},
 										
     			},
     			floors={
@@ -47,14 +47,14 @@ return {
 										
     			},
     			doors={
-                    {id = 40, dest = "street", coord_x = 1, coord_y = 21, type = 1},
-										{id = 41, dest = "street", coord_x = 1, coord_y = 22, type = 1},
-										{id = 42, dest = "village", coord_x = 4, coord_y = 23, type = 1},
-										{id = 43, dest = "street_dolphin", coord_x = 1, coord_y = 4, type = 1},
+                    {id = 40, dest = "street", dest_x = 1, dest_y = 21, type = 1},
+										{id = 41, dest = "street", dest_x = 1, dest_y = 22, type = 1},
+										{id = 42, dest = "village", dest_x = 4, dest_y = 23, type = 1},
+										{id = 43, dest = "street_dolphin", dest_x = 1, dest_y = 4, type = 1},
 										
     			},
     			npc={
-                    {type = "boy", coord_x = 7, coord_y = 19, offset_x = 3, offset_y = 1},
+                    {type = "boy", coord_x = 7, coord_y = 19, allow_x = 3, allow_y = 1},
 										
                 },
     			decor={

@@ -4,9 +4,9 @@ function Door(boss,x,y,properties)
 	local spritesheet = boss.images["basictiles"]
 	local door = {
     name = "door",
-		x=x,
-		y=y,
-		size=grill.tile,
+		x = x,
+		y = y,
+		size = grill.tile,
     properties = properties
 	}
 

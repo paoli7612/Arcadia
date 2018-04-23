@@ -16,8 +16,8 @@ function Maps(boss)
   function maps.change_map(door_prop)
     love.window.setTitle(door_prop.dest)
     boss.group = maps[door_prop.dest]
-    boss.player.x = door_prop.coord_x
-    boss.player.y = door_prop.coord_y
+    boss.player.x = door_prop.dest_x
+    boss.player.y = door_prop.dest_y
   end
 
   function load_map(level)

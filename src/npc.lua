@@ -11,8 +11,8 @@ function Npc(boss,properties)
 		speed = 1,
 		x = properties.coord_x,
 		y = properties.coord_y,
-		allow_x = {max = properties.coord_x + properties.offset_x, min = properties.coord_x - properties.offset_x},
-		allow_y = {max = properties.coord_y + properties.offset_y, min = properties.coord_y - properties.offset_y},
+		allow_x = {max = properties.coord_x + properties.allow_x, min = properties.coord_x - properties.allow_x},
+		allow_y = {max = properties.coord_y + properties.allow_y, min = properties.coord_y - properties.allow_y},
 		size=grill.tile,
 		properties = properties
 	}
