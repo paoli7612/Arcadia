@@ -26,38 +26,38 @@ return {
 						,02,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,21,20,20,20,20,20,20,21,20,20,21,20,20,20,20,20,20,20,21,20,20,20,20,02
 						,02,20,20,21,20,20,21,20,20,20,20,20,21,20,21,20,20,20,20,20,20,20,20,20,20,20,21,20,20,20,20,20,20,20,20,20,20,20,20,02
 						,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01
-						
+
     	},
     	properties={
     			walls={
-                    {id = 1, bloke = "red", type = 3},
-										{id = 2, bloke = "red", type = 2},
-										
+                    {id = 1, bloke = "lava", type = 3},
+										{id = 2, bloke = "lava", type = 2},
+
     			},
     			floors={
                     {id = 20, bloke = "grass", type = 1},
 										{id = 21, bloke = "grass", type = 2},
-										
+
     			},
     			doors={
                     {id = 40, dest = "spawn", dest_x = 19, dest_y = 23, type = 3},
 										{id = 41, dest = "spawn", dest_x = 20, dest_y = 23, type = 3},
-										
+
     			},
     			npc={
                     {type = "boy", coord_x = 3, coord_y = 3, allow_x = 0, allow_y = 0},
 										{type = "boy", coord_x = 36, coord_y = 3, allow_x = 0, allow_y = 0},
-										
+
                 },
     			decor={
-                    
+
                 },
     			torch={
                     {color = "yellow", coord_x = 1, coord_y = 1},
-										
+
     			},
     			cartel={
-                    
+
                 }
     		}
     	}
