@@ -25,7 +25,7 @@ class Map:
             for x,cell in enumerate(row):
                 if cell in list(range(1,20)):   # WALL
                     for element in self.program.converter.properties["walls"]:
-                        if element["id"] == cell: self.screen.blit(self.program.images.images["basictiles"]["wall"][element["color"]][element["type"]], (x*self.program.opt.TILE_SIZE, y*self.program.opt.TILE_SIZE))
+                        if element["id"] == cell: self.screen.blit(self.program.images.images["basictiles"]["wall"][element["bloke"]][element["type"]], (x*self.program.opt.TILE_SIZE, y*self.program.opt.TILE_SIZE))
                 if cell in list(range(20,40)):   # FLOOR
                     for element in self.program.converter.properties["floors"]:
                         if element["id"] == cell: self.screen.blit(self.program.images.images["basictiles"]["floor"][element["bloke"]][element["type"]], (x*self.program.opt.TILE_SIZE, y*self.program.opt.TILE_SIZE))

@@ -43,19 +43,19 @@ class Converter:
         def get_str(str): return str.split("=")[1].split("\"")[1]
 
         for pos,(id, color, type) in enumerate(self.properties["walls"]):
-            self.properties["walls"][pos] = {"id": get_int(id),"color": get_str(color),"type": get_int(type)-1}
+            self.properties["walls"][pos] = {"id": get_int(id),"bloke": get_str(color),"type": get_int(type)-1}
         for pos,(id, bloke, type) in enumerate(self.properties["floors"]):
             self.properties["floors"][pos] = {"id": get_int(id),"bloke": get_str(bloke),"type": get_int(type)-1}
-        for pos,(id, dest, coord_x, coord_y, type) in enumerate(self.properties["doors"]):
-            self.properties["doors"][pos] = {"id": get_int(id),"dest": get_str(dest),"coord_x": get_int(coord_x), "coord_y": get_int(coord_y),"type": get_int(type)-1}
+        for pos,(id, dest, dest_x, dest_y, type) in enumerate(self.properties["doors"]):
+            self.properties["doors"][pos] = {"id": get_int(id),"dest": get_str(dest),"dest_x": get_int(dest_x), "dest_y": get_int(dest_y),"type": get_int(type)-1}
         for pos,(type, coord_x, coord_y) in enumerate(self.properties["decor"]):
             self.properties["decor"][pos] = {"type": get_str(type), "coord_x": get_int(coord_x), "coord_y": get_int(coord_y)}
         for pos,(color, coord_x, coord_y) in enumerate(self.properties["torch"]):
             self.properties["torch"][pos] = {"color": get_str(color), "coord_x": get_int(coord_x), "coord_y": get_int(coord_y)}
         for pos,(text, coord_x, coord_y) in enumerate(self.properties["cartel"]):
             self.properties["cartel"][pos] = {"text": get_str(text), "coord_x": get_int(coord_x), "coord_y": get_int(coord_y)}
-        for pos,(type, coord_x, coord_y, offset_x, offset_y) in enumerate(self.properties["npc"]):
-            self.properties["npc"][pos] = {"type": get_str(type),"coord_x": get_int(coord_x), "coord_y": get_int(coord_y),"offset_x": get_int(coord_x), "offset_y": get_int(coord_y)}
+        for pos,(type, coord_x, coord_y, allow_x, allow_y) in enumerate(self.properties["npc"]):
+            self.properties["npc"][pos] = {"type": get_str(type),"coord_x": get_int(coord_x), "coord_y": get_int(coord_y),"allow_x": get_int(allow_x), "allow_y": get_int(allow_y)}
 
     def show(self):
         for k,vv in self.properties.items():

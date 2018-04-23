@@ -22,14 +22,14 @@ class Builder:
         walls, floors, doors, npcs, decors, torchs, cartels = str(),str(),str(),str(),str(),str(),str()
 
         props = self.program.converter.properties
-        for wall in props: walls.append((template.walls %(wall["id"],wall["color"],wall["type"]+1)) + down)
-        for floor in props: floors.append((template.floors %(floor["id"],floor["bloke"],floor["type"]+1)) + down)
-        for door in props: doors.append((template.doors %(door["id"],door["dest"],door["coord_x"],door["coord_y"],door["type"]+1)) + down)
-        for npc in props: npcs += (template.npc %(npc["type"],npc["coord_x"],npc["coord_y"],npc["offset_x"],npc["offset_y"])) + down
-        for decor in props: decors += (template.decor %(decor["type"],decor["coord_x"],decor["coord_y"])) + down
-        for torch in props: torchs += (template.torch %(torch["color"],torch["coord_x"],torch["coord_y"])) + down
-        for cartel in props: cartels += (template.cartel %(cartel["text"],cartel["coord_x"],cartel["coord_y"])) + down
+        for wall in props["walls"]:walls += (template.walls %(wall["id"],wall["bloke"],wall["type"]+1)) + down
+        for floor in props["floors"]: floors += (template.floors %(floor["id"],floor["bloke"],floor["type"]+1)) + down
+        for door in props["doors"]: doors += (template.doors %(door["id"],door["dest"],door["dest_x"],door["dest_y"],door["type"]+1)) + down
+        for npc in props["npc"]: npcs += (template.npc %(npc["type"],npc["coord_x"],npc["coord_y"],npc["allow_x"],npc["allow_y"])) + down
+        for decor in props["decor"]: decors += (template.decor %(decor["type"],decor["coord_x"],decor["coord_y"])) + down
+        for torch in props["torch"]: torchs += (template.torch %(torch["color"],torch["coord_x"],torch["coord_y"])) + down
+        for cartel in props["cartel"]: cartels += (template.cartel %(cartel["text"],cartel["coord_x"],cartel["coord_y"])) + down
 
         f = open(self.program.path_maps, "w")
-        f.write(template.to_fill %(self.program.name_map, walls, floors, doors, npcs, decors, torchs, cartels))
+        f.write(template.to_fill %(self.program.name_map, data, walls, floors, doors, npcs, decors, torchs, cartels))
         f.close()

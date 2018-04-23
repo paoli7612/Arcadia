@@ -26,17 +26,17 @@ return {
 						,02,20,21,20,24,20,20,20,04,25,25,25,25,25,25,25,25,25,25,25,25,04,20,20,20,24,20,20,20,04,22,22,22,22,22,22,22,22,22,02
 						,02,20,20,20,24,20,20,20,04,25,25,25,25,25,25,25,25,25,25,25,25,04,20,21,20,24,21,20,20,04,22,22,22,22,22,22,22,22,22,02
 						,02,01,01,01,42,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,43,01,01,01,01,01,01,01,01,01,01,01,01,01,02
-
+						
     	},
     	properties={
     			walls={
-                    {id = 1, color = "blue", type = 1},
-										{id = 2, color = "blue", type = 2},
-										{id = 3, color = "stone", type = 2},
-										{id = 4, color = "stone", type = 1},
-										{id = 5, color = "wood", type = 1},
-										{id = 6, color = "wood", type = 2},
-
+                    {id = 1, bloke = "blue", type = 1},
+										{id = 2, bloke = "blue", type = 2},
+										{id = 3, bloke = "stone", type = 2},
+										{id = 4, bloke = "stone", type = 1},
+										{id = 5, bloke = "wood", type = 1},
+										{id = 6, bloke = "wood", type = 2},
+										
     			},
     			floors={
                     {id = 20, bloke = "grass", type = 1},
@@ -46,21 +46,21 @@ return {
 										{id = 24, bloke = "stone", type = 1},
 										{id = 25, bloke = "wood", type = 3},
 										{id = 26, bloke = "grass", type = 4},
-
+										
     			},
     			doors={
-                    {id = 40, dest = "street", coord_x = 1, coord_y = 21, type = 1},
-										{id = 41, dest = "street", coord_x = 1, coord_y = 22, type = 1},
-										{id = 42, dest = "street_tortoise", coord_x = 4, coord_y = 1, type = 1},
-										{id = 43, dest = "street_dolphin", coord_x = 4, coord_y = 1, type = 1},
-
+                    {id = 40, dest = "street", dest_x = 1, dest_y = 21, type = 1},
+										{id = 41, dest = "street", dest_x = 1, dest_y = 22, type = 1},
+										{id = 42, dest = "street_tortoise", dest_x = 4, dest_y = 1, type = 1},
+										{id = 43, dest = "street_dolphin", dest_x = 4, dest_y = 1, type = 1},
+										
     			},
     			npc={
-                    {type = "blonde_girl", coord_x = 3, coord_y = 3, offset_x = 0, offset_y = 0},
-										{type = "red_girl", coord_x = 6, coord_y = 3, offset_x = 0, offset_y = 0},
-										{type = "boy", coord_x = 36, coord_y = 21, offset_x = 2, offset_y = 1},
-										{type = "libri", coord_x = 14, coord_y = 19, offset_x = 4, offset_y = 0},
-
+                    {type = "blonde_girl", coord_x = 3, coord_y = 3, allow_x = 0, allow_y = 0},
+										{type = "red_girl", coord_x = 6, coord_y = 3, allow_x = 0, allow_y = 0},
+										{type = "boy", coord_x = 36, coord_y = 21, allow_x = 2, allow_y = 1},
+										{type = "libri", coord_x = 14, coord_y = 19, allow_x = 4, allow_y = 0},
+										
                 },
     			decor={
                     {type = "statue", coord_x = 14, coord_y = 7},
@@ -111,14 +111,14 @@ return {
 										{type = "table", coord_x = 19, coord_y = 23},
 										{type = "throne", coord_x = 18, coord_y = 22},
 										{type = "throne", coord_x = 19, coord_y = 22},
-
+										
                 },
     			torch={
                     {color = "yellow", coord_x = 12, coord_y = 9},
 										{color = "yellow", coord_x = 12, coord_y = 5},
 										{color = "yellow", coord_x = 16, coord_y = 9},
 										{color = "yellow", coord_x = 16, coord_y = 5},
-
+										
     			},
     			cartel={
                     {text = "tortoise", coord_x = 3, coord_y = 23},
@@ -126,7 +126,7 @@ return {
 										{text = "street", coord_x = 38, coord_y = 4},
 										{text = "shop", coord_x = 5, coord_y = 11},
 										{text = "memorial", coord_x = 14, coord_y = 9},
-
+										
                 }
     		}
     	}

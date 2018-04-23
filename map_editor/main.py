@@ -43,7 +43,7 @@ class Program:
         self.list_properties = list()
         x = 0
         for wall in self.converter.properties["walls"]:
-            self.properties_screen.blit(self.images.images["basictiles"]["wall"][wall["color"]][wall["type"]], (x, 0))
+            self.properties_screen.blit(self.images.images["basictiles"]["wall"][wall["bloke"]][wall["type"]], (x, 0))
             self.list_properties.append(wall["id"])
             x += self.opt.TILE_SIZE
         for floor in self.converter.properties["floors"]:
@@ -210,8 +210,8 @@ class Selector(pygame.sprite.Sprite):
                     d["type"] = self.item
                     d["coord_x"] = self.x
                     d["coord_y"] = self.y
-                    d["offset_x"] = 0
-                    d["offset_y"] = 0
+                    d["allow_x"] = 0
+                    d["allow_y"] = 0
                     self.program.converter.properties["npc"].append(d)
 
         self.program.map.load_matrix()
