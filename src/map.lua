@@ -47,14 +47,22 @@ function Maps(boss)
     for i,cartel in ipairs(level.properties.cartel) do maps[level.name].add(Cartel(boss,cartel)) end
     return group
   end
-  load_map(require("maps/spawn"))
-    load_map(require("maps/street"))
-      load_map(require("maps/castle"))
-      load_map(require("maps/dungeon"))
-      load_map(require("maps/lake"))
-      load_map(require("maps/village"))
-        load_map(require("maps/street_dolphin"))
-        load_map(require("maps/street_tortoise"))
+  local handle = io.popen("ls src/maps/")
+  local result = handle:read("*a")
+  handle:close()
+
+
+s = result
+words = {}
+for word in s:gmatch("%a+") do table.insert(words, word) end
+
+
+  for i,n in ipairs(words) do
+    if not(n == "lua") then
+      load_map(require("maps/"..n))
+    end
+  end
+
 
   return maps
 end

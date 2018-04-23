@@ -5,6 +5,7 @@ Player = require("player")
 Maps = require("map")
 Images = require("images")
 
+
 function Boss()
 	local boss = {}
 	boss.grill = Grill()

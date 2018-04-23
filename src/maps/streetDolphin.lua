@@ -1,5 +1,5 @@
 return {
-    	name = "street_dolphin",
+    	name = "streetDolphin",
     	data = {
             02,01,01,01,42,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,02
 						,02,20,20,20,24,20,21,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,02
@@ -26,7 +26,7 @@ return {
 						,02,20,20,21,20,20,20,20,20,20,20,20,20,20,21,20,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,20,02
 						,02,20,20,20,20,20,20,20,20,20,20,21,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,24,24,20,20,02
 						,02,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,40,41,01,01,02
-						
+
     	},
     	properties={
     			walls={
@@ -36,7 +36,7 @@ return {
 										{id = 4, bloke = "wood", type = 1},
 										{id = 5, bloke = "stone", type = 1},
 										{id = 6, bloke = "stone", type = 2},
-										
+
     			},
     			floors={
                     {id = 20, bloke = "grass", type = 1},
@@ -44,7 +44,7 @@ return {
 										{id = 22, bloke = "wood", type = 1},
 										{id = 23, bloke = "wood", type = 2},
 										{id = 24, bloke = "stone", type = 1},
-										
+
     			},
     			doors={
                     {id = 40, dest = "street", dest_x = 1, dest_y = 21, type = 1},
@@ -52,11 +52,11 @@ return {
 										{id = 42, dest = "village", dest_x = 25, dest_y = 23, type = 1},
 										{id = 43, dest = "street_dolphin", dest_x = 1, dest_y = 22, type = 1},
 										{id = 44, dest = "street_tortoise", dest_x = 38, dest_y = 2, type = 1},
-										
+
     			},
     			npc={
                     {type = "blonde_girl", coord_x = 7, coord_y = 15, allow_x = 1, allow_y = 0},
-										
+
                 },
     			decor={
                     {type = "bed_up", coord_x = 10, coord_y = 13},
@@ -66,15 +66,15 @@ return {
 										{type = "shelf", coord_x = 7, coord_y = 14},
 										{type = "shelf", coord_x = 6, coord_y = 14},
 										{type = "urn", coord_x = 8, coord_y = 14},
-										
+
                 },
     			torch={
                     {color = "yellow", coord_x = 1, coord_y = 1},
-										
+
     			},
     			cartel={
                     {text = "village", coord_x = 3, coord_y = 1},
-										
+
                 }
     		}
     	}
