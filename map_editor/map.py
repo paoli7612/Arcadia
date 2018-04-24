@@ -19,7 +19,7 @@ class Map:
 
     def load_matrix(self):
         self.screen = pygame.Surface(self.program.opt.SIZE)
-        
+
         #load matrix
         for y,row in enumerate(self.matrix):
             for x,cell in enumerate(row):
