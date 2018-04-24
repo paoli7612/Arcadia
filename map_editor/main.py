@@ -98,6 +98,7 @@ class Program:
         self.running = True
         self.pause = False
         while self.running:
+            self.converter.update()
             self.clock.tick(50)
             self.selector.update()
             for event in pygame.event.get():

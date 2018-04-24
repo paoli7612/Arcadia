@@ -26,7 +26,7 @@ return {
 						,02,22,22,22,22,22,22,22,22,05,20,20,20,20,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,20,02
 						,02,22,22,22,22,22,22,22,22,05,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,02
 						,02,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,44,01,02
-
+						
     	},
     	properties={
     			walls={
@@ -36,7 +36,7 @@ return {
 										{id = 4, bloke = "wood", type = 1},
 										{id = 5, bloke = "stone", type = 1},
 										{id = 6, bloke = "stone", type = 2},
-
+										
     			},
     			floors={
                     {id = 20, bloke = "grass", type = 1},
@@ -44,17 +44,17 @@ return {
 										{id = 22, bloke = "wood", type = 1},
 										{id = 23, bloke = "wood", type = 2},
 										{id = 24, bloke = "stone", type = 1},
-
+										
     			},
     			doors={
-										{id = 42, dest = "village", dest_x = 4, dest_y = 23, type = 1},
-                    {id = 43, dest = "streetDolphin", dest_x = 1, dest_y = 4, type = 1},
+                    {id = 42, dest = "village", dest_x = 4, dest_y = 23, type = 1},
+										{id = 43, dest = "streetDolphin", dest_x = 1, dest_y = 4, type = 1},
 										{id = 44, dest = "streetElephant", dest_x = 1, dest_y = 4, type = 1},
-
+										
     			},
     			npc={
                     {type = "boy", coord_x = 7, coord_y = 19, allow_x = 3, allow_y = 1},
-
+										
                 },
     			decor={
                     {type = "shelf", coord_x = 4, coord_y = 15},
@@ -68,81 +68,23 @@ return {
 										{type = "bookshelf_full", coord_x = 22, coord_y = 10},
 										{type = "bookshelf_full", coord_x = 23, coord_y = 10},
 										{type = "bookshelf_full", coord_x = 28, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 28, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 28, coord_y = 10},
 										{type = "bookshelf_full", coord_x = 27, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 26, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 26, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 26, coord_y = 10},
 										{type = "bookshelf_full", coord_x = 26, coord_y = 10},
 										{type = "bookshelf_empty", coord_x = 21, coord_y = 10},
 										{type = "bookshelf_empty", coord_x = 27, coord_y = 10},
 										{type = "bookshelf_full", coord_x = 21, coord_y = 14},
-										{type = "bookshelf_full", coord_x = 21, coord_y = 14},
-										{type = "bookshelf_full", coord_x = 21, coord_y = 14},
-										{type = "bookshelf_full", coord_x = 22, coord_y = 14},
-										{type = "bookshelf_full", coord_x = 22, coord_y = 14},
-										{type = "bookshelf_full", coord_x = 22, coord_y = 14},
-										{type = "bookshelf_full", coord_x = 22, coord_y = 14},
-										{type = "bookshelf_full", coord_x = 22, coord_y = 14},
-										{type = "bookshelf_full", coord_x = 22, coord_y = 14},
-										{type = "bookshelf_full", coord_x = 22, coord_y = 14},
 										{type = "bookshelf_full", coord_x = 22, coord_y = 14},
 										{type = "bookshelf_full", coord_x = 23, coord_y = 14},
 										{type = "bookshelf_full", coord_x = 26, coord_y = 14},
-										{type = "bookshelf_full", coord_x = 26, coord_y = 14},
-										{type = "bookshelf_full", coord_x = 26, coord_y = 14},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 14},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 14},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 14},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 14},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 14},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 14},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 14},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 14},
 										{type = "bookshelf_full", coord_x = 27, coord_y = 14},
 										{type = "bookshelf_full", coord_x = 28, coord_y = 14},
-										{type = "bookshelf_full", coord_x = 28, coord_y = 14},
 										{type = "bookshelf_full", coord_x = 21, coord_y = 17},
-										{type = "bookshelf_full", coord_x = 21, coord_y = 17},
-										{type = "bookshelf_full", coord_x = 21, coord_y = 17},
-										{type = "bookshelf_full", coord_x = 22, coord_y = 17},
-										{type = "bookshelf_full", coord_x = 22, coord_y = 17},
-										{type = "bookshelf_full", coord_x = 22, coord_y = 17},
 										{type = "bookshelf_full", coord_x = 22, coord_y = 17},
 										{type = "bookshelf_full", coord_x = 23, coord_y = 17},
 										{type = "bookshelf_full", coord_x = 26, coord_y = 17},
-										{type = "bookshelf_full", coord_x = 26, coord_y = 17},
-										{type = "bookshelf_full", coord_x = 26, coord_y = 17},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 17},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 17},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 17},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 17},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 17},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 17},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 17},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 17},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 17},
-										{type = "bookshelf_full", coord_x = 27, coord_y = 17},
 										{type = "bookshelf_full", coord_x = 27, coord_y = 17},
 										{type = "bookshelf_full", coord_x = 28, coord_y = 17},
-										{type = "bookshelf_full", coord_x = 28, coord_y = 17},
-										{type = "bookshelf_full", coord_x = 28, coord_y = 17},
 										{type = "bookshelf_empty", coord_x = 22, coord_y = 17},
-										{type = "bookshelf_empty", coord_x = 22, coord_y = 17},
-										{type = "bookshelf_empty", coord_x = 22, coord_y = 17},
-										{type = "bookshelf_empty", coord_x = 22, coord_y = 17},
-										{type = "bookshelf_empty", coord_x = 23, coord_y = 17},
 										{type = "bookshelf_empty", coord_x = 23, coord_y = 17},
 										{type = "bookshelf_empty", coord_x = 26, coord_y = 14},
 										{type = "bookshelf_empty", coord_x = 28, coord_y = 17},
@@ -166,15 +108,15 @@ return {
 										{type = "urn", coord_x = 20, coord_y = 8},
 										{type = "urn", coord_x = 29, coord_y = 8},
 										{type = "urn", coord_x = 26, coord_y = 8},
-
+										
                 },
     			torch={
                     {color = "yellow", coord_x = 1, coord_y = 1},
-
+										
     			},
     			cartel={
                     {text = "village", coord_x = 3, coord_y = 1},
-
+										
                 }
     		}
     	}

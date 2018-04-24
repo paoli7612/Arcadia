@@ -61,3 +61,11 @@ class Converter:
         for k,vv in self.properties.items():
             print(k)
             for v in vv: print(v)
+
+    def update(self):
+        for k,v in self.properties.items():
+            l = list()
+            for element in v:
+                if not element in l:
+                    l.append(element)
+            self.properties[k] = l
