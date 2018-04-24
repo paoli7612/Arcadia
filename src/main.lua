@@ -1,7 +1,7 @@
 -- main.lua
 
 Grill = require("grill")
-Player = require("player")
+Player = require("sprites/player")
 Maps = require("map")
 Images = require("images")
 

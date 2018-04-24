@@ -41,7 +41,7 @@ function Group(maps)
   function group.collide(sprite)
     for i,item in ipairs(group.collider) do
       if sprite.x + sprite.dx == item.x and sprite.y + sprite.dy == item.y then
-        if item.name == "door" then maps.change_map(item.properties) end
+        if item.name == "door" then maps.change_map(item.door_prop) end
         return true
       end
     end

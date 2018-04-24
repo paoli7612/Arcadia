@@ -10,6 +10,7 @@ function Door(boss, properties)
     name = "door",
 		x = properties.coord_x,
 		y = properties.coord_y,
+		door_prop = properties
 	}
 
 	function door.draw()

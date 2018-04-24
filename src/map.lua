@@ -1,12 +1,12 @@
 
-Wall = require("wall")
-Npc = require("npc")
+Wall = require("sprites/wall")
+Npc = require("sprites/npc")
 Group = require("group")
-Door = require("door")
-Floor = require("floor")
-Decor = require("decor")
-Torch = require("torch")
-Cartel = require("cartel")
+Door = require("sprites/door")
+Floor = require("sprites/floor")
+Decor = require("sprites/decor")
+Torch = require("sprites/torch")
+Cartel = require("sprites/cartel")
 
 function Maps(boss)
   local grill = boss.grill
