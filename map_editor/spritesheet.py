@@ -38,7 +38,8 @@ class Spritesheet:
         self.images["basictiles"]["floor"]["stone"] = [get_image(6,1),get_image(1,9)]
         self.images["basictiles"]["floor"]["carpet"] = [get_image(1,2)]
         self.images["basictiles"]["floor"]["color"] = [get_image(1,1),get_image(3,1)]
-
+        self.images["basictiles"]["floor"]["clay"] = [get_image(3,7),get_image(5,7),get_image(4,7)]
+        self.images["basictiles"]["floor"]["stairs"] = [get_image(2,12),get_image(2,13),get_image(0,14),get_image(1,14)]
         # DOORS
         self.images["basictiles"]["door"] = [get_image(0,6),get_image(1,6),get_image(2,6),get_image(0,7),get_image(1,7)]
 
@@ -51,8 +52,9 @@ class Spritesheet:
         self.images["basictiles"]["decor"]["chest"] = get_image(4,4)
         self.images["basictiles"]["decor"]["table"] = get_image(6,6)
         self.images["basictiles"]["decor"]["urn"] = get_image(3,3)
-        self.images["basictiles"]["decor"]["bed_down"] = get_image(5,6)
+        self.images["basictiles"]["decor"]["bed_red"] = get_image(3,6)
         self.images["basictiles"]["decor"]["bed_up"] = get_image(5,5)
+        self.images["basictiles"]["decor"]["bed_blue"] = get_image(5,6)
         self.images["basictiles"]["decor"]["throne"] = get_image(6,5)
         self.images["basictiles"]["decor"]["statue"] = get_image(7,5)
         self.images["basictiles"]["decor"]["tower"] = get_image(7,5)

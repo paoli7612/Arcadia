@@ -59,8 +59,8 @@ return {
     			decor={
                     {type = "bed_up", coord_x = 10, coord_y = 13},
 										{type = "bed_up", coord_x = 11, coord_y = 13},
-										{type = "bed_down", coord_x = 10, coord_y = 14},
-										{type = "bed_down", coord_x = 11, coord_y = 14},
+										{type = "bed_red", coord_x = 10, coord_y = 14},
+										{type = "bed_red", coord_x = 11, coord_y = 14},
 										{type = "shelf", coord_x = 7, coord_y = 14},
 										{type = "shelf", coord_x = 6, coord_y = 14},
 										{type = "urn", coord_x = 8, coord_y = 14},

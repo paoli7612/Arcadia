@@ -13,7 +13,7 @@ function Boss()
 	boss.maps = Maps(boss)
 	boss.player = Player(boss,5,5)
 
-	boss.group = boss.maps["castleHall"]
+	boss.group = boss.maps["village"]
 	return boss
 end
 
