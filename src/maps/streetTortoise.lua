@@ -22,10 +22,10 @@ return {
 						,02,22,22,22,22,22,22,22,22,05,20,20,21,20,24,20,20,20,20,05,22,22,22,22,22,22,22,22,22,22,05,20,20,20,20,20,20,24,20,02
 						,02,22,22,22,22,22,22,22,22,05,20,20,21,20,24,20,20,20,20,05,22,22,22,22,22,22,22,22,22,22,05,20,20,20,21,20,20,24,20,02
 						,02,03,03,03,03,03,22,22,22,05,20,20,20,21,24,20,20,21,20,05,06,06,06,06,06,06,06,06,06,06,05,21,20,20,21,20,20,24,20,02
-						,02,22,22,22,22,22,22,22,22,05,20,20,20,20,24,21,20,20,21,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,24,24,41
-						,02,22,22,22,22,22,22,22,22,05,20,20,20,20,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,40
+						,02,22,22,22,22,22,22,22,22,05,20,20,20,20,24,21,20,20,21,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,24,20,02
+						,02,22,22,22,22,22,22,22,22,05,20,20,20,20,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,20,02
 						,02,22,22,22,22,22,22,22,22,05,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,02
-						,02,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,02
+						,02,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,44,01,02
 
     	},
     	properties={
@@ -47,10 +47,9 @@ return {
 
     			},
     			doors={
-                    {id = 40, dest = "street", dest_x = 1, dest_y = 21, type = 1},
-										{id = 41, dest = "street", dest_x = 1, dest_y = 22, type = 1},
 										{id = 42, dest = "village", dest_x = 4, dest_y = 23, type = 1},
-										{id = 43, dest = "street_dolphin", dest_x = 1, dest_y = 4, type = 1},
+                    {id = 43, dest = "streetDolphin", dest_x = 1, dest_y = 4, type = 1},
+										{id = 44, dest = "streetElephant", dest_x = 1, dest_y = 4, type = 1},
 
     			},
     			npc={
@@ -66,26 +65,6 @@ return {
 										{type = "statue", coord_x = 13, coord_y = 9},
 										{type = "statue", coord_x = 11, coord_y = 9},
 										{type = "bookshelf_full", coord_x = 21, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 21, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 21, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 21, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 21, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 21, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 21, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 21, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 21, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 21, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 21, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 21, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 21, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 21, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 21, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 22, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 22, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 22, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 22, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 22, coord_y = 10},
-										{type = "bookshelf_full", coord_x = 22, coord_y = 10},
 										{type = "bookshelf_full", coord_x = 22, coord_y = 10},
 										{type = "bookshelf_full", coord_x = 23, coord_y = 10},
 										{type = "bookshelf_full", coord_x = 28, coord_y = 10},
@@ -182,12 +161,6 @@ return {
 										{type = "urn", coord_x = 1, coord_y = 23},
 										{type = "table", coord_x = 2, coord_y = 17},
 										{type = "table", coord_x = 3, coord_y = 17},
-										{type = "urn", coord_x = 21, coord_y = 8},
-										{type = "urn", coord_x = 21, coord_y = 8},
-										{type = "urn", coord_x = 21, coord_y = 8},
-										{type = "urn", coord_x = 21, coord_y = 8},
-										{type = "urn", coord_x = 21, coord_y = 8},
-										{type = "urn", coord_x = 21, coord_y = 8},
 										{type = "urn", coord_x = 21, coord_y = 8},
 										{type = "urn", coord_x = 28, coord_y = 8},
 										{type = "urn", coord_x = 20, coord_y = 8},
