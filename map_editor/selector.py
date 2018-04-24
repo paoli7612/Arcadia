@@ -20,11 +20,11 @@ class Selector(pygame.sprite.Sprite):
 
     def get_new_id(self, item):
         if item == "walls":
-            for wall in self.converter.properties["walls"]: last_id = wall["id"]
+            for wall in self.program.converter.properties["walls"]: last_id = wall["id"]
         elif item == "floors":
-            for floor in self.converter.properties["floors"]: last_id = floor["id"]
+            for floor in self.program.converter.properties["floors"]: last_id = floor["id"]
         elif item == "doors":
-            for door in self.converter.properties["doors"]: last_id = door["id"]
+            for door in self.program.converter.properties["doors"]: last_id = door["id"]
         return last_id + 1
 
 
@@ -40,8 +40,7 @@ class Selector(pygame.sprite.Sprite):
                         del self.program.converter.properties[type][pos]
                         self.program.map.load_matrix()
                         return
-                except Exception as e:
-                    print(e)
+                except: pass
 
     def click(self):
         if self.y == self.program.opt.TILE_Y:                           # WALL line
@@ -66,8 +65,18 @@ class Selector(pygame.sprite.Sprite):
                 self.id_mode = False
                 self.item_mode = "npc"
             except: pass
-        elif self.x == self.program.opt.TILE_X:
-            print("new")
+        elif self.x == self.program.opt.TILE_X:                         # WALL column
+            try:
+                bloke,type = self.program.all_walls[self.y]
+                self.program.converter.properties["walls"].append({"id": self.get_new_id("walls"), "bloke":bloke, "type": type})
+                self.program.set_properties_screen()
+            except: pass
+        elif self.x == self.program.opt.TILE_X + 1:                       # FLOOR column
+            try:
+                bloke,type = self.program.all_floors[self.y]
+                self.program.converter.properties["floors"].append({"id": self.get_new_id("floors"), "bloke":bloke, "type": type})
+                self.program.set_properties_screen()
+            except: pass
         else:
             if self.id_mode: self.program.map.matrix[self.y][self.x] = self.id
             else:
