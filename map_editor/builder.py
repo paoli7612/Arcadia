@@ -24,7 +24,7 @@ class Builder:
         props = self.program.converter.properties
         for wall in props["walls"]:walls += (template.walls %(wall["id"],wall["bloke"],wall["type"]+1)) + down
         for floor in props["floors"]: floors += (template.floors %(floor["id"],floor["bloke"],floor["type"]+1)) + down
-        for door in props["doors"]: doors += (template.doors %(door["id"],door["dest"],door["dest_x"],door["dest_y"],door["type"]+1)) + down
+        for door in props["doors"]: doors += (template.doors %(door["dest"],door["coord_x"],door["coord_y"],door["dest_x"],door["dest_y"],door["type"]+1)) + down
         for npc in props["npc"]: npcs += (template.npc %(npc["type"],npc["coord_x"],npc["coord_y"],npc["allow_x"],npc["allow_y"])) + down
         for decor in props["decor"]: decors += (template.decor %(decor["type"],decor["coord_x"],decor["coord_y"])) + down
         for torch in props["torch"]: torchs += (template.torch %(torch["color"],torch["coord_x"],torch["coord_y"])) + down

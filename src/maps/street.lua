@@ -41,16 +41,16 @@ return {
 										
     			},
     			doors={
-                    {id = 40, dest = "spawn", dest_x = 19, dest_y = 23, type = 3},
-										{id = 41, dest = "spawn", dest_x = 20, dest_y = 23, type = 3},
-										{id = 42, dest = "castle", dest_x = 38, dest_y = 21, type = 1},
-										{id = 43, dest = "castle", dest_x = 38, dest_y = 22, type = 1},
-										{id = 44, dest = "village", dest_x = 38, dest_y = 2, type = 1},
-										{id = 45, dest = "village", dest_x = 38, dest_y = 3, type = 1},
-										{id = 46, dest = "lake", dest_x = 20, dest_y = 23, type = 1},
-										{id = 47, dest = "lake", dest_x = 20, dest_y = 23, type = 1},
-										{id = 48, dest = "dungeon", dest_x = 20, dest_y = 23, type = 1},
-										{id = 49, dest = "dungeon", dest_x = 20, dest_y = 23, type = 1},
+                    {dest = "spawn", coord_x = 19, coord_y = 0, dest_x = 19, dest_y = 23, type = 3},
+										{dest = "spawn", coord_x = 20, coord_y = 0, dest_x = 20, dest_y = 23, type = 3},
+										{dest = "castle", coord_x = 0, coord_y = 3, dest_x = 38, dest_y = 21, type = 1},
+										{dest = "castle", coord_x = 0, coord_y = 4, dest_x = 38, dest_y = 22, type = 1},
+										{dest = "village", coord_x = 0, coord_y = 20, dest_x = 38, dest_y = 2, type = 1},
+										{dest = "village", coord_x = 0, coord_y = 21, dest_x = 38, dest_y = 3, type = 1},
+										{dest = "lake", coord_x = 39, coord_y = 20, dest_x = 20, dest_y = 23, type = 1},
+										{dest = "lake", coord_x = 39, coord_y = 21, dest_x = 20, dest_y = 23, type = 1},
+										{dest = "dungeon", coord_x = 39, coord_y = 3, dest_x = 20, dest_y = 23, type = 1},
+										{dest = "dungeon", coord_x = 39, coord_y = 4, dest_x = 20, dest_y = 23, type = 1},
 										
     			},
     			npc={

@@ -26,7 +26,7 @@ return {
 						,02,20,20,20,21,20,20,21,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,21,20,20,20,41
 						,02,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,21,21,20,20,20,20,20,20,20,20,21,20,20,20,20,20,20,20,20,20,20,02
 						,02,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,02
-
+						
     	},
     	properties={
     			walls={
@@ -34,33 +34,35 @@ return {
 										{id = 2, bloke = "blue", type = 2},
 										{id = 3, bloke = "blue", type = 1},
 										{id = 4, bloke = "blue", type = 4},
-
+										
     			},
     			floors={
                     {id = 20, bloke = "grass", type = 1},
 										{id = 21, bloke = "grass", type = 2},
-
+										
     			},
     			doors={
-                    {id = 40, dest = "street", dest_x = 1, dest_y = 3, type = 1},
-										{id = 41, dest = "street", dest_x = 1, dest_y = 4, type = 1},
-										{id = 42, dest = "tower_nordovest", dest_x = 0, dest_y = 0, type = 2},
-										{id = 43, dest = "tower_sudovest", dest_x = 0, dest_y = 0, type = 2},
-										{id = 44, dest = "tower_nordest", dest_x = 0, dest_y = 0, type = 1},
-
+                    {dest = "street", coord_x = 39, coord_y = 21, dest_x = 1, dest_y = 3, type = 1},
+										{dest = "street", coord_x = 39, coord_y = 22, dest_x = 1, dest_y = 4, type = 1},
+										{dest = "castleHall", coord_x = 19, coord_y = 0, dest_x = 0, dest_y = 0, type = 2},
+										{dest = "castleHall", coord_x = 20, coord_y = 0, dest_x = 0, dest_y = 0, type = 2},
+										{dest = "null", coord_x = 4, coord_y = 8, dest_x = 0, dest_y = 0, type = 1},
+										{dest = "null", coord_x = 35, coord_y = 8, dest_x = 0, dest_y = 0, type = 1},
+										{dest = "null", coord_x = 4, coord_y = 21, dest_x = 0, dest_y = 0, type = 1},
+										
     			},
     			npc={
-
+                    
                 },
     			decor={
-
+                    
                 },
     			torch={
                     {color = "yellow", coord_x = 1, coord_y = 1},
-
+										
     			},
     			cartel={
-
+                    
                 }
     		}
     	}

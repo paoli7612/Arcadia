@@ -12,6 +12,7 @@ except: pass
 
 class Program:
     def __init__(self,arg):
+        pygame.init()
         self.opt = Setting()
         self.name_map = arg.name_map
         self.screen = pygame.display.set_mode((self.opt.WIDTH + self.opt.TILE_SIZE*3,self.opt.HEIGHT + self.opt.TILE_SIZE*4))

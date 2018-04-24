@@ -80,7 +80,7 @@ to_fill ="""return {
 
 walls = "{id = %d, bloke = \"%s\", type = %d},"
 floors = "{id = %d, bloke = \"%s\", type = %d},"
-doors = "{id = %d, dest = \"%s\", dest_x = %d, dest_y = %d, type = %d},"
+doors = "{dest = \"%s\", coord_x = %d, coord_y = %d, dest_x = %d, dest_y = %d, type = %d},"
 npc = "{type = \"%s\", coord_x = %d, coord_y = %d, allow_x = %d, allow_y = %d},"
 decor = "{type = \"%s\", coord_x = %d, coord_y = %d},"
 torch = "{color = \"%s\", coord_x = %d, coord_y = %d},"

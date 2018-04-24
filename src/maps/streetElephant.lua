@@ -49,9 +49,9 @@ return {
     			},
     			doors={
 
-                    {id = 40, dest = "streetTortoise", dest_x = 37, dest_y = 23, type = 1},
-                    {id = 41, dest = "streetDolphin", dest_x = 2, dest_y = 23, type = 1},
-										{id = 42, dest = "village", dest_x = 25, dest_y = 23, type = 5},
+                    {dest = "streetTortoise", coord_x = 4, coord_y = 0, dest_x = 37, dest_y = 23, type = 1},
+                    {dest = "streetDolphin", coord_x = 35, coord_y = 0, dest_x = 2, dest_y = 23, type = 1},
+										{dest = "village", coord_x = 27, coord_y = 2, dest_x = 25, dest_y = 23, type = 5},
 
     			},
     			npc={

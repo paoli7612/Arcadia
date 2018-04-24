@@ -4,6 +4,7 @@ class Selector(pygame.sprite.Sprite):
     def __init__(self,program):
         self.program = program
         pygame.sprite.Sprite.__init__(self)
+        self.font = pygame.font.Font(pygame.font.match_font("arial"), 15)
         self.image = pygame.Surface((self.program.opt.TILE_SIZE,self.program.opt.TILE_SIZE))
         pygame.draw.rect(self.image, (255,255,255), (0, 0, self.program.opt.TILE_SIZE,self.program.opt.TILE_SIZE ), 5)
         self.image.set_colorkey((0,0,0))
@@ -11,6 +12,14 @@ class Selector(pygame.sprite.Sprite):
         self.id = 0
         self.id_mode = True
         self.data_mode = True
+
+    def draw_coord(self):
+        text_surface = self.font.render(("%d - %d" %(self.x,self.y)), True, (255,0,0))
+        text_rect = text_surface.get_rect()
+        text_rect.bottomleft = (self.program.opt.WIDTH,self.program.opt.HEIGHT+40)
+        self.program.screen.blit(text_surface, text_rect)
+
+
 
     def update(self):
         x,y = pygame.mouse.get_pos()
@@ -23,13 +32,12 @@ class Selector(pygame.sprite.Sprite):
             for wall in self.program.converter.properties["walls"]: last_id = wall["id"]
         elif item == "floors":
             for floor in self.program.converter.properties["floors"]: last_id = floor["id"]
-        elif item == "doors":
-            for door in self.program.converter.properties["doors"]: last_id = door["id"]
         return last_id + 1
 
 
     def draw(self, surface):
         surface.blit(self.image, self.rect.topleft)
+        self.draw_coord()
 
     def remove(self):
         for type,elements in self.program.converter.properties.items():

@@ -29,11 +29,12 @@ class Map:
                 if cell in list(range(20,40)):   # FLOOR
                     for element in self.program.converter.properties["floors"]:
                         if element["id"] == cell: self.screen.blit(self.program.images.images["basictiles"]["floor"][element["bloke"]][element["type"]], (x*self.program.opt.TILE_SIZE, y*self.program.opt.TILE_SIZE))
-                if cell in list(range(40,60)):   # DOORS
-                    for element in self.program.converter.properties["doors"]:
-                        if element["id"] == cell: self.screen.blit(self.program.images.images["basictiles"]["door"][element["type"]], (x*self.program.opt.TILE_SIZE, y*self.program.opt.TILE_SIZE))
+
 
         #load others
+        for element in self.program.converter.properties["doors"]:
+            self.screen.blit(self.program.images.images["basictiles"]["door"][element["type"]],
+            (element["coord_x"]*self.program.opt.TILE_SIZE, element["coord_y"]*self.program.opt.TILE_SIZE))
         for element in self.program.converter.properties["decor"]:  # DECOR
             self.screen.blit(self.program.images.images["basictiles"]["decor"][element["type"]],
             (element["coord_x"]*self.program.opt.TILE_SIZE, element["coord_y"]*self.program.opt.TILE_SIZE))

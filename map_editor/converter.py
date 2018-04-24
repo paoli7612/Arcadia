@@ -46,8 +46,8 @@ class Converter:
             self.properties["walls"][pos] = {"id": get_int(id),"bloke": get_str(color),"type": get_int(type)-1}
         for pos,(id, bloke, type) in enumerate(self.properties["floors"]):
             self.properties["floors"][pos] = {"id": get_int(id),"bloke": get_str(bloke),"type": get_int(type)-1}
-        for pos,(id, dest, dest_x, dest_y, type) in enumerate(self.properties["doors"]):
-            self.properties["doors"][pos] = {"id": get_int(id),"dest": get_str(dest),"dest_x": get_int(dest_x), "dest_y": get_int(dest_y),"type": get_int(type)-1}
+        for pos,(dest, coord_x, coord_y, dest_x, dest_y, type) in enumerate(self.properties["doors"]):
+            self.properties["doors"][pos] = {"dest": get_str(dest), "coord_x": get_int(coord_x), "coord_y": get_int(coord_y), "dest_x": get_int(dest_x), "dest_y": get_int(dest_y),"type": get_int(type)-1}
         for pos,(type, coord_x, coord_y) in enumerate(self.properties["decor"]):
             self.properties["decor"][pos] = {"type": get_str(type), "coord_x": get_int(coord_x), "coord_y": get_int(coord_y)}
         for pos,(color, coord_x, coord_y) in enumerate(self.properties["torch"]):
