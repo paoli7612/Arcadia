@@ -66,8 +66,10 @@ class Selector(pygame.sprite.Sprite):
                 self.id_mode = False
                 self.item_mode = "npc"
             except: pass
-        elif self.x == self.program.opt.TILE_X:
-            print("new")
+        elif self.x == self.program.opt.TILE_X:                         # WALL column
+            print(self.program.all_walls)
+        elif self.x == self.program.opt.TILE_X + 1:                       # FLOOR column
+            print(self.program.all_floors)
         else:
             if self.id_mode: self.program.map.matrix[self.y][self.x] = self.id
             else:

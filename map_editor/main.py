@@ -40,13 +40,22 @@ class Program:
         self.creation_screen = pygame.Surface((self.opt.TILE_SIZE*3,self.opt.HEIGHT))
         self.creation_screen.fill((150,150,150))
         self.all_walls = list()
+        self.all_floors = list()
 
         y = 0
-        for name, list_image in self.images.images["basictiles"]["wall"].items():
-            for image in list_image:
-                print(name)
+        for bloke, list_image in self.images.images["basictiles"]["wall"].items():
+            for type,image in enumerate(list_image):
+                print((bloke,type))
                 self.creation_screen.blit(image, (0, y))
-                self.list_npc.append(name)
+                self.all_walls.append((bloke,type))
+                y += self.opt.TILE_SIZE
+
+        y = 0
+        for bloke, list_image in self.images.images["basictiles"]["floor"].items():
+            for type,image in enumerate(list_image):
+                print((bloke,type))
+                self.creation_screen.blit(image, (self.opt.TILE_SIZE, y))
+                self.all_floors.append((bloke,type))
                 y += self.opt.TILE_SIZE
 
     def set_properties_screen(self):
