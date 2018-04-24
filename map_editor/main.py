@@ -15,7 +15,7 @@ class Program:
         pygame.init()
         self.opt = Setting()
         self.name_map = arg.name_map
-        self.screen = pygame.display.set_mode((self.opt.WIDTH + self.opt.TILE_SIZE*3,self.opt.HEIGHT + self.opt.TILE_SIZE*4))
+        self.screen = pygame.display.set_mode((self.opt.WIDTH + self.opt.TILE_SIZE*3,self.opt.HEIGHT + self.opt.TILE_SIZE*5))
         self.set_grill_surface()
         pygame.display.set_caption(self.opt.TITLE)
         self.path = os.path.dirname(__file__)
@@ -60,13 +60,14 @@ class Program:
                 y += self.opt.TILE_SIZE
 
     def set_properties_screen(self):
-        self.properties_screen = pygame.Surface((self.opt.WIDTH, self.opt.TILE_SIZE*4))
+        self.properties_screen = pygame.Surface((self.opt.WIDTH, self.opt.TILE_SIZE*5))
         self.properties_screen.fill((200,200,200))
         self.list_walls = list()
         self.list_floors = list()
         self.list_doors = list()
         self.list_decors = list()
         self.list_npc = list()
+        self.list_door = list()
 
         x = 0
         for wall in self.converter.properties["walls"]:
@@ -91,6 +92,13 @@ class Program:
             self.properties_screen.blit(image, (x, self.opt.TILE_SIZE*3))
             self.list_npc.append(name)
             x += self.opt.TILE_SIZE
+
+        x = 0
+        for type,image in enumerate(self.images.images["basictiles"]["door"]):
+            self.properties_screen.blit(image, (x, self.opt.TILE_SIZE*4))
+            self.list_door.append(type)
+            x += self.opt.TILE_SIZE
+
 
 
     def loop(self):
