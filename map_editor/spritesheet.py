@@ -28,7 +28,7 @@ class Spritesheet:
         self.images["basictiles"]["wall"]["stone"] = [get_image(0,10),get_image(1,10)]
         self.images["basictiles"]["wall"]["wood"] = [get_image(0,11),get_image(1,11)]
         self.images["basictiles"]["wall"]["cave"] = [get_image(7,1),get_image(7,2)]
-        self.images["basictiles"]["wall"]["lava"] = [get_image(2,8),get_image(2,8),get_image(3,8)]
+        self.images["basictiles"]["wall"]["lava"] = [get_image(2,8),get_image(2,9),get_image(3,9)]
 
         # FLOOR
         self.images["basictiles"]["floor"] = dict()
