@@ -29,8 +29,10 @@ class Selector(pygame.sprite.Sprite):
 
     def get_new_id(self, item):
         if item == "walls":
+            last_id = 1
             for wall in self.program.converter.properties["walls"]: last_id = wall["id"]
         elif item == "floors":
+            last_id = 20
             for floor in self.program.converter.properties["floors"]: last_id = floor["id"]
         return last_id + 1
 
@@ -82,7 +84,7 @@ class Selector(pygame.sprite.Sprite):
         elif self.x == self.program.opt.TILE_X + 1:                       # FLOOR column
             try:
                 bloke,type = self.program.all_floors[self.y]
-                self.program.converter.properties["floors"].append({"id": self.get_new_id("floors"), "bloke":bloke, "type": type})
+                self.program.converter.properties["floors"].append({"id": self.get_new_id("floors"), "bloke":bloke, "type":type})
                 self.program.set_properties_screen()
             except: pass
         else:
