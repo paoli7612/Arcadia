@@ -34,13 +34,10 @@ function Maps(boss)
         for i,floor in ipairs(level.properties.floors) do
           if floor.id == p then maps[level.name].add(Floor(boss, x, y, floor)) end
         end
-      elseif p >= 40 and p < 60 then
-        for i,door in ipairs(level.properties.doors) do
-          if door.id == p then maps[level.name].add(Door(boss, x, y, door)) end
-        end
       end
       x = x+1
     end
+    for i,door in ipairs(level.properties.doors) do maps[level.name].add(Door(boss,door)) end
     for i,npc in ipairs(level.properties.npc) do maps[level.name].add(Npc(boss,npc)) end
     for i,decor in ipairs(level.properties.decor) do maps[level.name].add(Decor(boss,decor)) end
     for i,torch in ipairs(level.properties.torch) do maps[level.name].add(Torch(boss,torch)) end
