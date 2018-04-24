@@ -44,7 +44,9 @@ function Maps(boss)
     for i,cartel in ipairs(level.properties.cartel) do maps[level.name].add(Cartel(boss,cartel)) end
     return group
   end
-  local handle = io.popen("ls src/maps/")
+
+  --[[  ONLY DEBIAN
+    local handle = io.popen("ls src/maps/")
   local result = handle:read("*a")
   handle:close()
 
@@ -53,7 +55,6 @@ s = result
 words = {}
 for word in s:gmatch("%a+") do table.insert(words, word) end
 
-  --[[  ONLY DEBIAN
   for i,n in ipairs(words) do if not(n == "lua") then load_map(require("maps/"..n)) end end
   ]]
   load_map(require("maps/spawn"))
