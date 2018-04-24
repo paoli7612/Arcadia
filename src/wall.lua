@@ -11,7 +11,7 @@ function Wall(boss,x,y,properties)
 		properties = properties
 	}
 	function wall.draw()
-		spritesheet.draw_image(wall.x*wall.size,wall.y*wall.size,spritesheet.quads["wall"][properties.color][properties.type])
+		spritesheet.draw_image(wall.x*wall.size,wall.y*wall.size,spritesheet.quads["wall"][properties.bloke][properties.type])
 	end
 
 	return wall

@@ -49,10 +49,10 @@ return {
 
     			},
     			doors={
-                    {id = 40, dest = "street", dest_x = 1, dest_y = 21, type = 1},
-										{id = 41, dest = "street", dest_x = 1, dest_y = 22, type = 1},
-										{id = 42, dest = "street_tortoise", dest_x = 4, dest_y = 1, type = 1},
-										{id = 43, dest = "street_dolphin", dest_x = 4, dest_y = 1, type = 1},
+                    {id = 40, dest = "street", dest_x = 1, dest_y = 20, type = 1},
+										{id = 41, dest = "street", dest_x = 1, dest_y = 21, type = 1},
+										{id = 42, dest = "streetTortoise", dest_x = 4, dest_y = 1, type = 1},
+										{id = 43, dest = "streetDolphin", dest_x = 4, dest_y = 1, type = 1},
 
     			},
     			npc={

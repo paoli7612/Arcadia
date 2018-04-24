@@ -16,8 +16,8 @@ function Maps(boss)
   function maps.change_map(door_prop)
     love.window.setTitle(door_prop.dest)
     boss.group = maps[door_prop.dest]
-    boss.player.x = door_prop.coord_x
-    boss.player.y = door_prop.coord_y
+    boss.player.x = door_prop.dest_x
+    boss.player.y = door_prop.dest_y
   end
 
   function load_map(level)
@@ -47,14 +47,28 @@ function Maps(boss)
     for i,cartel in ipairs(level.properties.cartel) do maps[level.name].add(Cartel(boss,cartel)) end
     return group
   end
+  local handle = io.popen("ls src/maps/")
+  local result = handle:read("*a")
+  handle:close()
+
+
+s = result
+words = {}
+for word in s:gmatch("%a+") do table.insert(words, word) end
+
+  --[[  ONLY DEBIAN
+  for i,n in ipairs(words) do if not(n == "lua") then load_map(require("maps/"..n)) end end
+  ]]
   load_map(require("maps/spawn"))
     load_map(require("maps/street"))
       load_map(require("maps/castle"))
       load_map(require("maps/dungeon"))
       load_map(require("maps/lake"))
       load_map(require("maps/village"))
-        load_map(require("maps/street_dolphin"))
-        load_map(require("maps/street_tortoise"))
+        load_map(require("maps/streetDolphin"))
+        load_map(require("maps/streetTortoise"))
+        load_map(require("maps/streetElephant"))
+
 
   return maps
 end
