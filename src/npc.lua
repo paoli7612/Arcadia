@@ -5,20 +5,23 @@ function Npc(boss,properties)
 	local boss = boss
 	local spritesheet = boss.images["characters"]
 	local time = 0
+	local direction = "down"
+	local speed = 1
+	local properties = properties
+
+	local allow_x = {max = properties.coord_x + properties.allow_x,
+								min = properties.coord_x - properties.allow_x}
+	local allow_y = {max = properties.coord_y + properties.allow_y,
+								min = properties.coord_y - properties.allow_y}
+
 	local npc = {
     name = "npc",
-		direction = "down",
-		speed = 1,
 		x = properties.coord_x,
 		y = properties.coord_y,
-		allow_x = {max = properties.coord_x + properties.allow_x, min = properties.coord_x - properties.allow_x},
-		allow_y = {max = properties.coord_y + properties.allow_y, min = properties.coord_y - properties.allow_y},
-		size=grill.tile,
-		properties = properties
 	}
 
 	function npc.draw()
-		spritesheet.draw_image(npc.x*npc.size,npc.y*npc.size,spritesheet.quads[npc.properties.type][npc.direction]["stand"][1])
+		spritesheet.draw_image(npc.x*grill.tile,npc.y*grill.tile,spritesheet.quads[properties.type][direction]["stand"][1])
 	end
 
 	function npc.speak()
@@ -29,22 +32,24 @@ function Npc(boss,properties)
 		npc.dx, npc.dy = 0,0
 
 		time = time + dt
-		if time > npc.speed then
+		if time > speed then
 			p = love.math.random(6) -- 1 stop 2 right 3 left 4 up 5 down 6 stop
-			if p == 2 and npc.x + 1 <= npc.allow_x.max then
+			if p == 2 and npc.x + 1 <= allow_x.max then
 					npc.dx = 1
-					npc.direction = "right"
-			elseif p == 3 and npc.x - 1 >= npc.allow_x.min then
+					direction = "right"
+			elseif p == 3 and npc.x - 1 >= allow_x.min then
 					npc.dx = -1
-					npc.direction = "left"
-			elseif p == 4 and npc.y + 1 <= npc.allow_y.max then
+					direction = "left"
+			elseif p == 4 and npc.y + 1 <= allow_y.max then
 					npc.dy = 1
-					npc.direction = "down"
-			elseif p == 5 and npc.y - 1 >= npc.allow_y.min then
+					direction = "down"
+			elseif p == 5 and npc.y - 1 >= allow_y.min then
 					npc.dy = -1
-					npc.direction = "up"
+					direction = "up"
 			end
-			npc.speed = 1 + math.random();
+
+			speed = 1 + math.random();
+
 			if not boss.group.collide_pair(npc,boss.player) then
 				npc.x = npc.x + npc.dx
 				npc.y = npc.y + npc.dy

@@ -1,30 +1,31 @@
 -- torch.lua
 
 function Torch(boss,properties)
+
 	local grill = boss.grill
 	local spritesheet = boss.images["things"]
-  local time = 0
+	local properties = properties
+	local time = 0
+	local frame = 1
+	local speed = 0.1
+
 	local torch = {
     name = "torch",
-    speed = 0.1,
 		x=properties.coord_x,
-		y=properties.coord_y,
-		size=grill.tile,
-		properties = properties,
-    frame = 1
+		y=properties.coord_y
 	}
 
 	function torch.draw()
-		spritesheet.draw_image(torch.x*torch.size,torch.y*torch.size,spritesheet.quads["torch"][torch.properties.color][torch.frame])
+		spritesheet.draw_image(torch.x*grill.tile,torch.y*grill.tile,spritesheet.quads["torch"][properties.color][frame])
 	end
 
   function torch.update(dt)
 		time = time + dt
-		if time > torch.speed then
-			torch.frame = (torch.frame + 1)
-      if torch.frame == 4 then torch.frame = 1 end
+		if time > speed then
+			frame = (frame + 1)
+      if frame == 4 then frame = 1 end
 			time = 0
-			torch.speed = math.random();
+			speed = math.random();
 		end
 	end
 

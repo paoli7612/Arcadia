@@ -1,18 +1,19 @@
 -- decor.lua
 
 function Decor(boss,properties)
+
 	local grill = boss.grill
 	local spritesheet = boss.images["basictiles"]
+	local properties = properties
+
 	local decor = {
     name = "decor",
-		x=properties.coord_x,
-		y=properties.coord_y,
-		size=grill.tile,
-		properties = properties
+		x = properties.coord_x,
+		y = properties.coord_y,
 	}
 
 	function decor.draw()
-		spritesheet.draw_image(decor.x*decor.size,decor.y*decor.size,spritesheet.quads["decor"][decor.properties.type])
+		spritesheet.draw_image(decor.x*grill.tile,decor.y*grill.tile,spritesheet.quads["decor"][properties.type])
 	end
 
 	return decor

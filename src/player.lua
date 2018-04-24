@@ -1,51 +1,51 @@
 -- player.lua
 
-
 function Player(boss,x,y)
 	local grill = boss.grill
 	local boss = boss
 	local spritesheet = boss.images["characters"]
 	local time = 0
 
+	local direction = "down"
+	local position = "stand"
+	local frame = 1
+	local speed = 0.1
+
 	local player = {
 		name = "player",
 		x=x,
 		y=y,
-		size=grill.tile,
-		direction = "down",
-		position = "stand",
-		frame = 1,
-		speed = 0.1
 	}
+
 	function player.draw()
-		spritesheet.draw_image(player.x*player.size, player.y*player.size, spritesheet.quads["barra"][player.direction][player.position][player.frame])
+		spritesheet.draw_image(player.x*grill.tile, player.y*grill.tile, spritesheet.quads["barra"][direction][position][frame])
 	end
 
 	function player.update(dt)
 		time = time + dt
-		if time > player.speed then
-			player.move()
+		if time > speed then
+			move()
 			time = 0
 		end
 	end
 
-	function player.move()
+	function move()
 		player.dx, player.dy = 0,0
-		player.position = "walk"
+		position = "walk"
 		if love.keyboard.isDown("right") then
 			player.dx = 1
-			player.direction = "right"
+			direction = "right"
 		elseif love.keyboard.isDown("left") then
 			player.dx = -1
-			player.direction = "left"
+			direction = "left"
 		elseif love.keyboard.isDown("up") then
 			player.dy = -1
-			player.direction = "up"
+			direction = "up"
 		elseif love.keyboard.isDown("down") then
 			player.dy = 1
-			player.direction = "down"
+			direction = "down"
 		else
-			player.position = "stand"
+			position = "stand"
 		end
 
 		-- control coord for write maps
@@ -56,10 +56,10 @@ function Player(boss,x,y)
 			player.y = player.y + player.dy
 		end
 
-		if player.position == "walk" then
-			player.frame = (player.frame + 1)
-			if player.frame == 3 then player.frame = 1 end
-		else player.frame = 1 end
+		if position == "walk" then
+			frame = (frame + 1)
+			if frame == 3 then frame = 1 end
+		else frame = 1 end
 	end
 
 	return player
