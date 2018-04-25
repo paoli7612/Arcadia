@@ -67,7 +67,6 @@ class Program:
         self.list_doors = list()
         self.list_decors = list()
         self.list_npc = list()
-        self.list_door = list()
 
         x = 0
         for wall in self.converter.properties["walls"]:
@@ -96,9 +95,8 @@ class Program:
         x = 0
         for type,image in enumerate(self.images.images["basictiles"]["door"]):
             self.properties_screen.blit(image, (x, self.opt.TILE_SIZE*4))
-            self.list_door.append(type)
+            self.list_doors.append(type)
             x += self.opt.TILE_SIZE
-
 
 
     def loop(self):

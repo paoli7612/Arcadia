@@ -75,6 +75,12 @@ class Selector(pygame.sprite.Sprite):
                 self.id_mode = False
                 self.item_mode = "npc"
             except: pass
+        elif self.y == self.program.opt.TILE_Y+4:                       # DOOR line
+            try:
+                self.item = self.program.list_doors[self.x]
+                self.id_mode = False
+                self.item_mode = "door"
+            except: pass
         elif self.x == self.program.opt.TILE_X:                         # WALL column
             try:
                 bloke,type = self.program.all_walls[self.y]
@@ -92,4 +98,5 @@ class Selector(pygame.sprite.Sprite):
             else:
                 if self.item_mode == "decor": self.program.converter.properties["decor"].append({"type":self.item,"coord_x":self.x,"coord_y":self.y})
                 elif self.item_mode == "npc": self.program.converter.properties["npc"].append({"type":self.item,"coord_x":self.x,"coord_y":self.y,"allow_x":0,"allow_y":0})
+                elif self.item_mode == "door": self.program.converter.properties["doors"].append({"type":self.item,"dest":"null","coord_x":self.x,"coord_y":self.y,"dest_x":0,"dest_y":0})
         self.program.map.load_matrix()

@@ -48,6 +48,10 @@ return {
     			doors={
                     {dest = "castle", coord_x = 19, coord_y = 23, dest_x = 19, dest_y = 1, type = 2},
 										{dest = "castle", coord_x = 20, coord_y = 23, dest_x = 20, dest_y = 1, type = 2},
+										{dest = "null", coord_x = 12, coord_y = 7, dest_x = 0, dest_y = 0, type = 1},
+										{dest = "null", coord_x = 12, coord_y = 8, dest_x = 0, dest_y = 0, type = 1},
+										{dest = "null", coord_x = 27, coord_y = 7, dest_x = 0, dest_y = 0, type = 1},
+										{dest = "null", coord_x = 27, coord_y = 8, dest_x = 0, dest_y = 0, type = 1},
 										
     			},
     			npc={
