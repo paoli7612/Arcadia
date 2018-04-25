@@ -11,9 +11,9 @@ function Boss()
 	boss.grill = Grill()
 	boss.images = Images(boss.grill)
 	boss.maps = Maps(boss)
-	boss.player = Player(boss,5,5)
+	boss.player = Player(boss,20,5)
 
-	boss.group = boss.maps["village"]
+	boss.group = boss.maps["castle"]
 	return boss
 end
 
