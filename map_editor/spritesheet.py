@@ -68,8 +68,7 @@ class Spritesheet:
         self.images["basictiles"]["decor"]["sedding"] = get_image(6,10)
 
 # CHARACTERS_____________________________________________________________________________________________________
-        self.characters = Images(os.path.join(self.program.path_img,"characters" + self.program.opt.IMAGE_FORMAT))
-        get_image = self.characters.get_image
+        get_image = Images(os.path.join(self.program.path_img,"characters" + self.program.opt.IMAGE_FORMAT)).get_image
 
         # CHARACTERS
         self.images["characters"] = dict()
@@ -90,9 +89,20 @@ class Spritesheet:
         self.images["characters"]["ghost_blue"] = get_image(7,12)
         self.images["characters"]["ghost_green"] = get_image(10,12)
 
+        get_image = Images(os.path.join(self.program.path_img,"specials" + self.program.opt.IMAGE_FORMAT)).get_image
+        self.images["characters"]["king"] = get_image(0,0)
+        self.images["characters"]["queen"] = get_image(1,0)
+        self.images["characters"]["seller_blue"] = get_image(2,0)
+        self.images["characters"]["seller_blueHair"] = get_image(3,0)
+        self.images["characters"]["seller_red"] = get_image(4,0)
+        self.images["characters"]["seller_redHair"] = get_image(5,0)
+        self.images["characters"]["seller_green"] = get_image(2,1)
+        self.images["characters"]["seller_greenHair"] = get_image(3,1)
+        self.images["characters"]["seller_yellow"] = get_image(4,1)
+        self.images["characters"]["seller_yellowHair"] = get_image(5,1)
+
 # THINGS_____________________________________________________________________________________________________
-        self.things = Images(os.path.join(self.program.path_img,"things" + self.program.opt.IMAGE_FORMAT))
-        get_image = self.things.get_image
+        get_image = Images(os.path.join(self.program.path_img,"things" + self.program.opt.IMAGE_FORMAT)).get_image
 
         #TORCH
         self.images["things"] = dict()
