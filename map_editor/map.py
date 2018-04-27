@@ -24,15 +24,15 @@ class Map:
         for y,row in enumerate(self.matrix):
             for x,cell in enumerate(row):
                 if cell in list(range(1,20)):   # WALL
-                    for element in self.program.converter.properties["walls"]:
-                        if element["id"] == cell: self.screen.blit(self.program.images.images["basictiles"]["wall"][element["bloke"]][element["type"]], (x*self.program.opt.TILE_SIZE, y*self.program.opt.TILE_SIZE))
+                    for element in self.program.converter.properties["wall"]:
+                        if element["id"] == cell: self.screen.blit(self.program.images.images["basictiles"]["wall"][element["code"]], (x*self.program.opt.TILE_SIZE, y*self.program.opt.TILE_SIZE))
                 if cell in list(range(20,40)):   # FLOOR
-                    for element in self.program.converter.properties["floors"]:
-                        if element["id"] == cell: self.screen.blit(self.program.images.images["basictiles"]["floor"][element["bloke"]][element["type"]], (x*self.program.opt.TILE_SIZE, y*self.program.opt.TILE_SIZE))
+                    for element in self.program.converter.properties["floor"]:
+                        if element["id"] == cell: self.screen.blit(self.program.images.images["basictiles"]["floor"][element["code"]], (x*self.program.opt.TILE_SIZE, y*self.program.opt.TILE_SIZE))
 
 
         #load others
-        for element in self.program.converter.properties["doors"]:
+        for element in self.program.converter.properties["door"]:
             self.screen.blit(self.program.images.images["basictiles"]["door"][element["type"]],
             (element["coord_x"]*self.program.opt.TILE_SIZE, element["coord_y"]*self.program.opt.TILE_SIZE))
         for element in self.program.converter.properties["decor"]:  # DECOR

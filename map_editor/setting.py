@@ -8,6 +8,7 @@ class Setting:
     SIZE = WIDTH, HEIGHT
     LUA_FORMAT = ".lua"
     IMAGE_FORMAT = ".png"
+    JSON_FORMAT = ".json"
 
     class Colors:
         BLACK = (0,0,0)

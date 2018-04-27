@@ -44,60 +44,67 @@ class Program:
         self.all_floors = list()
 
         y = 0
-        for bloke, list_image in self.images.images["basictiles"]["wall"].items():
-            for type,image in enumerate(list_image):
-                print((bloke,type))
-                self.creation_screen.blit(image, (0, y))
-                self.all_walls.append((bloke,type))
-                y += self.opt.TILE_SIZE
+        for code, image in self.images.images["basictiles"]["wall"].items():
+            self.creation_screen.blit(image, (0, y))
+            self.all_walls.append((code,type))
+            y += self.opt.TILE_SIZE
 
         y = 0
-        for bloke, list_image in self.images.images["basictiles"]["floor"].items():
-            for type,image in enumerate(list_image):
-                print((bloke,type))
-                self.creation_screen.blit(image, (self.opt.TILE_SIZE, y))
-                self.all_floors.append((bloke,type))
-                y += self.opt.TILE_SIZE
+        for code, image in self.images.images["basictiles"]["floor"].items():
+            self.creation_screen.blit(image, (self.opt.TILE_SIZE, y))
+            self.all_floors.append((code,type))
+            y += self.opt.TILE_SIZE
 
     def set_properties_screen(self):
         self.properties_screen = pygame.Surface((self.opt.WIDTH, self.opt.TILE_SIZE*5))
         self.properties_screen.fill((200,200,200))
-        self.list_walls = list()
-        self.list_floors = list()
-        self.list_doors = list()
-        self.list_decors = list()
+        self.properties = dict()
+
+        print(self.converter.properties)
+
+        for item_name in "wall floor decor".split():
+            x = 0
+            self.properties[item_name] = list()
+            for item in self.converter.properties[item_name]:
+                self.properties_screen.blit(self.images.images["basictiles"][item_name][item["code"]], (x, 0))
+                self.properties[item_name].append(item["id"])
+                x += self.opt.TILE_SIZE
+
         self.list_npc = list()
-
-        x = 0
-        for wall in self.converter.properties["walls"]:
-            self.properties_screen.blit(self.images.images["basictiles"]["wall"][wall["bloke"]][wall["type"]], (x, 0))
-            self.list_walls.append(wall["id"])
-            x += self.opt.TILE_SIZE
-
-        x = 0
-        for floor in self.converter.properties["floors"]:
-            self.properties_screen.blit(self.images.images["basictiles"]["floor"][floor["bloke"]][floor["type"]], (x, self.opt.TILE_SIZE))
-            self.list_floors.append(floor["id"])
-            x += self.opt.TILE_SIZE
-
-        x = 0
-        for name, image in self.images.images["basictiles"]["decor"].items():
-            self.properties_screen.blit(image, (x, self.opt.TILE_SIZE*2))
-            self.list_decors.append(name)
-            x += self.opt.TILE_SIZE
-
         x = 0
         for name, image in self.images.images["characters"].items():
             self.properties_screen.blit(image, (x, self.opt.TILE_SIZE*3))
             self.list_npc.append(name)
             x += self.opt.TILE_SIZE
 
+        self.list_doors = list()
         x = 0
-        for type,image in enumerate(self.images.images["basictiles"]["door"]):
+        for name,image in self.images.images["basictiles"]["door"].items():
             self.properties_screen.blit(image, (x, self.opt.TILE_SIZE*4))
             self.list_doors.append(type)
             x += self.opt.TILE_SIZE
 
+    def draw(self):
+        self.screen.fill((0,0,0))
+        self.screen.blit(self.map.screen,(0,0))
+        self.screen.blit(self.grill,(0,0))
+        self.screen.blit(self.properties_screen, (0, self.opt.HEIGHT))
+        self.screen.blit(self.creation_screen, (self.opt.WIDTH, 0))
+        self.selector.draw(self.screen)
+        pygame.display.flip()
+
+    def event(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT: self.running = False
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE: self.pause = not self.pause
+                elif event.key == pygame.K_s: self.builder.save()
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 1: self.selector.click()
+                if event.button == 3: self.selector.remove()
+            elif event.type == pygame.MOUSEMOTION:
+                if event.buttons[0] == 1: self.selector.click()
+                if event.buttons[2] == 1: self.selector.remove()
 
     def loop(self):
         self.set_properties_screen()
@@ -105,28 +112,11 @@ class Program:
         self.running = True
         self.pause = False
         while self.running:
-            self.converter.update()
             self.clock.tick(50)
+            self.converter.update()
             self.selector.update()
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    self.running = False
-                elif event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_ESCAPE: self.pause = not self.pause
-                    elif event.key == pygame.K_s: self.builder.save()
-                elif event.type == pygame.MOUSEBUTTONDOWN:
-                    if event.button == 1: self.selector.click()
-                    if event.button == 3: self.selector.remove()
-                elif event.type == pygame.MOUSEMOTION:
-                    if event.buttons[0] == 1: self.selector.click()
-                    if event.buttons[2] == 1: self.selector.remove()
-            self.screen.fill((0,0,0))
-            self.screen.blit(self.map.screen,(0,0))
-            self.screen.blit(self.grill,(0,0))
-            self.screen.blit(self.properties_screen, (0, self.opt.HEIGHT))
-            self.screen.blit(self.creation_screen, (self.opt.WIDTH, 0))
-            self.selector.draw(self.screen)
-            pygame.display.flip()
+            self.event()
+            self.draw()
 
 # test
 if __name__ == "__main__":
