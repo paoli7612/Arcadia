@@ -58,15 +58,15 @@ for word in s:gmatch("%a+") do table.insert(words, word) end
   for i,n in ipairs(words) do if not(n == "lua") then load_map(require("maps/"..n)) end end
   ]]
   load_map(require("maps/spawn"))
-    load_map(require("maps/street"))
-      load_map(require("maps/castle"))
-        load_map(require("maps/castleHall"))
-      load_map(require("maps/dungeon"))
-      load_map(require("maps/lake"))
-      load_map(require("maps/village"))
-        load_map(require("maps/streetDolphin"))
-        load_map(require("maps/streetTortoise"))
-        load_map(require("maps/streetElephant"))
+    -- load_map(require("maps/street"))
+      -- load_map(require("maps/castle"))
+        -- load_map(require("maps/castleHall"))
+      -- load_map(require("maps/dungeon"))
+      -- load_map(require("maps/lake"))
+      -- load_map(require("maps/village"))
+        -- load_map(require("maps/streetDolphin"))
+        -- load_map(require("maps/streetTortoise"))
+        -- load_map(require("maps/streetElephant"))
 
 
   return maps
