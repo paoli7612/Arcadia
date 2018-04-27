@@ -44,20 +44,16 @@ class Program:
         self.all_floors = list()
 
         y = 0
-        for bloke, list_image in self.images.images["basictiles"]["wall"].items():
-            for type,image in enumerate(list_image):
-                print((bloke,type))
-                self.creation_screen.blit(image, (0, y))
-                self.all_walls.append((bloke,type))
-                y += self.opt.TILE_SIZE
+        for code, image in self.images.images["basictiles"]["wall"].items():
+            self.creation_screen.blit(image, (0, y))
+            self.all_walls.append((code,type))
+            y += self.opt.TILE_SIZE
 
         y = 0
-        for bloke, list_image in self.images.images["basictiles"]["floor"].items():
-            for type,image in enumerate(list_image):
-                print((bloke,type))
-                self.creation_screen.blit(image, (self.opt.TILE_SIZE, y))
-                self.all_floors.append((bloke,type))
-                y += self.opt.TILE_SIZE
+        for code, image in self.images.images["basictiles"]["floor"].items():
+            self.creation_screen.blit(image, (self.opt.TILE_SIZE, y))
+            self.all_floors.append((code,type))
+            y += self.opt.TILE_SIZE
 
     def set_properties_screen(self):
         self.properties_screen = pygame.Surface((self.opt.WIDTH, self.opt.TILE_SIZE*5))
@@ -93,7 +89,8 @@ class Program:
             x += self.opt.TILE_SIZE
 
         x = 0
-        for type,image in enumerate(self.images.images["basictiles"]["door"]):
+        for name,image in self.images.images["basictiles"]["door"].items():
+            print("qui",image)
             self.properties_screen.blit(image, (x, self.opt.TILE_SIZE*4))
             self.list_doors.append(type)
             x += self.opt.TILE_SIZE

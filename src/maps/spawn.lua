@@ -30,30 +30,25 @@ return {
     	},
     	properties={
     			walls={
-                    {id = 1, bloke = "blue", type = 1},
-										{id = 2, bloke = "blue", type = 2},
+                    {id = 1, code ="00001"},
+										{id = 2, code ="00001"},
 
     			},
     			floors={
-                    {id = 20, bloke = "grass", type = 1},
-										{id = 21, bloke = "grass", type = 2},
+                    {id = 20, code = "10001"},
+										{id = 21, code = "10001"},
 
     			},
     			doors={
-                    {dest = "street", coord_x = 19, coord_y = 24, dest_x = 19, dest_y = 1, type = 1},
-										{dest = "street",coord_y = 20, coord_y = 24, dest_x = 20, dest_y = 1, type = 1},
 
     			},
     			npc={
-                    {type = "boy", coord_x = 3, coord_y = 3, allow_x = 0, allow_y = 0},
-										{type = "alien", coord_x = 36, coord_y = 3, allow_x = 0, allow_y = 0},
 
                 },
     			decor={
 
                 },
     			torch={
-                    {color = "yellow", coord_x = 1, coord_y = 1},
 
     			},
     			cartel={
