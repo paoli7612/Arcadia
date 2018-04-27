@@ -46,9 +46,6 @@ return {
 										{dest = "street", coord_x = 39, coord_y = 22, dest_x = 1, dest_y = 4, type = 1},
 										{dest = "castleHall", coord_x = 19, coord_y = 0, dest_x = 19, dest_y = 22, type = 2},
 										{dest = "castleHall", coord_x = 20, coord_y = 0, dest_x = 20, dest_y = 22, type = 2},
-										{dest = "null", coord_x = 4, coord_y = 8, dest_x = 0, dest_y = 0, type = 1},
-										{dest = "null", coord_x = 35, coord_y = 8, dest_x = 0, dest_y = 0, type = 1},
-										{dest = "null", coord_x = 4, coord_y = 21, dest_x = 0, dest_y = 0, type = 1},
 
     			},
     			npc={

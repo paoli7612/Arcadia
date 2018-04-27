@@ -35,16 +35,15 @@ return {
 
     			},
     			floors={
-                    {id = 20, code = "10055"},
-										{id = 20, code = "10056"},
+                    {id = 20, code = "10054"},
+										{id = 21, code = "10053"},
 
     			},
     			doors={
-
-
+                    {dest = "street", code = "30001", coord_x = 20, coord_y = 24, dest_x = 9, dest_y = 9 },
+                    {dest = "street", code = "30001", coord_x = 19, coord_y = 24, dest_x = 9, dest_y = 9 },
     			},
     			npc={
-
 
                 },
     			decor={

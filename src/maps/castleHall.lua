@@ -26,7 +26,7 @@ return {
 						,00,00,00,00,00,00,00,00,00,00,00,00,00,03,22,22,22,22,22,22,22,22,22,22,22,22,03,00,00,00,00,00,00,00,00,00,00,00,00,00
 						,00,00,00,00,00,00,00,00,00,00,00,00,00,03,02,02,02,02,02,22,22,02,02,02,02,02,03,00,00,00,00,00,00,00,00,00,00,00,00,00
 						,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
-						
+
     	},
     	properties={
     			walls={
@@ -34,7 +34,7 @@ return {
 										{id = 3, bloke = "stone", type = 1},
 										{id = 4, bloke = "wood", type = 2},
 										{id = 5, bloke = "wood", type = 1},
-										
+
     			},
     			floors={
                     {id = 21, bloke = "stone", type = 1},
@@ -43,28 +43,24 @@ return {
 										{id = 24, bloke = "wood", type = 1},
 										{id = 25, bloke = "stairs", type = 3},
 										{id = 26, bloke = "stairs", type = 4},
-										
+
     			},
     			doors={
                     {dest = "castle", coord_x = 19, coord_y = 23, dest_x = 19, dest_y = 1, type = 2},
 										{dest = "castle", coord_x = 20, coord_y = 23, dest_x = 20, dest_y = 1, type = 2},
-										{dest = "null", coord_x = 12, coord_y = 7, dest_x = 0, dest_y = 0, type = 1},
-										{dest = "null", coord_x = 12, coord_y = 8, dest_x = 0, dest_y = 0, type = 1},
-										{dest = "null", coord_x = 27, coord_y = 7, dest_x = 0, dest_y = 0, type = 1},
-										{dest = "null", coord_x = 27, coord_y = 8, dest_x = 0, dest_y = 0, type = 1},
-										
+
     			},
     			npc={
-                    
+
                 },
     			decor={
-                    
+
                 },
     			torch={
-                    
+
     			},
     			cartel={
-                    
+
                 }
     		}
     	}

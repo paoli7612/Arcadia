@@ -37,7 +37,10 @@ function Maps(boss)
       end
       x = x+1
     end
-    for i,door in ipairs(level.properties.doors) do maps[level.name].add(Door(boss,door)) end
+    for i,door in ipairs(level.properties.doors) do
+      maps[level.name].add(Door(boss,door))
+      if maps[door.dest] == nil then load_map(require("maps/" .. door.dest)) end
+    end
     for i,npc in ipairs(level.properties.npc) do maps[level.name].add(Npc(boss,npc)) end
     for i,decor in ipairs(level.properties.decor) do maps[level.name].add(Decor(boss,decor)) end
     for i,torch in ipairs(level.properties.torch) do maps[level.name].add(Torch(boss,torch)) end
