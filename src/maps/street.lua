@@ -35,9 +35,9 @@ return {
 
     			},
     			floors={
-                    {id = 20, code = "10004"},
-										{id = 21, code = "10005"},
-										{id = 22, code = "10006"},
+                    {id = 20, code = "10055"},
+										{id = 21, code = "10056"},
+										{id = 22, code = "10057"},
 
     			},
     			doors={
