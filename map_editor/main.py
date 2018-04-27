@@ -90,11 +90,31 @@ class Program:
 
         x = 0
         for name,image in self.images.images["basictiles"]["door"].items():
-            print("qui",image)
             self.properties_screen.blit(image, (x, self.opt.TILE_SIZE*4))
             self.list_doors.append(type)
             x += self.opt.TILE_SIZE
 
+    def draw(self):
+        self.screen.fill((0,0,0))
+        self.screen.blit(self.map.screen,(0,0))
+        self.screen.blit(self.grill,(0,0))
+        self.screen.blit(self.properties_screen, (0, self.opt.HEIGHT))
+        self.screen.blit(self.creation_screen, (self.opt.WIDTH, 0))
+        self.selector.draw(self.screen)
+        pygame.display.flip()
+
+    def event(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT: self.running = False
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE: self.pause = not self.pause
+                elif event.key == pygame.K_s: self.builder.save()
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 1: self.selector.click()
+                if event.button == 3: self.selector.remove()
+            elif event.type == pygame.MOUSEMOTION:
+                if event.buttons[0] == 1: self.selector.click()
+                if event.buttons[2] == 1: self.selector.remove()
 
     def loop(self):
         self.set_properties_screen()
@@ -102,28 +122,11 @@ class Program:
         self.running = True
         self.pause = False
         while self.running:
-            self.converter.update()
             self.clock.tick(50)
+            self.converter.update()
             self.selector.update()
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    self.running = False
-                elif event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_ESCAPE: self.pause = not self.pause
-                    elif event.key == pygame.K_s: self.builder.save()
-                elif event.type == pygame.MOUSEBUTTONDOWN:
-                    if event.button == 1: self.selector.click()
-                    if event.button == 3: self.selector.remove()
-                elif event.type == pygame.MOUSEMOTION:
-                    if event.buttons[0] == 1: self.selector.click()
-                    if event.buttons[2] == 1: self.selector.remove()
-            self.screen.fill((0,0,0))
-            self.screen.blit(self.map.screen,(0,0))
-            self.screen.blit(self.grill,(0,0))
-            self.screen.blit(self.properties_screen, (0, self.opt.HEIGHT))
-            self.screen.blit(self.creation_screen, (self.opt.WIDTH, 0))
-            self.selector.draw(self.screen)
-            pygame.display.flip()
+            self.event()
+            self.draw()
 
 # test
 if __name__ == "__main__":
