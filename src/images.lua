@@ -14,7 +14,7 @@ function Spritesheet(grill, type)
     love.graphics.draw(image, quad, x, y, 0,(grill.tile/size), (grill.tile/size)) -- correct for float to int
   end
 
-  if type == "characters_test" then
+  if type == "characters" then
     function get_set(x,y)
       local quads = {}
       quads["down"] = {}
@@ -68,7 +68,7 @@ function Images(grill)
   local images = {}
   -- basictiles
   images["basictiles"] = Spritesheet(grill,"basictiles")
-  images["characters"] = Spritesheet(grill,"characters_test")
+  images["characters"] = Spritesheet(grill,"characters")
 
   return images
 end
