@@ -21,7 +21,6 @@ function Player(boss,x,y)
 	}
 
 	function player.draw()
-		for p in pairs(spritesheet.quads["npc"]) do print("player",p) end
 		spritesheet.draw_image(player.x*grill.tile, player.y*grill.tile, spritesheet.quads["npc"]["00001"][direction][position][frame])
 	end
 
