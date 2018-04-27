@@ -58,36 +58,26 @@ class Program:
     def set_properties_screen(self):
         self.properties_screen = pygame.Surface((self.opt.WIDTH, self.opt.TILE_SIZE*5))
         self.properties_screen.fill((200,200,200))
-        self.list_walls = list()
-        self.list_floors = list()
-        self.list_doors = list()
-        self.list_decors = list()
+        self.properties = dict()
+
+        print(self.converter.properties)
+
+        for item_name in "wall floor decor".split():
+            x = 0
+            self.properties[item_name] = list()
+            for item in self.converter.properties[item_name]:
+                self.properties_screen.blit(self.images.images["basictiles"][item_name][item["code"]], (x, 0))
+                self.properties[item_name].append(item["id"])
+                x += self.opt.TILE_SIZE
+
         self.list_npc = list()
-
-        x = 0
-        for wall in self.converter.properties["walls"]:
-            self.properties_screen.blit(self.images.images["basictiles"]["wall"][wall["bloke"]][wall["type"]], (x, 0))
-            self.list_walls.append(wall["id"])
-            x += self.opt.TILE_SIZE
-
-        x = 0
-        for floor in self.converter.properties["floors"]:
-            self.properties_screen.blit(self.images.images["basictiles"]["floor"][floor["bloke"]][floor["type"]], (x, self.opt.TILE_SIZE))
-            self.list_floors.append(floor["id"])
-            x += self.opt.TILE_SIZE
-
-        x = 0
-        for name, image in self.images.images["basictiles"]["decor"].items():
-            self.properties_screen.blit(image, (x, self.opt.TILE_SIZE*2))
-            self.list_decors.append(name)
-            x += self.opt.TILE_SIZE
-
         x = 0
         for name, image in self.images.images["characters"].items():
             self.properties_screen.blit(image, (x, self.opt.TILE_SIZE*3))
             self.list_npc.append(name)
             x += self.opt.TILE_SIZE
 
+        self.list_doors = list()
         x = 0
         for name,image in self.images.images["basictiles"]["door"].items():
             self.properties_screen.blit(image, (x, self.opt.TILE_SIZE*4))

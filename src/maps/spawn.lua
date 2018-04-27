@@ -31,12 +31,12 @@ return {
     	properties={
     			walls={
                     {id = 1, code ="00001"},
-										{id = 2, code ="00001"},
+										{id = 2, code ="00002"},
 
     			},
     			floors={
-                    {id = 20, code = "10001"},
-										{id = 21, code = "10001"},
+                    {id = 20, code = "10003"},
+										{id = 21, code = "10002"},
 
     			},
     			doors={
