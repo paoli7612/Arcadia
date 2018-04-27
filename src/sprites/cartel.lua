@@ -15,7 +15,9 @@ function Cartel(boss,properties)
 	}
 
 	function cartel.draw()
-		spritesheet.draw_image(cartel.x*cartel.size,cartel.y*cartel.size,spritesheet.quads["cartel"])
+		for p in pairs(spritesheet.quads["cartel"]) do print(p) end
+		print(spritesheet.quads["cartel"])
+		spritesheet.draw_image(cartel.x*cartel.size,cartel.y*cartel.size,spritesheet.quads["cartel"][properties.code])
 		if cartel.activate then love.graphics.print(cartel.properties.text, cartel.x*cartel.size,cartel.y*cartel.size) end
 	end
 
