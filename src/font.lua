@@ -61,8 +61,6 @@ function Letters(image)
   Letters.yellow["x"] = get_image(23,1)
   Letters.yellow["y"] = get_image(24,1)
   Letters.yellow["z"] = get_image(25,1)
-
-
   return Letters
 end
 

@@ -34,5 +34,5 @@ end
 function love.draw()
 	boss.group.draw()
 	boss.player.draw()
-	boss.font.write(100,100,"lili oldrin e suo marito")
+	boss.font.write(100,100,"testo di prova")
 end
