@@ -10,11 +10,11 @@ function Floor(boss,x,y,properties)
     name = "floor",
 		x = x,
 		y = y,
+		code = properties.code
 	}
 
 	function floor.draw()
-		print(floor.x,floor.y)
-		spritesheet.draw_image(floor.x*grill.tile,floor.y*grill.tile,spritesheet.quads["floor"][properties.bloke][properties.type])
+		spritesheet.draw_image(floor.x*grill.tile,floor.y*grill.tile,spritesheet.quads["floor"][floor.code])
 	end
 
 	return floor

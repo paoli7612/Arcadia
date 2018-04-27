@@ -4,6 +4,9 @@ function Player(boss,x,y)
 	local grill = boss.grill
 	local boss = boss
 	local spritesheet = boss.images["characters"]
+	for a in pairs(spritesheet.quads) do
+		print(a)
+	end
 	local time = 0
 
 	local direction = "down"
@@ -18,7 +21,7 @@ function Player(boss,x,y)
 	}
 
 	function player.draw()
-		spritesheet.draw_image(player.x*grill.tile, player.y*grill.tile, spritesheet.quads["barra"][direction][position][frame])
+		spritesheet.draw_image(player.x*grill.tile, player.y*grill.tile, spritesheet.quads["npc"]["00001"][direction][position][frame])
 	end
 
 	function player.update(dt)

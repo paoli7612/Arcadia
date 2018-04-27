@@ -26,56 +26,44 @@ return {
 						,02,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,21,20,20,20,20,20,20,21,20,20,21,20,20,20,20,20,20,20,21,20,20,20,20,02
 						,02,20,20,21,20,20,21,20,20,20,20,20,21,20,21,20,20,20,20,20,20,20,20,20,20,20,21,20,20,20,20,20,20,20,20,20,20,20,20,02
 						,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01,01
-						
+
     	},
     	properties={
     			walls={
-                    {id = 1, bloke = "red", type = 3},
-										{id = 2, bloke = "red", type = 2},
-										
+                    {id = 1, code = "00003"},
+										{id = 2, code = "00004"},
+
     			},
     			floors={
-                    {id = 20, bloke = "grass", type = 1},
-										{id = 21, bloke = "grass", type = 2},
-										{id = 22, bloke = "stone", type = 1},
-										
+                    {id = 20, code = "10055"},
+										{id = 21, code = "10056"},
+										{id = 22, code = "10057"},
+
     			},
     			doors={
-                    {dest = "spawn", coord_x = 19, coord_y = 0, dest_x = 19, dest_y = 23, type = 3},
-										{dest = "spawn", coord_x = 20, coord_y = 0, dest_x = 20, dest_y = 23, type = 3},
-										{dest = "castle", coord_x = 0, coord_y = 3, dest_x = 38, dest_y = 21, type = 1},
-										{dest = "castle", coord_x = 0, coord_y = 4, dest_x = 38, dest_y = 22, type = 1},
-										{dest = "village", coord_x = 0, coord_y = 20, dest_x = 38, dest_y = 2, type = 1},
-										{dest = "village", coord_x = 0, coord_y = 21, dest_x = 38, dest_y = 3, type = 1},
-										{dest = "lake", coord_x = 39, coord_y = 20, dest_x = 20, dest_y = 23, type = 1},
-										{dest = "lake", coord_x = 39, coord_y = 21, dest_x = 20, dest_y = 23, type = 1},
-										{dest = "dungeon", coord_x = 39, coord_y = 3, dest_x = 20, dest_y = 23, type = 1},
-										{dest = "dungeon", coord_x = 39, coord_y = 4, dest_x = 20, dest_y = 23, type = 1},
-										
+                    {dest = "spawn", code = "30001", coord_x = 19, coord_y = 0, dest_x = 19, dest_y = 23},
+										{dest = "spawn", code = "30001", coord_x = 20, coord_y = 0, dest_x = 20, dest_y = 23},
+										{dest = "castle", code = "30001", coord_x = 0, coord_y = 3, dest_x = 38, dest_y = 21},
+										{dest = "castle", code = "30001", coord_x = 0, coord_y = 4, dest_x = 38, dest_y = 22},
+										{dest = "village", code = "30001", coord_x = 0, coord_y = 20, dest_x = 38, dest_y = 2},
+										{dest = "village", code = "30001", coord_x = 0, coord_y = 21, dest_x = 38, dest_y = 3},
+
+
     			},
     			npc={
-                    {type = "libri", coord_x = 20, coord_y = 12, allow_x = 6, allow_y = 6},
-										{type = "boy", coord_x = 30, coord_y = 6, allow_x = 3, allow_y = 3},
-										
+
                 },
     			decor={
-                    
+
                 },
     			torch={
-                    {color = "yellow", coord_x = 17, coord_y = 2},
-										{color = "yellow", coord_x = 22, coord_y = 2},
-										{color = "blue", coord_x = 1, coord_y = 2},
-										{color = "green", coord_x = 1, coord_y = 22},
-										{color = "red", coord_x = 38, coord_y = 2},
-										{color = "blue", coord_x = 38, coord_y = 22},
-										
+
+
     			},
     			cartel={
-                    {text = "village", coord_x = 1, coord_y = 19},
-										{text = "castle", coord_x = 1, coord_y = 5},
-										{text = "dungeon", coord_x = 38, coord_y = 5},
-										{text = "lake", coord_x = 38, coord_y = 19},
-										
+                    {text = "tortoise", code = "40001", coord_x = 3, coord_y = 23},
+                    {text = "tortoise", code = "40002", coord_x = 7, coord_y = 23},
+
                 }
     		}
     	}
