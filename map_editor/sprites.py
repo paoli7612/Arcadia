@@ -95,3 +95,10 @@ def newSprite(type_name, param):
     elif type_name == "decor": return Decor(*param)
     elif type_name == "torch": return Torch(*param)
     elif type_name == "cartel": return Cartel(*param)
+
+def newSprite_code(self, code, x, y):
+    i = code[0]
+    if i == "2": return Decor(code,x,y), type
+    if i == "3": return Door("null",code,x,y,0,0), type
+    if i == "4": return Torch(code,x,y), type
+    if i == "5": return Cartel("",code,x,y), type

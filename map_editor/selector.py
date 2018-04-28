@@ -1,4 +1,5 @@
 import pygame
+from sprites import newSprite_code
 
 class Selector(pygame.sprite.Sprite):
     def __init__(self,program):
@@ -65,17 +66,21 @@ class Selector(pygame.sprite.Sprite):
                         return
                 except: pass
 
+
     def click(self):
         opt = self.program.opt
+        prop = self.program.toolbar.prop
 
         if self.x == opt.TILE_X or self.y == opt.TILE_Y:
             print("invalid click"); return
         if self.position == "map":
             self.program.map.matrix[self.y][self.x] = self.id
         elif self.position == "toolbar":
-            try: print(self.program.toolbar.prop[self.x-opt.TILE_X-1][self.y]["code"])
-            except:
+            try: # PRIMARY
+                self.selected =prop[self.x-opt.TILE_X-1][self.y]["code"]
+            except: # SECONDARY
                 try:
-                    print(self.program.toolbar.prop[self.x-opt.TILE_X-1][self.y])
+                    self.selected = prop[self.x-opt.TILE_X-1][self.y]
                 except: pass
         self.program.map.draw_matrix()
+        print(self.selected)

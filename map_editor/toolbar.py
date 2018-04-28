@@ -1,5 +1,5 @@
 import pygame
-from sprites import TYPES_NAME_PRIMARY, TYPES_NAME_SECONDARY
+from sprites import TYPES_NAME
 
 class Toolbar:
     def __init__(self, program):
@@ -14,19 +14,8 @@ class Toolbar:
         prop = self.program.converter.properties
         images = self.program.images.images
 
-        # PRIMARY
-        for x,type_name in enumerate(TYPES_NAME_PRIMARY):
-            self.prop[x] = list()
-            for y,element in enumerate(prop[type_name]):
-                image = images["basictiles"][type_name][element["code"]]
-                self.screen.blit(image, (x*self.opt.TILE_SIZE,y*self.opt.TILE_SIZE))
-                self.prop[x].append(element)
-            pygame.draw.line(self.screen,self.opt.Colors.BLACK, (self.opt.TILE_SIZE*(x+1),0),
-                            (self.opt.TILE_SIZE*(x+1),self.opt.HEIGHT), 4)
-
-        # SECONDARY
-        px = 2
-        tns = TYPES_NAME_SECONDARY
+        px = 0
+        tns = TYPES_NAME
         del tns[tns.index("npc")]
         for x,type_name in enumerate(tns):
             self.prop[x+px] = list()
@@ -42,12 +31,10 @@ class Toolbar:
             pygame.draw.line(self.screen, self.opt.Colors.BLACK, (self.opt.TILE_SIZE*(x+px+1),0),
                             (self.opt.TILE_SIZE*(x+px+1),self.opt.HEIGHT), 4)
 
-        for y,image in enumerate(images["characters"]["npc"].values()):
+        self.prop[x+px+1] = list()
+        for y,(code, image) in enumerate(images["characters"]["npc"].items()):
             self.screen.blit(image, ((x+px+1)*self.opt.TILE_SIZE,(y)*self.opt.TILE_SIZE))
-
-
-    def update():
-        pass
+            self.prop[x+px+1].append(code)
 
     def draw(self, screen):
         screen.blit(self.screen,(self.opt.WIDTH+self.opt.TILE_SIZE,0))
