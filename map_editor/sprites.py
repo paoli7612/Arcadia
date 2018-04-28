@@ -1,6 +1,8 @@
 import template
 
-TYPES_NAME = "wall floor door npc decor torch cartel".split()
+TYPES_NAME_SECONDARY = "door npc decor torch cartel".split()
+TYPES_NAME_PRIMARY = "wall floor".split()
+TYPES_NAME = TYPES_NAME_SECONDARY + TYPES_NAME_PRIMARY
 
 def get_int(str): return int(str.split("=")[1])
 def get_str(str): return str.split("=")[1].split("\"")[1]

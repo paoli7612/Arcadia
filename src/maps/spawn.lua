@@ -29,15 +29,15 @@ return {
 
     	},
     	properties={
-    			walls={
+    			wall={
                     {id = 1, code = "00003"},
 										{id = 2, code = "00007"},
     			},
-    			floors={
+    			floor={
                     {id = 20, code = "10054"},
 										{id = 21, code = "10053"},
     			},
-    			doors={
+    			door={
                     {dest = "street", code = "30001", coord_x = 20, coord_y = 24, dest_x = 9, dest_y = 9},
 										{dest = "street", code = "30001", coord_x = 19, coord_y = 24, dest_x = 9, dest_y = 9},
     			},

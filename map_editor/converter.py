@@ -22,9 +22,9 @@ class Converter:
         self.properties = dict()
 
         # get text
-        self.properties["wall"] = self.lua_text.split("walls")[1].split("floors")[0]
-        self.properties["floor"] = self.lua_text.split("floors")[1].split("doors")[0]
-        self.properties["door"] = self.lua_text.split("doors")[1].split("npc")[0]
+        self.properties["wall"] = self.lua_text.split("wall")[1].split("floor")[0]
+        self.properties["floor"] = self.lua_text.split("floor")[1].split("door")[0]
+        self.properties["door"] = self.lua_text.split("door")[1].split("npc")[0]
         self.properties["npc"] = self.lua_text.split("npc")[1].split("decor")[0]
         self.properties["decor"] = self.lua_text.split("decor")[1].split("torch")[0]
         self.properties["torch"] = self.lua_text.split("torch")[1].split("cartel")[0]

@@ -48,55 +48,14 @@ class Selector(pygame.sprite.Sprite):
                     print(element["coord_x"],self.x,element["coord_y"],self.y)
                     if element["coord_x"] == self.x and element["coord_y"] == self.y:
                         del self.program.converter.properties[type][pos]
-                        self.program.map.load_matrix()
+                        self.program.map.trix()
                         return
                 except: pass
 
     def click(self):
-        if self.y == self.program.opt.TILE_Y:                           # WALL line
-            try:
-                self.id = self.program.list_walls[self.x]
-                self.id_mode = True
-            except: pass
-        elif self.y == self.program.opt.TILE_Y+1:                       # FLOOR line
-            try:
-                self.id = self.program.list_floors[self.x]
-                self.id_mode = True
-            except: pass
-        elif self.y == self.program.opt.TILE_Y+2:                       # DECOR line
-            try:
-                self.item = self.program.list_decors[self.x]
-                self.id_mode = False
-                self.item_mode = "decor"
-            except: pass
-        elif self.y == self.program.opt.TILE_Y+3:                       # NPC line
-            try:
-                self.item = self.program.list_npc[self.x]
-                self.id_mode = False
-                self.item_mode = "npc"
-            except: pass
-        elif self.y == self.program.opt.TILE_Y+4:                       # DOOR line
-            try:
-                self.item = self.program.list_doors[self.x]
-                self.id_mode = False
-                self.item_mode = "door"
-            except: pass
-        elif self.x == self.program.opt.TILE_X:                         # WALL column
-            try:
-                bloke,type = self.program.all_walls[self.y]
-                self.program.converter.properties["walls"].append({"id": self.get_new_id("walls"), "bloke":bloke, "type": type})
-                self.program.set_properties_screen()
-            except: pass
-        elif self.x == self.program.opt.TILE_X + 1:                       # FLOOR column
-            try:
-                bloke,type = self.program.all_floors[self.y]
-                self.program.converter.properties["floors"].append({"id": self.get_new_id("floors"), "bloke":bloke, "type":type})
-                self.program.set_properties_screen()
-            except: pass
+        if self.id_mode: self.program.map.matrix[self.y][self.x] = self.id
         else:
-            if self.id_mode: self.program.map.matrix[self.y][self.x] = self.id
-            else:
-                if self.item_mode == "decor": self.program.converter.properties["decor"].append({"type":self.item,"coord_x":self.x,"coord_y":self.y})
-                elif self.item_mode == "npc": self.program.converter.properties["npc"].append({"type":self.item,"coord_x":self.x,"coord_y":self.y,"allow_x":0,"allow_y":0})
-                elif self.item_mode == "door": self.program.converter.properties["doors"].append({"type":self.item,"dest":"null","coord_x":self.x,"coord_y":self.y,"dest_x":0,"dest_y":0})
-        self.program.map.load_matrix()
+            if self.item_mode == "decor": self.program.converter.properties["decor"].append({"type":self.item,"coord_x":self.x,"coord_y":self.y})
+            elif self.item_mode == "npc": self.program.converter.properties["npc"].append({"type":self.item,"coord_x":self.x,"coord_y":self.y,"allow_x":0,"allow_y":0})
+            elif self.item_mode == "door": self.program.converter.properties["doors"].append({"type":self.item,"dest":"null","coord_x":self.x,"coord_y":self.y,"dest_x":0,"dest_y":0})
+        self.program.map.draw_matrix()

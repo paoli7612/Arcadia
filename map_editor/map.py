@@ -1,10 +1,12 @@
 import pygame
+from sprites import TYPES_NAME_SECONDARY
+
 class Map:
     def __init__(self, program, matrix=False):
         self.program = program
         self.matrix = matrix
         if not matrix: self.convert_matrix()
-        self.load_matrix()
+        self.draw_matrix()
 
     def convert_matrix(self):
         self.matrix = list()
@@ -15,32 +17,21 @@ class Map:
                 self.matrix.append(row)
                 x, y, row = 0, y+1, list()
             else: x += 1
-        self.load_matrix()
+        self.draw_matrix()
 
-    def load_matrix(self):
+    def draw_matrix(self):
         self.screen = pygame.Surface(self.program.opt.SIZE)
-
-        #load matrix
+        prop = self.program.converter.properties
         for y,row in enumerate(self.matrix):
             for x,cell in enumerate(row):
                 if cell in list(range(1,20)):   # WALL
-                    for element in self.program.converter.properties["wall"]:
+                    for element in prop["wall"]:
                         if element["id"] == cell: self.screen.blit(self.program.images.images["basictiles"]["wall"][element["code"]], (x*self.program.opt.TILE_SIZE, y*self.program.opt.TILE_SIZE))
                 if cell in list(range(20,40)):   # FLOOR
-                    for element in self.program.converter.properties["floor"]:
+                    for element in prop["floor"]:
                         if element["id"] == cell: self.screen.blit(self.program.images.images["basictiles"]["floor"][element["code"]], (x*self.program.opt.TILE_SIZE, y*self.program.opt.TILE_SIZE))
 
-
-        #load others
-        for element in self.program.converter.properties["door"]:
-            self.screen.blit(self.program.images.images["basictiles"]["door"][element["code"]],
-            (element["coord_x"]*self.program.opt.TILE_SIZE, element["coord_y"]*self.program.opt.TILE_SIZE))
-        for element in self.program.converter.properties["decor"]:  # DECOR
-            self.screen.blit(self.program.images.images["basictiles"]["decor"][element["code"]],
-            (element["coord_x"]*self.program.opt.TILE_SIZE, element["coord_y"]*self.program.opt.TILE_SIZE))
-        for element in self.program.converter.properties["torch"]:  # TORCH
-            self.screen.blit(self.program.images.images["things"]["torch"][element["color"]],
-            (element["coord_x"]*self.program.opt.TILE_SIZE, element["coord_y"]*self.program.opt.TILE_SIZE))
-        for element in self.program.converter.properties["cartel"]:  # CARTEL
-            self.screen.blit(self.program.images.images["basictiles"]["cartel"][element["code"]],
-            (element["coord_x"]*self.program.opt.TILE_SIZE, element["coord_y"]*self.program.opt.TILE_SIZE))
+        for type_name in TYPES_NAME_SECONDARY:
+            for element in prop[type_name]:
+                self.screen.blit(self.program.images.images["basictiles"][type_name][element["code"]],
+                (element["coord_x"]*self.program.opt.TILE_SIZE, element["coord_y"]*self.program.opt.TILE_SIZE))

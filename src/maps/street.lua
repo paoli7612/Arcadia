@@ -29,18 +29,18 @@ return {
 
     	},
     	properties={
-    			walls={
+    			wall={
                     {id = 1, code = "00003"},
 										{id = 2, code = "00004"},
 
     			},
-    			floors={
+    			floor={
                     {id = 20, code = "10055"},
 										{id = 21, code = "10056"},
 										{id = 22, code = "10057"},
 
     			},
-    			doors={
+    			door={
                     {dest = "spawn", code = "30001", coord_x = 19, coord_y = 0, dest_x = 19, dest_y = 23},
 										{dest = "spawn", code = "30001", coord_x = 20, coord_y = 0, dest_x = 20, dest_y = 23},
 

@@ -37,52 +37,10 @@ class Program:
         for x in range(0, self.opt.WIDTH+1, self.opt.TILE_SIZE): pygame.draw.line(self.grill, (255,255,255), (x, 0), (x, self.opt.HEIGHT))
         self.grill.set_colorkey((0,0,0))
 
-    def set_creation_screen(self):
-        self.creation_screen = pygame.Surface((self.opt.TILE_SIZE*3,self.opt.HEIGHT))
-        self.creation_screen.fill((150,150,150))
-        self.all_walls = list()
-        self.all_floors = list()
-
-        y = 0
-        for code, image in self.images.images["basictiles"]["wall"].items():
-            self.creation_screen.blit(image, (0, y))
-            self.all_walls.append((code,type))
-            y += self.opt.TILE_SIZE
-
-        y = 0
-        for code, image in self.images.images["basictiles"]["floor"].items():
-            self.creation_screen.blit(image, (self.opt.TILE_SIZE, y))
-            self.all_floors.append((code,type))
-            y += self.opt.TILE_SIZE
-
-    def set_properties_screen(self):
-        self.properties_screen = pygame.Surface((self.opt.WIDTH, self.opt.TILE_SIZE*5))
-        self.properties_screen.fill((200,200,200))
-        self.properties = dict()
-
-        print(self.converter.properties)
-
-        for item_name in "wall floor decor".split():
-            x = 0
-            self.properties[item_name] = list()
-            for item in self.converter.properties[item_name]:
-                self.properties_screen.blit(self.images.images["basictiles"][item_name][item["code"]], (x, 0))
-                self.properties[item_name].append(item["id"])
-                x += self.opt.TILE_SIZE
-
-        self.list_doors = list()
-        x = 0
-        for name,image in self.images.images["basictiles"]["door"].items():
-            self.properties_screen.blit(image, (x, self.opt.TILE_SIZE*4))
-            self.list_doors.append(type)
-            x += self.opt.TILE_SIZE
-
     def draw(self):
         self.screen.fill((0,0,0))
         self.screen.blit(self.map.screen,(0,0))
         self.screen.blit(self.grill,(0,0))
-        self.screen.blit(self.properties_screen, (0, self.opt.HEIGHT))
-        self.screen.blit(self.creation_screen, (self.opt.WIDTH, 0))
         self.selector.draw(self.screen)
         pygame.display.flip()
 
@@ -100,8 +58,6 @@ class Program:
                 if event.buttons[2] == 1: self.selector.remove()
 
     def loop(self):
-        self.set_properties_screen()
-        self.set_creation_screen()
         self.running = True
         self.pause = False
         while self.running:

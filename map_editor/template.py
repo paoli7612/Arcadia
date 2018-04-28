@@ -28,11 +28,11 @@ empty ="""return {
     		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     	},
     	properties={
-    			walls={
+    			wall={
     			},
-    			floors={
+    			floor={
     			},
-    			doors={
+    			door={
     			},
     			npc={
                 },
@@ -52,13 +52,13 @@ to_fill ="""return {
             %s
     	},
     	properties={
-    			walls={
+    			wall={
                     %s
     			},
-    			floors={
+    			floor={
                     %s
     			},
-    			doors={
+    			door={
                     %s
     			},
     			npc={
