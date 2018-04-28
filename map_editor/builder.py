@@ -23,13 +23,13 @@ class Builder:
 
         props = self.program.converter.properties
 
-        for wall in props["wall"]: walls += (template.walls %(wall["id"],wall["code"])) + down
-        for floor in props["floor"]: floors += (template.floors %(floor["id"],floor["code"])) + down
-        for door in props["door"]: doors += (template.doors %(door["dest"],door["code"],door["coord_x"],door["coord_y"],door["dest_x"],door["dest_y"])) + down
-        for npc in props["npc"]: npcs += (template.npc %(npc["code"],npc["coord_x"],npc["coord_y"],npc["allow_x"],npc["allow_y"])) + down
-        for decor in props["decor"]: decors += (template.decor %(decor["code"],decor["coord_x"],decor["coord_y"])) + down
-        for torch in props["torch"]: torchs += (template.torch %(torch["color"],torch["coord_x"],torch["coord_y"])) + down
-        for cartel in props["cartel"]: cartels += (template.cartel %(cartel["text"],cartel["coord_x"],cartel["coord_y"])) + down
+        for wall in props["wall"]: walls += str(wall) + down
+        for floor in props["floor"]: floors += str(floor) + down
+        for door in props["door"]: doors += str(door) + down
+        for npc in props["npc"]: npcs += str(npc) + down
+        for decor in props["decor"]: decors += str(decor) + down
+        for torch in props["torch"]: torchs += str(torch) + down
+        for cartel in props["cartel"]: cartels += str(cartel) + down
 
         f = open(self.program.path_maps, "w")
         f.write(template.to_fill %(self.program.name_map, data, walls, floors, doors, npcs, decors, torchs, cartels))

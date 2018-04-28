@@ -52,6 +52,8 @@ class Converter:
             for v in vv: print(v)
 
     def update(self):
+        print("update")
+        print(self.properties)
         for k,v in self.properties.items():
             l = list()
             for element in v:

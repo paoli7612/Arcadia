@@ -8,7 +8,7 @@ def get_int(str): return int(str.split("=")[1])
 def get_str(str): return str.split("=")[1].split("\"")[1]
 
 
-class Wall(dict):
+class Wall:
     def __init__(self, id, code):
         id, code = get_int(id), get_str(code)
         self.dict = {"id": id, "code": code}
