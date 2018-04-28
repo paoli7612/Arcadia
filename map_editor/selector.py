@@ -18,20 +18,28 @@ class Selector(pygame.sprite.Sprite):
     def draw_coord(self):
         self.draw_text(("%d - %d" %(self.x,self.y)),0,self.opt.TILE_Y*self.opt.TILE_SIZE)
 
-    def write(self,text):
-        self.draw_text(text, 100 ,self.opt.TILE_Y*self.opt.TILE_SIZE)
+    def write(self,text, y):
+        self.draw_text(text, 100 ,self.opt.TILE_Y*self.opt.TILE_SIZE + y*self.opt.TILE_SIZE)
 
     def draw_text(self, text, x, y):
-        text_surface = self.font.render(text, True, self.opt.FONT_COLOR)
-        text_rect = text_surface.get_rect()
-        text_rect.topleft = (x,y)
-        self.program.screen.blit(text_surface, text_rect)
+        if self.position == "map":
+            text_surface = self.font.render(text, True, self.opt.FONT_COLOR)
+            text_rect = text_surface.get_rect()
+            text_rect.topleft = (x,y)
+            self.program.screen.blit(text_surface, text_rect)
 
     def update(self):
         x,y = pygame.mouse.get_pos()
         self.x = int(x/self.program.opt.TILE_SIZE)
         self.y = int(y/self.program.opt.TILE_SIZE)
         self.rect.topleft = self.x*self.program.opt.TILE_SIZE,self.y*self.program.opt.TILE_SIZE
+
+        if self.x < self.opt.TILE_X and self.y < self.opt.TILE_Y:
+            self.position = "map"
+        elif self.x > self.opt.TILE_X and self.y < self.opt.TILE_Y:
+            self.position = "toolbar"
+        else: self.position = ""
+
 
     def get_new_id(self, item):
         if item == "wall":
@@ -45,7 +53,6 @@ class Selector(pygame.sprite.Sprite):
     def draw(self, surface):
         surface.blit(self.image, self.rect.topleft)
         self.draw_coord()
-        self.write("Test writer")
 
     def remove(self):
         for type,elements in self.prop.items():
@@ -60,10 +67,15 @@ class Selector(pygame.sprite.Sprite):
 
     def click(self):
         opt = self.program.opt
-        if self.x == opt.TILE_X or self.y == opt.TILE_Y: print("invalid click"); return
-        if self.id_mode: self.program.map.matrix[self.y][self.x] = self.id
-        else:
-            if self.item_mode == "decor": self.prop["decor"].append({"type":self.item,"coord_x":self.x,"coord_y":self.y})
-            elif self.item_mode == "npc": self.prop["npc"].append({"type":self.item,"coord_x":self.x,"coord_y":self.y,"allow_x":0,"allow_y":0})
-            elif self.item_mode == "door": self.prop["doors"].append({"type":self.item,"dest":"null","coord_x":self.x,"coord_y":self.y,"dest_x":0,"dest_y":0})
+
+        if self.x == opt.TILE_X or self.y == opt.TILE_Y:
+            print("invalid click"); return
+        if self.position == "map":
+            self.program.map.matrix[self.y][self.x] = self.id
+        elif self.position == "toolbar":
+            try: print(self.program.toolbar.prop[self.x-opt.TILE_X-1][self.y]["code"])
+            except:
+                try:
+                    print(self.program.toolbar.prop[self.x-opt.TILE_X-1][self.y])
+                except: pass
         self.program.map.draw_matrix()

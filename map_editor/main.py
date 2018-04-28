@@ -43,8 +43,8 @@ class Program:
         self.screen.fill((0,0,0))
         self.screen.blit(self.map.screen,(0,0))
         self.screen.blit(self.grill,(0,0))
-        self.selector.draw(self.screen)
         self.toolbar.draw(self.screen)
+        self.selector.draw(self.screen)
         pygame.display.flip()
 
     def event(self):

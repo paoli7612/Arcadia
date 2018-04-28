@@ -57,8 +57,8 @@ return {
 
     			},
     			cartel={
-                    {text = "tortoise", code = "40001", coord_x = 3, coord_y = 23},
-                    {text = "tortoise", code = "40002", coord_x = 7, coord_y = 23},
+                    {text = "tortoise", code = "50001", coord_x = 3, coord_y = 23},
+                    {text = "tortoise", code = "50002", coord_x = 7, coord_y = 23},
 
                 }
     		}

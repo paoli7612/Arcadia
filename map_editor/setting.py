@@ -12,7 +12,7 @@ class Setting:
     JSON_FORMAT = ".json"
 
 
-    TOOLBAR_X = TILE_SIZE * 10
+    TOOLBAR_X = TILE_SIZE * 14
     TOOLBAR_Y = HEIGHT
 
     class Colors:
@@ -22,4 +22,5 @@ class Setting:
         GREEN = (0,255,0)
         BLUE = (0,0,255)
 
-    FONT_COLOR = Colors.GREEN
+    FONT_COLOR = Colors.WHITE
+    FONT_COLOR_CHOICE = {True: Colors.GREEN, False: Colors.RED}
