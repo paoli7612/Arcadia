@@ -70,13 +70,6 @@ class Program:
                 self.properties[item_name].append(item["id"])
                 x += self.opt.TILE_SIZE
 
-        self.list_npc = list()
-        x = 0
-        for name, image in self.images.images["characters"].items():
-            self.properties_screen.blit(image, (x, self.opt.TILE_SIZE*3))
-            self.list_npc.append(name)
-            x += self.opt.TILE_SIZE
-
         self.list_doors = list()
         x = 0
         for name,image in self.images.images["basictiles"]["door"].items():

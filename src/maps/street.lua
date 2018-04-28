@@ -43,10 +43,6 @@ return {
     			doors={
                     {dest = "spawn", code = "30001", coord_x = 19, coord_y = 0, dest_x = 19, dest_y = 23},
 										{dest = "spawn", code = "30001", coord_x = 20, coord_y = 0, dest_x = 20, dest_y = 23},
-										{dest = "castle", code = "30001", coord_x = 0, coord_y = 3, dest_x = 38, dest_y = 21},
-										{dest = "castle", code = "30001", coord_x = 0, coord_y = 4, dest_x = 38, dest_y = 22},
-										{dest = "village", code = "30001", coord_x = 0, coord_y = 20, dest_x = 38, dest_y = 2},
-										{dest = "village", code = "30001", coord_x = 0, coord_y = 21, dest_x = 38, dest_y = 3},
 
 
     			},

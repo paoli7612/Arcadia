@@ -6,6 +6,7 @@ class Setting:
     WIDTH = TILE_X * TILE_SIZE
     HEIGHT = TILE_Y * TILE_SIZE
     SIZE = WIDTH, HEIGHT
+
     LUA_FORMAT = ".lua"
     IMAGE_FORMAT = ".png"
     JSON_FORMAT = ".json"

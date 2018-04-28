@@ -33,17 +33,14 @@ class Map:
 
         #load others
         for element in self.program.converter.properties["door"]:
-            self.screen.blit(self.program.images.images["basictiles"]["door"][element["type"]],
+            self.screen.blit(self.program.images.images["basictiles"]["door"][element["code"]],
             (element["coord_x"]*self.program.opt.TILE_SIZE, element["coord_y"]*self.program.opt.TILE_SIZE))
         for element in self.program.converter.properties["decor"]:  # DECOR
-            self.screen.blit(self.program.images.images["basictiles"]["decor"][element["type"]],
+            self.screen.blit(self.program.images.images["basictiles"]["decor"][element["code"]],
             (element["coord_x"]*self.program.opt.TILE_SIZE, element["coord_y"]*self.program.opt.TILE_SIZE))
         for element in self.program.converter.properties["torch"]:  # TORCH
             self.screen.blit(self.program.images.images["things"]["torch"][element["color"]],
             (element["coord_x"]*self.program.opt.TILE_SIZE, element["coord_y"]*self.program.opt.TILE_SIZE))
-        for element in self.program.converter.properties["npc"]:  # NPC
-            self.screen.blit(self.program.images.images["characters"][element["type"]],
-            (element["coord_x"]*self.program.opt.TILE_SIZE, element["coord_y"]*self.program.opt.TILE_SIZE))
         for element in self.program.converter.properties["cartel"]:  # CARTEL
-            self.screen.blit(self.program.images.images["basictiles"]["cartel"],
+            self.screen.blit(self.program.images.images["basictiles"]["cartel"][element["code"]],
             (element["coord_x"]*self.program.opt.TILE_SIZE, element["coord_y"]*self.program.opt.TILE_SIZE))
