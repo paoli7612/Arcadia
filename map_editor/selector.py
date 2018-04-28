@@ -3,6 +3,7 @@ import pygame
 class Selector(pygame.sprite.Sprite):
     def __init__(self,program):
         self.program = program
+        self.opt = self.program.opt
         pygame.sprite.Sprite.__init__(self)
         self.font = pygame.font.Font(pygame.font.match_font("arial"), 15)
         self.image = pygame.Surface((self.program.opt.TILE_SIZE,self.program.opt.TILE_SIZE))
@@ -14,11 +15,17 @@ class Selector(pygame.sprite.Sprite):
         self.data_mode = True
 
     def draw_coord(self):
-        text_surface = self.font.render(("%d - %d" %(self.x,self.y)), True, (255,0,0))
-        text_rect = text_surface.get_rect()
-        text_rect.bottomleft = (self.program.opt.WIDTH,self.program.opt.HEIGHT+40)
-        self.program.screen.blit(text_surface, text_rect)
+        self.draw_text(("%d - %d" %(self.x,self.y)),0,self.opt.TILE_Y*self.opt.TILE_SIZE)
 
+    def write(self,text):
+        self.draw_text(text, 100 ,self.opt.TILE_Y*self.opt.TILE_SIZE)
+
+
+    def draw_text(self, text, x, y):
+        text_surface = self.font.render(text, True, self.opt.FONT_COLOR)
+        text_rect = text_surface.get_rect()
+        text_rect.topleft = (x,y)
+        self.program.screen.blit(text_surface, text_rect)
 
 
     def update(self):
@@ -40,6 +47,7 @@ class Selector(pygame.sprite.Sprite):
     def draw(self, surface):
         surface.blit(self.image, self.rect.topleft)
         self.draw_coord()
+        self.write("Test writer")
 
     def remove(self):
         for type,elements in self.program.converter.properties.items():
@@ -53,6 +61,10 @@ class Selector(pygame.sprite.Sprite):
                 except: pass
 
     def click(self):
+        opt = self.program.opt
+        if self.x == opt.TILE_X or self.y == opt.TILE_Y:
+            print("invalid click")
+            return
         if self.id_mode: self.program.map.matrix[self.y][self.x] = self.id
         else:
             if self.item_mode == "decor": self.program.converter.properties["decor"].append({"type":self.item,"coord_x":self.x,"coord_y":self.y})
