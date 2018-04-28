@@ -16,7 +16,6 @@ class Toolbar:
 
         px = 0
         tns = TYPES_NAME
-        del tns[tns.index("npc")]
         for x,type_name in enumerate(tns):
             self.prop[x+px] = list()
             ay = 0
@@ -31,10 +30,6 @@ class Toolbar:
             pygame.draw.line(self.screen, self.opt.Colors.BLACK, (self.opt.TILE_SIZE*(x+px+1),0),
                             (self.opt.TILE_SIZE*(x+px+1),self.opt.HEIGHT), 4)
 
-        self.prop[x+px+1] = list()
-        for y,(code, image) in enumerate(images["characters"]["npc"].items()):
-            self.screen.blit(image, ((x+px+1)*self.opt.TILE_SIZE,(y)*self.opt.TILE_SIZE))
-            self.prop[x+px+1].append(code)
 
     def draw(self, screen):
         screen.blit(self.screen,(self.opt.WIDTH+self.opt.TILE_SIZE,0))

@@ -40,16 +40,6 @@ class Selector(pygame.sprite.Sprite):
             self.position = "toolbar"
         else: self.position = ""
 
-
-    def get_new_id(self, item):
-        if item == "wall":
-            last_id = 1
-            for wall in self.prop["wall"]: last_id = wall["id"]
-        elif item == "floor":
-            last_id = 20
-            for floor in self.prop["floor"]: last_id = floor["id"]
-        return last_id + 1
-
     def draw(self, surface):
         surface.blit(self.image, self.rect.topleft)
         self.draw_coord()
@@ -58,13 +48,11 @@ class Selector(pygame.sprite.Sprite):
         for type,elements in self.prop.items():
             for pos,element in enumerate(elements):
                 try:
-                    print(element["coord_x"],self.x,element["coord_y"],self.y)
                     if element["coord_x"] == self.x and element["coord_y"] == self.y:
                         del self.prop[type][pos]
                         self.program.map.trix()
                         return
                 except: pass
-
 
     def click(self):
         opt = self.program.opt
@@ -75,11 +63,10 @@ class Selector(pygame.sprite.Sprite):
         if self.position == "map":
             self.program.map.matrix[self.y][self.x] = self.id
         elif self.position == "toolbar":
-            try: # PRIMARY
-                self.selected =prop[self.x-opt.TILE_X-1][self.y]["code"]
-            except: # SECONDARY
-                try:
-                    self.selected = prop[self.x-opt.TILE_X-1][self.y]
-                except: pass
+            try:
+                self.selected = prop[self.x-opt.TILE_X-1][self.y]
+                print(self.selected)
+            except:
+                print("out position")
+
         self.program.map.draw_matrix()
-        print(self.selected)
