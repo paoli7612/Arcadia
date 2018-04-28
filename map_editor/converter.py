@@ -1,3 +1,4 @@
+from sprites import TYPES_NAME, newSprite
 
 class Converter:
     def __init__(self, program):
@@ -40,25 +41,10 @@ class Converter:
 
         #split dict
 
-        def get_int(str): return int(str.split("=")[1])
-        def get_str(str): return str.split("=")[1].split("\"")[1]
 
-        for pos,(id, code) in enumerate(self.properties["wall"]):
-            self.properties["wall"][pos] = {"id": get_int(id),"code": get_str(code)}
-        for pos,(id, code) in enumerate(self.properties["floor"]):
-            self.properties["floor"][pos] = {"id": get_int(id),"code": get_str(code)}
-        for pos,(dest, code, coord_x, coord_y, dest_x, dest_y) in enumerate(self.properties["door"]):
-            self.properties["door"][pos] = {"dest": get_str(dest), "code": get_str(code),
-            "coord_x": get_int(coord_x), "coord_y": get_int(coord_y), "dest_x": get_int(dest_x), "dest_y": get_int(dest_y)}
-        for pos,(type, coord_x, coord_y) in enumerate(self.properties["decor"]):
-            self.properties["decor"][pos] = {"code": get_str(type), "coord_x": get_int(coord_x), "coord_y": get_int(coord_y)}
-        for pos,(color, coord_x, coord_y) in enumerate(self.properties["torch"]):
-            self.properties["torch"][pos] = {"color": get_str(color), "coord_x": get_int(coord_x), "coord_y": get_int(coord_y)}
-        for pos,(text, code, coord_x, coord_y) in enumerate(self.properties["cartel"]):
-            self.properties["cartel"][pos] = {"text": get_str(text), "code": get_str(code), "coord_x": get_int(coord_x), "coord_y": get_int(coord_y)}
-        for pos,(type, coord_x, coord_y, allow_x, allow_y) in enumerate(self.properties["npc"]):
-            self.properties["npc"][pos] = {"type": get_str(type),"coord_x": get_int(coord_x), "coord_y": get_int(coord_y),
-            "allow_x": get_int(allow_x), "allow_y": get_int(allow_y)}
+        for type_name in TYPES_NAME:
+            for pos, param in enumerate(self.properties[type_name]):
+                self.properties[type_name][pos] = newSprite(type_name, param)
 
     def show(self):
         for k,vv in self.properties.items():

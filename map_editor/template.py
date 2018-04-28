@@ -78,9 +78,9 @@ to_fill ="""return {
 """
 
 
-walls = "{id = %d, code = \"%s\"},"
-floors = "{id = %d, code = \"%s\"},"
-doors = "{dest = \"%s\", code = \"%s\", coord_x = %d, coord_y = %d, dest_x = %d, dest_y = %d},"
+wall = "{id = %d, code = \"%s\"},"
+floor = "{id = %d, code = \"%s\"},"
+door = "{dest = \"%s\", code = \"%s\", coord_x = %d, coord_y = %d, dest_x = %d, dest_y = %d},"
 npc = "{code = \"%s\", coord_x = %d, coord_y = %d, allow_x = %d, allow_y = %d},"
 decor = "{code = \"%s\", coord_x = %d, coord_y = %d},"
 torch = "{color = \"%s\", coord_x = %d, coord_y = %d},"
