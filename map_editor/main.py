@@ -6,6 +6,7 @@ from map import Map
 from builder import Builder
 from argparser import Argparser
 from selector import Selector
+from toolbar import Toolbar
 
 try: input = raw_input
 except: pass
@@ -15,7 +16,7 @@ class Program:
         pygame.init()
         self.opt = Setting()
         self.name_map = arg.name_map
-        self.screen = pygame.display.set_mode((self.opt.WIDTH + self.opt.TILE_SIZE*3,self.opt.HEIGHT + self.opt.TILE_SIZE*5))
+        self.screen = pygame.display.set_mode((self.opt.WIDTH + self.opt.TILE_SIZE*10,self.opt.HEIGHT + self.opt.TILE_SIZE*9))
         self.set_grill_surface()
         pygame.display.set_caption(self.opt.TITLE)
         self.path = os.path.dirname(__file__)
@@ -28,6 +29,7 @@ class Program:
         self.converter = Converter(self)
         self.map = Map(self)
         self.selector = Selector(self)
+        self.toolbar = Toolbar(self)
         self.loop()
         pygame.quit()
 
@@ -42,6 +44,7 @@ class Program:
         self.screen.blit(self.map.screen,(0,0))
         self.screen.blit(self.grill,(0,0))
         self.selector.draw(self.screen)
+        self.toolbar.draw(self.screen)
         pygame.display.flip()
 
     def event(self):

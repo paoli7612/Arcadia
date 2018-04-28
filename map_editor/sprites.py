@@ -55,7 +55,7 @@ class Npc:
 
 
 class Decor:
-    def __init__(slef, code, coord_x, coord_y):
+    def __init__(self, code, coord_x, coord_y):
         code, coord_x, coord_y = get_str(code), get_int(coord_x), get_int(coord_y)
         self.dict = {"code": code, "coord_x": coord_x, "coord_y": coord_y}
         self.param = (code, coord_x, coord_y)
