@@ -27,17 +27,17 @@ function Maps(boss)
     for i,p in ipairs(level.data) do
       if x == grill.tile_w then x = 0 y = y + 1 end
       if p >= 1 and p < 20 then
-        for i,wall in ipairs(level.properties.walls) do
+        for i,wall in ipairs(level.properties.wall) do
           if wall.id == p then maps[level.name].add(Wall(boss, x, y, wall)) end
         end
       elseif p >= 20 and p < 40 then
-        for i,floor in ipairs(level.properties.floors) do
+        for i,floor in ipairs(level.properties.floor) do
           if floor.id == p then maps[level.name].add(Floor(boss, x, y, floor)) end
         end
       end
       x = x+1
     end
-    for i,door in ipairs(level.properties.doors) do
+    for i,door in ipairs(level.properties.door) do
       maps[level.name].add(Door(boss,door))
       if maps[door.dest] == nil then load_map(require("maps/" .. door.dest)) end
     end

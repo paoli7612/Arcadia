@@ -11,12 +11,12 @@ function Torch(boss,properties)
 
 	local torch = {
     name = "torch",
-		x=properties.coord_x,
-		y=properties.coord_y
+		x = properties.coord_x,
+		y = properties.coord_y
 	}
 
 	function torch.draw()
-		spritesheet.draw_image(torch.x*grill.tile,torch.y*grill.tile,spritesheet.quads["torch"][properties.color][frame])
+		spritesheet.draw_image(torch.x*grill.tile,torch.y*grill.tile,spritesheet.quads["torch"][properties.code])
 	end
 
   function torch.update(dt)
