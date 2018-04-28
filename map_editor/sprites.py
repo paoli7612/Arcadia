@@ -7,8 +7,8 @@ def get_str(str): return str.split("=")[1].split("\"")[1]
 
 class Wall:
     def __init__(self, code, coord_x, coord_y):
-        code = get_str(code)
-        coord_x, coord_y = get_int(coord_x), get_int(coord_y)
+        try: code, coord_x, coord_y = get_str(code), get_int(coord_x), get_int(coord_y)
+        except: pass
         self.dict = {"code": code, "coord_x":coord_x, "coord_y": coord_y}
         self.param = (code, coord_x, coord_y)
         self.LAYER = 1
@@ -94,3 +94,13 @@ def newSprite(type_name, param):
     elif type_name == "decor": return Decor(*param)
     elif type_name == "torch": return Torch(*param)
     elif type_name == "cartel": return Cartel(*param)
+
+def newSprite_code(code, x, y):
+    f = int(code[0])
+    if f == 0: return Wall(code,x,y), "wall"
+    elif f == 1: return Floor(code,x,y), "floor"
+    elif f == 2: return Decor(code,x,y), "decor"
+    elif f == 3: return Door("null",code,x,y,0,0), "door"
+    elif f == 4: return Torch(code,x,y), "torch"
+    elif f == 5: return Cartel("null",code,x,y), "cartel"
+    elif f == 6: return Npc(code,x,y,0,0), "npc"

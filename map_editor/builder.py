@@ -10,14 +10,6 @@ class Builder:
         f.write(template.empty %self.program.name_map)
 
     def save(self):
-        data = str()
-        for y in self.program.map.matrix:
-            for x in y:
-                if x < 10: x = "0" + str(x)
-                data+=",%s"%str(x)
-            data+="\n\t\t\t\t\t\t"
-        data = data[1:] # remove first ","
-
         down = "\n\t\t\t\t\t\t\t\t\t\t"
         walls, floors, doors, npcs, decors, torchs, cartels = str(),str(),str(),str(),str(),str(),str()
 
@@ -32,5 +24,5 @@ class Builder:
         for cartel in props["cartel"]: cartels += str(cartel) + down
 
         f = open(self.program.path_maps, "w")
-        f.write(template.to_fill %(self.program.name_map, data, walls, floors, doors, npcs, decors, torchs, cartels))
+        f.write(template.to_fill %(self.program.name_map, walls, floors, doors, npcs, decors, torchs, cartels))
         f.close()

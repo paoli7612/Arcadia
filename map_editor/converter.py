@@ -50,8 +50,10 @@ class Converter:
 
     def update(self):
         for k,v in self.properties.items():
-            l = list()
+            elements = list()
+            strings = list()
             for element in v:
-                if not element in l:
-                    l.append(element)
-            self.properties[k] = l
+                if not str(element) in strings:
+                    elements.append(element)
+                    strings.append(str(element))
+            self.properties[k] = elements
