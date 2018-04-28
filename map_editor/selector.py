@@ -47,12 +47,13 @@ class Selector(pygame.sprite.Sprite):
         self.draw_coord()
 
     def remove(self):
-        for type,elements in self.prop.items():
+        for type, elements in self.prop.items():
             for pos,element in enumerate(elements):
                 try:
                     if element["coord_x"] == self.x and element["coord_y"] == self.y:
+                        print("Del: %s" %(str(element)))
                         del self.prop[type][pos]
-                        self.program.map.trix()
+                        self.program.map.draw_matrix()
                         return
                 except: pass
 

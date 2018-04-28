@@ -21,7 +21,7 @@ class Toolbar:
             ay = 0
             for y,(code,image) in enumerate(images["basictiles"][type_name].items()):
                 if y-ay > self.opt.TILE_Y-1:
-                    ay += self.opt.TILE_Y+1
+                    ay += self.opt.TILE_Y
                     px += 1
                     self.prop[x+px] = list()
                 self.screen.blit(image, ((x+px)*self.opt.TILE_SIZE,(y-ay)*self.opt.TILE_SIZE))

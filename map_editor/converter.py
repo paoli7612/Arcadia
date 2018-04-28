@@ -49,11 +49,11 @@ class Converter:
             for v in vv: print(v)
 
     def update(self):
+        layers = list()
         for k,v in self.properties.items():
             elements = list()
-            strings = list()
             for element in v:
-                if not str(element) in strings:
+                if not element.LAYER in layers:
                     elements.append(element)
-                    strings.append(str(element))
+                    layers.append(element.LAYER)
             self.properties[k] = elements
