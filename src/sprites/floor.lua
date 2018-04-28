@@ -1,6 +1,6 @@
 -- floor.lua
 
-function Floor(boss,x,y,properties)
+function Floor(boss,properties)
 
 	local grill = boss.grill
 	local spritesheet = boss.images["basictiles"]
@@ -8,8 +8,8 @@ function Floor(boss,x,y,properties)
 
 	local floor = {
     name = "floor",
-		x = x,
-		y = y,
+		x = properties.coord_x,
+		y = properties.coord_y,
 		code = properties.code
 	}
 

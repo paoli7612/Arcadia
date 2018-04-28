@@ -40,8 +40,6 @@ class Converter:
             self.properties[property] = p
 
         #split dict
-
-
         for type_name in TYPES_NAME:
             for pos, param in enumerate(self.properties[type_name]):
                 self.properties[type_name][pos] = newSprite(type_name, param)

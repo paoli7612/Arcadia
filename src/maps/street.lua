@@ -30,14 +30,14 @@ return {
     	},
     	properties={
     			wall={
-                    {id = 1, code = "00003"},
-										{id = 2, code = "00004"},
+                    {id = 1, code = "00003", coord_x = 12, coord_y = 1},
+										{id = 2, code = "00004", coord_x = 13, coord_y = 1},
 
     			},
     			floor={
-                    {id = 20, code = "10055"},
-										{id = 21, code = "10056"},
-										{id = 22, code = "10057"},
+                    {id = 20, code = "10055", coord_x = 14, coord_y = 1},
+										{id = 21, code = "10056", coord_x = 15, coord_y = 1},
+										{id = 22, code = "10057", coord_x = 15, coord_y = 11},
 
     			},
     			door={

@@ -1,6 +1,6 @@
 -- wall.lua
 
-function Wall(boss,x,y,properties)
+function Wall(boss,properties)
 
 	local grill = boss.grill
 	local spritesheet = boss.images["basictiles"]
@@ -8,8 +8,8 @@ function Wall(boss,x,y,properties)
 
 	local wall = {
     name = "wall",
-		x = x,
-		y = y,
+		x = properties.coord_x,
+		y = properties.coord_y,
 		code = properties.code
 	}
 	function wall.draw()
