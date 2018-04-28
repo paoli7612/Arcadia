@@ -1,5 +1,4 @@
 import pygame
-from sprites import newSprite_code
 
 class Selector(pygame.sprite.Sprite):
     def __init__(self,program):

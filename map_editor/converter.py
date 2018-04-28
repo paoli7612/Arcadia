@@ -18,7 +18,6 @@ class Converter:
         try: self.lua_text = self.lua_text.translate(None, '\t\n ')
         except: self.lua_text = self.lua_text.translate('\t\n ')
 
-        self.data = self.lua_text.split("{")[2].split("}")[0].split(",")
         self.properties = dict()
 
         # get text

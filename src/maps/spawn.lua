@@ -2,13 +2,13 @@ return {
     	name = "spawn",
     	properties={
     			wall={
-                    {id = 1, code = "00003", coord_x = 1, coord_y = 1},
-										{id = 2, code = "00007", coord_x = 12, coord_y = 1},
+                    {code = "00003", coord_x = 1, coord_y = 1},
+										{code = "00007", coord_x = 12, coord_y = 1},
 
     			},
     			floor={
-                    {id = 20, code = "10054", coord_x = 11, coord_y = 1},
-										{id = 21, code = "10053", coord_x = 13, coord_y = 1},
+                    {code = "10054", coord_x = 11, coord_y = 1},
+										{code = "10053", coord_x = 13, coord_y = 1},
 
     			},
     			door={
