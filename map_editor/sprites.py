@@ -72,11 +72,11 @@ class Torch:
         self.param = (code, coord_x, coord_y)
         self.LAYER = 6
 
-    def __str__(self):
-        return (template.torch % self.param)
+    def __str__(self): return (template.torch % self.param)
+    def __getitem__(self, key): return self.dict[key]
 
 class Cartel:
-    def __inti__(self, text, code, coord_x, coord_y):
+    def __init__(self, text, code, coord_x, coord_y):
         text, code = get_str(text), get_str(code)
         coord_x, coord_y = get_int(coord_x), get_int(coord_y)
 
@@ -84,8 +84,8 @@ class Cartel:
         self.param = (text, code, coord_x, coord_y)
         self.LAYER = 7
 
-    def __str__(self):
-        return (template.cartel % self.param)
+    def __str__(self): return (template.cartel % self.param)
+    def __getitem__(self, key): return self.dict[key]
 
 def newSprite(type_name, param):
     if type_name == "wall": return Wall(*param)

@@ -1,16 +1,17 @@
-import pygame, os, json
+import pygame, os, json, time
 
 class Images:
     def __init__(self, program, image_path):
-        self.image = pygame.image.load(image_path).convert()
+        self.image = pygame.image.load(image_path)
         self.program = program
 
     def get_image(self, x, y):
         image32 = pygame.Surface((32, 32))
         image32.blit(self.image, (0, 0), (x*32, y*32, 32, 32))
-        image32 = pygame.transform.scale(image32, (self.program.opt.TILE_SIZE, self.program.opt.TILE_SIZE))
+        self.program.screen.fill((50,50,50))
         image32.set_colorkey((0,0,0))
         return image32
+        image32 = pygame.transform.scale(image32, (self.program.opt.TILE_SIZE, self.program.opt.TILE_SIZE))
 
 class Spritesheet:
     def __init__(self, program):

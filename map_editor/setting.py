@@ -1,7 +1,7 @@
 
 class Setting:
     TITLE = "Map editor"
-    TILE_SIZE = 24
+    TILE_SIZE = 32
     TILE = TILE_X, TILE_Y = 40,25
     WIDTH = TILE_X * TILE_SIZE
     HEIGHT = TILE_Y * TILE_SIZE
@@ -12,8 +12,8 @@ class Setting:
     JSON_FORMAT = ".json"
 
 
-    TOOLBAR_X = WIDTH
-    TOOLBAR_Y = TILE_SIZE * 10
+    TOOLBAR_X = TILE_SIZE * 10
+    TOOLBAR_Y = HEIGHT
 
     class Colors:
         BLACK = (0,0,0)
