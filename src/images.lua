@@ -14,7 +14,7 @@ function Spritesheet(grill)
     love.graphics.draw(image, quad, x, y, 0,(grill.tile/size), (grill.tile/size)) -- correct for float to int
   end
 
-  function get_set(x,y)
+  function get_npc(x,y)
     local quads = {}
     quads["down"] = {}
     quads["down"]["stand"] = {get_image(1+x,0+y)}
@@ -34,6 +34,13 @@ function Spritesheet(grill)
     return quads
   end
 
+  function get_torch(x,y)
+    return {get_image(x,y),get_image(1+x,y),get_image(2+x,y)}
+  end
+  function get_water(x,y)
+    return {get_image(x,y),get_image(1+x,y),get_image(2+x,y),get_image(3+x,y)}
+  end
+
   lines = ""
   for line in io.lines("src/img/basictiles.json") do lines = lines .. line end
   local dict = json.decode(lines)
@@ -41,8 +48,12 @@ function Spritesheet(grill)
     spritesheet.quads[sprite_type] = {}
     for id in pairs(dict[sprite_type]) do
       if not (id == "_cumment") then
-        if sprite_type == "npc" then
-          spritesheet.quads[sprite_type][id] = get_set(dict[sprite_type][id]["x"],dict[sprite_type][id]["y"])
+        if sprite_type == "water" then
+          spritesheet.quads[sprite_type][id] = get_water(dict[sprite_type][id]["x"],dict[sprite_type][id]["y"])
+        elseif sprite_type == "torch" then
+          spritesheet.quads[sprite_type][id] = get_torch(dict[sprite_type][id]["x"],dict[sprite_type][id]["y"])
+        elseif sprite_type == "npc" then
+          spritesheet.quads[sprite_type][id] = get_npc(dict[sprite_type][id]["x"],dict[sprite_type][id]["y"])
         else
           spritesheet.quads[sprite_type][id] = get_image(dict[sprite_type][id]["x"],dict[sprite_type][id]["y"])
         end
