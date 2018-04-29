@@ -12,10 +12,10 @@ try: input = raw_input
 except: pass
 
 class Program:
-    def __init__(self,arg):
+    def __init__(self):
         pygame.init()
         self.opt = Setting()
-        self.name_map = arg.name_map
+        self.name_map = "street"
         self.screen = pygame.display.set_mode((self.opt.WIDTH + self.opt.TILE_SIZE*15,self.opt.HEIGHT + self.opt.TILE_SIZE*3))
         self.set_grill_surface()
         pygame.display.set_caption(self.opt.TITLE)
@@ -72,9 +72,8 @@ class Program:
 
 # test
 if __name__ == "__main__":
-    a = Argparser()
-    if a.start:
-        g = Program(a)
+   # a = Argparser()
+    g = Program()
 
 
 

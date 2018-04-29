@@ -42,7 +42,11 @@ to_fill ="""return {
     			},
     			cartel={
                     %s
+                },
+                water={
+                    %s
                 }
+
     		}
     	}
 """
@@ -55,3 +59,4 @@ npc = "{code = \"%s\", coord_x = %d, coord_y = %d, allow_x = %d, allow_y = %d},"
 decor = "{code = \"%s\", coord_x = %d, coord_y = %d},"
 torch = "{code = \"%s\", coord_x = %d, coord_y = %d},"
 cartel = "{text = \"%s\", code = \"%s\", coord_x = %d, coord_y = %d},"
+water = "{code = \"%s\", coord_x = %d, coord_y = %d},"

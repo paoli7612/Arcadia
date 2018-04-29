@@ -15,7 +15,7 @@ class Selector(pygame.sprite.Sprite):
         self.id = 0
         self.id_mode = True
         self.data_mode = True
-        self.selected = "99999"
+        self.selected = "Nil"
 
     def draw_coord(self):
         self.draw_text(("%d - %d" %(self.x,self.y)),0,self.opt.TILE_Y*self.opt.TILE_SIZE)
@@ -45,6 +45,9 @@ class Selector(pygame.sprite.Sprite):
     def draw(self, surface):
         surface.blit(self.image, self.rect.topleft)
         self.draw_coord()
+        self.write(self.selected,0)
+        if self.selected == "Nil":
+            self.write("Select a item",2)
 
     def remove(self):
         for type, elements in self.prop.items():
@@ -64,9 +67,11 @@ class Selector(pygame.sprite.Sprite):
         if self.x == opt.TILE_X or self.y == opt.TILE_Y:
             print("invalid click"); return
         if self.position == "map":
-            element,type_name = newSprite_code(self.selected,self.x,self.y)
-            self.prop[type_name].append(element)
-            for element in self.prop[type_name]: print(element["code"])
+            if not self.selected == "Nil":
+                element,type_name = newSprite_code(self.selected,self.x,self.y)
+                self.prop[type_name].append(element)
+                for element in self.prop[type_name]: print(element["code"])
+
         elif self.position == "toolbar":
             try:
                 self.selected = prop[self.x-opt.TILE_X-1][self.y]

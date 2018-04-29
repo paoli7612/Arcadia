@@ -1,6 +1,6 @@
 import template
 
-TYPES_NAME = "wall floor door npc decor torch cartel".split()
+TYPES_NAME = "wall floor door npc decor torch cartel water".split()
 
 def get_int(str): return int(str.split("=")[1])
 def get_str(str): return str.split("=")[1].split("\"")[1]
@@ -80,6 +80,17 @@ class Torch:
     def __str__(self): return (template.torch % self.param)
     def __getitem__(self, key): return self.dict[key]
 
+class Water:
+    def __init__(self, code, coord_x, coord_y):
+        try: code, coord_x, coord_y = get_str(code), get_int(coord_x), get_int(coord_y)
+        except: pass
+        self.dict = {"code": code, "coord_x": coord_x, "coord_y": coord_y}
+        self.param = (code, coord_x, coord_y)
+        self.LAYER = "1:" + str(coord_x) + "-" + str(coord_y)
+
+    def __str__(self): return (template.torch % self.param)
+    def __getitem__(self, key): return self.dict[key]
+
 class Cartel:
     def __init__(self, text, code, coord_x, coord_y):
         try:
@@ -102,6 +113,7 @@ def newSprite(type_name, param):
     elif type_name == "decor": return Decor(*param)
     elif type_name == "torch": return Torch(*param)
     elif type_name == "cartel": return Cartel(*param)
+    elif type_name == "water": return Water(*param)
 
 def newSprite_code(code, x, y):
     f = int(code[0])
@@ -112,3 +124,4 @@ def newSprite_code(code, x, y):
     elif f == 4: return Torch(code,x,y), "torch"
     elif f == 5: return Cartel("null",code,x,y), "cartel"
     elif f == 6: return Npc(code,x,y,0,0), "npc"
+    elif f == 7: return Water(code,x,y), "water"
