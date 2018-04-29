@@ -3,7 +3,7 @@ function Grill()
 	local grill = {
 		tile_w = 40,
 		tile_h = 25,
-		tile = 20,	-- change if your monitor is too small
+		tile = 40,	-- change if your monitor is too small
 	}
 	grill.WIDTH = grill.tile_w*grill.tile
 	grill.HEIGHT = grill.tile_h*grill.tile
