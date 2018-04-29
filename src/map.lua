@@ -24,7 +24,8 @@ function Maps(boss)
     maps[level.name] = Group(maps)
     for i,door in ipairs(level.properties.door) do
       maps[level.name].add(Door(boss,door))
-      if maps[door.dest] == nil then load_map(require("maps/" .. door.dest)) end
+      if maps[door.dest] == nil and not (door.dest == "null") then
+        load_map(require("maps/" .. door.dest)) end
     end
     for i,wall in ipairs(level.properties.wall) do maps[level.name].add(Wall(boss,wall)) end
     for i,floor in ipairs(level.properties.floor) do maps[level.name].add(Floor(boss,floor)) end
