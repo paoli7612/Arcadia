@@ -28,8 +28,6 @@ function love.update(dt)
 	boss.player.update(dt)
 	boss.group.update(dt)
 	boss.chat.update(dt)
-	if love.keyboard.isDown("w") then boss.group.show() end
-	if love.keyboard.isDown("c") then boss.chat.activate = true end
 end
 
 function love.draw()
@@ -39,19 +37,18 @@ function love.draw()
 end
 
 function love.keypressed(key)
-   if key == "escape" then
-      love.event.quit()
-   end
+	if key == "escape" then
+		love.event.quit()
+	end
 
-	 if key == "i" then
-		 	boss.player.inventory.show()
-	 end
+	if key == "i" then	boss.player.inventory.show()
+	elseif key == "q" then	boss.player.action()
+	elseif key == "space" then	boss.chat.next()
+	elseif key == "c" then
+		boss.chat.write({"ciao e benvenuto in questo gioco","usa le freccie per muoverti",
+		"attraversando le porte cambierai zona","se muori ritorni in questo poso",
+		"conserva i soldi per quando trovi un mercante"})
+		boss.chat.show()
+	end
 
-	 if key == "o" then
-		 	boss.player.inventory.add(c)
-	 end
-
-	 if key == "p" then
-		 	boss.player.inventory.remove(c)
-	 end
 end

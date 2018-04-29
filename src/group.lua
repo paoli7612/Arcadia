@@ -28,6 +28,14 @@ function Group(maps)
     print("drawable") for i,item in ipairs(group.drawable) do print(" -" .. item.name) end
   end
 
+  function group.get_position(x,y)
+    for i,element in ipairs(group.updater) do
+        if element.x == x and element.y == y then
+          return element
+        end
+    end
+  end
+
   function group.draw()
     for i,item in ipairs(group.drawable) do item.draw() end
     for i,item in ipairs(group.collider) do item.draw() end

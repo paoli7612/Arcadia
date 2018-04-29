@@ -32,11 +32,17 @@ function Player(boss,x,y)
 	end
 
 	function player.update(dt)
-		time = time + dt
-		if time > speed then
-			move()
-			time = 0
+		if not boss.chat.activate then
+			time = time + dt
+			if time > speed then
+				move()
+				time = 0
+			end
 		end
+	end
+
+	function player.action()
+		print(boss.group.get_position(player.x,player.y-1).name)
 	end
 
 	function move()
@@ -59,7 +65,6 @@ function Player(boss,x,y)
 		end
 
 		-- control coord for write maps
-		if love.keyboard.isDown("q") then print(player.x, player.y) end
 
 		if not boss.group.collide(player) then
 			player.x = player.x + player.dx
