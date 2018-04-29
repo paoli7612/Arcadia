@@ -21,7 +21,6 @@ function Npc(boss,properties)
 	}
 
 	function npc.draw()
-		print(spritesheet.quads["npc"][properties.code])
 		spritesheet.draw_image(npc.x*grill.tile,npc.y*grill.tile,spritesheet.quads["npc"][properties.code][direction]["stand"][1])
 	end
 

@@ -6,7 +6,6 @@ Maps = require("map")
 Images = require("images")
 Chat = require("chat")
 
-
 function Boss()
 	local boss = {}
 	boss.grill = Grill()

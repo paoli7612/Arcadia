@@ -12,5 +12,7 @@ class Map:
 
         for type_name in TYPES_NAME:
             for element in prop[type_name]:
-                self.screen.blit(self.program.images.images["basictiles"][type_name][element["code"]],
-                (element["coord_x"]*self.program.opt.TILE_SIZE, element["coord_y"]*self.program.opt.TILE_SIZE))
+                try:
+                    self.screen.blit(self.program.images.images["basictiles"][type_name][element["code"]],
+                    (element["coord_x"]*self.program.opt.TILE_SIZE, element["coord_y"]*self.program.opt.TILE_SIZE))
+                except: print("Image withou CODE")

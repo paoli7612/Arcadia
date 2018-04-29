@@ -86,21 +86,21 @@ return {
 										{code = "00006", coord_x = 0, coord_y = 9},
 										{code = "00006", coord_x = 0, coord_y = 10},
 										{code = "00006", coord_x = 0, coord_y = 11},
-										{code = "00035", coord_x = 30, coord_y = 4},
-										{code = "00035", coord_x = 30, coord_y = 6},
-										{code = "00035", coord_x = 30, coord_y = 7},
-										{code = "00035", coord_x = 30, coord_y = 8},
-										{code = "00035", coord_x = 30, coord_y = 9},
-										{code = "00037", coord_x = 31, coord_y = 9},
-										{code = "00037", coord_x = 34, coord_y = 9},
-										{code = "00037", coord_x = 33, coord_y = 9},
-										{code = "00037", coord_x = 36, coord_y = 9},
-										{code = "00037", coord_x = 37, coord_y = 9},
-										{code = "00037", coord_x = 38, coord_y = 9},
-										{code = "00037", coord_x = 35, coord_y = 9},
-										{code = "00035", coord_x = 30, coord_y = 5},
 										{code = "00006", coord_x = 39, coord_y = 12},
-										
+										{code = "00009", coord_x = 30, coord_y = 4},
+										{code = "00009", coord_x = 30, coord_y = 5},
+										{code = "00009", coord_x = 30, coord_y = 6},
+										{code = "00009", coord_x = 30, coord_y = 7},
+										{code = "00009", coord_x = 30, coord_y = 8},
+										{code = "00009", coord_x = 30, coord_y = 9},
+										{code = "00011", coord_x = 31, coord_y = 9},
+										{code = "00011", coord_x = 33, coord_y = 9},
+										{code = "00011", coord_x = 34, coord_y = 9},
+										{code = "00011", coord_x = 35, coord_y = 9},
+										{code = "00011", coord_x = 36, coord_y = 9},
+										{code = "00011", coord_x = 37, coord_y = 9},
+										{code = "00011", coord_x = 38, coord_y = 9},
+
     			},
     			floor={
                     {code = "10055", coord_x = 18, coord_y = 23},
@@ -634,16 +634,23 @@ return {
 										{code = "10027", coord_x = 30, coord_y = 15},
 										{code = "10030", coord_x = 30, coord_y = 16},
 										{code = "10059", coord_x = 30, coord_y = 12},
-										
+										{code = "10031", coord_x = 28, coord_y = 19},
+										{code = "10031", coord_x = 29, coord_y = 19},
+										{code = "10031", coord_x = 30, coord_y = 19},
+										{code = "10031", coord_x = 31, coord_y = 19},
+										{code = "10031", coord_x = 32, coord_y = 19},
+										{code = "10031", coord_x = 33, coord_y = 19},
+										{code = "10031", coord_x = 34, coord_y = 19},
+
     			},
     			door={
                     {dest = "street", code = "30001", coord_x = 20, coord_y = 24, dest_x = 9, dest_y = 9},
 										{dest = "street", code = "30001", coord_x = 19, coord_y = 24, dest_x = 9, dest_y = 9},
-										
+
     			},
     			npc={
-                    {code = "60038", coord_x = 36, coord_y = 7, allow_x = 0, allow_y = 0},
-										
+                    {code = "60038", coord_x = 36, coord_y = 7, allow_x = 0, allow_y = 0, name = "steve"},
+
                 },
     			decor={
                     {code = "20014", coord_x = 38, coord_y = 4},
@@ -679,15 +686,17 @@ return {
 										{code = "20011", coord_x = 26, coord_y = 8},
 										{code = "20011", coord_x = 27, coord_y = 5},
 										{code = "20055", coord_x = 13, coord_y = 18},
-										
+										{code = "20056", coord_x = 33, coord_y = 15},
+
                 },
     			torch={
                     {code = "40003", coord_x = 31, coord_y = 10},
-										
+										{code = "40010", coord_x = 23, coord_y = 4},
+
     			},
     			cartel={
                     {text = "null", code = "50001", coord_x = 33, coord_y = 10},
-										
+
                 },
                 water={
                     {code = "70000", coord_x = 39, coord_y = 14},
@@ -703,8 +712,6 @@ return {
 										{code = "70000", coord_x = 34, coord_y = 17},
 										{code = "70000", coord_x = 33, coord_y = 17},
 										{code = "70000", coord_x = 33, coord_y = 18},
-										{code = "70000", coord_x = 33, coord_y = 19},
-										{code = "70000", coord_x = 34, coord_y = 19},
 										{code = "70000", coord_x = 34, coord_y = 18},
 										{code = "70000", coord_x = 34, coord_y = 20},
 										{code = "70000", coord_x = 33, coord_y = 20},
@@ -734,14 +741,11 @@ return {
 										{code = "70000", coord_x = 28, coord_y = 22},
 										{code = "70000", coord_x = 28, coord_y = 21},
 										{code = "70000", coord_x = 28, coord_y = 20},
-										{code = "70000", coord_x = 28, coord_y = 19},
 										{code = "70000", coord_x = 28, coord_y = 18},
 										{code = "70000", coord_x = 28, coord_y = 17},
 										{code = "70000", coord_x = 29, coord_y = 17},
 										{code = "70000", coord_x = 30, coord_y = 17},
 										{code = "70000", coord_x = 30, coord_y = 18},
-										{code = "70000", coord_x = 30, coord_y = 19},
-										{code = "70000", coord_x = 29, coord_y = 19},
 										{code = "70000", coord_x = 29, coord_y = 18},
 										{code = "70000", coord_x = 29, coord_y = 20},
 										{code = "70000", coord_x = 29, coord_y = 21},
@@ -763,12 +767,10 @@ return {
 										{code = "70000", coord_x = 31, coord_y = 22},
 										{code = "70000", coord_x = 32, coord_y = 20},
 										{code = "70000", coord_x = 31, coord_y = 20},
-										{code = "70000", coord_x = 32, coord_y = 19},
 										{code = "70000", coord_x = 32, coord_y = 18},
 										{code = "70000", coord_x = 32, coord_y = 17},
 										{code = "70000", coord_x = 31, coord_y = 17},
 										{code = "70000", coord_x = 31, coord_y = 18},
-										{code = "70000", coord_x = 31, coord_y = 19},
 										{code = "70000", coord_x = 31, coord_y = 16},
 										{code = "70000", coord_x = 31, coord_y = 15},
 										{code = "70000", coord_x = 31, coord_y = 14},
@@ -781,7 +783,6 @@ return {
 										{code = "70000", coord_x = 37, coord_y = 13},
 										{code = "70000", coord_x = 38, coord_y = 13},
 										{code = "70000", coord_x = 39, coord_y = 13},
-										{code = "70000", coord_x = 32, coord_y = 15},
 										{code = "70000", coord_x = 32, coord_y = 14},
 										{code = "70000", coord_x = 32, coord_y = 16},
 										{code = "70000", coord_x = 33, coord_y = 16},
@@ -804,7 +805,8 @@ return {
 										{code = "70000", coord_x = 25, coord_y = 24},
 										{code = "70000", coord_x = 24, coord_y = 24},
 										{code = "70000", coord_x = 25, coord_y = 23},
-										
+										{code = "70000", coord_x = 32, coord_y = 15},
+
                 }
 
     		}
