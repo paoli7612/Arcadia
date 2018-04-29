@@ -18,17 +18,17 @@ class Selector(pygame.sprite.Sprite):
         self.selected = "Nil"
 
     def draw_coord(self):
-        self.draw_text(("%d - %d" %(self.x,self.y)),0,self.opt.TILE_Y*self.opt.TILE_SIZE)
+        if self.position == "map":
+            self.draw_text(("%d - %d" %(self.x,self.y)),0,self.opt.TILE_Y*self.opt.TILE_SIZE)
 
     def write(self,text, y):
         self.draw_text(text, 100 ,self.opt.TILE_Y*self.opt.TILE_SIZE + y*self.opt.TILE_SIZE)
 
     def draw_text(self, text, x, y):
-        if self.position == "map":
-            text_surface = self.font.render(text, True, self.opt.FONT_COLOR)
-            text_rect = text_surface.get_rect()
-            text_rect.topleft = (x,y)
-            self.program.screen.blit(text_surface, text_rect)
+        text_surface = self.font.render(text, True, self.opt.FONT_COLOR)
+        text_rect = text_surface.get_rect()
+        text_rect.topleft = (x,y)
+        self.program.screen.blit(text_surface, text_rect)
 
     def update(self):
         x,y = pygame.mouse.get_pos()
@@ -52,7 +52,9 @@ class Selector(pygame.sprite.Sprite):
     def remove(self):
         for type, elements in self.prop.items():
             for pos,element in enumerate(elements):
+                print(element)
                 try:
+                    if (element["coord_x"] == self.x and element["coord_y"] == self.y): print("c")
                     if element["coord_x"] == self.x and element["coord_y"] == self.y:
                         print("Del: %s" %(str(element)))
                         del self.prop[type][pos]

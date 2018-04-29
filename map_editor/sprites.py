@@ -65,12 +65,12 @@ class Decor:
         self.param = (code, coord_x, coord_y)
         self.LAYER = "2:" + str(coord_x) + "-" + str(coord_y)
 
-    def __str__(self): return (template.Decor % self.param)
+    def __str__(self): return (template.decor % self.param)
     def __getitem__(self, key): return self.dict[key]
 
 
 class Torch:
-    def __init__(slef, code, coord_x, coord_y):
+    def __init__(self, code, coord_x, coord_y):
         try: code, coord_x, coord_y = get_str(code), get_int(coord_x), get_int(coord_y)
         except: pass
         self.dict = {"code": code, "coord_x": coord_x, "coord_y": coord_y}
