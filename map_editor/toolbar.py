@@ -19,7 +19,7 @@ class Toolbar:
         for x,type_name in enumerate(tns):
             self.prop[x+px] = list()
             ay = 0
-            for y,(code,image) in enumerate(images["basictiles"][type_name].items()):
+            for y,(code,image) in enumerate(images["sprites"][type_name].items()):
                 if y-ay > self.opt.TILE_Y-1:
                     ay += self.opt.TILE_Y
                     px += 1

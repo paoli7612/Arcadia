@@ -17,15 +17,15 @@ class Spritesheet:
     def __init__(self, program):
         self.program = program
         self.images = dict()
-# BASICTILES_____________________________________________________________________________________________________
-        image_path = os.path.join(self.program.path_img,"basictiles" + self.program.opt.IMAGE_FORMAT)
-        self.basictiles = Images(self.program, image_path)
-        self.images["basictiles"] = dict()
-        get_image = self.basictiles.get_image
+# SPRITES_____________________________________________________________________________________________________
+        image_path = os.path.join(self.program.path_img,"sprites" + self.program.opt.IMAGE_FORMAT)
+        self.sprites = Images(self.program, image_path)
+        self.images["sprites"] = dict()
+        get_image = self.sprites.get_image
 
-        coords = json.load(open(os.path.join(self.program.path_img,"basictiles" + self.program.opt.JSON_FORMAT)))
+        coords = json.load(open(os.path.join(self.program.path_img,"sprites" + self.program.opt.JSON_FORMAT)))
         for item_type, item_coords in coords.items():
-            self.images["basictiles"][item_type] = dict()
+            self.images["sprites"][item_type] = dict()
             for code,coord in item_coords.items():
                 if code == "_cumment": continue
-                self.images["basictiles"][item_type][code] = get_image(coord["x"],coord["y"])
+                self.images["sprites"][item_type][code] = get_image(coord["x"],coord["y"])

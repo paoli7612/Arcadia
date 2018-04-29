@@ -1,9 +1,9 @@
-function Spritesheet(grill)
+function Spritesheet(grill,type)
   local spritesheet = {
     quads = {}
   }
   local grill = grill
-  local image = love.graphics.newImage("img/basictiles.png")
+  local image = love.graphics.newImage("img/"..type..".png")
   local json = require ("json")
   local size = 32
   function get_image(x,y)
@@ -42,7 +42,7 @@ function Spritesheet(grill)
   end
 
   lines = ""
-  for line in io.lines("src/img/basictiles.json") do lines = lines .. line end
+  for line in io.lines("src/img/"..type..".json") do lines = lines .. line end
   local dict = json.decode(lines)
   for sprite_type in pairs(dict) do
     spritesheet.quads[sprite_type] = {}
@@ -66,8 +66,8 @@ end
 
 function Images(grill)
   local images = {}
-  -- basictiles
-  images["basictiles"] = Spritesheet(grill)
+  images["sprites"] = Spritesheet(grill,"sprites")
+  images["items"] = Spritesheet(grill,"items")
 
 
   return images

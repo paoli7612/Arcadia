@@ -37,3 +37,21 @@ function love.draw()
 	boss.player.draw()
 	boss.chat.draw()
 end
+
+function love.keypressed(key)
+   if key == "escape" then
+      love.event.quit()
+   end
+
+	 if key == "i" then
+		 	boss.player.inventory.show()
+	 end
+
+	 if key == "o" then
+		 	boss.player.inventory.add(c)
+	 end
+
+	 if key == "p" then
+		 	boss.player.inventory.remove(c)
+	 end
+end

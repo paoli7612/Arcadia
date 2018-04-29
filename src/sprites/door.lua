@@ -3,7 +3,7 @@
 function Door(boss, properties)
 
 	local grill = boss.grill
-	local spritesheet = boss.images["basictiles"]
+	local spritesheet = boss.images["sprites"]
 	local properties = properties
 
 	local door = {

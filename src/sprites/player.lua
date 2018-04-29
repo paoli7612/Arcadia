@@ -1,13 +1,13 @@
 -- player.lua
 
-Inventory = require("../inventory")
+Inventory = require("inventory")
+Food = require("sprites/items/food")
 
 function Player(boss,x,y)
 	local grill = boss.grill
 	local boss = boss
-	local inventory = Inventory(boss)
 
-	local spritesheet = boss.images["basictiles"]
+	local spritesheet = boss.images["sprites"]
 	for a in pairs(spritesheet.quads) do
 		print(a)
 	end
@@ -18,14 +18,17 @@ function Player(boss,x,y)
 	local frame = 1
 	local speed = 0.1
 
+
 	local player = {
 		name = "player",
 		x=x,
 		y=y,
+		inventory = Inventory(boss)
 	}
-
+	player.inventory.add(Food(boss,"B0001"))
 	function player.draw()
 		spritesheet.draw_image(player.x*grill.tile, player.y*grill.tile, spritesheet.quads["npc"]["60001"][direction][position][frame])
+		player.inventory.draw()
 	end
 
 	function player.update(dt)
@@ -33,18 +36,6 @@ function Player(boss,x,y)
 		if time > speed then
 			move()
 			time = 0
-
-			if love.keyboard.isDown("i") then
-				inventory.show()
-			end
-
-			if love.keyboard.isDown("o") then
-				inventory.add("ciao")
-			end
-
-			if love.keyboard.isDown("p") then
-				inventory.remove("ciao")
-			end
 		end
 	end
 

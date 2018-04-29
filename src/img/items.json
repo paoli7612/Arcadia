@@ -1,0 +1,11 @@
+{
+  "weapon": {
+    "_cumment": "sword",
+      "A0001":{"x": 3, "y": 1}
+    },
+  "food": {
+    "_cumment": "cookie",
+      "B0001":{"x": 20, "y": 0}
+  }
+
+}

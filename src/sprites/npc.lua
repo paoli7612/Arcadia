@@ -3,7 +3,7 @@
 function Npc(boss,properties)
 	local grill = boss.grill
 	local boss = boss
-	local spritesheet = boss.images["basictiles"]
+	local spritesheet = boss.images["sprites"]
 	local time = 0
 	local direction = "down"
 	local speed = 1

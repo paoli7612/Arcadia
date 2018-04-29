@@ -743,6 +743,7 @@ return {
                 },
                 water={
                     {code = "70000", coord_x = 36, coord_y = 3},
+										
                 }
 
     		}
