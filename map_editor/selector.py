@@ -58,6 +58,7 @@ class Selector(pygame.sprite.Sprite):
                     if element["coord_x"] == self.x and element["coord_y"] == self.y:
                         print("Del: %s" %(str(element)))
                         del self.prop[type][pos]
+                        self.program.saved = False
                         self.program.map.draw_matrix()
                         return
                 except: pass
@@ -68,6 +69,8 @@ class Selector(pygame.sprite.Sprite):
 
         if self.x == opt.TILE_X or self.y == opt.TILE_Y:
             print("invalid click"); return
+        self.program.saved = False
+
         if self.position == "map":
             if not self.selected == "Nil":
                 element,type_name = newSprite_code(self.selected,self.x,self.y)

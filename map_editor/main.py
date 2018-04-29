@@ -30,6 +30,7 @@ class Program:
         self.map = Map(self)
         self.selector = Selector(self)
         self.toolbar = Toolbar(self)
+        self.saved = True
         self.loop()
         pygame.quit()
 
@@ -45,6 +46,7 @@ class Program:
         self.screen.blit(self.grill,(0,0))
         self.toolbar.draw(self.screen)
         self.selector.draw(self.screen)
+        if self.saved: self.selector.write("Saved", 1)
         pygame.display.flip()
 
     def event(self):
@@ -52,7 +54,7 @@ class Program:
             if event.type == pygame.QUIT: self.running = False
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE: self.pause = not self.pause
-                elif event.key == pygame.K_s: self.builder.save()
+                elif event.key == pygame.K_s: self.builder.save(); self.saved = True
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1: self.selector.click()
                 if event.button == 3: self.selector.remove()
@@ -60,13 +62,18 @@ class Program:
                 if event.buttons[0] == 1: self.selector.click()
                 if event.buttons[2] == 1: self.selector.remove()
 
+
+    def update(self):
+        self.converter.update()
+        self.selector.update()
+
+
     def loop(self):
         self.running = True
         self.pause = False
         while self.running:
             self.clock.tick(50)
-            self.converter.update()
-            self.selector.update()
+            self.update()
             self.event()
             self.draw()
 

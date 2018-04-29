@@ -3,7 +3,7 @@
 function Npc(boss,properties)
 	local grill = boss.grill
 	local boss = boss
-	local spritesheet = boss.images["characters"]
+	local spritesheet = boss.images["basictiles"]
 	local time = 0
 	local direction = "down"
 	local speed = 1
@@ -21,7 +21,8 @@ function Npc(boss,properties)
 	}
 
 	function npc.draw()
-		spritesheet.draw_image(npc.x*grill.tile,npc.y*grill.tile,spritesheet.quads[properties.type][direction]["stand"][1])
+		print(spritesheet.quads["npc"][properties.code])
+		spritesheet.draw_image(npc.x*grill.tile,npc.y*grill.tile,spritesheet.quads["npc"][properties.code][direction]["stand"][1])
 	end
 
 	function npc.speak()

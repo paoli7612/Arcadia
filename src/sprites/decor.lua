@@ -13,7 +13,7 @@ function Decor(boss,properties)
 	}
 
 	function decor.draw()
-		spritesheet.draw_image(decor.x*grill.tile,decor.y*grill.tile,spritesheet.quads["decor"][properties.type])
+		spritesheet.draw_image(decor.x*grill.tile,decor.y*grill.tile,spritesheet.quads["decor"][properties.code])
 	end
 
 	return decor
