@@ -3,14 +3,14 @@ function Grill()
 	local grill = {
 		tile_w = 40,
 		tile_h = 25,
-		tile = 24,	-- change if your monitor is too small
+		tile = 38,	-- change if your monitor is too small
 	}
 	grill.WIDTH = grill.tile_w*grill.tile
 	grill.HEIGHT = grill.tile_h*grill.tile
 	love.window.setMode( grill.WIDTH, grill.HEIGHT )
 
 	function grill.draw()
-		--.love.graphics.setColor(0, 100, 255)
+		love.graphics.setColor(0, 100, 255)
 		for y=0,grill.HEIGHT,grill.tile do
 			love.graphics.line(0, y, grill.WIDTH, y)
 		end
