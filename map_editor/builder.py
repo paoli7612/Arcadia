@@ -25,5 +25,5 @@ class Builder:
         for water in props["water"]: waters += str(water) + down
 
         f = open(self.program.path_maps, "w")
-        f.write(template.to_fill %(self.program.name_map, walls, floors, doors, npcs, decors, torchs, cartels, water))
+        f.write(template.to_fill %(self.program.name_map, walls, floors, doors, npcs, decors, torchs, cartels, waters))
         f.close()
