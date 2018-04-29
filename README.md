@@ -16,7 +16,7 @@
   if love2d is installed, run run_linx.sh
 
 # SCREEN
-![alt text](doc/img/008.png)
+![alt text](doc/img/009.png)
 
 # MAP_EDITOR - PYTHON
 This simply program allow you to create or change all game map. All game map saved in maps folder. If you give this program a name of a exists map, the program allow you to change this. Else the program create a new map with this new name. [pygame is required]

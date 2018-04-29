@@ -20,7 +20,7 @@ Ogni partecipante, sia per aver scritto la storia, creato o modificato mappe o c
     - Eliminare: avviare `map_editor/del.bat`
 
 ##### Anteprima:
-![alt text](doc/img/005.png)
+![alt text](doc/img/007.png)
 ##### Istruzioni:
   - **Mappa:**
     Cliccando sulla mappa aggiungiamo l'item attuale che abbiamo selezionato alla posizione che abiamo cliccato;
@@ -38,5 +38,4 @@ Ogni partecipante, sia per aver scritto la storia, creato o modificato mappe o c
 
 ### Screenshoots
 ![alt text](doc/img/006.png)
-![alt text](doc/img/007.png)
-![alt text](doc/img/008.png)
+![alt text](doc/img/009.png)
