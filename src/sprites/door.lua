@@ -17,6 +17,11 @@ function Door(boss, properties)
 		spritesheet.draw_image(door.x*grill.tile,door.y*grill.tile,spritesheet.quads["door"][properties.code])
 	end
 
+	function door.touch()
+		boss.chat.write({"Questa porta conduce a "..properties.dest})
+		boss.chat.show()
+	end
+
 	return door
 end
 

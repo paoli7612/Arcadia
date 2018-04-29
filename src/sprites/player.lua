@@ -42,7 +42,19 @@ function Player(boss,x,y)
 	end
 
 	function player.action()
-		print(boss.group.get_position(player.x,player.y-1).name)
+		x = player.x
+		y = player.y
+		if direction == "right" then x = x+1
+		elseif direction == "left" then x = x-1
+		elseif direction == "up" then y = y-1
+		elseif direction == "down" then y = y+1 end
+		element = boss.group.get_position(x,y)
+		if not(element == nil) then
+			print(element.name)
+			if element.name == "npc" then element.speak() end
+			if element.name == "cartel" then element.touch() end
+			if element.name == "door" then element.touch() end
+		end
 	end
 
 	function move()

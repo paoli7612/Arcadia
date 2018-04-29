@@ -14,7 +14,7 @@ function Group(maps)
     elseif new_sprite.name == "door" then table.insert(group.collider,new_sprite)
     elseif new_sprite.name == "floor" then table.insert(group.drawable,new_sprite)
     elseif new_sprite.name == "decor" then table.insert(group.collider,new_sprite)
-    elseif new_sprite.name == "cartel" then table.insert(group.updater,new_sprite)
+    elseif new_sprite.name == "cartel" then table.insert(group.collider,new_sprite)
     elseif new_sprite.name == "torch" then table.insert(group.updater,new_sprite)
     elseif new_sprite.name == "water" then table.insert(group.updater,new_sprite)
     end
@@ -30,6 +30,11 @@ function Group(maps)
 
   function group.get_position(x,y)
     for i,element in ipairs(group.updater) do
+        if element.x == x and element.y == y then
+          return element
+        end
+    end
+    for i,element in ipairs(group.collider) do
         if element.x == x and element.y == y then
           return element
         end
@@ -57,8 +62,6 @@ function Group(maps)
     end
     for i,item in ipairs(group.updater) do
       if sprite.x + sprite.dx == item.x and sprite.y + sprite.dy == item.y then
-        if item.name == "cartel" then item.touch() end
-        if item.name == "npc" then item.speak() end
         return true end
     end
     return false

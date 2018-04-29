@@ -25,7 +25,8 @@ function Npc(boss,properties)
 	end
 
 	function npc.speak()
-		-- have a collision with player
+		boss.chat.write({"ciao sono un npc", "mentre mi parli non puoi muoverti"})
+		boss.chat.show()
 	end
 
 	function npc.update(dt)
