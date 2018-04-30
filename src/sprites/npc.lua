@@ -19,13 +19,44 @@ function Npc(boss,properties)
 		x = properties.coord_x,
 		y = properties.coord_y,
 	}
+	local description = require("../descriptions/" .. properties.nickname)
+	local current_quest = false
 
 	function npc.draw()
 		spritesheet.draw_image(npc.x*grill.tile,npc.y*grill.tile,spritesheet.quads["npc"][properties.code][direction]["stand"][1])
 	end
 
 	function npc.speak()
-		boss.chat.write({"ciao sono un npc", "mentre mi parli non puoi muoverti"})
+		-- Quest gia attiva
+		if not(current_quest == false) then
+				boss.chat.write(current_quest.chat.state)
+				boss.chat.show()
+			return
+		end
+		-- Quest da attivare
+		for i,quest in ipairs(description.quests) do
+			if quest.completed == false then
+				current_quest = quest
+				boss.chat.write(current_quest.chat.start)
+				boss.chat.show()
+				return
+			end
+		end
+		-- Quest completate
+		if not (current_quest == false) then
+			complete = true
+			for i,purpose in ipairs(current_quest.purpose) do
+				if purpose.completed then complete = false end
+		 	end
+			if complete then
+				boss.chat.write(current_quest.chat.quit)
+				boss.chat.show()
+				return
+			end
+		end
+		-- Chat random
+		text = description.speak[math.random(1,table.getn(description.speak))]
+		boss.chat.write(text)
 		boss.chat.show()
 	end
 

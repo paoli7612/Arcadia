@@ -18,7 +18,6 @@ function Player(boss,x,y)
 	local frame = 1
 	local speed = 0.1
 
-
 	local player = {
 		name = "player",
 		x=x,
@@ -50,7 +49,6 @@ function Player(boss,x,y)
 		elseif direction == "down" then y = y+1 end
 		element = boss.group.get_position(x,y)
 		if not(element == nil) then
-			print(element.name)
 			if element.name == "npc" then element.speak() end
 			if element.name == "cartel" then element.touch() end
 			if element.name == "door" then element.touch() end

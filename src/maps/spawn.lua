@@ -80,7 +80,7 @@ return {
 										{code = "00014", coord_x = 8, coord_y = 18},
 										{code = "00014", coord_x = 8, coord_y = 19},
 										{code = "00006", coord_x = 0, coord_y = 3},
-										
+
     			},
     			floor={
                     {code = "10055", coord_x = 13, coord_y = 20},
@@ -704,17 +704,17 @@ return {
 										{code = "10029", coord_x = 16, coord_y = 21},
 										{code = "10029", coord_x = 15, coord_y = 21},
 										{code = "10060", coord_x = 23, coord_y = 4},
-										
+
     			},
     			door={
                     {dest = "street", code = "30001", coord_x = 20, coord_y = 24, dest_x = 9, dest_y = 9},
 										{dest = "street", code = "30001", coord_x = 19, coord_y = 24, dest_x = 9, dest_y = 9},
-										
+
     			},
     			npc={
-                    {code = "60038", coord_x = 36, coord_y = 7, allow_x = 0, allow_y = 0},
-										{code = "60027", coord_x = 9, coord_y = 8, allow_x = 0, allow_y = 0},
-										
+                    {code = "60038", coord_x = 36, coord_y = 7, allow_x = 0, allow_y = 0, nickname = "steve"},
+										{code = "60027", coord_x = 9, coord_y = 8, allow_x = 0, allow_y = 0, nickname = "andy"},
+
                 },
     			decor={
                     {code = "20014", coord_x = 38, coord_y = 4},
@@ -803,7 +803,7 @@ return {
 										{code = "20057", coord_x = 0, coord_y = 8},
 										{code = "20057", coord_x = 0, coord_y = 5},
 										{code = "20055", coord_x = 8, coord_y = 14},
-										
+
                 },
     			torch={
                     {code = "40003", coord_x = 31, coord_y = 10},
@@ -811,11 +811,11 @@ return {
 										{code = "40003", coord_x = 25, coord_y = 14},
 										{code = "40002", coord_x = 15, coord_y = 20},
 										{code = "40002", coord_x = 20, coord_y = 5},
-										
+
     			},
     			cartel={
                     {text = "null", code = "50001", coord_x = 33, coord_y = 10},
-										
+
                 },
                 water={
                     {code = "70000", coord_x = 39, coord_y = 14},
@@ -999,7 +999,7 @@ return {
 										{code = "70000", coord_x = 6, coord_y = 15},
 										{code = "70000", coord_x = 17, coord_y = 24},
 										{code = "70000", coord_x = 18, coord_y = 23},
-										
+
                 }
 
     		}

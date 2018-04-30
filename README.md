@@ -15,6 +15,10 @@
 - LINUX:
   if love2d is installed, run run_linx.sh
 
+## game
+- press i key to see inventory
+- press q key to acion with another things (npc, cartel, doors...)
+
 # SCREEN
 ![alt text](doc/img/009.png)
 
