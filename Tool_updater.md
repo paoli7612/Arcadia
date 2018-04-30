@@ -51,6 +51,7 @@ Solo che correggendo solo gli **id** delle immagini, le mappe caricheranno le im
 Quindi ogni codice cambiato nei **.json** va riscritto anche nelle mappe salvate nella cartella **src/maps/**.
 
 #### esempio
+Data.json
 ```json
 {
   "floor": {
@@ -63,6 +64,7 @@ Quindi ogni codice cambiato nei **.json** va riscritto anche nelle mappe salvate
   }
 }
 ```
+Mappa.lua
 ```lua
 return {
   name = "spawn",
@@ -80,6 +82,7 @@ return {
 ```
 
 #### risultato
+Data.json
 ```json
 {
   "floor": {
@@ -92,6 +95,7 @@ return {
   }
 }
 ```
+Mappa.lua
 ```lua
 return {
   name = "spawn",
