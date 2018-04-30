@@ -16,7 +16,7 @@ function Cartel(boss,properties)
 	end
 
 	function cartel.touch()
-		boss.chat.write({properties.text})
+		boss.chat.write("Cartello",{properties.text})
 		boss.chat.show()
 	end
 

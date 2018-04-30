@@ -18,7 +18,7 @@ function Door(boss, properties)
 	end
 
 	function door.touch()
-		boss.chat.write({"Questa porta conduce a "..properties.dest})
+		boss.chat.write("Porta per",{properties.dest})
 		boss.chat.show()
 	end
 

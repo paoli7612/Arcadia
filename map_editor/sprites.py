@@ -45,7 +45,7 @@ class Door:
 class Npc:
     def __init__(self, code, coord_x, coord_y, allow_x, allow_y, nickname):
         try:
-            code, nickname = get_str(code) = get_str(nickname)
+            code, nickname = get_str(code), get_str(nickname)
             coord_x, coord_y = get_int(coord_x), get_int(coord_y)
             allow_x, allow_y = get_int(allow_x), get_int(allow_y)
 

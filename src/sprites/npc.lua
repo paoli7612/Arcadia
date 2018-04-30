@@ -21,6 +21,7 @@ function Npc(boss,properties)
 	}
 	local description = require("../descriptions/" .. properties.nickname)
 	local current_quest = false
+	local nickname = properties.nickname
 
 	function npc.draw()
 		spritesheet.draw_image(npc.x*grill.tile,npc.y*grill.tile,spritesheet.quads["npc"][properties.code][direction]["stand"][1])
@@ -29,7 +30,7 @@ function Npc(boss,properties)
 	function npc.speak()
 		-- Quest gia attiva
 		if not(current_quest == false) then
-				boss.chat.write(current_quest.chat.state)
+				boss.chat.write(nickname,current_quest.chat.state)
 				boss.chat.show()
 			return
 		end
@@ -37,7 +38,7 @@ function Npc(boss,properties)
 		for i,quest in ipairs(description.quests) do
 			if quest.completed == false then
 				current_quest = quest
-				boss.chat.write(current_quest.chat.start)
+				boss.chat.write(nickname,current_quest.chat.start)
 				boss.chat.show()
 				return
 			end
@@ -49,14 +50,14 @@ function Npc(boss,properties)
 				if purpose.completed then complete = false end
 		 	end
 			if complete then
-				boss.chat.write(current_quest.chat.quit)
+				boss.chat.write(nickname,current_quest.chat.quit)
 				boss.chat.show()
 				return
 			end
 		end
 		-- Chat random
 		text = description.speak[math.random(1,table.getn(description.speak))]
-		boss.chat.write(text)
+		boss.chat.write(nickname,text)
 		boss.chat.show()
 	end
 
