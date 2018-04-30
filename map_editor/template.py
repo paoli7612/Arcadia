@@ -57,7 +57,7 @@ to_fill ="""return {
 wall = "{code = \"%s\", coord_x = %d, coord_y = %d},"
 floor = "{code = \"%s\", coord_x = %d, coord_y = %d},"
 door = "{dest = \"%s\", code = \"%s\", coord_x = %d, coord_y = %d, dest_x = %d, dest_y = %d},"
-npc = "{code = \"%s\", coord_x = %d, coord_y = %d, allow_x = %d, allow_y = %d},"
+npc = "{code = \"%s\", coord_x = %d, coord_y = %d, allow_x = %d, allow_y = %d, nickname = \"%s\"},"
 decor = "{code = \"%s\", coord_x = %d, coord_y = %d},"
 torch = "{code = \"%s\", coord_x = %d, coord_y = %d},"
 cartel = "{text = \"%s\", code = \"%s\", coord_x = %d, coord_y = %d},"

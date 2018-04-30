@@ -43,14 +43,15 @@ class Door:
 
 
 class Npc:
-    def __init__(self, code, coord_x, coord_y, allow_x, allow_y):
+    def __init__(self, code, coord_x, coord_y, allow_x, allow_y, nickname):
         try:
-            code = get_str(code)
+            code, nickname = get_str(code) = get_str(nickname)
             coord_x, coord_y = get_int(coord_x), get_int(coord_y)
             allow_x, allow_y = get_int(allow_x), get_int(allow_y)
+
         except: pass
-        self.dict = {"code": code, "coord_x": coord_x, "coord_y": coord_y, "allow_x": allow_x, "allow_y": allow_y}
-        self.param = (code, coord_x, coord_y, allow_x, allow_y)
+        self.dict = {"code": code, "coord_x": coord_x, "coord_y": coord_y, "allow_x": allow_x, "allow_y": allow_y, "nickname": nickname}
+        self.param = (code, coord_x, coord_y, allow_x, allow_y, nickname)
         self.LAYER = "2:" + str(coord_x) + "-" + str(coord_y)
 
     def __str__(self): return (template.npc % self.param)
