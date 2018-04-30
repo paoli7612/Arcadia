@@ -124,5 +124,5 @@ def newSprite_code(code, x, y):
     elif f == 3: return Door("null",code,x,y,0,0), "door"
     elif f == 4: return Torch(code,x,y), "torch"
     elif f == 5: return Cartel("null",code,x,y), "cartel"
-    elif f == 6: return Npc(code,x,y,0,0), "npc"
+    elif f == 6: return Npc(code,x,y,0,0,"name"), "npc"
     elif f == 7: return Water(code,x,y), "water"

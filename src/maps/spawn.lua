@@ -707,8 +707,8 @@ return {
 
     			},
     			door={
-                    {dest = "street", code = "30001", coord_x = 20, coord_y = 24, dest_x = 9, dest_y = 9},
-										{dest = "street", code = "30001", coord_x = 19, coord_y = 24, dest_x = 9, dest_y = 9},
+                    {dest = "street", code = "30001", coord_x = 20, coord_y = 24, dest_x = 19, dest_y = 1},
+										{dest = "street", code = "30001", coord_x = 19, coord_y = 24, dest_x = 20, dest_y = 1},
 
     			},
     			npc={
@@ -823,7 +823,7 @@ return {
 
     			},
     			cartel={
-                    {text = "Casa di Steve", code = "50001", coord_x = 33, coord_y = 10},
+                    {text = "CasadiSteve", code = "50001", coord_x = 33, coord_y = 10},
 
                 },
                 water={

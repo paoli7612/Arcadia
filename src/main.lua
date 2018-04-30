@@ -19,9 +19,9 @@ end
 
 function love.load()
 	boss = Boss()
-	music = love.audio.newSource("snd/asd.wav", "static")
-	music:setVolume(0.9)
-	music:play()
+	-- music = love.audio.newSource("snd/asd.wav", "static")
+	-- music:setVolume(0.9)
+	-- music:play()
 end
 
 function love.update(dt)
@@ -44,11 +44,6 @@ function love.keypressed(key)
 	if key == "i" then	boss.player.inventory.show()
 	elseif key == "q" then	boss.player.action()
 	elseif key == "space" then	boss.chat.next()
-	elseif key == "c" then
-		boss.chat.write({"ciao e benvenuto in questo gioco","usa le freccie per muoverti",
-		"attraversando le porte cambierai zona","se muori ritorni in questo poso",
-		"conserva i soldi per quando trovi un mercante"})
-		boss.chat.show()
-	end
 
+	end
 end
