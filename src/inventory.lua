@@ -1,11 +1,13 @@
 -- inventory.lua
 
 Interface = require("interface")
+Quest_list = require("quest_list")
 
 function Inventory(boss)
   local inventory = {}
   local bag = {}
-  local interface = Interface(boss)
+  inventory.interface = Interface(boss)
+  inventory.quest_list = Quest_list(boss)
   local grill = boss.grill
   local show = false
 
@@ -15,7 +17,7 @@ function Inventory(boss)
       love.graphics.rectangle("fill", 0, 0, grill.WIDTH, grill.tile*2,0,2,2)
       for i,p in ipairs(bag) do
         p.draw(i,0) end
-      interface.draw()
+      inventory.interface.draw()
     end
   end
 

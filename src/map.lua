@@ -19,6 +19,7 @@ function Maps(boss)
     boss.group = maps[door_prop.dest]
     boss.player.x = door_prop.dest_x
     boss.player.y = door_prop.dest_y
+    boss.name_map = door_prop.dest
   end
 
   function load_map(level)

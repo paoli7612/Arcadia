@@ -11,8 +11,9 @@ function Boss()
 	boss.grill = Grill()
 	boss.images = Images(boss.grill)
 	boss.maps = Maps(boss)
-	boss.player = Player(boss,20,5)
+	boss.player = Player(boss,36,6)
 	boss.group = boss.maps["spawn"]
+	boss.name_map = "spawn"
 	boss.chat = Chat(boss)
 	return boss
 end
