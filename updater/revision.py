@@ -16,7 +16,7 @@ def main():
     #re.findall('"[0-9]{5}+"',ftos("img/items.json"))
     sprites_list=list()
 
-    for i in re.findall('"[A-Za-z]*[0-9][0-9]+"',ftos("../src/img/sprites.json")):
+    for i in re.findall('"[A-Za-z]*[0-9][0-9]+"',ftos("../src/img/s.json")):
         id=i.replace('"','')
         id=int(id)
         try:
