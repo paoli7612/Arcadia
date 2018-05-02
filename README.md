@@ -28,5 +28,4 @@ This simply program allow you to create or change all game map. All game map sav
 in map_editor folder there is main.py.
 WINDOWS: use run_win.bat in map_editor folder for give name of map to create/change
 LINUX: type `python main.py` in map_editor folder to see help of argparse
-![alt text](doc/img/006.png)
-![alt text](doc/img/007.png)
+![alt text](doc/img/010.png)
