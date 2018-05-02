@@ -73,9 +73,11 @@ class Selector(pygame.sprite.Sprite):
 
         if self.position == "map":
             if not self.selected == "Nil":
-                element,type_name = newSprite_code(self.selected,self.x,self.y)
-                self.prop[type_name].append(element)
-                for element in self.prop[type_name]: print(element["code"])
+                try:
+                    element,type_name = newSprite_code(self.selected,self.x,self.y)
+                    self.prop[type_name].append(element)
+                    for element in self.prop[type_name]: print(element["code"])
+                except: print("newSprite_code faild")
 
         elif self.position == "toolbar":
             try:

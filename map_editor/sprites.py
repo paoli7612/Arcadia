@@ -1,4 +1,6 @@
 import template
+from box import get_door_param, get_cartel_param, get_npc_param
+
 
 TYPES_NAME = "wall floor door npc decor torch cartel water".split()
 
@@ -41,7 +43,6 @@ class Door:
     def __str__(self): return (template.door % self.param)
     def __getitem__(self, key): return self.dict[key]
 
-
 class Npc:
     def __init__(self, code, coord_x, coord_y, allow_x, allow_y, nickname):
         try:
@@ -57,7 +58,6 @@ class Npc:
     def __str__(self): return (template.npc % self.param)
     def __getitem__(self, key): return self.dict[key]
 
-
 class Decor:
     def __init__(self, code, coord_x, coord_y):
         try: code, coord_x, coord_y = get_str(code), get_int(coord_x), get_int(coord_y)
@@ -68,7 +68,6 @@ class Decor:
 
     def __str__(self): return (template.decor % self.param)
     def __getitem__(self, key): return self.dict[key]
-
 
 class Torch:
     def __init__(self, code, coord_x, coord_y):
@@ -121,8 +120,15 @@ def newSprite_code(code, x, y):
     if f == 0: return Wall(code,x,y), "wall"
     elif f == 1: return Floor(code,x,y), "floor"
     elif f == 2: return Decor(code,x,y), "decor"
-    elif f == 3: return Door("null",code,x,y,0,0), "door"
     elif f == 4: return Torch(code,x,y), "torch"
-    elif f == 5: return Cartel("null",code,x,y), "cartel"
-    elif f == 6: return Npc(code,x,y,0,0,"name"), "npc"
     elif f == 7: return Water(code,x,y), "water"
+    # use tkinter
+    elif f == 3:
+        param = get_door_param()
+        return Door(param["dest"],code,x,y,int(param["dest_x"]),int(param["dest_y"])), "door"
+    elif f == 6:
+        param = get_npc_param()
+        return Npc(code,x,y,int(param["allow_x"]),int(param["allow_y"]),param["nickname"]), "npc"
+    elif f == 5:
+        param = get_cartel_param()
+        return Cartel(param["text"],code,x,y), "cartel"

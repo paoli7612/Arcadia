@@ -41,7 +41,7 @@ class Box:
             self.new_pair(voice,row)
         self.new_button("ok", self.end, row+1, 1)
 
-def get_door_npc():
+def get_door_param():
     box = Box()
     box.set_voices("dest dest_x dest_y".split())
     box.start()
@@ -50,5 +50,11 @@ def get_door_npc():
 def get_npc_param():
     box = Box()
     box.set_voices("nickname allow_x allow_y".split())
+    box.start()
+    return box.param
+
+def get_cartel_param():
+    box = Box()
+    box.set_voices("text".split())
     box.start()
     return box.param
