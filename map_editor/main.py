@@ -80,8 +80,7 @@ class Program:
 # test
 if __name__ == "__main__":
     a = Argparser()
-    if a.start:
-        g = Program(a)
+    g = Program(a)
 
 
 

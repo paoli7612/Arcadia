@@ -1,10 +1,11 @@
 import os, re
+from argparser import Argparser
 
 class Program:
-    def __init__(self):
+    def __init__(self, argv):
         self.sprites_list = list()
         self.path = os.path.dirname(__file__)
-        name_file = "s.json"
+        name_file = argv.json_name + ".json"
         self.json_path = os.path.join(self.path, "..", "src", "img", name_file)
         self.json_text = self.get_text(self.json_path)
         self.start()
@@ -31,4 +32,5 @@ class Program:
         return string
 
 if __name__ == "__main__":
-    p = Program()
+    a = Argparser()
+    p = Program(a)

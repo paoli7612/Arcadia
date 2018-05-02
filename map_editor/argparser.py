@@ -11,7 +11,6 @@ description = """
 """
 class Argparser:
     def __init__(self):
-        self.start = True
         self.parser = argparse.ArgumentParser(description=description)
         self.parser.add_argument("map name", metavar="NAME_MAP", type=str,
                                     help="the name of the map")
