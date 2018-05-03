@@ -8,6 +8,7 @@ Decor = require("sprites/decor")
 Torch = require("sprites/torch")
 Cartel = require("sprites/cartel")
 Water = require("sprites/water")
+Lever = require("sprites/lever")
 
 function Maps(boss)
   local grill = boss.grill
@@ -36,6 +37,7 @@ function Maps(boss)
     for i,torch in ipairs(level.properties.torch) do maps[level.name].add(Torch(boss,torch)) end
     for i,cartel in ipairs(level.properties.cartel) do maps[level.name].add(Cartel(boss,cartel)) end
     for i,water in ipairs(level.properties.water) do maps[level.name].add(Water(boss,water)) end
+    for i,lever in ipairs(level.properties.lever) do maps[level.name].add(Lever(boss,lever)) end
     return group
   end
 

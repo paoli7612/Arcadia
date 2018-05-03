@@ -11,7 +11,7 @@ class Builder:
 
     def save(self):
         down = "\n\t\t\t\t\t\t\t\t\t\t"
-        walls, floors, doors, npcs, decors, torchs, cartels, waters = str(),str(),str(),str(),str(),str(),str(),str()
+        walls, floors, doors, npcs, decors, torchs, cartels, waters, levers = " "*9
 
         props = self.program.converter.properties
 
@@ -23,7 +23,8 @@ class Builder:
         for torch in props["torch"]: torchs += str(torch) + down
         for cartel in props["cartel"]: cartels += str(cartel) + down
         for water in props["water"]: waters += str(water) + down
+        for lever in props["lever"]: levers += str(lever) + down
 
         f = open(self.program.path_maps, "w")
-        f.write(template.to_fill %(self.program.name_map, walls, floors, doors, npcs, decors, torchs, cartels, waters))
+        f.write(template.to_fill %(self.program.name_map, walls, floors, doors, npcs, decors, torchs, cartels, waters, levers))
         f.close()

@@ -223,7 +223,7 @@ return {
 										{code = "00003", coord_x = 34, coord_y = 17},
 										{code = "00003", coord_x = 21, coord_y = 24},
 										{code = "00003", coord_x = 20, coord_y = 24},
-										
+
     			},
     			floor={
                     {code = "10017", coord_x = 19, coord_y = 1},
@@ -618,25 +618,25 @@ return {
 										{code = "10039", coord_x = 0, coord_y = 5},
 										{code = "10039", coord_x = 1, coord_y = 5},
 										{code = "10039", coord_x = 2, coord_y = 5},
-										
+
     			},
     			door={
                     {dest = "spawn", code = "30001", coord_x = 19, coord_y = 0, dest_x = 19, dest_y = 23},
 										{dest = "spawn", code = "30001", coord_x = 20, coord_y = 0, dest_x = 20, dest_y = 23},
 										{dest = "null", code = "30001", coord_x = 2, coord_y = 3, dest_x = 0, dest_y = 0},
-										
+
     			},
     			npc={
-                    
+
                 },
     			decor={
-                    
+
                 },
     			torch={
-                    
+
     			},
     			cartel={
-                    
+
                 },
                 water={
                     {code = "70002", coord_x = 14, coord_y = 10},
@@ -775,8 +775,10 @@ return {
 										{code = "70002", coord_x = 6, coord_y = 14},
 										{code = "70002", coord_x = 7, coord_y = 15},
 										{code = "70002", coord_x = 7, coord_y = 14},
-										
-                }
 
+                },
+                lever = {
+
+                }
     		}
     	}

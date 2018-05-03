@@ -55,6 +55,12 @@ def get_npc_param():
 
 def get_cartel_param():
     box = Box()
-    box.set_voices("text".split())
+    box.set_voices(["text"])
+    box.start()
+    return box.param
+
+def get_lever_param():
+    box = Box()
+    box.set_voices(["datasheet"])
     box.start()
     return box.param

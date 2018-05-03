@@ -16,7 +16,7 @@ class Program:
         pygame.init()
         self.opt = Setting()
         self.name_map = arg.name_map
-        self.screen = pygame.display.set_mode((self.opt.WIDTH + self.opt.TILE_SIZE*15,self.opt.HEIGHT + self.opt.TILE_SIZE*3))
+        self.screen = pygame.display.set_mode((self.opt.WIDTH + self.opt.TILE_SIZE + self.opt.TOOLBAR_X,self.opt.HEIGHT + self.opt.TILE_SIZE*3))
         self.set_grill_surface()
         pygame.display.set_caption(self.opt.TITLE)
         self.path = os.path.dirname(__file__)

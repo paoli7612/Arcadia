@@ -2,7 +2,7 @@ return {
     	name = "spawn",
     	properties={
     			wall={
-                    {code = "00006", coord_x = 18, coord_y = 24},
+                     {code = "00006", coord_x = 18, coord_y = 24},
 										{code = "00006", coord_x = 21, coord_y = 24},
 										{code = "00006", coord_x = 39, coord_y = 3},
 										{code = "00006", coord_x = 39, coord_y = 4},
@@ -105,7 +105,7 @@ return {
 										
     			},
     			floor={
-                    {code = "10055", coord_x = 13, coord_y = 20},
+                     {code = "10055", coord_x = 13, coord_y = 20},
 										{code = "10055", coord_x = 14, coord_y = 20},
 										{code = "10055", coord_x = 15, coord_y = 20},
 										{code = "10055", coord_x = 16, coord_y = 20},
@@ -821,17 +821,17 @@ return {
 										
     			},
     			door={
-                    {dest = "street", code = "30001", coord_x = 20, coord_y = 24, dest_x = 19, dest_y = 1},
+                     {dest = "street", code = "30001", coord_x = 20, coord_y = 24, dest_x = 19, dest_y = 1},
 										{dest = "street", code = "30001", coord_x = 19, coord_y = 24, dest_x = 20, dest_y = 1},
 										
     			},
     			npc={
-                    {code = "60038", coord_x = 36, coord_y = 7, allow_x = 0, allow_y = 0, nickname = "steve"},
+                     {code = "60038", coord_x = 36, coord_y = 7, allow_x = 0, allow_y = 0, nickname = "steve"},
 										{code = "60027", coord_x = 9, coord_y = 8, allow_x = 0, allow_y = 0, nickname = "andy"},
 										
                 },
     			decor={
-                    {code = "20014", coord_x = 38, coord_y = 4},
+                     {code = "20014", coord_x = 38, coord_y = 4},
 										{code = "20015", coord_x = 36, coord_y = 4},
 										{code = "20016", coord_x = 34, coord_y = 4},
 										{code = "20013", coord_x = 32, coord_y = 4},
@@ -981,7 +981,7 @@ return {
 										
                 },
     			torch={
-                    {code = "40003", coord_x = 31, coord_y = 10},
+                     {code = "40003", coord_x = 31, coord_y = 10},
 										{code = "40003", coord_x = 6, coord_y = 5},
 										{code = "40003", coord_x = 25, coord_y = 14},
 										{code = "40002", coord_x = 15, coord_y = 20},
@@ -990,11 +990,11 @@ return {
 										
     			},
     			cartel={
-                    {text = "CasadiSteve", code = "50001", coord_x = 33, coord_y = 10},
+                     {text = "CasadiSteve", code = "50001", coord_x = 33, coord_y = 10},
 										
                 },
                 water={
-                    {code = "70000", coord_x = 39, coord_y = 14},
+                     {code = "70000", coord_x = 39, coord_y = 14},
 										{code = "70000", coord_x = 38, coord_y = 14},
 										{code = "70000", coord_x = 37, coord_y = 14},
 										{code = "70000", coord_x = 36, coord_y = 14},
@@ -1181,6 +1181,10 @@ return {
 										{code = "70000", coord_x = 39, coord_y = 20},
 										{code = "70000", coord_x = 39, coord_y = 21},
 										{code = "70000", coord_x = 39, coord_y = 22},
+										
+                },
+                lever={
+                     {text = "123", code = "80002", coord_x = 22, coord_y = 14},
 										
                 }
 

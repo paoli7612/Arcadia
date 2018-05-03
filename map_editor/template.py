@@ -16,6 +16,9 @@ empty ="""return {
     			cartel={
                 }
                 water={
+                },
+                lever={
+
                 }
     		}
     	}
@@ -47,6 +50,9 @@ to_fill ="""return {
                 },
                 water={
                     %s
+                },
+                lever={
+                    %s
                 }
 
     		}
@@ -62,3 +68,4 @@ decor = "{code = \"%s\", coord_x = %d, coord_y = %d},"
 torch = "{code = \"%s\", coord_x = %d, coord_y = %d},"
 cartel = "{text = \"%s\", code = \"%s\", coord_x = %d, coord_y = %d},"
 water = "{code = \"%s\", coord_x = %d, coord_y = %d},"
+lever = "{code = \"%s\", datasheet = \"%s\", coord_x = %d, coord_y = %d}"

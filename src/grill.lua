@@ -1,9 +1,12 @@
 -- grill
 function Grill()
+	love.window.setFullscreen(true)
+	maxWidth = love.graphics.getWidth()-100
+	maxHeight = love.graphics.getHeight()-100
 	local grill = {
 		tile_w = 40,
 		tile_h = 25,
-		tile = 38,	-- change if your monitor is too small
+		tile = maxHeight/25,	-- change if your monitor is too small
 	}
 	grill.WIDTH = grill.tile_w*grill.tile
 	grill.HEIGHT = grill.tile_h*grill.tile
