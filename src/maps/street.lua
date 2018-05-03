@@ -244,7 +244,7 @@ return {
 										{code = "00010", coord_x = 39, coord_y = 24},
 										{code = "00011", coord_x = 38, coord_y = 24},
 										{code = "00011", coord_x = 38, coord_y = 19},
-										
+
     			},
     			floor={
                      {code = "10017", coord_x = 19, coord_y = 1},
@@ -647,16 +647,16 @@ return {
 										{code = "10033", coord_x = 35, coord_y = 22},
 										{code = "10033", coord_x = 31, coord_y = 22},
 										{code = "10033", coord_x = 27, coord_y = 22},
-										
+
     			},
     			door={
                      {dest = "spawn", code = "30001", coord_x = 19, coord_y = 0, dest_x = 19, dest_y = 23, id = 0},
 										{dest = "spawn", code = "30001", coord_x = 20, coord_y = 0, dest_x = 20, dest_y = 23, id = 0},
 										{dest = "null", code = "30001", coord_x = 2, coord_y = 3, dest_x = 0, dest_y = 0, id = 1},
-										
+
     			},
     			npc={
-                     
+
                 },
     			decor={
                      {code = "20005", coord_x = 26, coord_y = 20},
@@ -665,15 +665,15 @@ return {
 										{code = "20059", coord_x = 34, coord_y = 20},
 										{code = "20020", coord_x = 26, coord_y = 23},
 										{code = "20060", coord_x = 27, coord_y = 20},
-										
+
                 },
     			torch={
                      {code = "40010", coord_x = 36, coord_y = 19},
 										{code = "40005", coord_x = 38, coord_y = 20},
-										
+
     			},
     			cartel={
-                     
+
                 },
                 water={
                      {code = "70002", coord_x = 14, coord_y = 10},
@@ -812,13 +812,13 @@ return {
 										{code = "70002", coord_x = 6, coord_y = 14},
 										{code = "70002", coord_x = 7, coord_y = 15},
 										{code = "70002", coord_x = 7, coord_y = 14},
-										
+
                 },
                 lever={
-                     {text = "01", code = "80003", coord_x = 29, coord_y = 22},
-										{text = "02", code = "80002", coord_x = 32, coord_y = 22},
-										{text = "03", code = "80003", coord_x = 35, coord_y = 22},
-										
+                     {datasheet = "01", code = "80003", coord_x = 29, coord_y = 22},
+										{datasheet = "02", code = "80002", coord_x = 32, coord_y = 22},
+										{datasheet = "03", code = "80003", coord_x = 35, coord_y = 22},
+
                 }
 
     		}
