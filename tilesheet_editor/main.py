@@ -2,6 +2,7 @@ import os, re
 from argparser import Argparser
 
 class Program:
+    DIM_ID=4
     def __init__(self, argv):
         self.sort_list=list()
         self.sprites_list = list()
@@ -24,12 +25,18 @@ class Program:
                 elif self.sprites_list[-2] < id  and self.sprites_list[-1]!=1:
                     self.sprites_list[-1] = self.sprites_list[-2]+1
             except: pass
-            zz = 4-len(str(self.sprites_list[-1]))
+            zz = self.DIM_ID-len(str(self.sprites_list[-1]))
             for z in range(zz):
                 z_id = z_id + '0'
             self.sort_list.append(head_id+z_id+str(self.sprites_list[-1]))
             z_id =''
         print(self.sort_list)
+
+        for line in open(self.json_path):
+            f=open('sort.jason','w')
+            line=re.sub(r"[A-Za-z]*[0-9][0-9]+",self.sort_list[1], line)
+            f.write(line)
+            print(line)
     def get_text(self,file_name):
         string = str()
         for row in open(file_name, "r"):
