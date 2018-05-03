@@ -33,9 +33,7 @@ class Program:
         print(self.sort_list)
 
         for line in open(self.json_path):
-            f=open('sort.jason','w')
-            line=re.sub(r"[A-Za-z]*[0-9][0-9]+",self.sort_list[1], line)
-            f.write(line)
+            line=re.sub("[A-Za-z]*[0-9][0-9]+",self.sort_list[1], line)
             print(line)
     def get_text(self,file_name):
         string = str()
