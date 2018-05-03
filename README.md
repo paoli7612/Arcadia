@@ -1,4 +1,4 @@
-# TILE_GAME - LUA
+# ![alt text](doc/ico.ico) TILE_GAME - LUA ![alt text](doc/ico.ico)
 
 ## install LOVE
 - WINDOWS:
