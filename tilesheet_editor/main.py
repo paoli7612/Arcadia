@@ -3,6 +3,7 @@ from argparser import Argparser
 
 class Program:
     def __init__(self, argv):
+        self.sort_list=list()
         self.sprites_list = list()
         self.path = os.path.dirname(__file__)
         name_file = argv.json_name + ".json"
@@ -23,13 +24,12 @@ class Program:
                 elif self.sprites_list[-2] < id  and self.sprites_list[-1]!=1:
                     self.sprites_list[-1] = self.sprites_list[-2]+1
             except: pass
-
-
             zz = 4-len(str(self.sprites_list[-1]))
             for z in range(zz):
                 z_id = z_id + '0'
-            print(head_id+z_id+str(self.sprites_list[-1]))
+            self.sort_list.append(head_id+z_id+str(self.sprites_list[-1]))
             z_id =''
+        print(self.sort_list)
     def get_text(self,file_name):
         string = str()
         for row in open(file_name, "r"):
