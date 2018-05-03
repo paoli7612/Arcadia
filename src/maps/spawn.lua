@@ -226,7 +226,6 @@ return {
 										{code = "10056", coord_x = 17, coord_y = 14},
 										{code = "10056", coord_x = 20, coord_y = 14},
 										{code = "10056", coord_x = 21, coord_y = 14},
-										{code = "10056", coord_x = 22, coord_y = 14},
 										{code = "10056", coord_x = 23, coord_y = 14},
 										{code = "10056", coord_x = 24, coord_y = 14},
 										{code = "10056", coord_x = 26, coord_y = 14},
@@ -818,6 +817,7 @@ return {
 										{code = "10017", coord_x = 35, coord_y = 18},
 										{code = "10017", coord_x = 34, coord_y = 19},
 										{code = "10013", coord_x = 34, coord_y = 18},
+										{code = "10055", coord_x = 22, coord_y = 14},
 										
     			},
     			door={
@@ -1184,8 +1184,7 @@ return {
 										
                 },
                 lever={
-                     {text = "123", code = "80002", coord_x = 22, coord_y = 14},
-										
+                     
                 }
 
     		}

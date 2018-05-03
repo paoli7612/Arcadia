@@ -1,6 +1,6 @@
 -- player.lua
 
-Inventory = require("inventory")
+Inventory = require("gui/inventory")
 Food = require("sprites/items/food")
 
 function Player(boss,x,y)
@@ -55,6 +55,7 @@ function Player(boss,x,y)
 			end
 			if element.name == "cartel" then element.touch() end
 			if element.name == "door" then element.touch() end
+			if element.name == "lever" then element.touch() end
 		end
 	end
 

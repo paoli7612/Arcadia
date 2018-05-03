@@ -4,7 +4,7 @@ Grill = require("grill")
 Player = require("sprites/player")
 Maps = require("map")
 Images = require("images")
-Chat = require("chat")
+Chat = require("gui/chat")
 
 function Boss()
 	local boss = {}

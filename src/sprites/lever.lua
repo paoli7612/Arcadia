@@ -1,6 +1,6 @@
 -- lever.lua
 
-function Torch(boss,properties)
+function Lever(boss,properties)
 
 	local grill = boss.grill
 	local spritesheet = boss.images["sprites"]
@@ -26,4 +26,4 @@ function Torch(boss,properties)
 	return lever
 end
 
-return Torch
+return Lever

@@ -40,6 +40,9 @@ function Spritesheet(grill,type)
   function get_water(x,y)
     return {get_image(x,y),get_image(1+x,y),get_image(2+x,y),get_image(3+x,y)}
   end
+  function get_lever(x,y)
+    return {get_image(x,y),get_image(1+x,y),get_image(2+x,y)}
+  end
 
   lines = ""
   for line in io.lines("src/img/"..type..".json") do lines = lines .. line end
@@ -54,6 +57,8 @@ function Spritesheet(grill,type)
           spritesheet.quads[sprite_type][id] = get_torch(dict[sprite_type][id]["x"],dict[sprite_type][id]["y"])
         elseif sprite_type == "npc" then
           spritesheet.quads[sprite_type][id] = get_npc(dict[sprite_type][id]["x"],dict[sprite_type][id]["y"])
+        elseif sprite_type == "lever" then
+          spritesheet.quads[sprite_type][id] = get_lever(dict[sprite_type][id]["x"],dict[sprite_type][id]["y"])
         else
           spritesheet.quads[sprite_type][id] = get_image(dict[sprite_type][id]["x"],dict[sprite_type][id]["y"])
         end

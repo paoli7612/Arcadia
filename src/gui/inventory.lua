@@ -1,6 +1,6 @@
 -- inventory.lua
 
-Interface = require("interface")
+Interface = require("gui/interface")
 Quest_list = require("quest_list")
 
 function Inventory(boss)
