@@ -107,7 +107,6 @@ return {
     			floor={
                      {code = "10055", coord_x = 13, coord_y = 20},
 										{code = "10055", coord_x = 14, coord_y = 20},
-										{code = "10055", coord_x = 15, coord_y = 20},
 										{code = "10055", coord_x = 16, coord_y = 20},
 										{code = "10055", coord_x = 17, coord_y = 20},
 										{code = "10055", coord_x = 18, coord_y = 20},
@@ -321,7 +320,6 @@ return {
 										{code = "10056", coord_x = 28, coord_y = 10},
 										{code = "10056", coord_x = 29, coord_y = 10},
 										{code = "10056", coord_x = 30, coord_y = 10},
-										{code = "10056", coord_x = 31, coord_y = 10},
 										{code = "10056", coord_x = 32, coord_y = 10},
 										{code = "10056", coord_x = 33, coord_y = 10},
 										{code = "10056", coord_x = 34, coord_y = 10},
@@ -406,7 +404,6 @@ return {
 										{code = "10056", coord_x = 3, coord_y = 5},
 										{code = "10056", coord_x = 4, coord_y = 5},
 										{code = "10056", coord_x = 5, coord_y = 5},
-										{code = "10056", coord_x = 6, coord_y = 5},
 										{code = "10056", coord_x = 7, coord_y = 4},
 										{code = "10056", coord_x = 8, coord_y = 4},
 										{code = "10056", coord_x = 9, coord_y = 4},
@@ -818,11 +815,14 @@ return {
 										{code = "10017", coord_x = 34, coord_y = 19},
 										{code = "10013", coord_x = 34, coord_y = 18},
 										{code = "10055", coord_x = 22, coord_y = 14},
+										{code = "10057", coord_x = 31, coord_y = 10},
+										{code = "10057", coord_x = 15, coord_y = 20},
+										{code = "10057", coord_x = 6, coord_y = 5},
 										
     			},
     			door={
-                     {dest = "street", code = "30001", coord_x = 20, coord_y = 24, dest_x = 19, dest_y = 1},
-										{dest = "street", code = "30001", coord_x = 19, coord_y = 24, dest_x = 20, dest_y = 1},
+                     {dest = "street", code = "30001", coord_x = 20, coord_y = 24, dest_x = 19, dest_y = 1, id = 0},
+										{dest = "street", code = "30001", coord_x = 19, coord_y = 24, dest_x = 20, dest_y = 1, id = 0},
 										
     			},
     			npc={
@@ -981,10 +981,7 @@ return {
 										
                 },
     			torch={
-                     {code = "40003", coord_x = 31, coord_y = 10},
-										{code = "40003", coord_x = 6, coord_y = 5},
-										{code = "40003", coord_x = 25, coord_y = 14},
-										{code = "40002", coord_x = 15, coord_y = 20},
+                     {code = "40003", coord_x = 25, coord_y = 14},
 										{code = "40002", coord_x = 20, coord_y = 5},
 										{code = "40006", coord_x = 2, coord_y = 20},
 										

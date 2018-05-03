@@ -43,7 +43,7 @@ class Box:
 
 def get_door_param():
     box = Box()
-    box.set_voices("dest dest_x dest_y".split())
+    box.set_voices("dest dest_x dest_y id".split())
     box.start()
     return box.param
 

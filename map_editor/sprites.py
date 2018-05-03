@@ -30,14 +30,14 @@ class Floor:
     def __getitem__(self, key): return self.dict[key]
 
 class Door:
-    def __init__(self, dest, code, coord_x, coord_y, dest_x, dest_y):
+    def __init__(self, dest, code, coord_x, coord_y, dest_x, dest_y, id):
         try:
-            dest, code =  get_str(dest), get_str(code)
+            dest, code, id =  get_str(dest), get_str(code), get_int(id)
             coord_x, coord_y = get_int(coord_x), get_int(coord_y)
             dest_x, dest_y = get_int(dest_x), get_int(dest_y)
         except: pass
-        self.dict = {"dest":dest,"code":code,"coord_x":coord_x,"coord_y":coord_y,"dest_x":dest_x,"dest_y":dest_y}
-        self.param = (dest, code, coord_x, coord_y, dest_x, dest_y)
+        self.dict = {"dest":dest,"code":code,"coord_x":coord_x,"coord_y":coord_y,"dest_x":dest_x,"dest_y":dest_y,"id":id}
+        self.param = (dest, code, coord_x, coord_y, dest_x, dest_y, id)
         self.LAYER = "2:" + str(coord_x) + "-" + str(coord_y)
 
     def __str__(self): return (template.door % self.param)
@@ -138,7 +138,7 @@ def newSprite_code(code, x, y):
     elif f == 2: return Decor(code,x,y), "decor"
     elif f == 3:
         param = get_door_param()
-        return Door(param["dest"],code,x,y,int(param["dest_x"]),int(param["dest_y"])), "door"
+        return Door(param["dest"],code,x,y,int(param["dest_x"]),int(param["dest_y"]),int(param["id"])), "door"
     elif f == 4: return Torch(code,x,y), "torch"
     elif f == 5:
         param = get_cartel_param()
