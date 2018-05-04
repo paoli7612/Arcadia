@@ -32,14 +32,27 @@ class Program:
             z_id =''
         print(self.sort_list)
 
+
         for line in open(self.json_path):
-            line=re.sub("[A-Za-z]*[0-9][0-9]+",self.sort_list[1], line)
+            line=re.sub("[A-Za-z]*[0-9][0-9][0-9]+",self.sort_list[1], line)
             print(line)
+
+
+
+        f = open(self.json_path,"w")
+        # write
+        f.close()
+
+
     def get_text(self,file_name):
         string = str()
         for row in open(file_name, "r"):
             string += row.strip()
         return string
+
+
+
+
 
 
 
