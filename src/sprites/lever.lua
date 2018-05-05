@@ -5,7 +5,7 @@ function Lever(boss, properties, name_map)
 	local grill = boss.grill
 	local spritesheet = boss.images["lever"]
 	local properties = properties
-  local frame = 1
+  local frame = 1 
 
 	function get_data_sheet(name_map)
 		local data_list = require("datasheets/" .. name_map)
@@ -23,8 +23,6 @@ function Lever(boss, properties, name_map)
 	}
 
 	function lever.draw()
-		print(properties.code)
-		print(spritesheet.quads)
 		spritesheet.draw_image(lever.x*grill.tile,lever.y*grill.tile,spritesheet.quads[properties.code][frame])
 	end
 

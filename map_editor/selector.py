@@ -38,7 +38,7 @@ class Selector(pygame.sprite.Sprite):
 
         if self.x < self.opt.TILE_X and self.y < self.opt.TILE_Y:
             self.position = "map"
-        elif self.x > self.opt.TILE_X and self.y < self.opt.TILE_Y:
+        elif self.x > self.opt.TILE_X:
             self.position = "toolbar"
         else: self.position = ""
 
@@ -67,7 +67,7 @@ class Selector(pygame.sprite.Sprite):
         opt = self.program.opt
         prop = self.program.toolbar.prop
 
-        if self.x == opt.TILE_X or self.y == opt.TILE_Y:
+        if self.x == opt.TILE_X:
             print("invalid click"); return
         self.program.saved = False
 

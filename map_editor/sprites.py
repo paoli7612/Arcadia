@@ -106,7 +106,7 @@ class Cartel:
     def __getitem__(self, key): return self.dict[key]
 
 class Lever:
-    def __init__(self, code, datasheet, coord_x, coord_y):
+    def __init__(self, datasheet, code, coord_x, coord_y):
         try:
             datasheet, code = get_str(datasheet), get_str(code)
             coord_x, coord_y = get_int(coord_x), get_int(coord_y)
@@ -120,7 +120,7 @@ class Lever:
     def __getitem__(self, key): return self.dict[key]
 
 class Chest:
-    def __init__(self, code, datasheet, coord_x, coord_y):
+    def __init__(self, datasheet, code, coord_x, coord_y):
         try:
             datasheet, code = get_str(datasheet), get_str(code)
             coord_x, coord_y = get_int(coord_x), get_int(coord_y)

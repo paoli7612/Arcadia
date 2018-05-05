@@ -8,9 +8,6 @@ function Player(boss,x,y)
 	local boss = boss
 
 	local spritesheet = boss.images["npc"]
-	for a in pairs(spritesheet.quads) do
-		print(a)
-	end
 	local time = 0
 
 	local direction = "down"

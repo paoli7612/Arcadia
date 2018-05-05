@@ -28,7 +28,7 @@ class Toolbar:
                 print(type_name,code)
                 self.prop[x+px].append(code)
             pygame.draw.line(self.screen, self.opt.Colors.BLACK, (self.opt.TILE_SIZE*(x+px+1),0),
-                            (self.opt.TILE_SIZE*(x+px+1),self.opt.HEIGHT), 4)
+                            (self.opt.TILE_SIZE*(x+px+1),self.opt.TOOLBAR_Y), 4)
 
 
     def draw(self, screen):

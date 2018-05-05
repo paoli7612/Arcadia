@@ -66,32 +66,34 @@ function Npc(boss,properties)
 	end
 
 	function npc.update(dt)
-		npc.dx, npc.dy = 0,0
+		if not boss.chat.activate then
+			npc.dx, npc.dy = 0,0
 
-		time = time + dt
-		if time > speed then
-			p = love.math.random(6) -- 1 stop 2 right 3 left 4 up 5 down 6 stop
-			if p == 2 and npc.x + 1 <= allow_x.max then
-					npc.dx = 1
-					direction = "right"
-			elseif p == 3 and npc.x - 1 >= allow_x.min then
-					npc.dx = -1
-					direction = "left"
-			elseif p == 4 and npc.y + 1 <= allow_y.max then
-					npc.dy = 1
-					direction = "down"
-			elseif p == 5 and npc.y - 1 >= allow_y.min then
-					npc.dy = -1
-					direction = "up"
+			time = time + dt
+			if time > speed then
+				p = love.math.random(6) -- 1 stop 2 right 3 left 4 up 5 down 6 stop
+				if p == 2 and npc.x + 1 <= allow_x.max then
+						npc.dx = 1
+						direction = "right"
+				elseif p == 3 and npc.x - 1 >= allow_x.min then
+						npc.dx = -1
+						direction = "left"
+				elseif p == 4 and npc.y + 1 <= allow_y.max then
+						npc.dy = 1
+						direction = "down"
+				elseif p == 5 and npc.y - 1 >= allow_y.min then
+						npc.dy = -1
+						direction = "up"
+				end
+
+				speed = 1 + math.random();
+
+				if not boss.group.collide_pair(npc,boss.player) then
+					npc.x = npc.x + npc.dx
+					npc.y = npc.y + npc.dy
+				end
+				time = 0
 			end
-
-			speed = 1 + math.random();
-
-			if not boss.group.collide_pair(npc,boss.player) then
-				npc.x = npc.x + npc.dx
-				npc.y = npc.y + npc.dy
-			end
-			time = 0
 		end
 	end
 
