@@ -9,6 +9,7 @@ return {
     torch={},
     cartel={},
     water={},
-    lever={}
+    lever={},
+    chest={}
   }
 }

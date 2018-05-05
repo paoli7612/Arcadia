@@ -27,6 +27,9 @@ return {
                 },
                 lever={
 
+                },
+                chest={
+                  
                 }
 
     		}
