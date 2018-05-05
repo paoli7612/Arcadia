@@ -49,7 +49,6 @@ function Spritesheet(grill,type)
     if not (code == "_") then
       x = dict[d]["x"]
       y = dict[d]["y"]
-      print(x,y)
       if type == "water" then
         spritesheet.quads[code] = get_water(x, y)
       elseif type == "torch" then

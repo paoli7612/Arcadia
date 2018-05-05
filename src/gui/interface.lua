@@ -41,10 +41,12 @@ end
 function interface.add_exp(exp)
   attr.exp = attr.exp + exp
   if attr.exp >= attr.exp_max then
+    -- level up
     attr.exp = attr.exp - attr.exp_max
     attr.exp_max = attr.exp_max * 2
     attr.level = attr.level + 1
     attr.life_max = attr.life_max + 10
+    attr.life = attr.life_max
     print("new level")
   end
 end

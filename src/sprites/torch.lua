@@ -16,7 +16,6 @@ function Torch(boss,properties)
 	}
 
 	function torch.draw()
-		print("torch")
 		spritesheet.draw_image(torch.x*grill.tile,torch.y*grill.tile,spritesheet.quads[properties.code][frame])
 	end
 

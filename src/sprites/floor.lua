@@ -14,7 +14,6 @@ function Floor(boss,properties)
 	}
 
 	function floor.draw()
-		print("floor")
 		spritesheet.draw_image(floor.x*grill.tile,floor.y*grill.tile,spritesheet.quads[floor.code])
 	end
 

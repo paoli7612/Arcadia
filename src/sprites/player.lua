@@ -26,7 +26,6 @@ function Player(boss,x,y)
 	}
 	player.inventory.add(Food(boss,"B0001"))
 	function player.draw()
-		print("player")
 		spritesheet.draw_image(player.x*grill.tile, player.y*grill.tile, spritesheet.quads["60001"][direction][position][frame])
 		player.inventory.draw()
 	end
