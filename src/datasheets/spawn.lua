@@ -11,7 +11,10 @@ return {
   {
     name = "02",
     contenent = {},      -- contenuto chest
-    message = "empty",   -- messaggio all appertura
-    unlocket = true     -- chest apribile
+    message = {
+       open = {"questa cassa non sembra contenere nulla"},                  -- messaggio all appertura
+       lock = {"non riesco ad aprire questa cassa", "devo trovare un modo"} -- messaggio quando la cassa e'bloccata
+    },
+    unlocked = true     -- chest apribile
   }
 }

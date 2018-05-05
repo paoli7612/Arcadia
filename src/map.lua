@@ -39,7 +39,7 @@ function Maps(boss)
     for i,cartel in ipairs(level.properties.cartel) do maps[level.name].add(Cartel(boss,cartel)) end
     for i,water in ipairs(level.properties.water) do maps[level.name].add(Water(boss,water)) end
     for i,lever in ipairs(level.properties.lever) do maps[level.name].add(Lever(boss,lever,level.name)) end
-    for i,chest in ipairs(level.properties.chest) do maps[level.name].add(Chest(boss,chest)) end
+    for i,chest in ipairs(level.properties.chest) do maps[level.name].add(Chest(boss,chest,level.name)) end
     return group
   end
 

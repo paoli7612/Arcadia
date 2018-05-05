@@ -1,6 +1,6 @@
 -- chest.lua
 
-function Chest(boss,properties)
+function Chest(boss,properties, name_map)
 
 	local grill = boss.grill
 	local spritesheet = boss.images["chest"]
@@ -15,13 +15,30 @@ function Chest(boss,properties)
 		y = properties.coord_y
 	}
 
+	function get_data_sheet(name_map)
+		local data_list = require("datasheets/" .. name_map)
+		for i,datasheet in ipairs(data_list) do
+			if datasheet.name == properties.datasheet
+			then return datasheet end
+		end
+	end
+
+	local datasheet = get_data_sheet(name_map)
+
 	function chest.draw()
 		spritesheet.draw_image(chest.x*grill.tile,chest.y*grill.tile,spritesheet.quads[properties.code][frame])
 	end
 
 	function chest.touch()
-		activate = true
-		dframe = 1
+		if datasheet.unlocked then
+			activate = true
+			dframe = 1
+			boss.chat.write("cassa",datasheet.message.open)
+			boss.chat.show()
+		else
+			boss.chat.write("cassa",datasheet.message.lock)
+			boss.chat.show()
+		end
 	end
 
   function chest.update(dt)
