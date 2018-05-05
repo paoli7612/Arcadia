@@ -10,20 +10,8 @@ return {
   },
   {
     name = "02",
-    frame = 1,
-    purpose = "door",
-    command = "open",
-    other = "close",
-    id_door = 1,
-    scope = 2
-  },
-  {
-    name = "03",
-    frame = 1,
-    purpose = "door",
-    command = "open",
-    other = "close",
-    id_door = 1,
-    scope = 2
+    contenent = {},      -- contenuto chest
+    message = "empty",   -- messaggio all appertura
+    unlocket = true     -- chest apribile
   }
 }
