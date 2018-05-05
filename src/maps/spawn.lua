@@ -28,7 +28,7 @@ return {
 										{code = "00006", coord_x = 28, coord_y = 10},
 										{code = "00006", coord_x = 29, coord_y = 10},
 										{code = "00006", coord_x = 23, coord_y = 10},
-
+										
     			},
     			floor={
                     {code = "10167", coord_x = 24, coord_y = 10},
@@ -64,14 +64,14 @@ return {
 										{code = "10179", coord_x = 28, coord_y = 8},
 										{code = "10179", coord_x = 28, coord_y = 9},
 										{code = "10184", coord_x = 29, coord_y = 8},
-
+										
     			},
     			door={
                     {dest = "street", code = "30007", coord_x = 24, coord_y = 10, dest_x = 0, dest_y = 0, id = 1},
-
+										
     			},
     			npc={
-
+                    
                 },
     			decor={
                     {code = "20035", coord_x = 29, coord_y = 4},
@@ -89,25 +89,25 @@ return {
 										{code = "20034", coord_x = 23, coord_y = 8},
 										{code = "20034", coord_x = 24, coord_y = 8},
 										{code = "20059", coord_x = 29, coord_y = 9},
-
+										
                 },
     			torch={
                     {code = "40008", coord_x = 27, coord_y = 4},
-
+										
     			},
     			cartel={
-
+                    
                 },
                 water={
-
+                    
                 },
                 lever={
-                    {dataseet = "01", code = "80001", coord_x = 22, coord_y = 11},
-
+                    {text = "01", code = "80001", coord_x = 22, coord_y = 11},
+										
                 },
                 chest={
-                    {dataseet = "02", code = "90001", coord_x = 25, coord_y = 11},
-
+                    {datasheet = "02", code = "90001", coord_x = 25, coord_y = 11}
+										
                 }
 
     		}
