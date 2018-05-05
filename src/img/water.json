@@ -1,8 +1,8 @@
 {
-  "_cumment": "acqua",
+  "_": "acqua",
     "70001":{"x": 0, "y": 0},
-  "_cumment": "cascata",
+  "_": "cascata",
     "70002":{"x": 0, "y": 1},
-  "_cumment": "lava",
+  "_": "lava",
     "70003":{"x": 0, "y": 2}
-},
+}

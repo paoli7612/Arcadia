@@ -1,6 +1,6 @@
 import pygame, time, os
 from setting import Setting
-from spritesheet import Spritesheet
+from spritesheet import Images
 from converter import Converter
 from map import Map
 from builder import Builder
@@ -21,7 +21,7 @@ class Program:
         pygame.display.set_caption(self.opt.TITLE)
         self.path = os.path.dirname(__file__)
         self.path_img = os.path.join(self.path, ".." , "src", "img")
-        self.images = Spritesheet(self)
+        self.images = Images(self)
         self.path_maps = os.path.join(self.path, ".." , "src", "maps", self.name_map + self.opt.LUA_FORMAT)
         self.create = not os.path.exists(self.path_maps)
         self.builder = Builder(self)
