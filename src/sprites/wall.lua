@@ -13,6 +13,7 @@ function Wall(boss,properties)
 		code = properties.code
 	}
 	function wall.draw()
+		print("wall")
 		spritesheet.draw_image(wall.x*grill.tile, wall.y*grill.tile, spritesheet.quads[wall.code])
 	end
 

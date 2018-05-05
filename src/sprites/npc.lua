@@ -24,6 +24,7 @@ function Npc(boss,properties)
 	local description = require("../descriptions/" .. properties.nickname)
 
 	function npc.draw()
+		print("npc")
 		spritesheet.draw_image(npc.x*grill.tile,npc.y*grill.tile,spritesheet.quads[properties.code][direction]["stand"][1])
 	end
 

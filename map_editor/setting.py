@@ -12,7 +12,7 @@ class Setting:
     JSON_FORMAT = ".json"
 
 
-    TOOLBAR_X = TILE_SIZE * 17
+    TOOLBAR_X = TILE_SIZE * 18
     TOOLBAR_Y = HEIGHT
 
     class Colors:

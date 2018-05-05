@@ -14,6 +14,7 @@ function Door(boss, properties)
 	}
 
 	function door.draw()
+		print("door")
 		spritesheet.draw_image(door.x*grill.tile,door.y*grill.tile,spritesheet.quads[properties.code])
 	end
 

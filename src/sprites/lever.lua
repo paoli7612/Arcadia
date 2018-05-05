@@ -25,6 +25,7 @@ function Lever(boss, properties, name_map)
 	}
 
 	function lever.draw()
+		print("lever")
 		spritesheet.draw_image(lever.x*grill.tile,lever.y*grill.tile,spritesheet.quads[properties.code][frame])
 	end
 

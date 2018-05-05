@@ -12,6 +12,7 @@ function Cartel(boss,properties)
 	}
 
 	function cartel.draw()
+		print("cartel")
 		spritesheet.draw_image(cartel.x*grill.tile,cartel.y*grill.tile,spritesheet.quads[properties.code])
 	end
 

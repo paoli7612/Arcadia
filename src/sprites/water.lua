@@ -16,6 +16,7 @@ function Water(boss,properties)
 	}
 
 	function water.draw()
+		print("water")
 		spritesheet.draw_image(water.x*grill.tile,water.y*grill.tile,spritesheet.quads[properties.code][frame])
 	end
 
