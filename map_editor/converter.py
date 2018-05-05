@@ -29,7 +29,8 @@ class Converter:
         self.properties["torch"] = self.lua_text.split("torch")[1].split("cartel")[0]
         self.properties["cartel"] = self.lua_text.split("cartel")[1].split("water")[0]
         self.properties["water"] = self.lua_text.split("water")[1].split("lever")[0]
-        self.properties["lever"] = self.lua_text.split("lever")[1]
+        self.properties["lever"] = self.lua_text.split("lever")[1].split("chest")[0]
+        self.properties["chest"] = self.lua_text.split("chest")[1]
         # split text
         for property in self.properties:
             p = list()

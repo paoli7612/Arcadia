@@ -19,6 +19,9 @@ empty ="""return {
                 },
                 lever={
 
+                },
+                chest={
+
                 }
     		}
     	}
@@ -52,6 +55,9 @@ to_fill ="""return {
                     %s
                 },
                 lever={
+                    %s
+                },
+                chest={
                     %s
                 }
 

@@ -1,8 +1,8 @@
 import template
-from box import get_door_param, get_cartel_param, get_npc_param, get_lever_param
+from box import get_door_param, get_cartel_param, get_npc_param, get_lever_param, get_chest_param
 
 
-TYPES_NAME = "wall floor door npc decor torch cartel water lever".split()
+TYPES_NAME = "wall floor door npc decor torch cartel water lever chest".split()
 
 def get_int(str): return int(str.split("=")[1])
 def get_str(str): return str.split("=")[1].split("\"")[1]
@@ -119,6 +119,20 @@ class Lever:
     def __str__(self): return (template.cartel % self.param)
     def __getitem__(self, key): return self.dict[key]
 
+class Chest:
+    def __init__(self, code, datasheet, coord_x, coord_y):
+        try:
+            datasheet, code = get_str(datasheet), get_str(code)
+            coord_x, coord_y = get_int(coord_x), get_int(coord_y)
+        except: pass
+
+        self.dict = {"datasheet": datasheet, "code": code, "coord_x": coord_x, "coord_y": coord_y}
+        self.param = (datasheet, code, coord_x, coord_y)
+        self.LAYER = "2:" + str(coord_x) + "-" + str(coord_y)
+
+    def __str__(self): return (template.chest % self.param)
+    def __getitem__(self, key): return self.dict[key]
+
 
 def newSprite(type_name, param):
     if type_name == "wall": return Wall(*param)
@@ -130,6 +144,7 @@ def newSprite(type_name, param):
     elif type_name == "cartel": return Cartel(*param)
     elif type_name == "water": return Water(*param)
     elif type_name == "lever": return Lever(*param)
+    elif type_name == "chest": return Chest(*param)
 
 def newSprite_code(code, x, y):
     f = int(code[0])
@@ -150,3 +165,6 @@ def newSprite_code(code, x, y):
     elif f == 8:
         param = get_lever_param()
         return Lever(code,param["datasheet"],x,y), "lever"
+    elif f == 9:
+        param = get_chest_param()
+        return Lever(code,param["datasheet"],x,y), "chest"

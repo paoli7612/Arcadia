@@ -64,3 +64,9 @@ def get_lever_param():
     box.set_voices(["datasheet"])
     box.start()
     return box.param
+
+def get_chest_param():
+    box = Box()
+    box.set_voices(["datasheet"])
+    box.start()
+    return box.param

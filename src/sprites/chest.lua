@@ -23,7 +23,7 @@ function Chest(boss,properties)
 		time = time + dt
 		if time > speed then
 			frame = (frame + 1)
-      if frame == 4 then frame = 1 end
+      if frame == 5 then frame = 1 end
 			time = 0
 			speed = math.random();
 		end
