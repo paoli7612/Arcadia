@@ -109,41 +109,6 @@
       "30012":{"x": 4, "y": 18}
   },
 
-  "torch": {
-    "_cumment": "yellow",
-      "40001":{"x": 0, "y": 19},
-    "_cumment": "blue",
-      "40002":{"x": 0, "y": 20},
-    "_cumment": "red",
-      "40003":{"x": 0, "y": 21},
-    "_cumment": "green",
-      "40004":{"x": 0, "y": 22},
-    "_cumment": "purple",
-      "40005":{"x": 0, "y": 23},
-    "_cumment": "orange",
-      "40006":{"x": 0, "y": 24},
-    "_cumment": "fire1",
-      "40007":{"x": 0, "y": 18},
-    "_cumment": "fire2",
-      "40008":{"x": 0, "y": 17},
-    "_cumment": "fire3",
-      "40009":{"x": 0, "y": 16},
-    "_cumment": "fire4",
-      "40010":{"x": 0, "y": 15}
-  },
 
-  "lever": {
-    "_cumment": "yellow",
-      "80001":{"x": 3, "y": 19},
-    "_cumment": "blue",
-      "80002":{"x": 3, "y": 20},
-    "_cumment": "red",
-      "80003":{"x": 3, "y": 21},
-    "_cumment": "green",
-      "80004":{"x": 3, "y": 22},
-    "_cumment": "purple",
-      "80005":{"x": 3, "y": 23},
-    "_cumment": "orange",
-      "80006":{"x": 3, "y": 24}
-  }
+
 }
