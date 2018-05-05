@@ -1,6 +1,7 @@
 import pygame, os, json, time
+from sprites import TYPES_NAME
 
-class Images:
+class Spritesheet:
     def __init__(self, program, image_path):
         self.image = pygame.image.load(image_path)
         self.program = program
@@ -13,19 +14,23 @@ class Images:
         return image32
         image32 = pygame.transform.scale(image32, (self.program.opt.TILE_SIZE, self.program.opt.TILE_SIZE))
 
-class Spritesheet:
+class Images:
     def __init__(self, program):
         self.program = program
         self.images = dict()
-# SPRITES_____________________________________________________________________________________________________
-        image_path = os.path.join(self.program.path_img,"sprites" + self.program.opt.IMAGE_FORMAT)
-        self.sprites = Images(self.program, image_path)
-        self.images["sprites"] = dict()
-        get_image = self.sprites.get_image
+        for type in TYPES_NAME:
+            print(type)
+            self.load_images(type)
 
-        coords = json.load(open(os.path.join(self.program.path_img,"sprites" + self.program.opt.JSON_FORMAT)))
-        for item_type, item_coords in coords.items():
-            self.images["sprites"][item_type] = dict()
-            for code,coord in item_coords.items():
-                if code == "_cumment": continue
-                self.images["sprites"][item_type][code] = get_image(coord["x"],coord["y"])
+    def load_images(self,type):
+        image_path = os.path.join(self.program.path_img, type + self.program.opt.IMAGE_FORMAT)
+        data_path = os.path.join(self.program.path_img, type + self.program.opt.JSON_FORMAT)
+        ss = Spritesheet(self.program, image_path)
+        data = json.load(open(data_path))
+        self.images[type] = dict()
+        for code, coords in data.items():
+            if code == "_": continue    # cumment
+            self.images[type][code] = ss.get_image(*coords.values())
+
+    def __getitem__(self, key):
+        return self.images[key]

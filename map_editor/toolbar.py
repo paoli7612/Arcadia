@@ -12,14 +12,14 @@ class Toolbar:
     def reset_screen(self):
         self.screen.fill(self.opt.Colors.BLUE)
         prop = self.program.converter.properties
-        images = self.program.images.images
+        images = self.program.images
 
         px = 0
         tns = TYPES_NAME
         for x,type_name in enumerate(tns):
             self.prop[x+px] = list()
             ay = 0
-            for y,(code,image) in enumerate(images["sprites"][type_name].items()):
+            for y,(code,image) in enumerate(images[type_name].items()):
                 if y-ay > self.opt.TILE_Y-1:
                     ay += self.opt.TILE_Y
                     px += 1
