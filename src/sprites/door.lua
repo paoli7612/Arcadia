@@ -3,7 +3,7 @@
 function Door(boss, properties)
 
 	local grill = boss.grill
-	local spritesheet = boss.images["sprites"]
+	local spritesheet = boss.images["door"]
 	local properties = properties
 
 	local door = {
@@ -14,7 +14,7 @@ function Door(boss, properties)
 	}
 
 	function door.draw()
-		spritesheet.draw_image(door.x*grill.tile,door.y*grill.tile,spritesheet.quads["door"][properties.code])
+		spritesheet.draw_image(door.x*grill.tile,door.y*grill.tile,spritesheet.quads[properties.code])
 	end
 
 	function door.touch()

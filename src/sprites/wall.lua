@@ -3,7 +3,7 @@
 function Wall(boss,properties)
 
 	local grill = boss.grill
-	local spritesheet = boss.images["sprites"]
+	local spritesheet = boss.images["wall"]
 	local properties = properties
 
 	local wall = {
@@ -13,7 +13,7 @@ function Wall(boss,properties)
 		code = properties.code
 	}
 	function wall.draw()
-		spritesheet.draw_image(wall.x*grill.tile, wall.y*grill.tile, spritesheet.quads["wall"][wall.code])
+		spritesheet.draw_image(wall.x*grill.tile, wall.y*grill.tile, spritesheet.quads[wall.code])
 	end
 
 	return wall

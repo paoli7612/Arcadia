@@ -3,7 +3,7 @@
 function Npc(boss,properties)
 	local grill = boss.grill
 	local boss = boss
-	local spritesheet = boss.images["sprites"]
+	local spritesheet = boss.images["npc"]
 	local time = 0
 	local direction = "down"
 	local speed = 1
@@ -24,7 +24,7 @@ function Npc(boss,properties)
 	local description = require("../descriptions/" .. properties.nickname)
 
 	function npc.draw()
-		spritesheet.draw_image(npc.x*grill.tile,npc.y*grill.tile,spritesheet.quads["npc"][properties.code][direction]["stand"][1])
+		spritesheet.draw_image(npc.x*grill.tile,npc.y*grill.tile,spritesheet.quads[properties.code][direction]["stand"][1])
 	end
 
 	function npc.speak()

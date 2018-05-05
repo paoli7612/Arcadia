@@ -7,7 +7,7 @@ function Player(boss,x,y)
 	local grill = boss.grill
 	local boss = boss
 
-	local spritesheet = boss.images["sprites"]
+	local spritesheet = boss.images["npc"]
 	for a in pairs(spritesheet.quads) do
 		print(a)
 	end
@@ -26,7 +26,7 @@ function Player(boss,x,y)
 	}
 	player.inventory.add(Food(boss,"B0001"))
 	function player.draw()
-		spritesheet.draw_image(player.x*grill.tile, player.y*grill.tile, spritesheet.quads["npc"]["60001"][direction][position][frame])
+		spritesheet.draw_image(player.x*grill.tile, player.y*grill.tile, spritesheet.quads["60001"][direction][position][frame])
 		player.inventory.draw()
 	end
 

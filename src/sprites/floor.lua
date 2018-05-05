@@ -3,7 +3,7 @@
 function Floor(boss,properties)
 
 	local grill = boss.grill
-	local spritesheet = boss.images["sprites"]
+	local spritesheet = boss.images["floor"]
 	local properties = properties
 
 	local floor = {
@@ -14,7 +14,7 @@ function Floor(boss,properties)
 	}
 
 	function floor.draw()
-		spritesheet.draw_image(floor.x*grill.tile,floor.y*grill.tile,spritesheet.quads["floor"][floor.code])
+		spritesheet.draw_image(floor.x*grill.tile,floor.y*grill.tile,spritesheet.quads[floor.code])
 	end
 
 	return floor
