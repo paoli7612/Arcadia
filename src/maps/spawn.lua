@@ -102,7 +102,7 @@ return {
 										{code = "00006", coord_x = 36, coord_y = 1},
 										{code = "00006", coord_x = 30, coord_y = 1},
 										{code = "00006", coord_x = 35, coord_y = 1},
-										
+
     			},
     			floor={
                      {code = "10055", coord_x = 13, coord_y = 20},
@@ -818,17 +818,17 @@ return {
 										{code = "10057", coord_x = 31, coord_y = 10},
 										{code = "10057", coord_x = 15, coord_y = 20},
 										{code = "10057", coord_x = 6, coord_y = 5},
-										
+
     			},
     			door={
                      {dest = "street", code = "30001", coord_x = 20, coord_y = 24, dest_x = 19, dest_y = 1, id = 0},
 										{dest = "street", code = "30001", coord_x = 19, coord_y = 24, dest_x = 20, dest_y = 1, id = 0},
-										
+
     			},
     			npc={
                      {code = "60038", coord_x = 36, coord_y = 7, allow_x = 0, allow_y = 0, nickname = "steve"},
 										{code = "60027", coord_x = 9, coord_y = 8, allow_x = 0, allow_y = 0, nickname = "andy"},
-										
+
                 },
     			decor={
                      {code = "20014", coord_x = 38, coord_y = 4},
@@ -978,17 +978,17 @@ return {
 										{code = "20011", coord_x = 36, coord_y = 17},
 										{code = "20011", coord_x = 37, coord_y = 21},
 										{code = "20011", coord_x = 38, coord_y = 19},
-										
+
                 },
     			torch={
                      {code = "40003", coord_x = 25, coord_y = 14},
 										{code = "40002", coord_x = 20, coord_y = 5},
 										{code = "40006", coord_x = 2, coord_y = 20},
-										
+
     			},
     			cartel={
                      {text = "CasadiSteve", code = "50001", coord_x = 33, coord_y = 10},
-										
+
                 },
                 water={
                      {code = "70000", coord_x = 39, coord_y = 14},
@@ -1178,10 +1178,10 @@ return {
 										{code = "70000", coord_x = 39, coord_y = 20},
 										{code = "70000", coord_x = 39, coord_y = 21},
 										{code = "70000", coord_x = 39, coord_y = 22},
-										
+
                 },
                 lever={
-                     
+
                 }
 
     		}

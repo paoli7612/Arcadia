@@ -3,7 +3,7 @@
 function Lever(boss, properties, name_map)
 
 	local grill = boss.grill
-	local spritesheet = boss.images["sprites"]
+	local spritesheet = boss.images["lever"]
 	local properties = properties
   local frame = 1
 
@@ -25,7 +25,7 @@ function Lever(boss, properties, name_map)
 	}
 
 	function lever.draw()
-		spritesheet.draw_image(lever.x*grill.tile,lever.y*grill.tile,spritesheet.quads["lever"][properties.code][frame])
+		spritesheet.draw_image(lever.x*grill.tile,lever.y*grill.tile,spritesheet.quads[properties.code][frame])
 	end
 
   function lever.touch()

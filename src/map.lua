@@ -41,7 +41,7 @@ function Maps(boss)
     return group
   end
 
-  load_map(require("maps/spawn"))
+  load_map(require("maps/test"))
 
   return maps
 end
