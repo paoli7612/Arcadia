@@ -18,6 +18,7 @@ function Group(maps)
     elseif new_sprite.name == "torch" then table.insert(group.updater,new_sprite)
     elseif new_sprite.name == "water" then table.insert(group.updater,new_sprite)
     elseif new_sprite.name == "lever" then table.insert(group.collider,new_sprite)
+    elseif new_sprite.name == "chest" then table.insert(group.updater,new_sprite)
     end
     new_sprite.group = group
   end

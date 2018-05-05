@@ -39,6 +39,9 @@ function Spritesheet(grill,type)
   function get_lever(x,y)
     return {get_image(x,y),get_image(1+x,y),get_image(2+x,y)}
   end
+  function get_chest(x,y)
+    return {get_image(x,y),get_image(x,y+1),get_image(x,y+2),get_image(x,y+2)}
+  end
 
   lines = ""
   for line in io.lines("src/img/"..type..".json") do lines = lines .. line end
@@ -56,6 +59,9 @@ function Spritesheet(grill,type)
       elseif type == "npc" then
         spritesheet.quads[code] = get_npc(x, y)
       elseif type == "lever" then
+        spritesheet.quads[code] = get_lever(x, y)
+      elseif type == "chest" then
+        spritesheet.quads[code] = get_chest(x, y)
       else spritesheet.quads[code] = get_image(x,y)
       end
     end

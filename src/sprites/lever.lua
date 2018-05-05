@@ -16,8 +16,6 @@ function Lever(boss, properties, name_map)
 	end
 
 	local datasheet = get_data_sheet(name_map)
-	print(datasheet)
-	print(datasheet.purpose)
 	local lever = {
     name = "lever",
 		x = properties.coord_x,
@@ -25,6 +23,8 @@ function Lever(boss, properties, name_map)
 	}
 
 	function lever.draw()
+		print(properties.code)
+		print(spritesheet.quads)
 		spritesheet.draw_image(lever.x*grill.tile,lever.y*grill.tile,spritesheet.quads[properties.code][frame])
 	end
 

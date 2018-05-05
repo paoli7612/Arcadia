@@ -56,6 +56,7 @@ function Player(boss,x,y)
 			if element.name == "cartel" then element.touch() end
 			if element.name == "door" then element.touch() end
 			if element.name == "lever" then element.touch() end
+			if element.name == "chest" then element.touch() end
 		end
 	end
 
