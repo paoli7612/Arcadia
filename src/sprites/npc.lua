@@ -47,7 +47,10 @@ function Npc(boss,properties)
 						if quest.name == npc.current_quest.name then quest.completed = true end
 					end
 					boss.player.inventory.quest_list.del(npc.current_quest.name)
+					boss.player.inventory.interface.add_exp(npc.current_quest.reward.exp)
+					boss.player.inventory.interface.add_money(npc.current_quest.reward.money)
 					npc.current_quest = false
+
 					return
 				end
 				-- Quest gia attiva

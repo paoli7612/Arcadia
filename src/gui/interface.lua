@@ -38,6 +38,11 @@ function interface.add_life(life)
     print("dead") end
 end
 
+function interface.add_money(money)
+  attr.money = attr.money + money
+end
+
+
 function interface.add_exp(exp)
   attr.exp = attr.exp + exp
   if attr.exp >= attr.exp_max then
