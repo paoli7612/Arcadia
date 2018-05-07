@@ -13,10 +13,13 @@ function Quest_list(boss)
     table.insert(quests, quest)
   end
 
-  function quest_list.del(i)
-    table.remove(npcs, i)
-    table.remove(quests, i)
-
+  function quest_list.del(name)
+    for i,quest in ipairs(quests) do
+      if quest.name == name then
+        table.remove(npcs, i)
+        table.remove(quests, i)
+      end
+    end
   end
 
   function quest_list.talk(npc)

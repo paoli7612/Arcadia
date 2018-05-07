@@ -46,6 +46,7 @@ function Npc(boss,properties)
 					for i,quest in ipairs(description.quests) do
 						if quest.name == npc.current_quest.name then quest.completed = true end
 					end
+					boss.player.inventory.quest_list.del(npc.current_quest.name)
 					npc.current_quest = false
 					return
 				end
