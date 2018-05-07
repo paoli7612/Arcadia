@@ -47,8 +47,8 @@ function Player(boss,x,y)
 		element = boss.group.get_position(x,y)
 		if not(element == nil) then
 			if element.name == "npc" then
-				element.speak()
-				boss.player.inventory.quest_list.talk(element)
+				text = boss.player.inventory.quest_list.talk(element)
+				element.speak(text)
 			end
 			if element.name == "cartel" then element.touch() end
 			if element.name == "door" then element.touch() end

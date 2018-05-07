@@ -19,7 +19,8 @@ function Npc(boss,properties)
 		x = properties.coord_x,
 		y = properties.coord_y,
 		nickname = properties.nickname,
-		current_quest = false
+		current_quest = false,
+		chat_random = true
 	}
 	local description = require("../descriptions/" .. properties.nickname)
 
@@ -27,7 +28,12 @@ function Npc(boss,properties)
 		spritesheet.draw_image(npc.x*grill.tile,npc.y*grill.tile,spritesheet.quads[properties.code][direction]["stand"][1])
 	end
 
-	function npc.speak()
+	function npc.speak(text)
+		if not (text == nil) then
+			boss.chat.write(npc.nickname,text)
+			boss.chat.show()
+			return
+		end
 		if not(npc.current_quest == false) then
 			-- Quest completata
 				complete = true

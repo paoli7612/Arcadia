@@ -73,9 +73,6 @@ return {
 										{code = "00014", coord_x = 26, coord_y = 24},
 										{code = "00014", coord_x = 25, coord_y = 24},
 										{code = "00014", coord_x = 24, coord_y = 24},
-										{code = "00014", coord_x = 23, coord_y = 24},
-										{code = "00014", coord_x = 22, coord_y = 24},
-										{code = "00014", coord_x = 21, coord_y = 24},
 										{code = "00014", coord_x = 20, coord_y = 24},
 										{code = "00009", coord_x = 39, coord_y = 23},
 										{code = "00009", coord_x = 39, coord_y = 22},
@@ -139,6 +136,8 @@ return {
 										{code = "00009", coord_x = 17, coord_y = 2},
 										{code = "00015", coord_x = 17, coord_y = 3},
 										{code = "00015", coord_x = 19, coord_y = 24},
+										{code = "00015", coord_x = 23, coord_y = 24},
+										{code = "00016", coord_x = 21, coord_y = 24},
 										
     			},
     			floor={
@@ -884,7 +883,8 @@ return {
 										
     			},
     			door={
-                    
+                    {dest = "street", code = "30005", coord_x = 22, coord_y = 24, dest_x = 22, dest_y = 1, id = 1},
+										
     			},
     			npc={
                     {code = "60032", coord_x = 35, coord_y = 7, allow_x = 3, allow_y = 5, nickname = "emily"},

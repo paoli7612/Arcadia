@@ -12,7 +12,7 @@ return {
           "ciao blabla",
           "missione tutorial",
           "ricompensa è 10 soldi e 10 esperienza",
-          "bla bla vai a parlare con andy"
+          "bla bla vai a parlare con andy ed emily"
         },
         state = {
           "sei ancora qui?",
@@ -33,6 +33,16 @@ return {
             chat = {
               "ciao vedo che stai risolvendo la tua prima quest",
               "io sono andy e bla bla bla",
+              "torna da steve per avere la tua ricompensa"
+            }
+          },
+          {
+            npc = "emily",
+            map = "spawn",
+            completed = false,
+            chat = {
+              "ciao vedo che stai risolvendo la tua prima quest",
+              "io sono emily e bla bla bla",
               "torna da steve per avere la tua ricompensa"
             }
           }

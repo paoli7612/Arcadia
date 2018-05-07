@@ -24,6 +24,7 @@ function Chat(boss)
   function chat.write(title,lines)
     current_lines = lines
     current_title = title
+    frame = 1
   end
 
   function chat.show()
@@ -35,7 +36,8 @@ function Chat(boss)
       frame = frame + 1
       if frame > table.getn(current_lines) then
         chat.activate = false
-        frame = 1 end
+        frame = 1
+      end
     end
   end
 
