@@ -81,6 +81,10 @@ function Images(grill)
   images["chest"] = Spritesheet(grill,"chest")
   images["door"] = Spritesheet(grill,"door")
   images["water"] = Spritesheet(grill,"water")
+
+
+  images["food"] = Spritesheet(grill,"food")
+
   return images
 end
 
