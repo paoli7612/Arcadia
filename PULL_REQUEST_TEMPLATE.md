@@ -1,7 +1,6 @@
 ## Pull request
 
-#### [nome utente()]
-#### [nome branch()]
-#### [data]
-#### [descrizione()]
-#### [prossimo passo]
+- Utente: **user**
+- Data: **data**
+- Descrizione: **blablabla**
+- Prossimo passo: **blablabla**
