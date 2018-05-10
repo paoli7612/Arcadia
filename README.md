@@ -8,8 +8,8 @@
 
  </table>
 
-## fai la tua parte
-Se vuoi partecipare anche tu a questo progretto <a href="https://github.com/paoli7612/TileGame-Lua/blob/master/SPOT.md">clicca qui</a>.
+## if you want in
+If you want in this game <a href="https://github.com/paoli7612/TileGame-Lua/blob/master/SPOT.md">click here</a>.
 
 ## install LOVE
 - WINDOWS:
@@ -39,4 +39,5 @@ This simply program allow you to create or change all game map. All game map sav
 in map_editor folder there is main.py.
 WINDOWS: use run_win.bat in map_editor folder for give name of map to create/change
 LINUX: type `python main.py` in map_editor folder to see help of argparse
+
 ![alt text](doc/img/013.png)
