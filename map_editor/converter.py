@@ -18,19 +18,22 @@ class Converter:
         try: self.lua_text = self.lua_text.translate(None, '\t\n ')
         except: self.lua_text = self.lua_text.translate('\t\n ')
 
-        self.properties = dict()
 
         # get text
-        self.properties["wall"] = self.lua_text.split("wall")[1].split("floor")[0]
-        self.properties["floor"] = self.lua_text.split("floor")[1].split("door")[0]
-        self.properties["door"] = self.lua_text.split("door")[1].split("npc")[0]
-        self.properties["npc"] = self.lua_text.split("npc")[1].split("decor")[0]
-        self.properties["decor"] = self.lua_text.split("decor")[1].split("torch")[0]
-        self.properties["torch"] = self.lua_text.split("torch")[1].split("cartel")[0]
-        self.properties["cartel"] = self.lua_text.split("cartel")[1].split("water")[0]
-        self.properties["water"] = self.lua_text.split("water")[1].split("lever")[0]
-        self.properties["lever"] = self.lua_text.split("lever")[1].split("chest")[0]
-        self.properties["chest"] = self.lua_text.split("chest")[1]
+        prop = dict()
+        text = self.lua_text
+        prop["wall"] = text.split("wall")[1].split("floor")[0]
+        prop["floor"] = text.split("floor")[1].split("door")[0]
+        prop["door"] = text.split("door")[1].split("npc")[0]
+        prop["npc"] = text.split("npc")[1].split("decor")[0]
+        prop["decor"] = text.split("decor")[1].split("torch")[0]
+        prop["torch"] = text.split("torch")[1].split("cartel")[0]
+        prop["cartel"] = text.split("cartel")[1].split("water")[0]
+        prop["water"] = text.split("water")[1].split("lever")[0]
+        prop["lever"] = text.split("lever")[1].split("chest")[0]
+        prop["chest"] = text.split("chest")[1]
+        self.properties = prop
+
         # split text
         for property in self.properties:
             p = list()
@@ -44,11 +47,6 @@ class Converter:
         for type_name in TYPES_NAME:
             for pos, param in enumerate(self.properties[type_name]):
                 self.properties[type_name][pos] = newSprite(type_name, param)
-
-    def show(self):
-        for k,vv in self.properties.items():
-            print(k)
-            for v in vv: print(v)
 
     def update(self):
         layers = list()
