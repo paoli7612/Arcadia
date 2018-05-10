@@ -1,11 +1,11 @@
-# 
+#
 <table width="100%">
  <tr>
   <td><img src="https://github.com/paoli7612/TileGame-Lua/blob/master/doc/loco.png" width="100px"></td>
   <td><h1>  TILE_GAME - LUA </h1></td>
    <td><img src="https://github.com/paoli7612/TileGame-Lua/blob/master/doc/loco.png" width="100px"></td>
   </tr>
- 
+
  </table>
 
 ## install LOVE
@@ -28,7 +28,7 @@
 - press q key to acion with another things (npc, cartel, doors...)
 
 # SCREEN
-![alt text](doc/img/009.png)
+![alt text](doc/img/014.png)
 
 # MAP_EDITOR - PYTHON
 This simply program allow you to create or change all game map. All game map saved in maps folder. If you give this program a name of a exists map, the program allow you to change this. Else the program create a new map with this new name. [pygame is required]
@@ -36,4 +36,4 @@ This simply program allow you to create or change all game map. All game map sav
 in map_editor folder there is main.py.
 WINDOWS: use run_win.bat in map_editor folder for give name of map to create/change
 LINUX: type `python main.py` in map_editor folder to see help of argparse
-![alt text](doc/img/010.png)
+![alt text](doc/img/013.png)
