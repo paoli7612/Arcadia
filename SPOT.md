@@ -1,7 +1,7 @@
 # TileGame-Lua
 
 ### Credits
-Ogni partecipante, sia per aver scritto la storia, creato o modificato mappe, composto o suonato le colonne sonore, o creato e modificato immagini.
+Ogni partecipante, sia per aver scritto la storia, creato o modificato mappe, composto o suonato le colonne sonore, o creato e modificato immagini, se lo acconsente verrà gitato per nome/nickname nelle release del gioco.
 
 ## Tools
 ### MAP EDITOR
