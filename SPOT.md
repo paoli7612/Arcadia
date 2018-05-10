@@ -1,13 +1,14 @@
 # TileGame-Lua
 
 ### Credits
-Ogni partecipante, sia per aver scritto la storia, creato o modificato mappe o creato e modificato immagini.
+Ogni partecipante, sia per aver scritto la storia, creato o modificato mappe, composto o suonato le colonne sonore, o creato e modificato immagini.
 
 ## Tools
 ### MAP EDITOR
 ##### Dipendenze:
  - Python 2 / Python 3 (Consigliabile Python3)
  - Pygame
+ - Tkinter
 
 ##### Utilizzo:
   - LINUX:
@@ -20,22 +21,20 @@ Ogni partecipante, sia per aver scritto la storia, creato o modificato mappe o c
     - Eliminare: avviare `map_editor/del.bat`
 
 ##### Anteprima:
-![alt text](doc/img/007.png)
+![alt text](doc/img/013.png)
 ##### Istruzioni:
-  - **Mappa:**
-    Cliccando sulla mappa aggiungiamo l'item attuale che abbiamo selezionato alla posizione che abiamo cliccato;
-  - **Barra aggiunta:**
-    Selezionando gli item di questa barra possiamo aggiungerli alla **Barra selezione**;
-  - **Barra selezione:** Contiene tutti gli item che possiamo inserire, cliccandoci sopra lo selezionamo: in seguito possiamo aggiungerli alla **Mappa**;
+  - **Mappa**
+
+    Cliccando sulla mappa aggiungiamo l'item attuale che abbiamo selezionato alla posizione che abbiamo cliccato.
+  - **Barra selezione**
+
+  Contiene tutti gli item che possiamo inserire: in seguito possiamo aggiungerli alla **Mappa**.
+  - **Impostazioni aggiuntive**
+
+  Quando inseriamo delle porte, degli npc, delle leve, o dei cartelli, ci si aprirà una piccola finestra dove inserire le **impostazioni aggiuntive**: non preoccupatevi se non riconoscete alcune voci... Se chiudete la finestra l'aggiunta verrà annullata.
 
 ##### Comandi:
   - **Save:** premento il tasto **s** la mappa viene salvata e quindi la versione precedente viene sovrascritta;
-  - **Info:** premento il tasto **i** il programma
-
-### IMAGE EDITOR
-### STORY EDITOR
-
 
 ### Screenshoots
-![alt text](doc/img/006.png)
-![alt text](doc/img/009.png)
+![alt text](doc/img/014.png)
