@@ -6,7 +6,7 @@ Ogni partecipante, sia per aver scritto la storia, creato o modificato mappe, co
 ## Tools
 ### MAP EDITOR
 ##### Dipendenze:
- - Python 2 / Python 3 (Consigliabile Python3)
+ - Python 3 
  - Pygame
  - Tkinter
 
