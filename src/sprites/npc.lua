@@ -6,7 +6,6 @@ function Npc(boss,properties)
 	local spritesheet = boss.images["npc"]
 	local time = 0
 	local direction = "down"
-	local speed = 1
 	local properties = properties
 
 	local allow_x = {max = properties.coord_x + properties.allow_x,
@@ -22,10 +21,13 @@ function Npc(boss,properties)
 		current_quest = false,
 		chat_random = true
 	}
+	local ix = npc.x * grill.tile
+	local iy = npc.y * grill.tile
+	local speed = grill.tile/10
 	local description = require("../descriptions/" .. properties.nickname)
 
 	function npc.draw()
-		spritesheet.draw_image(npc.x*grill.tile,npc.y*grill.tile,spritesheet.quads[properties.code][direction]["stand"][1])
+		spritesheet.draw_image(ix,iy,spritesheet.quads[properties.code][direction]["stand"][1])
 	end
 
 	function npc.speak(text)
@@ -78,9 +80,8 @@ function Npc(boss,properties)
 	function npc.update(dt)
 		if not boss.chat.activate then
 			npc.dx, npc.dy = 0,0
-
 			time = time + dt
-			if time > speed then
+			if time > (1 + math.random()) then
 				p = love.math.random(6) -- 1 stop 2 right 3 left 4 up 5 down 6 stop
 				if p == 2 and npc.x + 1 <= allow_x.max then
 						npc.dx = 1
@@ -96,14 +97,19 @@ function Npc(boss,properties)
 						direction = "up"
 				end
 
-				speed = 1 + math.random();
-
 				if not boss.group.collide_pair(npc,boss.player) then
 					npc.x = npc.x + npc.dx
 					npc.y = npc.y + npc.dy
 				end
+
+
 				time = 0
 			end
+
+			if ix < npc.x*grill.tile then	ix = ix + speed	end
+			if ix > npc.x*grill.tile then	ix = ix - speed	end
+			if iy < npc.y*grill.tile then	iy = iy + speed	end
+			if iy > npc.y*grill.tile then	iy = iy - speed	end
 		end
 	end
 
