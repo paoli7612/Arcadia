@@ -23,7 +23,7 @@ function Npc(boss,properties)
 	}
 	local ix = npc.x * grill.tile
 	local iy = npc.y * grill.tile
-	local speed = grill.tile/10
+	local speed = math.floor(grill.tile/11)
 	local description = require("../descriptions/" .. properties.nickname)
 
 	function npc.draw()
@@ -105,10 +105,14 @@ function Npc(boss,properties)
 				time = 0
 			end
 
-			if ix < npc.x*grill.tile then	ix = ix + speed	end
-			if ix > npc.x*grill.tile then	ix = ix - speed	end
-			if iy < npc.y*grill.tile then	iy = iy + speed	end
-			if iy > npc.y*grill.tile then	iy = iy - speed	end
+			mx = npc.x*grill.tile
+			my = npc.y*grill.tile
+			if (math.abs(mx-ix) < speed) then ix = mx end
+			if (math.abs(my-iy) < speed) then iy = my end
+			if ix < mx then	ix = ix + speed	end
+			if ix > mx then	ix = ix - speed	end
+			if iy < my then	iy = iy + speed	end
+			if iy > my then	iy = iy - speed	end
 		end
 	end
 

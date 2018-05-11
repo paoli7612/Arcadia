@@ -32,7 +32,7 @@ function Player(boss,x,y)
 		player.inventory.draw()
 	end
 
-	function reset_coord(x,y)
+	function player.reset_coord(x,y)
 		player.x = x
 		player.y = y
 		ix = player.x * grill.tile

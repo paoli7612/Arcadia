@@ -19,7 +19,7 @@ function Maps(boss)
   function maps.change_map(door_prop)
     love.window.setTitle(door_prop.dest)
     boss.group = maps[door_prop.dest]
-    boss.player.reset_coord(door.door_prop.dest_x,door.door_prop.dest_y)
+    boss.player.reset_coord(door_prop.dest_x, door_prop.dest_y)
     boss.name_map = door_prop.dest
   end
 
