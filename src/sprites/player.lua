@@ -8,12 +8,10 @@ function Player(boss,x,y)
 	local boss = boss
 
 	local spritesheet = boss.images["npc"]
-	local time = 0
 
 	local direction = "down"
 	local position = "stand"
 	local frame = 1
-	local speed = 0.1
 
 	local player = {
 		name = "player",
@@ -21,19 +19,40 @@ function Player(boss,x,y)
 		y=y,
 		inventory = Inventory(boss)
 	}
+	local ix = player.x * grill.tile
+	local iy = player.y * grill.tile
+
+	local speed = math.floor(grill.tile/8)
+	local moving = true
+
 	player.inventory.add(Food(boss,"A0001"))
+
 	function player.draw()
-		spritesheet.draw_image(player.x*grill.tile, player.y*grill.tile, spritesheet.quads["60001"][direction][position][frame])
+		spritesheet.draw_image(ix,iy, spritesheet.quads["60001"][direction][position][frame])
 		player.inventory.draw()
+	end
+
+	function reset_coord(x,y)
+		player.x = x
+		player.y = y
+		ix = player.x * grill.tile
+		iy = player.y * grill.tile
 	end
 
 	function player.update(dt)
 		if not boss.chat.activate then
-			time = time + dt
-			if time > speed then
-				move()
-				time = 0
+			if moving then
+				mx = player.x*grill.tile
+				my = player.y*grill.tile
+				if (math.abs(mx-ix) < speed) then ix = mx end
+				if (math.abs(my-iy) < speed) then iy = my end
+				if ix < mx then	ix = ix + speed
+				elseif ix > mx  then	ix = ix - speed
+				elseif iy < my then	iy = iy + speed
+				elseif iy > my then	iy = iy - speed
+				else moving = false end
 			end
+			if not moving then move() end
 		end
 	end
 
@@ -81,6 +100,7 @@ function Player(boss,x,y)
 		if not boss.group.collide(player) then
 			player.x = player.x + player.dx
 			player.y = player.y + player.dy
+			moving = true
 		end
 
 		if position == "walk" then

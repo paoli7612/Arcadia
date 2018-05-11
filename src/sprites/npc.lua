@@ -102,7 +102,6 @@ function Npc(boss,properties)
 					npc.y = npc.y + npc.dy
 				end
 
-
 				time = 0
 			end
 
