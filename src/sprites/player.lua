@@ -2,6 +2,8 @@
 
 Inventory = require("gui/inventory")
 Food = require("sprites/items/food")
+Sword = require("sprites/items/sword")
+Bow = require("sprites/items/bow")
 
 function Player(boss,x,y)
 	local grill = boss.grill
@@ -26,10 +28,11 @@ function Player(boss,x,y)
 	local moving = true
 
 	player.inventory.add(Food(boss,"A0001"))
-
+	local b = Sword(Bow,"C0002")
 	function player.draw()
 		spritesheet.draw_image(ix,iy, spritesheet.quads["60001"][direction][position][frame])
 		player.inventory.draw()
+		s.draw()
 	end
 
 	function player.reset_coord(x,y)
@@ -40,6 +43,7 @@ function Player(boss,x,y)
 	end
 
 	function player.update(dt)
+		s.update(dt)
 		if not boss.chat.activate then
 			if moving then
 				mx = player.x*grill.tile
