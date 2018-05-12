@@ -14,7 +14,7 @@ function Inventory(boss)
 
   function inventory.draw()
     if show then
-      love.graphics.setColor(10,10,30)
+      love.graphics.setColor(0,0,0)
       love.graphics.rectangle("fill", 0, 0, grill.WIDTH, grill.tile*2,0,2,2)
       inventory.interface.draw()
       for i,p in ipairs(bag) do
