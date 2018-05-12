@@ -25,7 +25,6 @@ class Toolbar:
                     px += 1
                     self.prop[x+px] = list()
                 self.screen.blit(image, ((x+px)*self.opt.TILE_SIZE,(y-ay)*self.opt.TILE_SIZE))
-                print(type_name,code)
                 self.prop[x+px].append(code)
             pygame.draw.line(self.screen, self.opt.Colors.BLACK, (self.opt.TILE_SIZE*(x+px+1),0),
                             (self.opt.TILE_SIZE*(x+px+1),self.opt.TOOLBAR_Y), 4)
