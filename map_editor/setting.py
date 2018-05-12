@@ -1,3 +1,6 @@
+from screeninfo import get_monitors
+
+
 
 class Setting:
     TITLE = "Map editor"
@@ -14,7 +17,7 @@ class Setting:
 
     TOOLBAR_X = TILE_SIZE * 19
     TOOLBAR_Y = HEIGHT + TILE_SIZE * 3
-    
+
 
     class Colors:
         BLACK = (0,0,0)
