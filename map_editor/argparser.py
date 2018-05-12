@@ -7,6 +7,9 @@ description = """
         If you give this program a name of a exists map, the program
         allow you to change this. Else the program create a new map
         with this new name.
+
+        Key S to save
+        Key D to resize
 """
 class Argparser:
     def __init__(self):

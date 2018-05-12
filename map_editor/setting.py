@@ -1,27 +1,30 @@
-
+import os
 class Setting:
-    TITLE = "Map editor"
-    TILE_SIZE = 32
-    TILE = TILE_X, TILE_Y = 40,25
-    WIDTH = TILE_X * TILE_SIZE
-    HEIGHT = TILE_Y * TILE_SIZE
-    SIZE = WIDTH, HEIGHT
+    def __init__(self):
+        self.TITLE = "Map editor"
+        path = os.path.dirname(__file__)
+        path_setting = os.path.join(path, "setting")
+        text = open(path_setting,"r").read()
+        self.TILE_SIZE = int(text.split("=")[1])
+        self.TILE = self.TILE_X, self.TILE_Y = 40,25
+        self.WIDTH = self.TILE_X * self.TILE_SIZE
+        self.HEIGHT = self.TILE_Y * self.TILE_SIZE
+        self.SIZE = self.WIDTH, self.HEIGHT
 
-    LUA_FORMAT = ".lua"
-    IMAGE_FORMAT = ".png"
-    JSON_FORMAT = ".json"
+        self.LUA_FORMAT = ".lua"
+        self.IMAGE_FORMAT = ".png"
+        self.JSON_FORMAT = ".json"
+
+        self.TOOLBAR_X = self.TILE_SIZE * 19
+        self.TOOLBAR_Y = self.HEIGHT + self.TILE_SIZE * 3
 
 
-    TOOLBAR_X = TILE_SIZE * 19
-    TOOLBAR_Y = HEIGHT + TILE_SIZE * 3
-    
-
-    class Colors:
-        BLACK = (0,0,0)
-        WHITE = (255,255,255)
-        RED = (255,0,0)
-        GREEN = (0,255,0)
-        BLUE = (0,0,255)
-
-    FONT_COLOR = Colors.WHITE
-    FONT_COLOR_CHOICE = {True: Colors.GREEN, False: Colors.RED}
+        class Colors:
+            BLACK = (0,0,0)
+            WHITE = (255,255,255)
+            RED = (255,0,0)
+            GREEN = (0,255,0)
+            BLUE = (0,0,255)
+        self.Colors = Colors
+        self.FONT_COLOR = Colors.WHITE
+        self.FONT_COLOR_CHOICE = {True: Colors.GREEN, False: Colors.RED}
