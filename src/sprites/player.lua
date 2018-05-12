@@ -28,11 +28,13 @@ function Player(boss,x,y)
 	local moving = true
 
 	player.inventory.add(Food(boss,"A0001"))
-	local b = Sword(Bow,"C0002")
+	b = Bow(boss,"C0002")
+	player.inventory.add(b)
+	player.inventory.equip(b)
+
 	function player.draw()
 		spritesheet.draw_image(ix,iy, spritesheet.quads["60001"][direction][position][frame])
 		player.inventory.draw()
-		s.draw()
 	end
 
 	function player.reset_coord(x,y)
@@ -43,7 +45,6 @@ function Player(boss,x,y)
 	end
 
 	function player.update(dt)
-		s.update(dt)
 		if not boss.chat.activate then
 			if moving then
 				mx = player.x*grill.tile
