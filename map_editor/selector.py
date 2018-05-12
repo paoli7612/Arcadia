@@ -63,6 +63,11 @@ class Selector(pygame.sprite.Sprite):
                         return
                 except: pass
 
+    def add_sprite(self):
+        element,type_name = newSprite_code(self.selected,self.x,self.y)
+        self.prop[type_name].append(element)
+        for element in self.prop[type_name]: print(element["code"])
+
     def click(self):
         opt = self.program.opt
         prop = self.program.toolbar.prop
@@ -73,9 +78,8 @@ class Selector(pygame.sprite.Sprite):
 
         if self.position == "map":
             if not self.selected == "Nil":
-                element,type_name = newSprite_code(self.selected,self.x,self.y)
-                self.prop[type_name].append(element)
-                for element in self.prop[type_name]: print(element["code"])
+                try: self.add_sprite()
+                except: pass
 
         elif self.position == "toolbar":
             try: self.selected = prop[self.x-opt.TILE_X-1][self.y]
