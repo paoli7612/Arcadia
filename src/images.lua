@@ -10,8 +10,9 @@ function Spritesheet(grill,type)
     return love.graphics.newQuad(x*size, y*size, size, size, image:getDimensions())
   end
 
-  function spritesheet.draw_image(x,y,quad)
-    love.graphics.draw(image, quad, x, y, 0, (grill.tile/size), (grill.tile/size)) -- correct for float to int
+  function spritesheet.draw_image(x,y,quad, rotation)
+    if rotation == nil then rotation = 0 end
+    love.graphics.draw(image, quad, x, y, rotation, (grill.tile/size), (grill.tile/size)) -- correct for float to int
   end
 
   function get_npc(x,y)
@@ -84,6 +85,8 @@ function Images(grill)
 
 
   images["food"] = Spritesheet(grill,"food")
+  images["sword"] = Spritesheet(grill,"sword")
+  images["bow"] = Spritesheet(grill,"bow")
 
   return images
 end
