@@ -7,15 +7,16 @@ from builder import Builder
 from argparser import Argparser
 from selector import Selector
 from toolbar import Toolbar
-
 try: input = raw_input
 except: pass
 
+name_map = None
+
 class Program:
-    def __init__(self, arg):
+    def __init__(self):
         pygame.init()
         self.opt = Setting()
-        self.name_map = arg.name_map
+        self.name_map = name_map
         self.screen = pygame.display.set_mode((self.opt.WIDTH + self.opt.TILE_SIZE + self.opt.TOOLBAR_X,self.opt.HEIGHT + self.opt.TILE_SIZE*3))
         self.set_grill_surface()
         pygame.display.set_caption(self.opt.TITLE)
@@ -33,6 +34,19 @@ class Program:
         self.saved = True
         self.loop()
         pygame.quit()
+
+    def resize(self):
+        pygame.quit()
+        opt = self.opt
+        print(opt.TILE_SIZE)
+        if opt.TILE_SIZE == 32: size = 16
+        else: size = 32
+        print(size)
+        f = open(os.path.join(self.path,"setting"),"w")
+        f.write("TILE=%d" %size)
+        f.close()
+
+        reset()
 
     def set_grill_surface(self):
         self.grill = self.screen.copy()
@@ -55,6 +69,7 @@ class Program:
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE: self.pause = not self.pause
                 elif event.key == pygame.K_s: self.builder.save(); self.saved = True
+                elif event.key == pygame.K_d: self.resize()
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1: self.selector.click()
                 if event.button == 3: self.selector.remove()
@@ -67,7 +82,6 @@ class Program:
         self.converter.update()
         self.selector.update()
 
-
     def loop(self):
         self.running = True
         self.pause = False
@@ -77,12 +91,14 @@ class Program:
             self.event()
             self.draw()
 
+
+
+
+def reset():
+    Program()
+
+
 # test
 if __name__ == "__main__":
-    a = Argparser()
-    g = Program(a)
-
-
-
-
-# now we start with "python main.py [map_name]"
+    name_map = Argparser().name_map
+    Program()

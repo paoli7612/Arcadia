@@ -11,8 +11,8 @@ class Spritesheet:
         image32.blit(self.image, (0, 0), (x*32, y*32, 32, 32))
         self.program.screen.fill((50,50,50))
         image32.set_colorkey((0,0,0))
-        return image32
         image32 = pygame.transform.scale(image32, (self.program.opt.TILE_SIZE, self.program.opt.TILE_SIZE))
+        return image32
 
 class Images:
     def __init__(self, program):
