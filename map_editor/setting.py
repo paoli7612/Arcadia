@@ -1,11 +1,13 @@
 from screeninfo import get_monitors
 
-
+width = 0
+for m in get_monitors():
+    if width<m.width: width=m.width
 
 class Setting:
     TITLE = "Map editor"
-    TILE_SIZE = 32
     TILE = TILE_X, TILE_Y = 40,25
+    TILE_SIZE = width // 60
     WIDTH = TILE_X * TILE_SIZE
     HEIGHT = TILE_Y * TILE_SIZE
     SIZE = WIDTH, HEIGHT

@@ -408,8 +408,3 @@ def _get_enumerator():
 def get_monitors(name=None):
     enumerator = _ENUMERATORS[name] if name else _get_enumerator()
     return enumerator()
-
-
-if __name__ == '__main__':
-    for m in get_monitors():
-print(str(m))
