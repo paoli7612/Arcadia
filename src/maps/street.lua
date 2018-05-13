@@ -304,8 +304,6 @@ return {
 										{code = "00018", coord_x = 28, coord_y = 24},
 										{code = "00021", coord_x = 2, coord_y = 24},
 										{code = "00021", coord_x = 39, coord_y = 10},
-										{code = "00020", coord_x = 39, coord_y = 11},
-										{code = "00020", coord_x = 39, coord_y = 12},
 										{code = "00020", coord_x = 39, coord_y = 13},
 										{code = "00020", coord_x = 39, coord_y = 14},
 										
@@ -947,6 +945,8 @@ return {
     			},
     			door={
                     {dest = "spawn", code = "30005", coord_x = 22, coord_y = 0, dest_x = 22, dest_y = 23, id = 1},
+										{dest = "village", code = "30007", coord_x = 39, coord_y = 11, dest_x = 1, dest_y = 11, id = 1},
+										{dest = "village", code = "30007", coord_x = 39, coord_y = 12, dest_x = 1, dest_y = 12, id = 1},
 										
     			},
     			npc={
