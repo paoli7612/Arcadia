@@ -43,9 +43,11 @@ function love.keypressed(key)
 		love.event.quit()
 	end
 
-	if key == "i" then	boss.player.inventory.show()
-	elseif key == "q" then	boss.player.action()
-	elseif key == "space" then	boss.chat.next()
+	if key == "i" then	boss.player.inventory.show() end
+		if boss.chat.activate then
+			if key == "space" then boss.chat.next() end
+		else
+			if key == "q" then boss.player.action() end
+		end
 
 	end
-end

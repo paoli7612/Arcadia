@@ -8,7 +8,6 @@ function Grill()
 		tile_h = 25,
 		tile = math.floor(maxHeight/25)	-- change if your monitor is too small
 	}
-	print(grill.tile)
 	grill.WIDTH = grill.tile_w*grill.tile
 	grill.HEIGHT = grill.tile_h*grill.tile
 	love.window.setMode( grill.WIDTH, grill.HEIGHT )
