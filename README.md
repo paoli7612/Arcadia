@@ -2,7 +2,7 @@
 <table width="100%">
  <tr>
   <td><img src="https://github.com/paoli7612/TileGame-Lua/blob/master/doc/loco.png" width="100px"></td>
-  <td><h1>  TILE_GAME - LUA </h1></td>
+  <td><h1>  The world of ARCADIA </h1></td>
    <td><img src="https://github.com/paoli7612/TileGame-Lua/blob/master/doc/loco.png" width="100px"></td>
   </tr>
 
