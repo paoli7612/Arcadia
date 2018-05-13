@@ -32,7 +32,9 @@ function Inventory(boss)
   end
 
   function inventory.remove(item)
-    for i,p in ipairs(bag) do if p.code == item.code then table.remove(bag,i) return end end
+    for i,p in ipairs(bag) do
+      if p.code == item.code then
+        table.remove(bag,i) return end end
   end
 
   function inventory.show()

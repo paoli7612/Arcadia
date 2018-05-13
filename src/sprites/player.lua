@@ -27,10 +27,14 @@ function Player(boss,x,y)
 	local speed = math.floor(grill.tile/8)
 	local moving = true
 
-	player.inventory.add(Food(boss,"A0001"))
+
 	b = Bow(boss,"C0002")
 	player.inventory.add(b)
 	player.inventory.equip(b)
+
+	function player.add_food(code)
+		player.inventory.add(Food(boss,code))
+	end
 
 	function player.draw()
 		spritesheet.draw_image(ix,iy, spritesheet.quads["60001"][direction][position][frame])

@@ -5,6 +5,7 @@ function Quest_list(boss)
 
   local quests = {}
   local npcs = {}
+  quest_list.completed = {}
 
   local boss = boss
 
@@ -14,6 +15,8 @@ function Quest_list(boss)
   end
 
   function quest_list.del(name)
+    table.insert(quest_list.completed, name)
+    print("del", name)
     for i,quest in ipairs(quests) do
       if quest.name == name then
         table.remove(npcs, i)
