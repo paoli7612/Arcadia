@@ -43,6 +43,15 @@ function Spritesheet(grill,type)
   function get_chest(x,y)
     return {get_image(x,y),get_image(x,y+1),get_image(x,y+2),get_image(x,y+2)}
   end
+  function get_arrow(x,y)
+    local quads = {}
+    quads["right"] = get_image(x,y)
+    quads["down"] = get_image(x+1,y)
+    quads["left"] = get_image(x+2,y)
+    quads["up"] = get_image(x+3,y)
+    return quads
+  end
+
 
   lines = ""
   for line in io.lines("src/img/"..type..".json") do lines = lines .. line end
@@ -63,6 +72,8 @@ function Spritesheet(grill,type)
         spritesheet.quads[code] = get_lever(x, y)
       elseif type == "chest" then
         spritesheet.quads[code] = get_chest(x, y)
+      elseif type == "arrow" then
+        spritesheet.quads[code] = get_arrow(x, y)
       else spritesheet.quads[code] = get_image(x,y)
       end
     end

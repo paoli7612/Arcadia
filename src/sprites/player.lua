@@ -67,7 +67,7 @@ function Player(boss,x,y)
 	end
 
 	function player.shot()
-		a = Arrow(boss, "D0006", player.x, player.y)
+		a = Arrow(boss, "D0001", player.x, player.y, direction)
 		boss.group.add(a)
 	end
 

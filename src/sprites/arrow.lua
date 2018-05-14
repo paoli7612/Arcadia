@@ -4,27 +4,28 @@ function Arrow(boss, code, x, y, d)
   local arrow = {
     name = "arrow",
     x = x,
-    y = y,
-    d = d}
+    y = y}
   local boss = boss
   local spritesheet = boss.images["arrow"]
   local code = code
   local grill = boss.grill
-  local rotation = 0
-  function set_rot()
-    if arrow.d then rotation = math.pi/4 end
+  local direction = d
+  local speed = 20
 
-    if not arrow.d then math.random(math.pi/3) end
-  end
-  set_rot()
-
+  local ix = arrow.x * grill.tile
+  local iy = arrow.y * grill.tile
 
   function arrow.draw()
-    spritesheet.draw_image(arrow.x*grill.tile,arrow.y*grill.tile,spritesheet.quads[code], rotation)
+    spritesheet.draw_image(ix,iy,spritesheet.quads[code][direction])
   end
 
   function arrow.update()
-    print("arrow, update")
+    arrow.x = math.floor(ix/grill.tile)
+    arrow.y = math.floor(iy/grill.tile)
+
+    if direction == "left" then
+      ix = ix - speed
+    end
   end
 
   return arrow

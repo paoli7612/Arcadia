@@ -25,12 +25,15 @@ function Group(maps)
     new_sprite.group = group
   end
 
-  function group.show()
-    print("sprites group: ")
-    print("collider") for i,item in ipairs(group.collider) do print(" -" .. item.name) end
-    print("updater") for i,item in ipairs(group.updater) do print(" -" .. item.name) end
-    print("drawable") for i,item in ipairs(group.drawable) do print(" -" .. item.name) end
-    print("arrow") for i,item in ipairs(group.arrow) do print(" -" .. item.name) end
+  function group.show(any)
+    if any == nil then
+      print("sprites group: ")
+      print("collider") for i,item in ipairs(group.collider) do print(" -" .. item.name) end
+      print("updater") for i,item in ipairs(group.updater) do print(" -" .. item.name) end
+      print("drawable") for i,item in ipairs(group.drawable) do print(" -" .. item.name) end
+      print("arrow") for i,item in ipairs(group.arrow) do print(" -" .. item.name) end
+    elseif any == "arrow" then for i,item in ipairs(group.arrow) do print(" -" .. item.name) end end
+
   end
 
   function group.get_position(x,y)
@@ -75,7 +78,11 @@ function Group(maps)
 
   function group.update(dt)
     for i,item in ipairs(group.updater) do item.update(dt) end
-    for i,item in ipairs(group.arrow) do item.update(dt) end
+    for i,item in ipairs(group.arrow) do
+      if item.x < 0 or item.y < 0 then
+        table.remove(group.arrow, i)
+      else item.update(dt) end
+    end
 
   end
 
