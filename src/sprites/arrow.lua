@@ -23,9 +23,10 @@ function Arrow(boss, code, x, y, d)
     arrow.x = math.floor(ix/grill.tile)
     arrow.y = math.floor(iy/grill.tile)
 
-    if direction == "left" then
-      ix = ix - speed
-    end
+    if direction == "left" then ix = ix - speed end
+    if direction == "right" then ix = ix + speed end
+    if direction == "up" then iy = iy - speed end
+    if direction == "down" then iy = iy + speed end
   end
 
   return arrow
