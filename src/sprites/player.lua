@@ -4,6 +4,7 @@ Inventory = require("gui/inventory")
 Food = require("sprites/items/food")
 Sword = require("sprites/items/sword")
 Bow = require("sprites/items/bow")
+Arrow = require("sprites/arrow")
 
 function Player(boss,x,y)
 	local grill = boss.grill
@@ -63,6 +64,11 @@ function Player(boss,x,y)
 			end
 			if not moving then move() end
 		end
+	end
+
+	function player.shot()
+		a = Arrow(boss, "D0006", player.x, player.y)
+		boss.group.add(a)
 	end
 
 	function player.action()

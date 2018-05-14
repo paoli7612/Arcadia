@@ -44,6 +44,7 @@ function love.keypressed(key)
 	end
 
 	if key == "i" then	boss.player.inventory.show() end
+	if key == "w" then	boss.player.shot() end
 		if boss.chat.activate then
 			if key == "space" then boss.chat.next() end
 		else
