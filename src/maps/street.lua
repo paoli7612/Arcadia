@@ -951,6 +951,8 @@ return {
     			},
     			npc={
                     {code = "60008", coord_x = 20, coord_y = 12, allow_x = 10, allow_y = 10, nickname = "jeff"},
+										{code = "60038", coord_x = 12, coord_y = 1, allow_x = 0, allow_y = 0, nickname = "guardia1"},
+										{code = "60038", coord_x = 14, coord_y = 1, allow_x = 0, allow_y = 0, nickname = "guardia2"},
 										
                 },
     			decor={
