@@ -19,7 +19,7 @@ class Program:
         SIZE = (self.opt.WIDTH + self.opt.TILE_SIZE + self.opt.TOOLBAR_X,self.opt.TOOLBAR_Y)
         self.screen = pygame.display.set_mode(SIZE)
         self.set_grill_surface()
-        pygame.display.set_caption(self.opt.TITLE)
+        pygame.display.set_caption(self.opt.TITLE %self.name_map)
         self.path = os.path.dirname(__file__)
         self.path_img = os.path.join(self.path, ".." , "src", "img")
         self.images = Images(self)

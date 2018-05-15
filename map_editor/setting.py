@@ -5,7 +5,7 @@ for m in get_monitors():
     if width<m.width: width=m.width
 
 class Setting:
-    TITLE = "Map editor"
+    TITLE = "Map editor - %s"
     TILE = TILE_X, TILE_Y = 40,25
     TILE_SIZE = width // 65
     WIDTH = TILE_X * TILE_SIZE
