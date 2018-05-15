@@ -19,7 +19,7 @@ function Boss()
 	boss.group = boss.maps["spawn"]
 	boss.name_map = "spawn"
 	boss.chat = Chat(boss)
-	
+
 	Load(boss)
 
 	return boss

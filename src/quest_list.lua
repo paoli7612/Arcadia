@@ -9,9 +9,20 @@ function Quest_list(boss)
 
   local boss = boss
 
+  function isCompleted(quest)
+    completed = false
+    for i,name in ipairs(quest_list.completed) do
+      if name == quest.name then completed = true end
+    end
+    return completed
+  end
+
+
   function quest_list.add(npc, quest)
+    if isCompleted(quest) then return false end
     table.insert(npcs, npc)
     table.insert(quests, quest)
+    return true
   end
 
   function quest_list.del(name)

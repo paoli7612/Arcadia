@@ -76,10 +76,15 @@ function Npc(boss,properties)
 		for i,quest in ipairs(description.quests) do
 			if quest.completed == false then
 				npc.current_quest = quest
-				boss.player.inventory.quest_list.add(npc,npc.current_quest)
-				boss.chat.write(npc.nickname,npc.current_quest.chat.start)
-				boss.chat.show()
-				return
+				if boss.player.inventory.quest_list.add(npc,npc.current_quest) then
+					boss.chat.write(npc.nickname,npc.current_quest.chat.start)
+					boss.chat.show()
+					return
+				else
+					for i,quest in ipairs(description.quests) do
+						if quest.name == npc.current_quest.name then quest.completed = true end
+					end
+					npc.current_quest = false end
 			end
 		end
 
