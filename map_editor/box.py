@@ -1,15 +1,18 @@
 import tkinter
 
 class Box:
-    def __init__(self, voices):
+    def __init__(self, title, voices):
         self.master = tkinter.Tk()
         self.buttons = dict()
         self.texts = dict()
         self.set_voices(voices)
+        self.master.title(title)
         self.start()
 
+
     def new_label(self, text, row, column):
-        tkinter.Label(self.master, text = text).grid(row = row, column = column)
+        l = tkinter.Label(self.master, text = text)
+        l.grid(row = row, column = column)
 
     def new_text(self, name, row, column):
         ent = tkinter.Entry(self.master)
@@ -41,7 +44,7 @@ class Box:
     def set_voices(self,voices):
         for row,voice in enumerate(voices):
             self.new_pair(voice,row)
-        self.new_button("ok", self.end, row+1, 1)
+        self.new_button("add", self.end, row+1, 1)
 
 def get_param(type):
     if type == "chest": voices = ["datasheet"]
@@ -49,5 +52,5 @@ def get_param(type):
     elif type == "cartel": voices = ["text"]
     elif type == "npc": voices = "nickname allow_x allow_y".split()
     elif type == "door": voices = "dest dest_x dest_y id".split()
-    box = Box(voices)
+    box = Box(type, voices)
     return box.param
