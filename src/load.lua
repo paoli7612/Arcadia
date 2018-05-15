@@ -4,6 +4,10 @@ function load(boss)
   file = io.open("save/player.txt", "r")
 
   name_map = file.read(file)
+  love.window.setTitle(name_map)
+  boss.group = boss.maps[name_map]
+  boss.name_map = name_map
+
   x = file.read(file)
   y = file.read(file)
   boss.player.reset_coord(x,y)

@@ -19,27 +19,49 @@
 function save(boss)
   local text = ""
 
-  function add(p)
-    print(p)
-    text = text .. p .. "\n"
+  function add(p) text = text .. p .. "\n" end
+  function del() text = "" end
+
+  function write(name)
+    local file = io.open("save/"..name..".txt", "w")
+    file.write(file, text)
+    file.flush(file)
   end
 
-  add(boss.name_map)
-  add(boss.player.x)
-  add(boss.player.y)
+  -- player
+  function player()
+    del()
+    add(boss.name_map)
+    add(boss.player.x)
+    add(boss.player.y)
+    attr = boss.player.inventory.interface.attr
+    add(attr.life)
+    add(attr.life_max)
+    add(attr.exp)
+    add(attr.exp_max)
+    add(attr.level)
+    add(attr.money)
+    write("player")
+  end
 
-  attr = boss.player.inventory.interface.attr
-  add(attr.life)
-  add(attr.life_max)
-  add(attr.exp)
-  add(attr.exp_max)
-  print(attr.level)
-  add(attr.level)
-  add(attr.money)
+  function quest_completed()
+    del()
+    for i,completed in ipairs(boss.player.inventory.quest_list.completed) do
+      add(completed) end
+    write("quest_completed")
+  end
 
-  local file = io.open("save/player.txt", "w")
-  file.write(file, text)
-  file.flush(file)
+  function quest_started()
+    del()
+
+    write("quest_started")
+  end
+
+  player()
+  quest_completed()
+  quest_started()
+
+  print("Game saved")
 
 end
 
