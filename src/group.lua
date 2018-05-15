@@ -1,6 +1,6 @@
 -- group.lua
 
-function Group(maps)
+function Group(maps,grill)
   local group = {
     collider = {},
     updater = {},
@@ -8,6 +8,7 @@ function Group(maps)
     arrow = {}
   }
   local maps = maps
+  local grill = grill
 
   function group.add(new_sprite)
     if new_sprite.name == "wall" then table.insert(group.collider, new_sprite)
@@ -79,7 +80,7 @@ function Group(maps)
   function group.update(dt)
     for i,item in ipairs(group.updater) do item.update(dt) end
     for i,item in ipairs(group.arrow) do
-      if item.x < 0 or item.y < 0 then
+      if item.x < 0 or item.y < 0 or item.x > grill.tile_w or item.y > grill.tile_h then
         table.remove(group.arrow, i)
       else item.update(dt) end
     end

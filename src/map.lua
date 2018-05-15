@@ -24,7 +24,7 @@ function Maps(boss)
   end
 
   function load_map(level)
-    maps[level.name] = Group(maps)
+    maps[level.name] = Group(maps,grill)
     for i,door in ipairs(level.properties.door) do
       maps[level.name].add(Door(boss,door))
       if maps[door.dest] == nil and not (door.dest == "null") then
