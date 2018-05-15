@@ -957,6 +957,8 @@ return {
 										{code = "10126", coord_x = 27, coord_y = 14},
 										{code = "10126", coord_x = 24, coord_y = 13},
 										{code = "10126", coord_x = 19, coord_y = 14},
+										{code = "10040", coord_x = 0, coord_y = 11},
+										{code = "10040", coord_x = 0, coord_y = 12},
 										
     			},
     			door={
