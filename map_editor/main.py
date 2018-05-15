@@ -16,7 +16,8 @@ class Program:
         pygame.init()
         self.opt = Setting()
         self.name_map = arg.name_map
-        self.screen = pygame.display.set_mode((self.opt.WIDTH + self.opt.TILE_SIZE + self.opt.TOOLBAR_X,self.opt.HEIGHT + self.opt.TILE_SIZE*3))
+        SIZE = (self.opt.WIDTH + self.opt.TILE_SIZE + self.opt.TOOLBAR_X,self.opt.TOOLBAR_Y)
+        self.screen = pygame.display.set_mode(SIZE)
         self.set_grill_surface()
         pygame.display.set_caption(self.opt.TITLE)
         self.path = os.path.dirname(__file__)
@@ -36,8 +37,10 @@ class Program:
 
     def set_grill_surface(self):
         self.grill = self.screen.copy()
-        for y in range(0, self.opt.HEIGHT+1, self.opt.TILE_SIZE): pygame.draw.line(self.grill, (255,255,255), (0, y), (self.opt.WIDTH, y))
-        for x in range(0, self.opt.WIDTH+1, self.opt.TILE_SIZE): pygame.draw.line(self.grill, (255,255,255), (x, 0), (x, self.opt.HEIGHT))
+        for y in range(0, self.opt.HEIGHT+1, self.opt.TILE_SIZE):
+            pygame.draw.line(self.grill, (255,255,255), (0, y), (self.opt.WIDTH, y))
+        for x in range(0, self.opt.WIDTH+1, self.opt.TILE_SIZE):
+            pygame.draw.line(self.grill, (255,255,255), (x, 0), (x, self.opt.HEIGHT))
         self.grill.set_colorkey((0,0,0))
 
     def draw(self):
@@ -66,7 +69,6 @@ class Program:
     def update(self):
         self.converter.update()
         self.selector.update()
-
 
     def loop(self):
         self.running = True

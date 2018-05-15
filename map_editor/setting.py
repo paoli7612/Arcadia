@@ -7,7 +7,7 @@ for m in get_monitors():
 class Setting:
     TITLE = "Map editor"
     TILE = TILE_X, TILE_Y = 40,25
-    TILE_SIZE = width // 60
+    TILE_SIZE = width // 65
     WIDTH = TILE_X * TILE_SIZE
     HEIGHT = TILE_Y * TILE_SIZE
     SIZE = WIDTH, HEIGHT
@@ -17,8 +17,8 @@ class Setting:
     JSON_FORMAT = ".json"
 
 
-    TOOLBAR_X = TILE_SIZE * 19
-    TOOLBAR_Y = HEIGHT + TILE_SIZE * 3
+    TOOLBAR_X = TILE_SIZE * 20
+    TOOLBAR_Y = HEIGHT + TILE_SIZE * 5
 
 
     class Colors:
