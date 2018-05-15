@@ -19,11 +19,11 @@
 function save(boss)
   local text = ""
 
-  function add(p) text = text .. p .. "\n" end
+  function add(p) text = text .. tostring(p) .. "\n" end
   function del() text = "" end
 
   function write(name)
-    local file = io.open("save/"..name..".txt", "w")
+    local file = io.open("save/"..name..".pia", "w")
     file.write(file, text)
     file.flush(file)
   end
@@ -53,7 +53,27 @@ function save(boss)
 
   function quest_started()
     del()
-
+    for i,level in pairs(boss.maps) do
+      if not (type(level) == "function") then
+        for i,sprite in pairs(level.updater) do
+          if sprite.name == "npc" then
+            if not (sprite.current_quest == false) then
+              c = sprite.current_quest.purpose
+              add(sprite.nickname)
+              talk = ""
+              for i,t in ipairs(c.talk) do
+                talk = talk .. tostring(t.completed) .. " " end
+              add(talk)
+              mission = ""
+              for i,m in ipairs(c.mission) do
+                mission = mission .. tostring(m.completed) end
+              add(mission)
+              add("end")
+            end
+          end
+        end
+      end
+    end
     write("quest_started")
   end
 

@@ -4,7 +4,7 @@ function load(boss)
   local file = nil
 
   function catch(name)
-    file = io.open("save/"..name..".txt", "r")
+    file = io.open("save/"..name..".pia", "r")
   end
 
   function read()
@@ -45,9 +45,21 @@ function load(boss)
     end
   end
 
+  function quest_started()
+    catch("quest_started")
+    r = read()
+    while not(r == nil) do
+      if r == "end" then end
+      for i in string.gmatch(r, "%S+") do
+        print(i)
+      end
+      r = read()
+    end
+  end
+
   player()
   quest_completed()
-
+  quest_started()
 end
 
 return load
