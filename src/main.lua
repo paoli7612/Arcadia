@@ -6,6 +6,10 @@ Maps = require("map")
 Images = require("images")
 Chat = require("gui/chat")
 
+
+Save = require("save")
+Load = require("load")
+
 function Boss()
 	local boss = {}
 	boss.grill = Grill()
@@ -15,6 +19,9 @@ function Boss()
 	boss.group = boss.maps["spawn"]
 	boss.name_map = "spawn"
 	boss.chat = Chat(boss)
+	
+	Load(boss)
+
 	return boss
 end
 
@@ -47,6 +54,7 @@ function love.keypressed(key)
 	if key == "i" then	boss.player.inventory.show() end
 	if key == "w" then	boss.player.shot() end
 	if key == "e" then	boss.group.show("arrow") end
+	if key == "s" then save(boss) end
 		if boss.chat.activate then
 			if key == "space" then boss.chat.next() end
 		else
