@@ -13,27 +13,38 @@ except: pass
 
 class Program:
     def __init__(self, arg):
-        pygame.init()
-        self.opt = Setting()
+        # setting
         self.name_map = arg.name_map
-        SIZE = (self.opt.WIDTH + self.opt.TILE_SIZE + self.opt.TOOLBAR_X,self.opt.TOOLBAR_Y)
-        self.screen = pygame.display.set_mode(SIZE)
-        self.set_grill_surface()
+        self.opt = Setting()
+
+        # pygame
+        pygame.init()
+        self.screen = pygame.display.set_mode(self.opt.WINDOW_SIZE)
         pygame.display.set_caption(self.opt.TITLE %self.name_map)
+        self.clock = pygame.time.Clock()
+        self.set_grill_surface()
+
+        # data
         self.path = os.path.dirname(__file__)
         self.path_img = os.path.join(self.path, ".." , "src", "img")
-        self.images = Images(self)
-        self.path_maps = os.path.join(self.path, ".." , "src", "maps", self.name_map + self.opt.LUA_FORMAT)
+        file = self.name_map + self.opt.LUA_FORMAT
+        self.path_maps = os.path.join(self.path, ".." , "src", "maps", file)
         self.create = not os.path.exists(self.path_maps)
+
+        # objects
         self.builder = Builder(self)
-        self.clock = pygame.time.Clock()
         self.converter = Converter(self)
+        self.images = Images(self)
         self.map = Map(self)
         self.selector = Selector(self)
         self.toolbar = Toolbar(self)
+
+        # loop
         self.saved = True
         self.loop()
         pygame.quit()
+
+
 
     def set_grill_surface(self):
         self.grill = self.screen.copy()

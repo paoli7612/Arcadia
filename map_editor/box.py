@@ -9,7 +9,6 @@ class Box:
         self.master.title(title)
         self.start()
 
-
     def new_label(self, text, row, column):
         l = tkinter.Label(self.master, text = text)
         l.grid(row = row, column = column)

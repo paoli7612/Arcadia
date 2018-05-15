@@ -16,10 +16,10 @@ class Setting:
     IMAGE_FORMAT = ".png"
     JSON_FORMAT = ".json"
 
-
     TOOLBAR_X = TILE_SIZE * 20
     TOOLBAR_Y = HEIGHT + TILE_SIZE * 5
 
+    WINDOW_SIZE = (WIDTH + TILE_SIZE + TOOLBAR_X, TOOLBAR_Y)
 
     class Colors:
         BLACK = (0,0,0)

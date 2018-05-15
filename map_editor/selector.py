@@ -52,7 +52,6 @@ class Selector(pygame.sprite.Sprite):
     def remove(self):
         for type, elements in self.prop.items():
             for pos,element in enumerate(elements):
-                print(element)
                 try:
                     if element["coord_x"] == self.x and element["coord_y"] == self.y:
                         print("Del: %s" %(str(element)))
@@ -71,7 +70,7 @@ class Selector(pygame.sprite.Sprite):
         prop = self.program.toolbar.prop
 
         if self.x == opt.TILE_X:
-            print("invalid click"); return
+            return # click on margin
         self.program.saved = False
 
         if self.position == "map":
@@ -81,6 +80,6 @@ class Selector(pygame.sprite.Sprite):
 
         elif self.position == "toolbar":
             try: self.selected = prop[self.x-opt.TILE_X-1][self.y]
-            except: print("out position")
+            except: pass # out position
 
         self.program.map.draw_matrix()

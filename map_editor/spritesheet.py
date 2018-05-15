@@ -19,7 +19,6 @@ class Images:
         self.program = program
         self.images = dict()
         for type in TYPES_NAME:
-            print(type)
             self.load_images(type)
 
     def load_images(self,type):
