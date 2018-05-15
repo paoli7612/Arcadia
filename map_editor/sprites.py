@@ -1,5 +1,5 @@
 import template
-from box import get_door_param, get_cartel_param, get_npc_param, get_lever_param, get_chest_param
+from box import get_param
 
 
 TYPES_NAME = "wall floor door npc decor torch cartel water lever chest".split()
@@ -36,7 +36,8 @@ class Door:
             coord_x, coord_y = get_int(coord_x), get_int(coord_y)
             dest_x, dest_y = get_int(dest_x), get_int(dest_y)
         except: pass
-        self.dict = {"dest":dest,"code":code,"coord_x":coord_x,"coord_y":coord_y,"dest_x":dest_x,"dest_y":dest_y,"id":id}
+        self.dict = {"dest":dest, "code":code, "coord_x":coord_x,
+        "coord_y":coord_y, "dest_x":dest_x, "dest_y":dest_y, "id":id}
         self.param = (dest, code, coord_x, coord_y, dest_x, dest_y, id)
         self.LAYER = "2:" + str(coord_x) + "-" + str(coord_y)
 
@@ -51,7 +52,8 @@ class Npc:
             allow_x, allow_y = get_int(allow_x), get_int(allow_y)
 
         except: pass
-        self.dict = {"code": code, "coord_x": coord_x, "coord_y": coord_y, "allow_x": allow_x, "allow_y": allow_y, "nickname": nickname}
+        self.dict = {"code": code, "coord_x": coord_x, "coord_y": coord_y,
+        "allow_x": allow_x, "allow_y": allow_y, "nickname": nickname}
         self.param = (code, coord_x, coord_y, allow_x, allow_y, nickname)
         self.LAYER = "2:" + str(coord_x) + "-" + str(coord_y)
 
@@ -133,7 +135,6 @@ class Chest:
     def __str__(self): return (template.chest % self.param)
     def __getitem__(self, key): return self.dict[key]
 
-
 def newSprite(type_name, param):
     if type_name == "wall": return Wall(*param)
     elif type_name == "floor": return Floor(*param)
@@ -148,23 +149,26 @@ def newSprite(type_name, param):
 
 def newSprite_code(code, x, y):
     f = int(code[0])
+    print(code, f)
     if f == 0: return Wall(code,x,y), "wall"
     elif f == 1: return Floor(code,x,y), "floor"
     elif f == 2: return Decor(code,x,y), "decor"
     elif f == 3:
-        param = get_door_param()
-        return Door(param["dest"],code,x,y,int(param["dest_x"]),int(param["dest_y"]),int(param["id"])), "door"
+        param = get_param("door")
+        return Door(param["dest"],code,x,y,int(param["dest_x"]),
+            int(param["dest_y"]),int(param["id"])), "door"
     elif f == 4: return Torch(code,x,y), "torch"
     elif f == 5:
-        param = get_cartel_param()
+        param = get_param("cartel")
         return Cartel(param["text"],code,x,y), "cartel"
     elif f == 6:
-        param = get_npc_param()
-        return Npc(code,x,y,int(param["allow_x"]),int(param["allow_y"]),param["nickname"]), "npc"
+        param = get_param("npc")
+        return Npc(code,x,y,int(param["allow_x"]),
+            int(param["allow_y"]),param["nickname"]), "npc"
     elif f == 7: return Water(code,x,y), "water"
     elif f == 8:
-        param = get_lever_param()
-        return Lever(code,param["datasheet"],x,y), "lever"
+        param = get_param("lever")
+        return Lever(param["datasheet"],code,x,y), "lever"
     elif f == 9:
-        param = get_chest_param()
-        return Lever(code,param["datasheet"],x,y), "chest"
+        param = get_param("chest")
+        return Chest(param["datasheet"],code,x,y), "chest"
