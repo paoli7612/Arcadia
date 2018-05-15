@@ -15,8 +15,7 @@ class Toolbar:
         images = self.program.images
 
         px = 0
-        tns = TYPES_NAME
-        for x,type_name in enumerate(tns):
+        for x,type_name in enumerate(TYPES_NAME):
             self.prop[x+px] = list()
             ay = 0
             for y,(code,image) in enumerate(images[type_name].items()):

@@ -54,7 +54,6 @@ class Selector(pygame.sprite.Sprite):
             for pos,element in enumerate(elements):
                 print(element)
                 try:
-                    if (element["coord_x"] == self.x and element["coord_y"] == self.y): print("c")
                     if element["coord_x"] == self.x and element["coord_y"] == self.y:
                         print("Del: %s" %(str(element)))
                         del self.prop[type][pos]
@@ -66,7 +65,6 @@ class Selector(pygame.sprite.Sprite):
     def add_sprite(self):
         element,type_name = newSprite_code(self.selected,self.x,self.y)
         self.prop[type_name].append(element)
-        for element in self.prop[type_name]: print(element["code"])
 
     def click(self):
         opt = self.program.opt

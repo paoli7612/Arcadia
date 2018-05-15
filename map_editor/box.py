@@ -1,10 +1,12 @@
 import tkinter
 
 class Box:
-    def __init__(self):
+    def __init__(self, voices):
         self.master = tkinter.Tk()
         self.buttons = dict()
         self.texts = dict()
+        self.set_voices(voices)
+        self.start()
 
     def new_label(self, text, row, column):
         tkinter.Label(self.master, text = text).grid(row = row, column = column)
@@ -41,32 +43,11 @@ class Box:
             self.new_pair(voice,row)
         self.new_button("ok", self.end, row+1, 1)
 
-def get_door_param():
-    box = Box()
-    box.set_voices("dest dest_x dest_y id".split())
-    box.start()
-    return box.param
-
-def get_npc_param():
-    box = Box()
-    box.set_voices("nickname allow_x allow_y".split())
-    box.start()
-    return box.param
-
-def get_cartel_param():
-    box = Box()
-    box.set_voices(["text"])
-    box.start()
-    return box.param
-
-def get_lever_param():
-    box = Box()
-    box.set_voices(["datasheet"])
-    box.start()
-    return box.param
-
-def get_chest_param():
-    box = Box()
-    box.set_voices(["datasheet"])
-    box.start()
+def get_param(type):
+    if type == "chest": voices = ["datasheet"]
+    elif type == "lever": voices = ["datasheet"]
+    elif type == "cartel": voices = ["text"]
+    elif type == "npc": voices = "nickname allow_x allow_y".split()
+    elif type == "door": voices = "dest dest_x dest_y id".split()
+    box = Box(voices)
     return box.param
