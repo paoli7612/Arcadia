@@ -11,6 +11,7 @@ function Arrow(boss, code, x, y, d)
   local grill = boss.grill
   local direction = d
   local speed = 20
+  local group = boss.group
 
   local ix = arrow.x * grill.tile
   local iy = arrow.y * grill.tile
@@ -20,6 +21,7 @@ function Arrow(boss, code, x, y, d)
   end
 
   function arrow.update()
+
     arrow.x = math.floor(ix/grill.tile)
     arrow.y = math.floor(iy/grill.tile)
 

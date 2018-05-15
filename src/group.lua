@@ -63,6 +63,16 @@ function Group(maps,grill)
     else return false end
   end
 
+  function group.collide_any(sprite, group, skyp)
+    for i,item in ipairs(group) do
+      if not (item.name == skyp) then
+        if item.x == sprite.x and item.y == sprite.y then
+          return true
+        end
+      end
+    end
+  end
+
   function group.collide(sprite)
     for i,item in ipairs(group.collider) do
       if sprite.x + sprite.dx == item.x and sprite.y + sprite.dy == item.y then
@@ -85,6 +95,11 @@ function Group(maps,grill)
       else item.update(dt) end
     end
 
+    -- arrow collide obstacle
+    for i,arrow in ipairs(group.arrow) do
+      if group.collide_any(arrow, group.collider) then table.remove(group.arrow, i) end
+      if group.collide_any(arrow, group.updater,"water") then table.remove(group.arrow, i) end
+    end
   end
 
   return group
