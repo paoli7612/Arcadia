@@ -32,7 +32,7 @@ function Maps(boss)
     end
     for i,wall in ipairs(level.properties.wall) do maps[level.name].add(Wall(boss,wall)) end
     for i,floor in ipairs(level.properties.floor) do maps[level.name].add(Floor(boss,floor)) end
-    for i,npc in ipairs(level.properties.npc) do maps[level.name].add(Npc(boss,npc)) end
+    for i,npc in ipairs(level.properties.npc) do maps[level.name].add(Npc(boss,npc,level.name)) end
     for i,decor in ipairs(level.properties.decor) do maps[level.name].add(Decor(boss,decor)) end
     for i,torch in ipairs(level.properties.torch) do maps[level.name].add(Torch(boss,torch)) end
     for i,cartel in ipairs(level.properties.cartel) do maps[level.name].add(Cartel(boss,cartel)) end

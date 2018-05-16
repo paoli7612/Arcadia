@@ -46,15 +46,21 @@ function love.draw()
 	boss.chat.draw()
 end
 
+function love.quit()
+	Save(boss)
+	print("saved")
+end
+
+
 function love.keypressed(key)
 	if key == "escape" then
+		save(boss)
 		love.event.quit()
 	end
 
 	if key == "i" then	boss.player.inventory.show() end
 	if key == "w" then	boss.player.shot() end
 	if key == "e" then	boss.group.show("arrow") end
-	if key == "s" then save(boss) end
 		if boss.chat.activate then
 			if key == "space" then boss.chat.next() end
 		else
