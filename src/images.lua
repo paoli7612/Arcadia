@@ -10,9 +10,8 @@ function Spritesheet(grill,type)
     return love.graphics.newQuad(x*size, y*size, size, size, image:getDimensions())
   end
 
-  function spritesheet.draw_image(x,y,quad, rotation)
-    if rotation == nil then rotation = 0 end
-    love.graphics.draw(image, quad, x, y, rotation, (grill.tile/size), (grill.tile/size)) -- correct for float to int
+  function spritesheet.draw_image(x,y,quad)
+    love.graphics.draw(image, quad, x, y, 0, (grill.tile/size), (grill.tile/size)) -- correct for float to int
   end
 
   function get_npc(x,y)
@@ -31,18 +30,10 @@ function Spritesheet(grill,type)
     quads["up"]["walk"] = {get_image(0+x,3+y),get_image(2+x,3+y)}
     return quads
   end
-  function get_torch(x,y)
-    return {get_image(x,y),get_image(1+x,y),get_image(2+x,y)}
-  end
-  function get_water(x,y)
-    return {get_image(x,y),get_image(1+x,y),get_image(2+x,y),get_image(3+x,y)}
-  end
-  function get_lever(x,y)
-    return {get_image(x,y),get_image(1+x,y),get_image(2+x,y)}
-  end
-  function get_chest(x,y)
-    return {get_image(x,y),get_image(x,y+1),get_image(x,y+2),get_image(x,y+2)}
-  end
+  function get_torch(x,y) return {get_image(x,y),get_image(1+x,y),get_image(2+x,y)} end
+  function get_water(x,y) return {get_image(x,y),get_image(1+x,y),get_image(2+x,y),get_image(3+x,y)} end
+  function get_lever(x,y) return {get_image(x,y),get_image(1+x,y),get_image(2+x,y)} end
+  function get_chest(x,y) return {get_image(x,y),get_image(x,y+1),get_image(x,y+2),get_image(x,y+2)} end
   function get_arrow(x,y)
     local quads = {}
     quads["right"] = get_image(x,y)
@@ -62,18 +53,12 @@ function Spritesheet(grill,type)
     if not (code == "_") then
       x = dict[d]["x"]
       y = dict[d]["y"]
-      if type == "water" then
-        spritesheet.quads[code] = get_water(x, y)
-      elseif type == "torch" then
-        spritesheet.quads[code] = get_torch(x, y)
-      elseif type == "npc" then
-        spritesheet.quads[code] = get_npc(x, y)
-      elseif type == "lever" then
-        spritesheet.quads[code] = get_lever(x, y)
-      elseif type == "chest" then
-        spritesheet.quads[code] = get_chest(x, y)
-      elseif type == "arrow" then
-        spritesheet.quads[code] = get_arrow(x, y)
+      if type == "water" then spritesheet.quads[code] = get_water(x, y)
+      elseif type == "torch" then spritesheet.quads[code] = get_torch(x, y)
+      elseif type == "npc" then spritesheet.quads[code] = get_npc(x, y)
+      elseif type == "lever" then spritesheet.quads[code] = get_lever(x, y)
+      elseif type == "chest" then spritesheet.quads[code] = get_chest(x, y)
+      elseif type == "arrow" then spritesheet.quads[code] = get_arrow(x, y)
       else spritesheet.quads[code] = get_image(x,y)
       end
     end
