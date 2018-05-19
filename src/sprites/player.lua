@@ -7,8 +7,6 @@ Bow = require("sprites/items/bow")
 Arrow = require("sprites/arrow")
 
 function Player(boss,x,y)
-	local grill = boss.grill
-	local boss = boss
 
 	local spritesheet = boss.images["npc"]
 
@@ -22,10 +20,10 @@ function Player(boss,x,y)
 		y=y,
 		inventory = Inventory(boss)
 	}
-	local ix = player.x * grill.tile
-	local iy = player.y * grill.tile
+	local ix = player.x * boss.grill.tile
+	local iy = player.y * boss.grill.tile
 
-	local speed = math.floor(grill.tile/8)
+	local speed = math.floor(boss.grill.tile/8)
 	local moving = true
 
 
@@ -45,15 +43,15 @@ function Player(boss,x,y)
 	function player.reset_coord(x,y)
 		player.x = x
 		player.y = y
-		ix = player.x * grill.tile
-		iy = player.y * grill.tile
+		ix = player.x * boss.grill.tile
+		iy = player.y * boss.grill.tile
 	end
 
 	function player.update(dt)
 		if not boss.chat.activate then
 			if moving then
-				mx = player.x*grill.tile
-				my = player.y*grill.tile
+				mx = player.x*boss.grill.tile
+				my = player.y*boss.grill.tile
 				if (math.abs(mx-ix) < speed) then ix = mx end
 				if (math.abs(my-iy) < speed) then iy = my end
 				if ix < mx then	ix = ix + speed
