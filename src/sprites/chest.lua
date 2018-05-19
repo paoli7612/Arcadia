@@ -4,11 +4,12 @@ function Chest(boss,properties, name_map)
 
 	local grill = boss.grill
 	local spritesheet = boss.images["chest"]
-	local properties = properties
+
 	local time = 0
 	local frame = 1
 	local speed = 0.05
 	local dframe = 1
+
 	local chest = {
     name = "chest",
 		x = properties.coord_x,

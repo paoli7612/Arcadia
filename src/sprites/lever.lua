@@ -4,7 +4,6 @@ function Lever(boss, properties, name_map)
 
 	local grill = boss.grill
 	local spritesheet = boss.images["lever"]
-	local properties = properties
   local frame = 1 
 
 	function get_data_sheet(name_map)

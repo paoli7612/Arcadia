@@ -16,12 +16,15 @@ function Player(boss,x,y)
 
 	local player = {
 		name = "player",
-		x=x,
-		y=y,
 		inventory = Inventory(boss)
 	}
-	local ix = player.x * boss.grill.tile
-	local iy = player.y * boss.grill.tile
+	function player.reset_coord(x,y)
+		player.x = x
+		player.y = y
+		ix = player.x * boss.grill.tile
+		iy = player.y * boss.grill.tile
+	end
+	player.reset_coord(x,y)
 
 	local speed = math.floor(boss.grill.tile/8)
 	local moving = true
@@ -40,12 +43,6 @@ function Player(boss,x,y)
 		player.inventory.draw()
 	end
 
-	function player.reset_coord(x,y)
-		player.x = x
-		player.y = y
-		ix = player.x * boss.grill.tile
-		iy = player.y * boss.grill.tile
-	end
 
 	function player.update(dt)
 		if not boss.chat.activate then

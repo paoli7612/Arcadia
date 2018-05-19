@@ -4,7 +4,6 @@ function Water(boss,properties)
 
 	local grill = boss.grill
 	local spritesheet = boss.images["water"]
-	local properties = properties
 	local time = 0
 	local frame = 1
 	local speed = 1.1

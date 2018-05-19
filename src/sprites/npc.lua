@@ -2,11 +2,9 @@
 
 function Npc(boss,properties,name_map)
 	local grill = boss.grill
-	local boss = boss
 	local spritesheet = boss.images["npc"]
 	local time = 0
 	local direction = "down"
-	local properties = properties
 
 	local allow_x = {max = properties.coord_x + properties.allow_x,
 								min = properties.coord_x - properties.allow_x}
