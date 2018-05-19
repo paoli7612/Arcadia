@@ -1,6 +1,6 @@
 -- npc.lua
 
-function Npc(boss,properties)
+function Npc(boss,properties,name_map)
 	local grill = boss.grill
 	local boss = boss
 	local spritesheet = boss.images["npc"]
@@ -15,6 +15,7 @@ function Npc(boss,properties)
 
 	local npc = {
     name = "npc",
+		name_map = name_map,
 		x = properties.coord_x,
 		y = properties.coord_y,
 		nickname = properties.nickname,
@@ -24,7 +25,7 @@ function Npc(boss,properties)
 	local ix = npc.x * grill.tile
 	local iy = npc.y * grill.tile
 	local speed = math.floor(grill.tile/11)
-	local description = require("../descriptions/" .. properties.nickname)
+	npc.description = require("../descriptions/" .. properties.nickname)
 
 	function npc.draw()
 		spritesheet.draw_image(ix,iy,spritesheet.quads[properties.code][direction]["stand"][1])
@@ -56,7 +57,7 @@ function Npc(boss,properties)
 				if complete then
 					boss.chat.write(npc.nickname,npc.current_quest.chat.quit)
 					boss.chat.show()
-					for i,quest in ipairs(description.quests) do
+					for i,quest in ipairs(npc.description.quests) do
 						if quest.name == npc.current_quest.name then quest.completed = true end
 					end
 					boss.player.inventory.quest_list.del(npc.current_quest.name)
@@ -73,7 +74,7 @@ function Npc(boss,properties)
 			return
 		end
 		-- Quest da attivare
-		for i,quest in ipairs(description.quests) do
+		for i,quest in ipairs(npc.description.quests) do
 			if quest.completed == false then
 				npc.current_quest = quest
 				if boss.player.inventory.quest_list.add(npc,npc.current_quest) then
@@ -81,7 +82,7 @@ function Npc(boss,properties)
 					boss.chat.show()
 					return
 				else
-					for i,quest in ipairs(description.quests) do
+					for i,quest in ipairs(npc.description.quests) do
 						if quest.name == npc.current_quest.name then quest.completed = true end
 					end
 					npc.current_quest = false end
@@ -89,7 +90,7 @@ function Npc(boss,properties)
 		end
 
 		-- Chat random
-		text = description.speak[math.random(1,table.getn(description.speak))]
+		text = npc.description.speak[math.random(1,table.getn(npc.description.speak))]
 		boss.chat.write(npc.nickname,text)
 		boss.chat.show()
 	end

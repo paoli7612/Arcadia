@@ -59,7 +59,9 @@ function save(boss)
           if sprite.name == "npc" then
             if not (sprite.current_quest == false) then
               c = sprite.current_quest.purpose
+              add(sprite.name_map)
               add(sprite.nickname)
+              add(sprite.current_quest.name)
               talk = ""
               for i,t in ipairs(c.talk) do
                 talk = talk .. tostring(t.completed) .. " " end
@@ -68,7 +70,6 @@ function save(boss)
               for i,m in ipairs(c.mission) do
                 mission = mission .. tostring(m.completed) end
               add(mission)
-              add("end")
             end
           end
         end
