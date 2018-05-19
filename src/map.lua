@@ -17,11 +17,16 @@ function Maps(boss)
   local maps = {}
 
   function maps.change_map(door_prop)
-    love.window.setTitle(door_prop.dest)
-    boss.group = maps[door_prop.dest]
     boss.player.reset_coord(door_prop.dest_x, door_prop.dest_y)
-    boss.name_map = door_prop.dest
+    maps.use(door_prop.dest)
   end
+
+  function maps.use(dest)
+    love.window.setTitle(dest)
+    boss.group = maps[dest]
+    boss.name_map = dest
+  end
+
 
   function load_map(level)
     maps[level.name] = Group(maps,grill)

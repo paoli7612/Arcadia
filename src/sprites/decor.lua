@@ -4,7 +4,6 @@ function Decor(boss,properties)
 
 	local grill = boss.grill
 	local spritesheet = boss.images["decor"]
-	local properties = properties
 
 	local decor = {
     name = "decor",

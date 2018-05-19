@@ -1,4 +1,4 @@
-Font = require("gui/font")
+Font = require("font")
 
 function Chat(boss)
   local chat = {activate = false}

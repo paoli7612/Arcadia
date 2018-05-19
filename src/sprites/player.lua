@@ -1,15 +1,13 @@
 -- player.lua
 
-Inventory = require("gui/inventory")
+Inventory = require("inventory")
+
 Food = require("sprites/items/food")
 Sword = require("sprites/items/sword")
 Bow = require("sprites/items/bow")
 Arrow = require("sprites/arrow")
 
 function Player(boss,x,y)
-	local grill = boss.grill
-	local boss = boss
-
 	local spritesheet = boss.images["npc"]
 
 	local direction = "down"
@@ -18,17 +16,20 @@ function Player(boss,x,y)
 
 	local player = {
 		name = "player",
-		x=x,
-		y=y,
 		inventory = Inventory(boss)
 	}
-	local ix = player.x * grill.tile
-	local iy = player.y * grill.tile
+	function player.reset_coord(x,y)
+		player.x = x
+		player.y = y
+		ix = player.x * boss.grill.tile
+		iy = player.y * boss.grill.tile
+	end
+	player.reset_coord(x,y)
 
-	local speed = math.floor(grill.tile/8)
+	local speed = math.floor(boss.grill.tile/8)
 	local moving = true
 
-
+	-- starter bow
 	b = Bow(boss,"C0002")
 	player.inventory.add(b)
 	player.inventory.equip(b)
@@ -38,22 +39,16 @@ function Player(boss,x,y)
 	end
 
 	function player.draw()
-		spritesheet.draw_image(ix,iy, spritesheet.quads["60001"][direction][position][frame])
+		spritesheet.draw_image(ix,iy, spritesheet.quads["60048"][direction][position][frame])
 		player.inventory.draw()
 	end
 
-	function player.reset_coord(x,y)
-		player.x = x
-		player.y = y
-		ix = player.x * grill.tile
-		iy = player.y * grill.tile
-	end
 
 	function player.update(dt)
 		if not boss.chat.activate then
 			if moving then
-				mx = player.x*grill.tile
-				my = player.y*grill.tile
+				mx = player.x*boss.grill.tile
+				my = player.y*boss.grill.tile
 				if (math.abs(mx-ix) < speed) then ix = mx end
 				if (math.abs(my-iy) < speed) then iy = my end
 				if ix < mx then	ix = ix + speed

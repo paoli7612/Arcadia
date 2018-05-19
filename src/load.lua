@@ -27,14 +27,14 @@ function load(boss)
     y = tonumber(read())
     boss.player.reset_coord(x,y)
 
-    boss.player.inventory.interface.attr = {
-      life = tonumber(read()),
-      life_max = tonumber(read()),
-      exp = tonumber(read()),
-      exp_max = tonumber(read()),
-      level = tonumber(read()),
-      money = tonumber(read())
-    }
+    attr = boss.player.inventory.attr
+    attr.life = tonumber(read())
+    attr.life_max = tonumber(read())
+    attr.exp = tonumber(read())
+    attr.exp_max = tonumber(read())
+    attr.level = tonumber(read())
+    attr.money = tonumber(read())
+
   end
 
   function quest_completed()

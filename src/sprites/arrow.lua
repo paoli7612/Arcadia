@@ -1,15 +1,13 @@
 -- arrow.lua
 
-function Arrow(boss, code, x, y, d)
+function Arrow(boss, code, x, y, direction)
   local arrow = {
     name = "arrow",
     x = x,
     y = y}
-  local boss = boss
   local spritesheet = boss.images["arrow"]
-  local code = code
+
   local grill = boss.grill
-  local direction = d
   local speed = 20
   local group = boss.group
 

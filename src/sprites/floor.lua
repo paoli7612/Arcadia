@@ -4,7 +4,6 @@ function Floor(boss,properties)
 
 	local grill = boss.grill
 	local spritesheet = boss.images["floor"]
-	local properties = properties
 
 	local floor = {
     name = "floor",
