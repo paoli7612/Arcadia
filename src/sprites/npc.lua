@@ -40,9 +40,7 @@ function Npc(boss,properties,name_map)
 		if not(npc.current_quest == false) then
 			-- control completed missions
 			for i,mission in ipairs(npc.current_quest.purpose.mission) do
-
 				for j,completed in ipairs(boss.player.inventory.quest_list.completed) do
-					print(completed, mission.quest)
 					if mission.quest == completed then mission.completed = true print("mission completed = true") end
 				end
 			end
@@ -52,8 +50,9 @@ function Npc(boss,properties,name_map)
 					if not talk.completed then complete = false end
 				end
 				for i,mission in ipairs(npc.current_quest.purpose.mission) do
-					if not mission.completed then complete = false  print("mission completed == false")end
+					if not mission.completed then complete = false end
 				end
+
 				if complete then
 					boss.chat.write(npc.nickname,npc.current_quest.chat.quit)
 					boss.chat.show()
@@ -61,8 +60,8 @@ function Npc(boss,properties,name_map)
 						if quest.name == npc.current_quest.name then quest.completed = true end
 					end
 					boss.player.inventory.quest_list.del(npc.current_quest.name)
-					boss.player.inventory.interface.add_exp(npc.current_quest.reward.exp)
-					boss.player.inventory.interface.add_money(npc.current_quest.reward.money)
+					boss.player.inventory.attr.add_exp(npc.current_quest.reward.exp)
+					boss.player.inventory.attr.add_money(npc.current_quest.reward.money)
 					food = npc.current_quest.reward.food
 					if food then boss.player.add_food(food) end
 					npc.current_quest = false

@@ -7,7 +7,7 @@ function Inventory(boss)
   local inventory = {}
   local bag = {}
   local equip = nil
-  inventory.interface = Attr(boss)
+  inventory.attr = Attr(boss)
   inventory.quest_list = Quest_list(boss)
   local grill = boss.grill
   local show = false
@@ -16,7 +16,7 @@ function Inventory(boss)
     if show then
       love.graphics.setColor(0,0,0)
       love.graphics.rectangle("fill", 0, 0, grill.WIDTH, grill.tile*2,0,2,2)
-      inventory.interface.draw()
+      inventory.attr.draw()
       for i,p in ipairs(bag) do
         p.draw(i,0) end
       equip.draw(grill.tile_w-1,0)

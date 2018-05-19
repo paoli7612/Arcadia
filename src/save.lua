@@ -34,7 +34,7 @@ function save(boss)
     add(boss.name_map)
     add(boss.player.x)
     add(boss.player.y)
-    attr = boss.player.inventory.interface.attr
+    attr = boss.player.inventory.attr
     add(attr.life)
     add(attr.life_max)
     add(attr.exp)
