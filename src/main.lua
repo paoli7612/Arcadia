@@ -6,7 +6,6 @@ Maps = require("map")
 Images = require("images")
 Chat = require("gui/chat")
 
-
 Save = require("save")
 Load = require("load")
 
@@ -16,8 +15,7 @@ function Boss()
 	boss.images = Images(boss.grill)
 	boss.maps = Maps(boss)
 	boss.player = Player(boss,36,6)
-	boss.group = boss.maps["spawn"]
-	boss.name_map = "spawn"
+	boss.maps.use("spawn")
 	boss.chat = Chat(boss)
 
 	Load(boss)
