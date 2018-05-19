@@ -118,7 +118,7 @@ class Lever:
         self.param = (datasheet, code, coord_x, coord_y)
         self.LAYER = "2:" + str(coord_x) + "-" + str(coord_y)
 
-    def __str__(self): return (template.cartel % self.param)
+    def __str__(self): return (template.lever % self.param)
     def __getitem__(self, key): return self.dict[key]
 
 class Chest:

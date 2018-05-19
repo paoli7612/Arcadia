@@ -119,7 +119,6 @@ return {
 										{code = "00013", coord_x = 19, coord_y = 0},
 										{code = "00013", coord_x = 18, coord_y = 0},
 										{code = "00011", coord_x = 17, coord_y = 0},
-										{code = "00009", coord_x = 39, coord_y = 3},
 										{code = "00011", coord_x = 35, coord_y = 17},
 										{code = "00012", coord_x = 36, coord_y = 17},
 										{code = "00009", coord_x = 17, coord_y = 1},
@@ -138,7 +137,7 @@ return {
 										{code = "00072", coord_x = 6, coord_y = 9},
 										{code = "00072", coord_x = 6, coord_y = 10},
 										{code = "00072", coord_x = 5, coord_y = 10},
-										
+
     			},
     			floor={
                     {code = "10184", coord_x = 23, coord_y = 5},
@@ -880,17 +879,19 @@ return {
 										{code = "10060", coord_x = 4, coord_y = 17},
 										{code = "10041", coord_x = 5, coord_y = 13},
 										{code = "10179", coord_x = 24, coord_y = 10},
-										
+										{code = "10034", coord_x = 39, coord_y = 3},
+
     			},
     			door={
-                    {dest = "street", code = "30005", coord_x = 22, coord_y = 24, dest_x = 22, dest_y = 1, id = 1},
-										
+                    {dest = "street", code = "30005", coord_x = 22, coord_y = 24, dest_x = 22, dest_y = 1, id = 2},
+										{dest = "test", code = "30007", coord_x = 39, coord_y = 3, dest_x = 2, dest_y = 2, id = 1},
+
     			},
     			npc={
                     {code = "60032", coord_x = 35, coord_y = 7, allow_x = 3, allow_y = 5, nickname = "emily"},
 										{code = "60036", coord_x = 34, coord_y = 20, allow_x = 1, allow_y = 1, nickname = "steve"},
 										{code = "60006", coord_x = 17, coord_y = 15, allow_x = 4, allow_y = 5, nickname = "andy"},
-										
+
                 },
     			decor={
                     {code = "20035", coord_x = 29, coord_y = 4},
@@ -1007,16 +1008,16 @@ return {
 										{code = "20023", coord_x = 32, coord_y = 18},
 										{code = "20031", coord_x = 31, coord_y = 18},
 										{code = "20059", coord_x = 36, coord_y = 21},
-										
+
                 },
     			torch={
                     {code = "40008", coord_x = 27, coord_y = 4},
 										{code = "40007", coord_x = 35, coord_y = 18},
 										{code = "40007", coord_x = 36, coord_y = 18},
-										
+
     			},
     			cartel={
-                    
+
                 },
                 water={
                     {code = "70001", coord_x = 0, coord_y = 24},
@@ -1139,15 +1140,15 @@ return {
 										{code = "70001", coord_x = 4, coord_y = 6},
 										{code = "70001", coord_x = 2, coord_y = 6},
 										{code = "70001", coord_x = 3, coord_y = 16},
-										
+
                 },
                 lever={
-                    {text = "01", code = "80001", coord_x = 22, coord_y = 11},
-										
+                    {datasheet = "01", code = "80001", coord_x = 22, coord_y = 11}
+
                 },
                 chest={
                     {datasheet = "02", code = "90001", coord_x = 25, coord_y = 11}
-										
+
                 }
 
     		}

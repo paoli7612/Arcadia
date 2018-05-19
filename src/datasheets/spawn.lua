@@ -1,5 +1,6 @@
 return {
   {
+    type = "lever",
     name = "01",
     frame = 1,          -- frame iniziale
     purpose = "door",   -- scopo della leva
@@ -9,6 +10,7 @@ return {
     scope = 2           -- esegue il command se il frame diventa 2
   },
   {
+    type = "chest",
     name = "02",
     contenent = {},      -- contenuto chest
     message = {
