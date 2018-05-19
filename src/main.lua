@@ -51,7 +51,6 @@ function love.quit()
 	print("saved")
 end
 
-
 function love.keypressed(key)
 	if key == "escape" then
 		save(boss)
