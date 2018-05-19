@@ -1,13 +1,13 @@
 -- inventory.lua
 
-Interface = require("gui/interface")
+Attr = require("attr")
 Quest_list = require("quest_list")
 
 function Inventory(boss)
   local inventory = {}
   local bag = {}
   local equip = nil
-  inventory.interface = Interface(boss)
+  inventory.interface = Attr(boss)
   inventory.quest_list = Quest_list(boss)
   local grill = boss.grill
   local show = false

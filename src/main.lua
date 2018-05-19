@@ -4,7 +4,7 @@ Grill = require("grill")
 Player = require("sprites/player")
 Maps = require("map")
 Images = require("images")
-Chat = require("gui/chat")
+Chat = require("chat")
 
 Save = require("save")
 Load = require("load")

@@ -1,13 +1,13 @@
 -- player.lua
 
-Inventory = require("gui/inventory")
+Inventory = require("inventory")
+
 Food = require("sprites/items/food")
 Sword = require("sprites/items/sword")
 Bow = require("sprites/items/bow")
 Arrow = require("sprites/arrow")
 
 function Player(boss,x,y)
-
 	local spritesheet = boss.images["npc"]
 
 	local direction = "down"
@@ -26,7 +26,7 @@ function Player(boss,x,y)
 	local speed = math.floor(boss.grill.tile/8)
 	local moving = true
 
-
+	-- starter bow
 	b = Bow(boss,"C0002")
 	player.inventory.add(b)
 	player.inventory.equip(b)
@@ -36,7 +36,7 @@ function Player(boss,x,y)
 	end
 
 	function player.draw()
-		spritesheet.draw_image(ix,iy, spritesheet.quads["60001"][direction][position][frame])
+		spritesheet.draw_image(ix,iy, spritesheet.quads["60048"][direction][position][frame])
 		player.inventory.draw()
 	end
 
