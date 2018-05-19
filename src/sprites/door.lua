@@ -4,11 +4,14 @@ function Door(boss, properties)
 
 	local grill = boss.grill
 	local spritesheet = boss.images["door"]
+	local properties = properties
 
 	local door = {
     name = "door",
 		x = properties.coord_x,
 		y = properties.coord_y,
+		id = properties.id,
+		open = true,
 		door_prop = properties
 	}
 

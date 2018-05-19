@@ -879,12 +879,11 @@ return {
 										{code = "10060", coord_x = 4, coord_y = 17},
 										{code = "10041", coord_x = 5, coord_y = 13},
 										{code = "10179", coord_x = 24, coord_y = 10},
-										{code = "10034", coord_x = 39, coord_y = 3},
 
     			},
     			door={
                     {dest = "street", code = "30005", coord_x = 22, coord_y = 24, dest_x = 22, dest_y = 1, id = 2},
-										{dest = "test", code = "30007", coord_x = 39, coord_y = 3, dest_x = 2, dest_y = 2, id = 1},
+										{dest = "curie044", code = "30001", coord_x = 39, coord_y = 3, dest_x = 10, dest_y = 2, id = 1},
 
     			},
     			npc={
