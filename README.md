@@ -24,7 +24,7 @@ If you want in this game <a href="https://github.com/paoli7612/TileGame-Lua/blob
 - WINDOWS:
   run run_win.bat
 - LINUX:
-  if love2d is installed, run run_linx.sh
+  if you have love2d, run run_linx.sh
 
 ## game
 - press i key to see inventory
