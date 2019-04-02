@@ -34,15 +34,6 @@ function Spritesheet(grill,type)
   function get_water(x,y) return {get_image(x,y),get_image(1+x,y),get_image(2+x,y),get_image(3+x,y)} end
   function get_lever(x,y) return {get_image(x,y),get_image(1+x,y),get_image(2+x,y)} end
   function get_chest(x,y) return {get_image(x,y),get_image(x,y+1),get_image(x,y+2),get_image(x,y+2)} end
-  function get_arrow(x,y)
-    local quads = {}
-    quads["right"] = get_image(x,y)
-    quads["down"] = get_image(x+1,y)
-    quads["left"] = get_image(x+2,y)
-    quads["up"] = get_image(x+3,y)
-    return quads
-  end
-
 
   lines = ""
   for line in io.lines("src/img/"..type..".json") do lines = lines .. line end
@@ -78,12 +69,6 @@ function Images(grill)
   images["chest"] = Spritesheet(grill,"chest")
   images["door"] = Spritesheet(grill,"door")
   images["water"] = Spritesheet(grill,"water")
-
-  images["arrow"] = Spritesheet(grill,"arrow")
-
-  images["food"] = Spritesheet(grill,"food")
-  images["sword"] = Spritesheet(grill,"sword")
-  images["bow"] = Spritesheet(grill,"bow")
 
   return images
 end

@@ -1,12 +1,5 @@
 -- player.lua
 
-Inventory = require("inventory")
-
-Food = require("sprites/items/food")
-Sword = require("sprites/items/sword")
-Bow = require("sprites/items/bow")
-Arrow = require("sprites/arrow")
-
 function Player(boss,x,y)
 	local spritesheet = boss.images["npc"]
 
@@ -15,8 +8,7 @@ function Player(boss,x,y)
 	local frame = 1
 
 	local player = {
-		name = "player",
-		inventory = Inventory(boss)
+		name = "player"
 	}
 	function player.reset_coord(x,y)
 		player.x = x
@@ -29,18 +21,8 @@ function Player(boss,x,y)
 	local speed = math.floor(boss.grill.tile/8)
 	local moving = true
 
-	-- starter bow
-	b = Bow(boss,"C0002")
-	player.inventory.add(b)
-	player.inventory.equip(b)
-
-	function player.add_food(code)
-		player.inventory.add(Food(boss,code))
-	end
-
 	function player.draw()
 		spritesheet.draw_image(ix,iy, spritesheet.quads["60048"][direction][position][frame])
-		player.inventory.draw()
 	end
 
 
@@ -61,11 +43,6 @@ function Player(boss,x,y)
 		end
 	end
 
-	function player.shot()
-		a = Arrow(boss, "D0001", player.x, player.y, direction)
-		boss.group.add(a)
-	end
-
 	function player.action()
 		x = player.x
 		y = player.y
@@ -76,7 +53,6 @@ function Player(boss,x,y)
 		element = boss.group.get_position(x,y)
 		if not(element == nil) then
 			if element.name == "npc" then
-				text = boss.player.inventory.quest_list.talk(element)
 				element.speak(text)
 			end
 			if element.name == "cartel" then element.touch() end

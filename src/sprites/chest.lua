@@ -1,7 +1,7 @@
 -- chest.lua
 
 function Chest(boss,properties, name_map)
-
+	
 	local grill = boss.grill
 	local spritesheet = boss.images["chest"]
 

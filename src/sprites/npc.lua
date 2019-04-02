@@ -17,7 +17,6 @@ function Npc(boss,properties,name_map)
 		x = properties.coord_x,
 		y = properties.coord_y,
 		nickname = properties.nickname,
-		current_quest = false,
 		chat_random = true
 	}
 	local ix = npc.x * grill.tile
@@ -30,63 +29,6 @@ function Npc(boss,properties,name_map)
 	end
 
 	function npc.speak(text)
-		if not (text == nil) then
-			boss.chat.write(npc.nickname,text)
-			boss.chat.show()
-			return
-		end
-		if not(npc.current_quest == false) then
-			-- control completed missions
-			for i,mission in ipairs(npc.current_quest.purpose.mission) do
-				for j,completed in ipairs(boss.player.inventory.quest_list.completed) do
-					if mission.quest == completed then mission.completed = true print("mission completed = true") end
-				end
-			end
-			-- Quest completata
-				complete = true
-				for i,talk in ipairs(npc.current_quest.purpose.talk) do
-					if not talk.completed then complete = false end
-				end
-				for i,mission in ipairs(npc.current_quest.purpose.mission) do
-					if not mission.completed then complete = false end
-				end
-
-				if complete then
-					boss.chat.write(npc.nickname,npc.current_quest.chat.quit)
-					boss.chat.show()
-					for i,quest in ipairs(npc.description.quests) do
-						if quest.name == npc.current_quest.name then quest.completed = true end
-					end
-					boss.player.inventory.quest_list.del(npc.current_quest.name)
-					boss.player.inventory.attr.add_exp(npc.current_quest.reward.exp)
-					boss.player.inventory.attr.add_money(npc.current_quest.reward.money)
-					food = npc.current_quest.reward.food
-					if food then boss.player.add_food(food) end
-					npc.current_quest = false
-					return
-				end
-				-- Quest gia attiva
-				boss.chat.write(npc.nickname,npc.current_quest.chat.state)
-				boss.chat.show()
-			return
-		end
-		-- Quest da attivare
-		for i,quest in ipairs(npc.description.quests) do
-			if quest.completed == false then
-				npc.current_quest = quest
-				if boss.player.inventory.quest_list.add(npc,npc.current_quest) then
-					boss.chat.write(npc.nickname,npc.current_quest.chat.start)
-					boss.chat.show()
-					return
-				else
-					for i,quest in ipairs(npc.description.quests) do
-						if quest.name == npc.current_quest.name then quest.completed = true end
-					end
-					npc.current_quest = false end
-			end
-		end
-
-		-- Chat random
 		text = npc.description.speak[math.random(1,table.getn(npc.description.speak))]
 		boss.chat.write(npc.nickname,text)
 		boss.chat.show()

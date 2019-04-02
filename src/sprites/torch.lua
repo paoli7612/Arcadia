@@ -4,6 +4,7 @@ function Torch(boss,properties)
 
 	local grill = boss.grill
 	local spritesheet = boss.images["torch"]
+	
 	local time = 0
 	local frame = 1
 	local speed = 0.1
