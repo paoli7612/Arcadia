@@ -338,8 +338,10 @@ return {
     			door={
                     {dest = "spawn", code = "30007", coord_x = 19, coord_y = 24, dest_x = 33, dest_y = 1, id = 1},
 										{dest = "spawn", code = "30007", coord_x = 20, coord_y = 24, dest_x = 33, dest_y = 1, id = 2},
-										{dest = "curie6-1", code = "30007", coord_x = 19, coord_y = 7, dest_x = 19, dest_y = 22, id = 2},
+										{dest = "curie6-1", code = "30007", coord_x = 19, coord_y = 7, dest_x = 19, dest_y = 23, id = 2},
 										{dest = "curie6-1", code = "30007", coord_x = 20, coord_y = 7, dest_x = 20, dest_y = 23, id = 2},
+										{dest = "curie5-0", code = "30007", coord_x = 8, coord_y = 10, dest_x = 23, dest_y = 15, id = 3},
+										{dest = "curie5-0", code = "30007", coord_x = 8, coord_y = 11, dest_x = 23, dest_y = 16, id = 3},
 										
     			},
     			npc={
