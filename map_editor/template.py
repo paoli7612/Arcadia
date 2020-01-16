@@ -1,30 +1,28 @@
 empty ="""return {
     	name = "%s",
     	properties={
-    			wall={
-    			},
-    			floor={
-    			},
-    			door={
-    			},
-    			npc={
-                },
-    			decor={
-                },
-    			torch={
-    			},
-    			cartel={
-                }
-                water={
-                },
-                lever={
-
-                },
-                chest={
-
-                }
-    		}
-    	}
+            wall={
+            },
+            floor={
+            },
+            door={
+            },
+            npc={
+            },
+            decor={
+            },
+            torch={
+            },
+            cartel={
+            }
+            water={
+            },
+            lever={
+            },
+            chest={
+            }
+		}
+	}
 """
 
 to_fill ="""return {
