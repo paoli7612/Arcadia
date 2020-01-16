@@ -345,7 +345,7 @@ return {
 										{dest = "curie5-0", code = "30007", coord_x = 8, coord_y = 12, dest_x = 31, dest_y = 14, id = 3},
 										{dest = "curie5-0", code = "30007", coord_x = 8, coord_y = 13, dest_x = 31, dest_y = 14, id = 3},
                     {dest = "curie6-0(1)", code = "30007", coord_x = 13, coord_y = 18, dest_x = 13, dest_y = 19, id = 5},
-										{dest = "curie6-0(1)", code = "30007", coord_x = 14, coord_y = 18, dest_x = 14, dest_y = 18, id = 5},
+										{dest = "curie6-0(1)", code = "30007", coord_x = 14, coord_y = 18, dest_x = 14, dest_y = 19, id = 5},
 
     			},
     			npc={

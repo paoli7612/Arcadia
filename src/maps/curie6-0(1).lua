@@ -102,7 +102,7 @@ return {
 										{code = "00012", coord_x = 11, coord_y = 14},
 										{code = "00011", coord_x = 28, coord_y = 14},
 										{code = "00010", coord_x = 16, coord_y = 14},
-										
+
     			},
     			floor={
                     {code = "10117", coord_x = 14, coord_y = 21},
@@ -353,33 +353,33 @@ return {
 										{code = "10129", coord_x = 27, coord_y = 14},
 										{code = "10129", coord_x = 27, coord_y = 15},
 										{code = "10129", coord_x = 27, coord_y = 16},
-										
+
     			},
     			door={
-                    {dest = "curie6-0", code = "30007", coord_x = 13, coord_y = 18, dest_x = 13, dest_y = 16, id = 1},
+                    {dest = "curie6-0", code = "30007", coord_x = 13, coord_y = 18, dest_x = 13, dest_y = 17, id = 1},
 										{dest = "curie6-0", code = "30007", coord_x = 14, coord_y = 18, dest_x = 14, dest_y = 17, id = 1},
-										
+
     			},
     			npc={
-                    
+
                 },
     			decor={
-                    
+
                 },
     			torch={
-                    
+
     			},
     			cartel={
-                    
+
                 },
                 water={
-                    
+
                 },
                 lever={
-                    
+
                 },
                 chest={
-                    
+
                 }
 
     		}
