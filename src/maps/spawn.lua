@@ -882,7 +882,6 @@ return {
     			},
     			door={
                     {dest = "street", code = "30005", coord_x = 22, coord_y = 24, dest_x = 22, dest_y = 1, id = 2},
-										{dest = "curie044", code = "30001", coord_x = 39, coord_y = 3, dest_x = 10, dest_y = 2, id = 1},
 										{dest = "curie6-0", code = "30004", coord_x = 33, coord_y = 0, dest_x = 19, dest_y = 24, id = 1},
 
     			},
