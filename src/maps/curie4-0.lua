@@ -120,9 +120,6 @@ return {
 										{code = "00014", coord_x = 15, coord_y = 16},
 										{code = "00014", coord_x = 16, coord_y = 16},
 										{code = "00009", coord_x = 7, coord_y = 15},
-										{code = "00009", coord_x = 7, coord_y = 14},
-										{code = "00009", coord_x = 7, coord_y = 13},
-										{code = "00009", coord_x = 7, coord_y = 12},
 										{code = "00009", coord_x = 7, coord_y = 11},
 
     			},
@@ -442,6 +439,9 @@ return {
                     {dest = "curie5-0", code = "30007", coord_x = 32, coord_y = 12, dest_x = 9, dest_y = 11, id = 1},
 										{dest = "curie5-0", code = "30007", coord_x = 32, coord_y = 13, dest_x = 9, dest_y = 12, id = 1},
 										{dest = "curie5-0", code = "30007", coord_x = 32, coord_y = 14, dest_x = 9, dest_y = 12, id = 1},
+                    {dest = "curie3-0", code = "30007", coord_x = 7, coord_y = 12, dest_x = 31, dest_y = 12, id = 2},
+                    {dest = "curie3-0", code = "30007", coord_x = 7, coord_y = 13, dest_x = 31, dest_y = 13, id = 2},
+										{dest = "curie3-0", code = "30007", coord_x = 7, coord_y = 14, dest_x = 31, dest_y = 14, id = 2},
 
     			},
     			npc={
