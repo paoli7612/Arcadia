@@ -390,7 +390,6 @@ return {
 										{code = "10040", coord_x = 33, coord_y = 4},
 										{code = "10040", coord_x = 33, coord_y = 2},
 										{code = "10040", coord_x = 33, coord_y = 1},
-										{code = "10040", coord_x = 32, coord_y = 1},
 										{code = "10040", coord_x = 31, coord_y = 1},
 										{code = "10040", coord_x = 27, coord_y = 1},
 										{code = "10040", coord_x = 25, coord_y = 1},
@@ -561,7 +560,6 @@ return {
 										{code = "10048", coord_x = 34, coord_y = 12},
 										{code = "10048", coord_x = 33, coord_y = 9},
 										{code = "10048", coord_x = 34, coord_y = 7},
-										{code = "10048", coord_x = 32, coord_y = 6},
 										{code = "10048", coord_x = 32, coord_y = 4},
 										{code = "10048", coord_x = 30, coord_y = 2},
 										{code = "10048", coord_x = 35, coord_y = 2},
@@ -879,6 +877,8 @@ return {
 										{code = "10060", coord_x = 4, coord_y = 17},
 										{code = "10041", coord_x = 5, coord_y = 13},
 										{code = "10179", coord_x = 24, coord_y = 10},
+										{code = "10040", coord_x = 32, coord_y = 6},
+										{code = "10080", coord_x = 32, coord_y = 1},
 										
     			},
     			door={
@@ -1016,7 +1016,9 @@ return {
 										
     			},
     			cartel={
-                    
+                    {text = "Marie Curie Pergine Valsugana", code = "50003", coord_x = 34, coord_y = 1},
+										{text = "Work in progress", code = "50001", coord_x = 33, coord_y = 2},
+										
                 },
                 water={
                     {code = "70001", coord_x = 0, coord_y = 24},
