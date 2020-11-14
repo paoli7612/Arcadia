@@ -306,6 +306,11 @@ return {
 										{code = "00021", coord_x = 39, coord_y = 10},
 										{code = "00020", coord_x = 39, coord_y = 13},
 										{code = "00020", coord_x = 39, coord_y = 14},
+										{code = "00015", coord_x = 20, coord_y = 22},
+										{code = "00011", coord_x = 20, coord_y = 20},
+										{code = "00013", coord_x = 21, coord_y = 20},
+										{code = "00009", coord_x = 20, coord_y = 21},
+										{code = "00014", coord_x = 21, coord_y = 22},
 										
     			},
     			floor={
@@ -431,7 +436,6 @@ return {
 										{code = "10113", coord_x = 24, coord_y = 22},
 										{code = "10113", coord_x = 23, coord_y = 22},
 										{code = "10113", coord_x = 22, coord_y = 22},
-										{code = "10113", coord_x = 20, coord_y = 22},
 										{code = "10113", coord_x = 17, coord_y = 21},
 										{code = "10113", coord_x = 16, coord_y = 21},
 										{code = "10113", coord_x = 12, coord_y = 21},
@@ -533,7 +537,6 @@ return {
 										{code = "10115", coord_x = 14, coord_y = 18},
 										{code = "10115", coord_x = 15, coord_y = 18},
 										{code = "10115", coord_x = 18, coord_y = 19},
-										{code = "10115", coord_x = 21, coord_y = 21},
 										{code = "10115", coord_x = 22, coord_y = 20},
 										{code = "10115", coord_x = 18, coord_y = 17},
 										{code = "10115", coord_x = 20, coord_y = 15},
@@ -779,7 +782,6 @@ return {
 										{code = "10121", coord_x = 22, coord_y = 7},
 										{code = "10121", coord_x = 18, coord_y = 4},
 										{code = "10121", coord_x = 12, coord_y = 3},
-										{code = "10121", coord_x = 20, coord_y = 20},
 										{code = "10121", coord_x = 16, coord_y = 22},
 										{code = "10121", coord_x = 15, coord_y = 15},
 										{code = "10121", coord_x = 12, coord_y = 13},
@@ -920,11 +922,8 @@ return {
 										{code = "10188", coord_x = 25, coord_y = 19},
 										{code = "10188", coord_x = 23, coord_y = 21},
 										{code = "10188", coord_x = 22, coord_y = 21},
-										{code = "10188", coord_x = 21, coord_y = 22},
 										{code = "10188", coord_x = 19, coord_y = 23},
 										{code = "10188", coord_x = 19, coord_y = 22},
-										{code = "10188", coord_x = 20, coord_y = 21},
-										{code = "10188", coord_x = 21, coord_y = 20},
 										{code = "10188", coord_x = 21, coord_y = 18},
 										{code = "10188", coord_x = 22, coord_y = 17},
 										{code = "10188", coord_x = 22, coord_y = 15},
@@ -947,6 +946,7 @@ return {
                     {dest = "spawn", code = "30005", coord_x = 22, coord_y = 0, dest_x = 22, dest_y = 23, id = 1},
 										{dest = "village", code = "30007", coord_x = 39, coord_y = 11, dest_x = 1, dest_y = 11, id = 1},
 										{dest = "village", code = "30007", coord_x = 39, coord_y = 12, dest_x = 1, dest_y = 12, id = 1},
+										{dest = "cave", code = "30001", coord_x = 21, coord_y = 21, dest_x = 5, dest_y = 5, id = 4},
 										
     			},
     			npc={
@@ -971,11 +971,14 @@ return {
 										
                 },
     			torch={
-                    
+                    {code = "40006", coord_x = 22, coord_y = 20},
+										{code = "40001", coord_x = 38, coord_y = 13},
+										
     			},
     			cartel={
                     {text = "Village", code = "50006", coord_x = 24, coord_y = 1},
 										{text = "Bhooo", code = "50002", coord_x = 37, coord_y = 11},
+										{text = "La cava...", code = "50006", coord_x = 24, coord_y = 21},
 										
                 },
                 water={
