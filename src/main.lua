@@ -1,10 +1,11 @@
 -- main.lua
 
 Grill = require("grill")
-Player = require("sprites/player")
-Maps = require("map")
-Images = require("images")
 Chat = require("chat")
+Maps = require("maps")
+Images = require("images")
+
+Player = require("sprites/player")
 
 Save = require("save")
 Load = require("load")
@@ -14,7 +15,7 @@ function Boss()
 	boss.grill = Grill()
 	boss.images = Images(boss.grill)
 	boss.maps = Maps(boss)
-	boss.player = Player(boss,36,6)
+	boss.player = Player(boss)
 	boss.maps.use("spawn")
 	boss.chat = Chat(boss)
 

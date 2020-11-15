@@ -7,7 +7,7 @@ Sword = require("sprites/items/sword")
 Bow = require("sprites/items/bow")
 Arrow = require("sprites/arrow")
 
-function Player(boss,x,y)
+function Player(boss)
 	local spritesheet = boss.images["npc"]
 
 	local direction = "down"
@@ -24,7 +24,6 @@ function Player(boss,x,y)
 		ix = player.x * boss.grill.tile
 		iy = player.y * boss.grill.tile
 	end
-	player.reset_coord(x,y)
 
 	local speed = math.floor(boss.grill.tile/8)
 	local moving = true
