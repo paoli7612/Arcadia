@@ -2,7 +2,6 @@ function Spritesheet(grill,type)
   local spritesheet = {
     quads = {}
   }
-  local grill = grill
   local image = love.graphics.newImage("img/"..type..".png")
   local json = require("json")
   local size = 32

@@ -16,8 +16,7 @@ function Boss()
 	boss.images = Images(boss.grill)
 	boss.maps = Maps(boss)
 	boss.player = Player(boss)
-	boss.maps.use("spawn")
-	boss.chat = Chat(boss)
+	boss.chat = Chat(boss.grill)
 
 	Load(boss)
 

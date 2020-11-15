@@ -1,13 +1,11 @@
 Font = require("font")
 
-function Chat(boss)
+function Chat(grill)
   local chat = {activate = false}
   local time = 0
   local speed = 4
-  local grill = boss.grill
   local frame = 1
   local current_lines = {}
-  -- local font = Font(boss)
 
   function chat.draw()
     if chat.activate then
