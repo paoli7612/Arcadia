@@ -1,37 +1,37 @@
 #
 <table width="100%">
  <tr>
-  <td><img src="https://github.com/paoli7612/TileGame-Lua/blob/master/doc/loco.png" width="100px"></td>
+  <td><img src="doc/loco.png" width="100px"></td>
   <td><h1>  The world of ARCADIA </h1></td>
-   <td><img src="https://github.com/paoli7612/TileGame-Lua/blob/master/doc/loco.png" width="100px"></td>
+   <td><img src="doc/loco.png" width="100px"></td>
   </tr>
 
  </table>
 
-## if you want in
-If you want in this game <a href="https://github.com/paoli7612/TileGame-Lua/blob/master/SPOT.md">click here</a>.
+## - Install LOVE2d
 
-## install LOVE
-- WINDOWS:
- Installation isn't required, LOVE is in love2d folder of repository.
-- LINUX:
+- **WINDOWS**:
+ Installation isn't required, LOVE is in love2d folder.
+- **LINUX**:
 ```shell
   $ sudo add-apt-repository ppa:bartbes/love-stable
   $ sudo apt-get update
   $ sudo apt-get install love
  ```
-## run
-- WINDOWS:
+
+## - Play
+
+- **WINDOWS**:
   run run_win.bat
 - LINUX:
   if you have love2d, run run_linx.sh
 
-## game
+## - Game
 - press i key to see inventory
 - press q key to acion with another things (npc, cartel, doors...)
 
-# SCREEN
-![alt text](doc/img/014.png)
+## SCREEN
+<a href="screen"> Screen Folder </a>
 
 # MAP_EDITOR - PYTHON
 This simply program allow you to create or change all game map. All game map saved in maps folder. If you give this program a name of a exists map, the program allow you to change this. Else the program create a new map with this new name. [pygame is required]
