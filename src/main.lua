@@ -17,15 +17,13 @@ function Boss()
 	boss.maps = Maps(boss)
 	boss.player = Player(boss)
 	boss.chat = Chat(boss.grill)
-
-	Load(boss)
-
 	return boss
 end
 
 function love.load()
 	boss = Boss()
-
+	Load(boss)
+	
 	music = love.audio.newSource("snd/example2.wav", "static")
 	music:setVolume(0.9)
 	music:setLooping(true)
