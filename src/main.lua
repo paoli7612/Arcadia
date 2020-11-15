@@ -23,8 +23,8 @@ end
 function love.load()
 	boss = Boss()
 	Load(boss)
-	
-	music = love.audio.newSource("snd/example2.wav", "static")
+
+	music = love.audio.newSource("snd/spawn.wav", "static")
 	music:setVolume(0.9)
 	music:setLooping(true)
 	music:play()
