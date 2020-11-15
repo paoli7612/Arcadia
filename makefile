@@ -2,7 +2,7 @@
 playGame:
 	love src
 
-tilehseetEditor: tilehseet_editor/main.py
+resetGame: save/reset.py
 	python3 $<
 
 mapEditor: map_editor/main.py
