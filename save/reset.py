@@ -6,7 +6,7 @@ def reset():
     files = os.listdir(folder)
     for file in files:
         src = os.path.join(folder, file)
-        shutil.copyfile(src, file)
+        shutil.copyfile(src, os.path.join(path, file))
 
 def get_new_code():
     code = str()
