@@ -9,7 +9,6 @@ return {
         state = 1,
         chat = {
           start = {
-            "ciao blabla",
             "missione tutorial",
             "ricompensa è 10 soldi e 10 esperienza",
             "bla bla vai a parlare con andy ed emily"

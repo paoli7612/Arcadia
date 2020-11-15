@@ -82,8 +82,6 @@ function save(boss)
   quest_completed()
   quest_started()
 
-  print("Game saved")
-
 end
 
 return save
