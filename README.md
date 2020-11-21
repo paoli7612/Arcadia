@@ -1,13 +1,12 @@
-#
 <table width="100%">
  <tr>
   <td><img src="doc/loco.png" width="100px"></td>
   <td><h1>  The world of ARCADIA </h1></td>
    <td><img src="doc/loco.png" width="100px"></td>
   </tr>
-
  </table>
 
+![](doc/img/014.png)
 ## - Install LOVE2d
 
 - **WINDOWS**:
