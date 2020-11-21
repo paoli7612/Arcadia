@@ -21,22 +21,11 @@ function Maps(boss)
     maps.use(door_prop.dest)
   end
 
-  function load_song(name)
-    path_song = "snd/"..name..".wav"
-    if love.filesystem.exists(path_song)	then
-      boss.song = love.audio.newSource(path_song, "stream")
-    else
-      boss.song = love.audio.newSource("snd/castle.wav", "stream")
-    end
-  end
-
   function maps.use(dest)
     love.window.setTitle(dest)
     boss.group = maps[dest]
     boss.name_map = dest
-    boss.song:stop()
-    load_song(dest)
-    boss.song:play()
+    boss.audio.change_map(dest)
   end
 
 
@@ -60,7 +49,6 @@ function Maps(boss)
   end
 
   load_map(require("maps/spawn"))
-  load_song('spawn')
   return maps
 end
 

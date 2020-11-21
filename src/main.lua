@@ -1,6 +1,7 @@
 -- main.lua
 
 Grill = require("grill")
+Audio = require("audio")
 Chat = require("chat")
 Maps = require("maps")
 Images = require("images")
@@ -13,6 +14,7 @@ Load = require("load")
 function Boss()
 	local boss = {}
 	boss.grill = Grill()
+	boss.audio = Audio()
 	boss.images = Images(boss.grill)
 	boss.maps = Maps(boss)
 	boss.player = Player(boss)
