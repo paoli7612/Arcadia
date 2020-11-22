@@ -1,6 +1,6 @@
 function Audio()
   local audio = {}
-  audio.song = 'spawn'
+  audio.song = ''
   audio.music = love.audio.newSource("snd/spawn.wav", 'stream')
 
   function audio.change_map(name)
