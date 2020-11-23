@@ -15,8 +15,8 @@ function Inventory(boss)
   function inventory.draw()
     if show then
       love.graphics.setColor(0,0,0)
-      love.graphics.rectangle("fill", 0, 0, grill.WIDTH, grill.tile*2,0,2,2)
-      inventory.attr.draw()
+      love.graphics.rectangle("fill", 50, 50, 200, grill.tile*3+50,0,2,2)
+      inventory.attr.draw(60, 65)
       for i,p in ipairs(bag) do
         p.draw(i,0) end
       equip.draw(grill.tile_w-1,0)
