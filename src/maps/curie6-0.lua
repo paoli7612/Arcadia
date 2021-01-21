@@ -348,10 +348,10 @@ return {
 										{dest = "curie6-0(1)", code = "30007", coord_x = 14, coord_y = 18, dest_x = 14, dest_y = 19, id = 5},
 										{dest = "curie6-0(1)", code = "30007", coord_x = 25, coord_y = 18, dest_x = 25, dest_y = 18, id = 6},
 										{dest = "curie6-0(1)", code = "30007", coord_x = 26, coord_y = 18, dest_x = 26, dest_y = 18, id = 6},
-                    {dest = "curie7-0", code = "30007", coord_x = 31, coord_y = 10, dest_x = 2, dest_y = 10, id = 4},
-                    {dest = "curie7-0", code = "30007", coord_x = 31, coord_y = 11, dest_x = 2, dest_y = 10, id = 4},
-                    {dest = "curie7-0", code = "30007", coord_x = 31, coord_y = 12, dest_x = 2, dest_y = 10, id = 4},
-										{dest = "curie7-0", code = "30007", coord_x = 31, coord_y = 13, dest_x = 2, dest_y = 13, id = 4},
+                    {dest = "curie7-0", code = "30007", coord_x = 31, coord_y = 10, dest_x = 2, dest_y = 13, id = 4},
+                    {dest = "curie7-0", code = "30007", coord_x = 31, coord_y = 11, dest_x = 2, dest_y = 13, id = 4},
+                    {dest = "curie7-0", code = "30007", coord_x = 31, coord_y = 12, dest_x = 2, dest_y = 14, id = 4},
+										{dest = "curie7-0", code = "30007", coord_x = 31, coord_y = 13, dest_x = 2, dest_y = 14, id = 4},
 
     			},
     			npc={
