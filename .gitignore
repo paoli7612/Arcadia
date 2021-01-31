@@ -1,4 +1,5 @@
 *.pyc
 *__pycache__
 save/player.pia
-*.pia
+save/quest_completed.pia
+save/quest_started.pia
