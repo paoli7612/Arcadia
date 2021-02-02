@@ -14,7 +14,7 @@ empty ="""return {
             torch={
             },
             cartel={
-            }
+            },
             water={
             },
             lever={
