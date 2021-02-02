@@ -177,9 +177,10 @@ return {
 										{code = "00072", coord_x = 39, coord_y = 1},
 										{code = "00072", coord_x = 39, coord_y = 2},
 										{code = "00072", coord_x = 39, coord_y = 3},
-										{code = "00071", coord_x = 38, coord_y = 9},
-										{code = "00071", coord_x = 39, coord_y = 8},
-										
+										{code = "00072", coord_x = 38, coord_y = 9},
+										{code = "00072", coord_x = 39, coord_y = 9},
+										{code = "00072", coord_x = 39, coord_y = 8},
+
     			},
     			floor={
                     {code = "10125", coord_x = 6, coord_y = 5},
@@ -383,30 +384,33 @@ return {
 										{code = "10010", coord_x = 35, coord_y = 10},
 										{code = "10010", coord_x = 36, coord_y = 10},
 										{code = "10009", coord_x = 31, coord_y = 10},
-										{code = "10011", coord_x = 37, coord_y = 10},
 										{code = "10008", coord_x = 34, coord_y = 4},
 										{code = "10008", coord_x = 35, coord_y = 4},
 										{code = "10008", coord_x = 35, coord_y = 5},
-										
+										{code = "10010", coord_x = 37, coord_y = 10},
+										{code = "10010", coord_x = 38, coord_y = 10},
+										{code = "10010", coord_x = 39, coord_y = 10},
+
     			},
     			door={
                     {dest = "street", code = "30002", coord_x = 6, coord_y = 5, dest_x = 22, dest_y = 21, id = 1},
 										{dest = "cave", code = "30004", coord_x = 14, coord_y = 1, dest_x = 34, dest_y = 6, id = 2},
 										{dest = "cave", code = "30004", coord_x = 34, coord_y = 5, dest_x = 14, dest_y = 2, id = 3},
 										{dest = "mine", code = "30005", coord_x = 33, coord_y = 0, dest_x = 5, dest_y = 5, id = 4},
-										
+										{dest = "cave2", code = "30002", coord_x = 40, coord_y = 10, dest_x = 1, dest_y = 10, id = 5},
+
     			},
     			npc={
-                    
+
                 },
     			decor={
-                    
+
                 },
     			torch={
-                    
+
     			},
     			cartel={
-                    
+
                 },
                 water={
                     {code = "70003", coord_x = 2, coord_y = 14},
@@ -737,16 +741,13 @@ return {
 										{code = "70003", coord_x = 36, coord_y = 14},
 										{code = "70003", coord_x = 37, coord_y = 14},
 										{code = "70003", coord_x = 38, coord_y = 14},
-										{code = "70003", coord_x = 38, coord_y = 10},
-										{code = "70003", coord_x = 39, coord_y = 10},
-										{code = "70003", coord_x = 39, coord_y = 9},
-										
+
                 },
                 lever={
-                    
+
                 },
                 chest={
-                    
+
                 }
 
     		}
