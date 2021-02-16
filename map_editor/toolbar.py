@@ -10,7 +10,7 @@ class Toolbar:
         self.reset_screen()
 
     def reset_screen(self):
-        self.screen.fill(self.opt.Colors.BLUE)
+        self.screen.fill((30, 30, 30))
         prop = self.program.converter.properties
         images = self.program.images
 

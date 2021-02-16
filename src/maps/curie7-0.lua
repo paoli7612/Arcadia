@@ -134,7 +134,7 @@ return {
 										{code = "00014", coord_x = 2, coord_y = 16},
 										{code = "00015", coord_x = 1, coord_y = 16},
 										{code = "00010", coord_x = 1, coord_y = 15},
-
+										
     			},
     			floor={
                     {code = "10118", coord_x = 2, coord_y = 10},
@@ -193,33 +193,138 @@ return {
 										{code = "10117", coord_x = 9, coord_y = 11},
 										{code = "10117", coord_x = 9, coord_y = 10},
 										{code = "10117", coord_x = 9, coord_y = 9},
-
+										{code = "10115", coord_x = 9, coord_y = 17},
+										{code = "10115", coord_x = 10, coord_y = 17},
+										{code = "10115", coord_x = 11, coord_y = 17},
+										{code = "10115", coord_x = 12, coord_y = 17},
+										{code = "10115", coord_x = 13, coord_y = 17},
+										{code = "10115", coord_x = 14, coord_y = 17},
+										{code = "10115", coord_x = 15, coord_y = 17},
+										{code = "10115", coord_x = 16, coord_y = 17},
+										{code = "10115", coord_x = 17, coord_y = 17},
+										{code = "10115", coord_x = 18, coord_y = 17},
+										{code = "10115", coord_x = 19, coord_y = 17},
+										{code = "10115", coord_x = 20, coord_y = 17},
+										{code = "10115", coord_x = 21, coord_y = 17},
+										{code = "10115", coord_x = 22, coord_y = 17},
+										{code = "10115", coord_x = 23, coord_y = 17},
+										{code = "10115", coord_x = 23, coord_y = 18},
+										{code = "10115", coord_x = 23, coord_y = 19},
+										{code = "10115", coord_x = 22, coord_y = 19},
+										{code = "10115", coord_x = 22, coord_y = 18},
+										{code = "10115", coord_x = 21, coord_y = 18},
+										{code = "10115", coord_x = 20, coord_y = 18},
+										{code = "10115", coord_x = 19, coord_y = 18},
+										{code = "10115", coord_x = 18, coord_y = 18},
+										{code = "10115", coord_x = 17, coord_y = 18},
+										{code = "10115", coord_x = 16, coord_y = 18},
+										{code = "10115", coord_x = 15, coord_y = 18},
+										{code = "10115", coord_x = 14, coord_y = 18},
+										{code = "10115", coord_x = 13, coord_y = 18},
+										{code = "10115", coord_x = 12, coord_y = 18},
+										{code = "10115", coord_x = 11, coord_y = 18},
+										{code = "10115", coord_x = 10, coord_y = 18},
+										{code = "10115", coord_x = 9, coord_y = 18},
+										{code = "10115", coord_x = 9, coord_y = 19},
+										{code = "10115", coord_x = 9, coord_y = 20},
+										{code = "10115", coord_x = 9, coord_y = 21},
+										{code = "10115", coord_x = 9, coord_y = 22},
+										{code = "10115", coord_x = 9, coord_y = 23},
+										{code = "10115", coord_x = 10, coord_y = 23},
+										{code = "10115", coord_x = 11, coord_y = 23},
+										{code = "10115", coord_x = 12, coord_y = 23},
+										{code = "10115", coord_x = 13, coord_y = 23},
+										{code = "10115", coord_x = 14, coord_y = 23},
+										{code = "10115", coord_x = 15, coord_y = 23},
+										{code = "10115", coord_x = 16, coord_y = 23},
+										{code = "10115", coord_x = 17, coord_y = 23},
+										{code = "10115", coord_x = 18, coord_y = 23},
+										{code = "10115", coord_x = 19, coord_y = 23},
+										{code = "10115", coord_x = 20, coord_y = 23},
+										{code = "10115", coord_x = 21, coord_y = 23},
+										{code = "10115", coord_x = 22, coord_y = 23},
+										{code = "10115", coord_x = 23, coord_y = 23},
+										{code = "10115", coord_x = 23, coord_y = 22},
+										{code = "10115", coord_x = 23, coord_y = 21},
+										{code = "10115", coord_x = 23, coord_y = 20},
+										{code = "10115", coord_x = 22, coord_y = 20},
+										{code = "10115", coord_x = 21, coord_y = 20},
+										{code = "10115", coord_x = 21, coord_y = 19},
+										{code = "10115", coord_x = 20, coord_y = 19},
+										{code = "10115", coord_x = 19, coord_y = 19},
+										{code = "10115", coord_x = 18, coord_y = 19},
+										{code = "10115", coord_x = 17, coord_y = 19},
+										{code = "10115", coord_x = 16, coord_y = 19},
+										{code = "10115", coord_x = 15, coord_y = 19},
+										{code = "10115", coord_x = 14, coord_y = 19},
+										{code = "10115", coord_x = 13, coord_y = 19},
+										{code = "10115", coord_x = 12, coord_y = 19},
+										{code = "10115", coord_x = 11, coord_y = 19},
+										{code = "10115", coord_x = 10, coord_y = 19},
+										{code = "10115", coord_x = 10, coord_y = 20},
+										{code = "10115", coord_x = 11, coord_y = 20},
+										{code = "10115", coord_x = 12, coord_y = 20},
+										{code = "10115", coord_x = 13, coord_y = 20},
+										{code = "10115", coord_x = 14, coord_y = 20},
+										{code = "10115", coord_x = 15, coord_y = 20},
+										{code = "10115", coord_x = 16, coord_y = 20},
+										{code = "10115", coord_x = 17, coord_y = 20},
+										{code = "10115", coord_x = 18, coord_y = 20},
+										{code = "10115", coord_x = 19, coord_y = 20},
+										{code = "10115", coord_x = 20, coord_y = 20},
+										{code = "10115", coord_x = 21, coord_y = 21},
+										{code = "10115", coord_x = 22, coord_y = 21},
+										{code = "10115", coord_x = 22, coord_y = 22},
+										{code = "10115", coord_x = 21, coord_y = 22},
+										{code = "10115", coord_x = 20, coord_y = 22},
+										{code = "10115", coord_x = 19, coord_y = 22},
+										{code = "10115", coord_x = 18, coord_y = 22},
+										{code = "10115", coord_x = 17, coord_y = 22},
+										{code = "10115", coord_x = 16, coord_y = 22},
+										{code = "10115", coord_x = 15, coord_y = 22},
+										{code = "10115", coord_x = 14, coord_y = 22},
+										{code = "10115", coord_x = 13, coord_y = 22},
+										{code = "10115", coord_x = 12, coord_y = 22},
+										{code = "10115", coord_x = 11, coord_y = 22},
+										{code = "10115", coord_x = 10, coord_y = 22},
+										{code = "10115", coord_x = 11, coord_y = 21},
+										{code = "10115", coord_x = 12, coord_y = 21},
+										{code = "10115", coord_x = 13, coord_y = 21},
+										{code = "10115", coord_x = 10, coord_y = 21},
+										{code = "10115", coord_x = 14, coord_y = 21},
+										{code = "10115", coord_x = 15, coord_y = 21},
+										{code = "10115", coord_x = 16, coord_y = 21},
+										{code = "10115", coord_x = 20, coord_y = 21},
+										{code = "10115", coord_x = 19, coord_y = 21},
+										{code = "10115", coord_x = 18, coord_y = 21},
+										{code = "10115", coord_x = 17, coord_y = 21},
+										
     			},
     			door={
                     {dest = "curie6-0", code = "30007", coord_x = 1, coord_y = 13, dest_x = 29, dest_y = 12, id = 1},
-                    {dest = "curie6-0", code = "30007", coord_x = 1, coord_y = 14, dest_x = 29, dest_y = 13, id = 1},
-
+										{dest = "curie6-0", code = "30007", coord_x = 1, coord_y = 14, dest_x = 29, dest_y = 13, id = 1},
+										
     			},
     			npc={
-
+                    
                 },
     			decor={
-
+                    
                 },
     			torch={
-
+                    
     			},
     			cartel={
-
+                    
                 },
                 water={
-
+                    
                 },
                 lever={
-
+                    
                 },
                 chest={
-
+                    
                 }
 
     		}
