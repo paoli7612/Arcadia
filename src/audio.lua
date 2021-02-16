@@ -5,7 +5,7 @@ function Audio()
 
   function audio.change_map(name)
     if not (audio.song == name) then
-      if love.filesystem.exists("snd/"..name..".wav") then
+      if not (love.filesystem.getInfo("snd/"..name..".wav") == nil) then
         audio.song = name
         audio.music:stop()
         audio.music = love.audio.newSource("snd/"..name..".wav", 'stream')
