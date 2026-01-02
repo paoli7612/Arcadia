@@ -17,6 +17,6 @@ return {
        open = {"questa cassa non sembra contenere nulla"},                  -- messaggio all appertura
        lock = {"non riesco ad aprire questa cassa", "devo trovare un modo"} -- messaggio quando la cassa e'bloccata
     },
-    unlocked = true     -- chest apribile
+    unlocked = false     -- chest apribile
   }
 }

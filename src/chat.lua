@@ -10,11 +10,11 @@ function Chat(grill)
   function chat.draw()
     if chat.activate then
       love.graphics.setColor(200,200,200)
-      love.graphics.rectangle("fill", 0, 0, grill.WIDTH, grill.tile*2,0,2,2)
+      love.graphics.rectangle("fill", 0, 0, WIDTH, tile*2,0,2,2)
       love.graphics.setColor(255,0,0)
       love.graphics.print(current_title, 0, 0,0,2,2)
       love.graphics.setColor(0,0,0)
-      love.graphics.print(current_lines[frame], grill.tile, grill.tile,0,2,2)
+      love.graphics.print(current_lines[frame], tile, tile,0,2,2)
       love.graphics.setColor(255,255,255)
     end
   end
