@@ -90,7 +90,7 @@ function Group(maps,grill)
   function group.update(dt)
     for i,item in ipairs(group.updater) do item.update(dt) end
     for i,item in ipairs(group.arrow) do
-      if item.x < 0 or item.y < 0 or item.x > grill.tile_w or item.y > grill.tile_h then
+      if item.x < 0 or item.y < 0 or item.x > tile_w or item.y > tile_h then
         table.remove(group.arrow, i)
       else item.update(dt) end
     end

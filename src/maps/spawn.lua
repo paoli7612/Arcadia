@@ -884,6 +884,7 @@ return {
     			door={
                     {dest = "street", code = "30005", coord_x = 22, coord_y = 24, dest_x = 22, dest_y = 1, id = 2},
 										{dest = "curie6-0", code = "30004", coord_x = 33, coord_y = 0, dest_x = 19, dest_y = 24, id = 1},
+										{dest = "sandbox", code = "30007", coord_x = 16, coord_y = 12, dest_x = 20, dest_y = 10, id = 7612},
 										
     			},
     			npc={

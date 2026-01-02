@@ -8,6 +8,7 @@ function Sword(boss, code)
   function sword.draw()
     spritesheet.draw_image(ix,iy,spritesheet.quads[sword.code],rotation)
   end
+  
   return sword
 end
 

@@ -1,11 +1,9 @@
 -- main.lua
-
 Grill = require("grill")
 Audio = require("audio")
 Chat = require("chat")
 Maps = require("maps")
 Images = require("images")
-
 Player = require("sprites/player")
 
 -- Save = require("save")
