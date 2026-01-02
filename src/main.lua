@@ -8,8 +8,8 @@ Images = require("images")
 
 Player = require("sprites/player")
 
-Save = require("save")
-Load = require("load")
+-- Save = require("save")
+-- Load = require("load")
 
 function Boss()
 	local boss = {}
@@ -24,7 +24,8 @@ end
 
 function love.load()
 	boss = Boss()
-	Load(boss)
+	boss.group = boss.maps['spawn']
+	-- Load(boss)
 end
 
 function love.update(dt)
@@ -40,7 +41,7 @@ function love.draw()
 end
 
 function love.quit()
-	Save(boss)
+	-- Save(boss)
 	print("saved")
 end
 

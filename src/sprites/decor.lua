@@ -2,7 +2,6 @@
 
 function Decor(boss,properties)
 
-	local grill = boss.grill
 	local spritesheet = boss.images["decor"]
 
 	local decor = {
@@ -12,7 +11,7 @@ function Decor(boss,properties)
 	}
 
 	function decor.draw()
-		spritesheet.draw_image(decor.x*grill.tile,decor.y*grill.tile,spritesheet.quads[properties.code])
+		spritesheet.draw_image(decor.x*tile,decor.y*tile,spritesheet.quads[properties.code])
 	end
 
 	return decor

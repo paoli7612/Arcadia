@@ -2,7 +2,6 @@
 
 function Torch(boss,properties)
 
-	local grill = boss.grill
 	local spritesheet = boss.images["torch"]
 	local time = 0
 	local frame = 1
@@ -15,7 +14,7 @@ function Torch(boss,properties)
 	}
 
 	function torch.draw()
-		spritesheet.draw_image(torch.x*grill.tile,torch.y*grill.tile,spritesheet.quads[properties.code][frame])
+		spritesheet.draw_image(torch.x*tile,torch.y*tile,spritesheet.quads[properties.code][frame])
 	end
 
   function torch.update(dt)

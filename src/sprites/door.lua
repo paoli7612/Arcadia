@@ -16,7 +16,7 @@ function Door(boss, properties)
 	}
 
 	function door.draw()
-		spritesheet.draw_image(door.x*grill.tile,door.y*grill.tile,spritesheet.quads[properties.code])
+		spritesheet.draw_image(door.x*tile,door.y*tile,spritesheet.quads[properties.code])
 	end
 
 	function door.touch()

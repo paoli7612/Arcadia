@@ -10,7 +10,7 @@ function Spritesheet(grill,type)
   end
 
   function spritesheet.draw_image(x,y,quad)
-    love.graphics.draw(image, quad, x, y, 0, (grill.tile/size), (grill.tile/size)) -- correct for float to int
+    love.graphics.draw(image, quad, x, y, 0, (tile/size), (tile/size)) 
   end
 
   function get_npc(x,y)

@@ -13,7 +13,7 @@ function Floor(boss,properties)
 	}
 
 	function floor.draw()
-		spritesheet.draw_image(floor.x*grill.tile,floor.y*grill.tile,spritesheet.quads[floor.code])
+		spritesheet.draw_image(floor.x*tile,floor.y*tile,spritesheet.quads[floor.code])
 	end
 
 	return floor

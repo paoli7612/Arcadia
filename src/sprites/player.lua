@@ -21,11 +21,11 @@ function Player(boss)
 	function player.reset_coord(x,y)
 		player.x = x
 		player.y = y
-		ix = player.x * boss.grill.tile
-		iy = player.y * boss.grill.tile
+		ix = player.x * tile
+		iy = player.y * tile
 	end
-
-	local speed = math.floor(boss.grill.tile/8)
+	player.reset_coord(21, 3)
+	local speed = math.floor(tile/8)
 	local moving = true
 
 	-- starter bow
@@ -42,12 +42,11 @@ function Player(boss)
 		player.inventory.draw()
 	end
 
-
 	function player.update(dt)
 		if not boss.chat.activate then
 			if moving then
-				mx = player.x*boss.grill.tile
-				my = player.y*boss.grill.tile
+				mx = player.x*tile
+				my = player.y*tile
 				if (math.abs(mx-ix) < speed) then ix = mx end
 				if (math.abs(my-iy) < speed) then iy = my end
 				if ix < mx then	ix = ix + speed

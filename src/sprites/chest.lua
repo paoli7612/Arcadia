@@ -2,7 +2,6 @@
 
 function Chest(boss,properties, name_map)
 
-	local grill = boss.grill
 	local spritesheet = boss.images["chest"]
 
 	local time = 0
@@ -27,7 +26,7 @@ function Chest(boss,properties, name_map)
 	local datasheet = get_data_sheet(name_map)
 
 	function chest.draw()
-		spritesheet.draw_image(chest.x*grill.tile,chest.y*grill.tile,spritesheet.quads[properties.code][frame])
+		spritesheet.draw_image(chest.x*tile,chest.y*tile,spritesheet.quads[properties.code][frame])
 	end
 
 	function chest.touch()

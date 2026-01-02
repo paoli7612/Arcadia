@@ -20,9 +20,9 @@ function Npc(boss,properties,name_map)
 		current_quest = false,
 		chat_random = true
 	}
-	local ix = npc.x * grill.tile
-	local iy = npc.y * grill.tile
-	local speed = math.floor(grill.tile/11)
+	local ix = npc.x * tile
+	local iy = npc.y * tile
+	local speed = math.floor(tile/11)
 	npc.description = require("../descriptions/" .. properties.nickname)
 
 	function npc.draw()
@@ -120,8 +120,8 @@ function Npc(boss,properties,name_map)
 				time = 0
 			end
 
-			mx = npc.x*grill.tile
-			my = npc.y*grill.tile
+			mx = npc.x*tile
+			my = npc.y*tile
 			if (math.abs(mx-ix) < speed) then ix = mx end
 			if (math.abs(my-iy) < speed) then iy = my end
 			if ix < mx then	ix = ix + speed	end

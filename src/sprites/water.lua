@@ -2,7 +2,6 @@
 
 function Water(boss,properties)
 
-	local grill = boss.grill
 	local spritesheet = boss.images["water"]
 	local time = 0
 	local frame = 1
@@ -15,7 +14,7 @@ function Water(boss,properties)
 	}
 
 	function water.draw()
-		spritesheet.draw_image(water.x*grill.tile,water.y*grill.tile,spritesheet.quads[properties.code][frame])
+		spritesheet.draw_image(water.x*tile,water.y*tile,spritesheet.quads[properties.code][frame])
 	end
 
   function water.update(dt)
