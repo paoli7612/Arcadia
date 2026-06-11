@@ -1,25 +1,19 @@
 -- inventory.lua
 
-Attr = require("attr")
-Quest_list = require("quest_list")
+local Attr = require("attr")
+local Quest_list = require("quest_list")
 
-function Inventory(boss)
+local function Inventory(boss)
   local inventory = {}
   local bag = {}
   local equip = nil
   inventory.attr = Attr(boss)
   inventory.quest_list = Quest_list(boss)
-  local grill = boss.grill
   local show = false
 
   function inventory.draw()
     if show then
-      love.graphics.setColor(0,0,0)
-      love.graphics.rectangle("fill", 50, 50, 200, grill.tile*3+50,0,2,2)
-      inventory.attr.draw(60, 65)
-      for i,p in ipairs(bag) do
-        p.draw(i+4,2) end
-      equip.draw(grill.tile_w-1,0)
+      boss.interface.draw_inventory(inventory.attr, bag, equip)
     end
   end
 

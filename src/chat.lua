@@ -1,34 +1,37 @@
-Font = require("font")
+--- Dialog and message state.
+-- Rendering is delegated to the shared interface manager.
+-- @module chat
 
-function Chat(grill)
+local function Chat(interface)
   local chat = {activate = false}
   local time = 0
   local speed = 4
   local frame = 1
   local current_lines = {}
+  local current_title = ""
 
+  --- Draw the active dialog panel.
   function chat.draw()
     if chat.activate then
-      love.graphics.setColor(200,200,200)
-      love.graphics.rectangle("fill", 0, 0, grill.WIDTH, grill.tile*2,0,2,2)
-      love.graphics.setColor(255,0,0)
-      love.graphics.print(current_title, 0, 0,0,2,2)
-      love.graphics.setColor(0,0,0)
-      love.graphics.print(current_lines[frame], grill.tile, grill.tile,0,2,2)
-      love.graphics.setColor(255,255,255)
+      interface.draw_dialog(current_title, current_lines[frame])
     end
   end
 
+  --- Replace the current dialog content.
+  -- @param title string Dialog title.
+  -- @param lines table Dialog lines.
   function chat.write(title,lines)
     current_lines = lines
     current_title = title
     frame = 1
   end
 
+  --- Toggle dialog visibility.
   function chat.show()
     chat.activate = not chat.activate
   end
 
+  --- Advance to the next dialog line.
   function chat.next()
     if chat.activate then
       frame = frame + 1
@@ -39,6 +42,8 @@ function Chat(grill)
     end
   end
 
+  --- Update dialog timers.
+  -- @param dt number Seconds elapsed since the previous frame.
   function chat.update(dt)
     time = time + dt
 		if time > speed then

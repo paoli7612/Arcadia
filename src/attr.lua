@@ -13,19 +13,19 @@ function Attr(boss)
 
 
   function attr.draw(x, y)
-    love.graphics.setColor(255,255,0)
+    love.graphics.setColor(1, 1, 0)
     love.graphics.print("Money " .. attr.money, x, y)
 
-    love.graphics.setColor(255,0,255)
+    love.graphics.setColor(1, 0, 1)
     love.graphics.print("Exp " .. attr.exp .. "/" .. attr.exp_max, x, y+grill.tile*2)
 
-    love.graphics.setColor(255,255,255)
+    love.graphics.setColor(1, 1, 1)
     love.graphics.print("Level " .. attr.level, x, y+grill.tile*3)
 
-    love.graphics.setColor(255,0,0)
+    love.graphics.setColor(1, 0, 0)
     love.graphics.print("Life " .. attr.life .. "/" .. attr.life_max, x, y+grill.tile*1)
 
-    love.graphics.setColor(255, 255, 255)
+    love.graphics.setColor(1, 1, 1)
   end
 
   function attr.add_life(life)

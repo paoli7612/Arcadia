@@ -22,7 +22,7 @@ function Maps(boss)
   end
 
   function maps.use(dest)
-    love.window.setTitle(dest)
+    love.window.setTitle("The world of Arcadia")
     boss.group = maps[dest]
     boss.name_map = dest
     boss.audio.change_map(dest)

@@ -20,7 +20,7 @@ function load(boss)
     catch("player")
     name_map = read()
     boss.audio.change_map(name_map)
-    love.window.setTitle(name_map)
+    love.window.setTitle("The world of Arcadia")
     boss.group = boss.maps[name_map]
     boss.name_map = name_map
 
